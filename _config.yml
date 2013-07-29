@@ -1,4 +1,3 @@
-baseurl: /daoluan.github.io
 markdown: redcarpet markdown
 pygments: true
 permalink: /:year/:month/:title
