@@ -1,0 +1,99 @@
+---
+author: daoluan
+comments: true
+date: 2012-05-16 21:57:21+00:00
+layout: post
+slug: '%e6%90%ac%e5%ae%b6%e4%ba%86%ef%bc%8c%e6%9c%89%e4%ba%86%e8%87%aa%e5%b7%b1%e7%9a%84%e7%8b%ac%e7%ab%8b%e5%8d%9a%e5%ae%a2'
+title: 搬家了，有了自己的独立博客
+wordpress_id: 304
+categories:
+- 随笔
+tags:
+- 随笔
+---
+
+# 搬家啦
+
+2012年5月12日有了自己的独立博客，在博客园的那一段时间里，一直压力有点肿。园里高手如云，以至于写点东西也要小心翼翼的。之前也是一直写技术的东西，很少涉及生活。所以决定给自己换一个比较轻松的环境，写技术，写心情，写生活，记录点点滴滴。
+
+<!-- more -->
+
+# 一路博客园
+
+在博客园里写了几篇文章，自我觉得还写的不错的，下面总结一下：
+
+刚到博客园的时候（其实一直到现在也是）非常喜欢VC，碰巧加入了同专业的一位师姐的项目，是关于图像处理的，所以搞了一会儿的位图操作；悲催的是，后来被师姐踢了：
+
+[我的第一个MFC小项目（1）之 初来咋到](http://www.cnblogs.com/daoluanxiaozi/archive/2011/11/18/2254755.html)
+
+[我的第一个MFC小项目（2）之 初涉位图](http://www.cnblogs.com/daoluanxiaozi/archive/2011/11/23/2260671.html)
+
+[我的第一个MFC小项目（3）之 位图转换](http://www.cnblogs.com/daoluanxiaozi/archive/2011/12/08/2280453.html)
+
+[我的第一个MFC小项目（4）之 位图转换（续）](http://www.cnblogs.com/daoluanxiaozi/archive/2011/12/20/2295114.html)
+
+之后看了JJH《Effective C++》翻译的这本书，这是一本让真正初探C++奥妙的一本书，所以有些感触,现在在看《Effective C++》的升级版《More Effective C++》：
+
+[C++静态数据成员和静态成员函数](http://www.cnblogs.com/daoluanxiaozi/archive/2011/12/03/2274636.html)
+
+[C++虚函数和纯虚函数（1）](http://www.cnblogs.com/daoluanxiaozi/archive/2011/12/04/2275364.html)
+
+[C++虚函数和纯虚函数（2）](http://www.cnblogs.com/daoluanxiaozi/archive/2011/12/04/2275520.html)
+
+[C++对析构函数的误解](http://www.cnblogs.com/daoluanxiaozi/archive/2011/12/09/2281796.html)
+
+[STL swap潜在的危险](http://www.cnblogs.com/daoluanxiaozi/archive/2011/12/18/2291972.html) （这个很有意思，自己想的）
+
+之后莫名其妙又在VC上转了，期间理解了一些比较有趣的技术实现，间断间断的写：
+
+[MFC中托盘（TRAYICON）实现](http://www.cnblogs.com/daoluanxiaozi/archive/2011/11/12/2246733.html)
+
+[MFC自动隐藏](http://www.cnblogs.com/daoluanxiaozi/archive/2011/11/17/2252599.html)
+
+[MFC 自定义消息](http://www.cnblogs.com/daoluanxiaozi/archive/2012/01/28/2330527.html)
+
+[MFC 鼠标去留](http://www.cnblogs.com/daoluanxiaozi/archive/2012/02/04/2337561.html)
+
+[MFC DLEdit 设计属于自己的编辑框](http://www.cnblogs.com/daoluanxiaozi/archive/2012/02/04/2337016.html)
+
+终【DL便签 V0.3】发布了，VC做的：
+
+[捣乱便签V0.3发布！](http://blog.csdn.net/daoluanxiaozi/article/details/7483269)
+
+大二上学期，有了数据结构的课程，于是写了几篇关于算法的：
+
+[哈夫曼压缩算法](http://www.cnblogs.com/daoluanxiaozi/archive/2011/12/26/2302464.html) （这是我倍感欣慰的地方，赫夫曼压缩编码思路不难，但是实现过程有涉及一些技巧）
+
+接下来看了《深入理解计算机系统》，超有感觉，所以：
+
+[从简单的算法初探过程汇编](http://www.cnblogs.com/daoluanxiaozi/archive/2012/02/08/2340530.html)（不得了，居然被51CTO看中了，一不小心就被转了[http://developer.51cto.com/art/201202/316116.htm](http://developer.51cto.com/art/201202/316116.htm)，怎么说呢，对自己的一个肯定吧，说明还是有学到点东西的）
+
+另有：
+
+[简单的外壳（shell）](http://www.cnblogs.com/daoluanxiaozi/archive/2012/02/23/2365513.html) （初探外壳)
+
+[关于读书的流水账](http://www.cnblogs.com/daoluanxiaozi/archive/2012/03/14/2397033.html) 和 [妙趣横生的虚拟存储器](http://www.cnblogs.com/daoluanxiaozi/archive/2012/03/12/2392281.html) （超有感觉的两篇学习总结）
+
+剩下就是算法的东西了：
+
+[《编程珠玑，字字珠玑》1234读书笔记——多路归并排序](http://www.cnblogs.com/daoluanxiaozi/archive/2012/03/29/2423087.html)
+
+[《编程珠玑，字字珠玑》45678读书笔记——编程技巧](http://www.cnblogs.com/daoluanxiaozi/archive/2012/04/06/2435248.html)
+
+[《编程珠玑，字字珠玑》910读书笔记——代码优化](http://www.cnblogs.com/daoluanxiaozi/archive/2012/04/15/2450134.html)
+
+[《编程珠玑，字字珠玑》读书笔记完结篇——AVL树](http://www.cnblogs.com/daoluanxiaozi/archive/2012/04/26/2471256.html)
+
+[背包问题（01背包，完全背包，多重背包）](http://www.cnblogs.com/daoluanxiaozi/archive/2012/05/06/2486105.html)
+
+# 总结
+
+捣乱认为比较有价值的文章就是这些了，当然不可能都是自己的东西，更多的是学习总结，另外加上自己的理解。站在了巨人的肩膀上，远的东西没有看到多少；倒了从巨人身上学到很多东西。
+
+接下来的任务就是把《导轮》啃完，买都买了，不看就坑我爹了...哈哈，顺便写写《算法导轮》总结吧，另外，算法是“万恶之源”。
+
+感觉独立博客环境比较轻松，以后会分享更多的经验，大家一起学习啦。
+
+本文完 2012-05-17
+
+捣乱小子 [http://www.daoluan.net/blog](http://www.daoluan.net/blog/)
