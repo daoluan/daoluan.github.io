@@ -13,7 +13,7 @@ tags:
 - CSRF 攻击
 ---
 
-在 Django 的表单（或 POST）中硬性添加 **{% csrf_token %} **标记如下，否则在提交表单的时候会出错，目的就是为了防止 CSRF 攻击：
+在 Django 的表单（或 POST）中硬性添加 标记如下，否则在提交表单的时候会出错，目的就是为了防止 CSRF 攻击：
 
     
     <form action="/summit_question" method="post"> 
