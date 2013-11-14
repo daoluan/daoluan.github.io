@@ -195,3 +195,38 @@ ul.posts {
   #related h2 {
     margin-bottom: 1em;
   }
+
+
+
+
+
+
+a code{color:inherit}
+h1{font-size:36px}
+h2{font-size:30px}
+h3{font-size:24px}
+h4{font-size:18px}
+h5{font-size:14px}
+h6{font-size:12px}
+h1{margin:40px 0}
+h2{margin:30px 0}
+h3{margin:20px 0}
+h4,h5,h6{margin:15px 0}
+p,pre,blockquote{margin:0 0 15px}
+hr{margin:30px 0}
+code,pre{font-family:Menlo,Consolas,"Courier New",monospace;font-size:12px !important}
+pre{padding:9.5px !important;border:1px solid #dddddd !important}
+pre code{background-color:transparent !important}
+dt,dd{margin-top:5px;margin-bottom:5px}
+dd{margin-left:40px}
+table{margin-bottom:20px}
+table th,table td{padding:8px;line-height:20px;text-align:left;vertical-align:top;border-top:1px solid #dddddd}
+table th{font-weight:bold}
+table thead th{vertical-align:bottom}
+table caption+thead tr:first-child th,table caption+thead tr:first-child td,table colgroup+thead tr:first-child th,table colgroup+thead tr:first-child td,table thead:first-child tr:first-child th,table thead:first-child tr:first-child td{border-top:0}
+table tbody+tbody{border-top:2px solid #dddddd}
+blockquote{border-left-width:10px;background-color:rgba(0,0,0,0.03);border-top-right-radius:5px;border-bottom-right-radius:5px;padding:15px 20px}
+blockquote p{margin-bottom:15px;font-size:14px;line-height:1.428571429}
+blockquote ul:last-child,blockquote ol:last-child{margin-bottom:0}
+ul,ol{margin-bottom:15px}
+ul ul,ol ul,ul ol,ol ol{margin-bottom:15px}
