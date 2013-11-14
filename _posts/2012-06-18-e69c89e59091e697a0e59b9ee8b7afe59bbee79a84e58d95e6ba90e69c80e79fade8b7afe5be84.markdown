@@ -1,0 +1,45 @@
+---
+author: daoluan
+comments: true
+date: 2012-06-18 15:57:32+00:00
+layout: post
+slug: '%e6%9c%89%e5%90%91%e6%97%a0%e5%9b%9e%e8%b7%af%e5%9b%be%e7%9a%84%e5%8d%95%e6%ba%90%e6%9c%80%e7%9f%ad%e8%b7%af%e5%be%84'
+title: 【图论】有向无回路图的单源最短路径
+wordpress_id: 563
+categories:
+- 算法
+tags:
+- 《算法导轮》学习总结
+---
+
+有向无回路图（Directed acyclic graph，DAG）的单源最短路径是基于这个理论：
+
+<!-- more -->
+
+
+> 倘若从点s到点v存在最短路径，即可达，所经过的点为：P0，P1，P2，P3....PN-1。
+特别地，P0为s，v为PN-1。现对这个点序列按顺序进行[松弛](http://www.daoluan.net/blog/?p=437)，即[松弛](http://www.daoluan.net/blog/?p=437)顺序为（P0，P1），（P1，P2），（P2，P3）...，结果可以得到dist[v]=shortest_path(s,v)。注意，松弛顺序并非是严格先后，打比方：1，3，4在1，2，3，4中依旧是保持顺序的，但是可能中间会有“小插曲”。
+
+
+[![image.png](http://daoluan.net/blog/wp-content/uploads/2012/06/image6.png)](http://daoluan.net/blog/wp-content/uploads/2012/06/image6.png)
+
+又[拓扑排序](http://www.daoluan.net/blog/?p=425)，可以知道，s到a肯定是不可达到，也就是不存在最短路径。故有期待已久的代码：
+
+    
+    DAG(G)
+    	dist[n]    //    dist[i]表示s到i的最短路径
+    	TOPLLOGICAL-SORT(G)    //    拓扑排序
+    	for u∈拓扑排序后的有序点集
+    		for e(u,v)
+    		//    用e(u,v)松弛路径dist[v]
+
+
+有图有证据：（红色表示当前在[松弛](http://www.daoluan.net/blog/?p=437)的边）
+
+[![image1.png](http://daoluan.net/blog/wp-content/uploads/2012/06/image11.png)](http://daoluan.net/blog/wp-content/uploads/2012/06/image11.png)
+
+此算法抠门有两个条件：1、有向 2、无环
+
+本文完 2012-06-18
+
+捣乱小子 [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)
