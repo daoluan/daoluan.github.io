@@ -42,14 +42,14 @@ tags:
   * 空虚寂寞，想找个GF...
 
 
-背包问题，经典有[背包九讲](http://www.google.com.hk/#hl=zh-CN&newwindow=1&safe=strict&site=&source=hp&q=%E8%83%8C%E5%8C%85%E4%B9%9D%E8%AE%B2&oq=%E8%83%8C%E5%8C%85%E4%B9%9D&aq=0&aqi=g2&aql=&gs_l=hp.3.0.0l2.167.13160.0.14083.46.32.14.0.0.4.277.3579.10j13j3.26.0...0.0.fdYcxJL8ndA&bav=on.2,or.r_gc.r_pw.,cf.osb&fp=5d6d0c415301648b&biw=1152&bih=628)。
+背包问题，经典有[背包九讲](http://www.google.com.hk/#hl=zh-CN&newwindow=1&safe=strict&site=&source=hp&q=%E8%83%8C%E5%8C%85%E4%B9%9D%E8%AE%B2&oq=%E8%83%8C%E5%8C%85%E4%B9%9D&aq=0&aqi=g2&aql=&gs\_l=hp.3.0.0l2.167.13160.0.14083.46.32.14.0.0.4.277.3579.10j13j3.26.0...0.0.fdYcxJL8ndA&bav=on.2,or.r\_gc.r\_pw.,cf.osb&fp=5d6d0c415301648b&biw=1152&bih=628)。
 
 
 
 # 01背包
 
 
-[![魔兽插图](http://images.cnblogs.com/cnblogs_com/daoluanxiaozi/201205/201205061646439368.jpg)](http://images.cnblogs.com/cnblogs_com/daoluanxiaozi/201205/201205061646426826.jpg)
+[![魔兽插图](http://images.cnblogs.com/cnblogs\_com/daoluanxiaozi/201205/201205061646439368.jpg)](http://images.cnblogs.com/cnblogs\_com/daoluanxiaozi/201205/201205061646426826.jpg)
 
 
 > 不死族的巫妖王发工资拉,死亡骑士拿到一张N元的钞票(记住,只有一张钞票),为了防止自己在战斗中频繁的死掉,他决定给自己买一些道具,于是他来到了地精商店前.

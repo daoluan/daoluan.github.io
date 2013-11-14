@@ -18,7 +18,7 @@ tags:
 
 
 > 倘若从点s到点v存在最短路径，即可达，所经过的点为：P0，P1，P2，P3....PN-1。
-特别地，P0为s，v为PN-1。现对这个点序列按顺序进行[松弛](http://www.daoluan.net/blog/?p=437)，即[松弛](http://www.daoluan.net/blog/?p=437)顺序为（P0，P1），（P1，P2），（P2，P3）...，结果可以得到dist[v]=shortest_path(s,v)。注意，松弛顺序并非是严格先后，打比方：1，3，4在1，2，3，4中依旧是保持顺序的，但是可能中间会有“小插曲”。
+特别地，P0为s，v为PN-1。现对这个点序列按顺序进行[松弛](http://www.daoluan.net/blog/?p=437)，即[松弛](http://www.daoluan.net/blog/?p=437)顺序为（P0，P1），（P1，P2），（P2，P3）...，结果可以得到dist[v]=shortest\_path(s,v)。注意，松弛顺序并非是严格先后，打比方：1，3，4在1，2，3，4中依旧是保持顺序的，但是可能中间会有“小插曲”。
 
 
 [![image.png](http://daoluan.net/blog/wp-content/uploads/2012/06/image6.png)](http://daoluan.net/blog/wp-content/uploads/2012/06/image6.png)

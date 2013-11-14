@@ -28,33 +28,33 @@ python 作为一种脚本语言, 已经逐渐大量用于 web 后台开发中, �
 在应用程序一方面, 必须提供下面的方法:
 
     
-    def simple_app(environ, start_response):
+    def simple\_app(environ, start\_response):
         """可能是最简单的处理了"""
         status = '200 OK'
-        response_headers = [('Content-type', 'text/plain')]
-        start_response(status, response_headers)
+        response\_headers = [('Content-type', 'text/plain')]
+        start\_response(status, response\_headers)
         return ['Hello world!\n'] # 返回结果必须可迭代
 
 
-除了方法以外, 还可以用实现了 __call__ 的类实现.
+除了方法以外, 还可以用实现了 \_\_call\_\_ 的类实现.
 
-它会被服务器调用, 在这里 environ 是一个字典, 包含了环境变量, REQUEST_METHOD,SCRIPT_NAME,QUERY_STRING 等; start_response 是一个回调函数, 会在 simple_app 中被调用, 主要用来开始响应 HTTP. start_response 原型大概是这样:
+它会被服务器调用, 在这里 environ 是一个字典, 包含了环境变量, REQUEST\_METHOD,SCRIPT\_NAME,QUERY\_STRING 等; start\_response 是一个回调函数, 会在 simple\_app 中被调用, 主要用来开始响应 HTTP. start\_response 原型大概是这样:
 
     
-    def start_response(status, response_headers, exc_info=None):
+    def start\_response(status, response\_headers, exc\_info=None):
         ...
         return write # 返回这 write 函数 只是为了兼容之前的 web 框架, 新的框架根本用不到.
 
 
-参数有 status 即状态码; response_headers HTTP 头, 可以修改; exc_info 是与错误相关的信息, 在产生相应数据过程中可能发生错误, 这时需要更新 HTTP 头部, 通过再次调用 start_response 可以实现. 因此更为详尽的实现写法可能是这种:
+参数有 status 即状态码; response\_headers HTTP 头, 可以修改; exc\_info 是与错误相关的信息, 在产生相应数据过程中可能发生错误, 这时需要更新 HTTP 头部, 通过再次调用 start\_response 可以实现. 因此更为详尽的实现写法可能是这种:
 
     
-    def start_response(status, response_headers, exc_info=None):
-        if exc_info:
+    def start\_response(status, response\_headers, exc\_info=None):
+        if exc\_info:
              try:
-                 # do stuff w/exc_info here
+                 # do stuff w/exc\_info here
              finally:
-                 exc_info = None    # Avoid circular ref.
+                 exc\_info = None    # Avoid circular ref.
         return write
 
 
@@ -63,15 +63,15 @@ python 作为一种脚本语言, 已经逐渐大量用于 web 后台开发中, �
 ### Server/服务器
 
 
-在服务器方面, 可以想象最简单的工作就是调用 simple_app(), 然后向客户端发送数据:
+在服务器方面, 可以想象最简单的工作就是调用 simple\_app(), 然后向客户端发送数据:
 
     
-    result = simple_app(environ, start_response) #名字不一定为 simple_app
+    result = simple\_app(environ, start\_response) #名字不一定为 simple\_app
     try:
         for data in result:
             if data:    # don't send headers until body appears
                 write(data)
-        if not headers_sent:
+        if not headers\_sent:
             write('')   # send headers now if body was empty
     finally:
         if hasattr(result, 'close'):
@@ -87,8 +87,8 @@ python 作为一种脚本语言, 已经逐渐大量用于 web 后台开发中, �
 下面看看 Django 是如何实现 WSGI 的. Django 其内部已经自带了一个方便本地测试的小服务器, 所以在刚开始学习 Django 的时候并不需搭建 apache 或者 nginx 服务器. Django 自带的服务器基于 python wsgiref 模块实现, 它自带的测试代码:
 
     
-    # demo_app() 是 application
-    def demo_app(environ,start_response):
+    # demo\_app() 是 application
+    def demo\_app(environ,start\_response):
         from StringIO import StringIO
         stdout = StringIO()
         print >>stdout, "Hello world!"
@@ -96,24 +96,24 @@ python 作为一种脚本语言, 已经逐渐大量用于 web 后台开发中, �
         h = environ.items(); h.sort()
         for k,v in h:
             print >>stdout, k,'=', repr(v)
-        start_response("200 OK", [('Content-Type','text/plain')])
+        start\_response("200 OK", [('Content-Type','text/plain')])
         return [stdout.getvalue()]
     
-    def make_server(
-        host, port, app, server_class=WSGIServer, handler_class=WSGIRequestHandler
+    def make\_server(
+        host, port, app, server\_class=WSGIServer, handler\_class=WSGIRequestHandler
     ):
         """Create a new WSGI server listening on `host` and `port` for `app`"""
-        server = server_class((host, port), handler_class)
-        server.set_app(app)
+        server = server\_class((host, port), handler\_class)
+        server.set\_app(app)
         return server
     
-    if __name__ == '__main__':
-        httpd = make_server('', 8000, demo_app)
+    if \_\_name\_\_ == '\_\_main\_\_':
+        httpd = make\_server('', 8000, demo\_app)
         sa = httpd.socket.getsockname()
         print "Serving HTTP on", sa[0], "port", sa[1], "..."
         import webbrowser
         webbrowser.open('http://localhost:8000/xyz?abc')
-        httpd.handle_request()  # serve one request, then exit
+        httpd.handle\_request()  # serve one request, then exit
 
 
 python 的库有好多的工具, 这时可能因为需要的原因, 会生出好多的父类, 为了讲明, 根据 wsgiref 模块和它自带的测试用例得出下面的 UML 图(注意, 这只是 wsgiref, 没有涉及 Django):
@@ -125,30 +125,30 @@ python 的库有好多的工具, 这时可能因为需要的原因, 会生出好
 
 
 	
-  * make_server() 中 WSGIServer 类已经作为服务器类, 负责接收请求, 调用 application 的处理, 返回相应;
+  * make\_server() 中 WSGIServer 类已经作为服务器类, 负责接收请求, 调用 application 的处理, 返回相应;
 
 	
   * WSGIRequestHandler 作为请求处理类, 并已经配置在 WSGIServer 中;
 
 	
-  * 接着还设置了 WSGIServer.application 属性(set_app(app));
+  * 接着还设置了 WSGIServer.application 属性(set\_app(app));
 
 	
   * 返回 server 实例.
 
 	
-  * 接着打开浏览器, 即发起请求. 服务器实例 WSGIServer httpd 调用自身 handle_request() 函数处理请求. handle_request() 的工作流程如下:请求-->WSGIServer 收到-->调用 WSGIServer.handle_request()-->调用 _handle_request_noblock()-->调用 process_request()-->调用 finish_request()-->finish_request() 中实例化 WSGIRequestHandler-->实例化过程中会调用 handle()-->handle() 中实例化 ServerHandler-->调用 ServerHandler.run()-->run() 调用 application() 这才是真正的逻辑.-->run() 中在调用 ServerHandler.finish_response() 返回数据-->回到 process_request() 中调用 WSGIServer.shutdown_request() 关闭请求(其实什么也没做)
+  * 接着打开浏览器, 即发起请求. 服务器实例 WSGIServer httpd 调用自身 handle\_request() 函数处理请求. handle\_request() 的工作流程如下:请求-->WSGIServer 收到-->调用 WSGIServer.handle\_request()-->调用 \_handle\_request\_noblock()-->调用 process\_request()-->调用 finish\_request()-->finish\_request() 中实例化 WSGIRequestHandler-->实例化过程中会调用 handle()-->handle() 中实例化 ServerHandler-->调用 ServerHandler.run()-->run() 调用 application() 这才是真正的逻辑.-->run() 中在调用 ServerHandler.finish\_response() 返回数据-->回到 process\_request() 中调用 WSGIServer.shutdown\_request() 关闭请求(其实什么也没做)
 
 
-ps: 明明 application 是 WSGIServer 的属性, 为什么会在 ServerHandler 中调用? 因为在实例化 WSGIRequestHandler 的时候 WSGIServer 把自己搭进去了, 所以在 WSGIRequestHandler 中实例化 ServerHandler 时候可以通过 WSGIRequestHandler.server.get_app() 得到真正的 application.
+ps: 明明 application 是 WSGIServer 的属性, 为什么会在 ServerHandler 中调用? 因为在实例化 WSGIRequestHandler 的时候 WSGIServer 把自己搭进去了, 所以在 WSGIRequestHandler 中实例化 ServerHandler 时候可以通过 WSGIRequestHandler.server.get\_app() 得到真正的 application.
 
 
 ### 总结
 
 
-从上面可以得到, 启动服务器的时候, 无论以什么方式都要给它传递一个 application(), 是一个函数也好, 一个实现了 __call__ 的类也好; 当请求到达服务器的时候, 服务器自会调用 application(), 从而得到相应数据. 至于, 对请求的数据如何相应, application() 中可以细化.
+从上面可以得到, 启动服务器的时候, 无论以什么方式都要给它传递一个 application(), 是一个函数也好, 一个实现了 \_\_call\_\_ 的类也好; 当请求到达服务器的时候, 服务器自会调用 application(), 从而得到相应数据. 至于, 对请求的数据如何相应, application() 中可以细化.
 
-确实, 其中的调用链太过长, 这期间还没有加入 HTTP 头的分析(提取 Cookie等). 如果只为响应一个 "helloworld", 在 WSGIServer.finish_request() 中直接相应数据就好了, WSGIRequestHandler 和 ServerHandler 类可以直接省去, 而只需要你提供一个 application()! 但事实上, 并不只是相应 "helloworld" 那样简单...
+确实, 其中的调用链太过长, 这期间还没有加入 HTTP 头的分析(提取 Cookie等). 如果只为响应一个 "helloworld", 在 WSGIServer.finish\_request() 中直接相应数据就好了, WSGIRequestHandler 和 ServerHandler 类可以直接省去, 而只需要你提供一个 application()! 但事实上, 并不只是相应 "helloworld" 那样简单...
 
 关于 Django 中的 WSGI 如何, 下一节再说. Django 源码剖析从这里开始! 我已经在 github 备份了 Django 源码的注释: [Decode-Django](https://github.com/daoluan/Decode-Django), 有兴趣的童鞋 fork 吧. 本文结合 python wsgiref, BaseHTTPServer.py, SocketServer.py 模块源码看更好.
 

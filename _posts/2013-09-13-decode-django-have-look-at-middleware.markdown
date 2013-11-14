@@ -27,90 +27,90 @@ BaseHandler 在 django.core.handlers.base.py 中定义, 有两个核心的成员
     # 好经典的 handler
     class BaseHandler(object):
         # Changes that are always applied to a response (in this order).
-        response_fixes = [
-            http.fix_location_header,
-            http.conditional_content_removal,
-            http.fix_IE_for_attach,
-            http.fix_IE_for_vary,
+        response\_fixes = [
+            http.fix\_location\_header,
+            http.conditional\_content\_removal,
+            http.fix\_IE\_for\_attach,
+            http.fix\_IE\_for\_vary,
         ]
     
         初始化函数, 初始化请求中间件, 视图中间件, 模版中间件, 响应中间件和异常中间件.
-        def __init__(self):
-            self._request_middleware = self._view_middleware =
-                self._template_response_middleware =
-                self._response_middleware =
-                self._exception_middleware = None  视图, 模版相应, 相应, 异常中间件, 请求中间件
+        def \_\_init\_\_(self):
+            self.\_request\_middleware = self.\_view\_middleware =
+                self.\_template\_response\_middleware =
+                self.\_response\_middleware =
+                self.\_exception\_middleware = None  视图, 模版相应, 相应, 异常中间件, 请求中间件
     
-        根据 mysite.settings.py 中的 `MIDDLEWARE_CLASSES` 添加所有的中间件.
-        def load_middleware(self):
+        根据 mysite.settings.py 中的 `MIDDLEWARE\_CLASSES` 添加所有的中间件.
+        def load\_middleware(self):
             """
-            Populate middleware lists from settings.MIDDLEWARE_CLASSES.
+            Populate middleware lists from settings.MIDDLEWARE\_CLASSES.
     
             从 settings 中加载各种中间件
     
-            Must be called after the environment is fixed (see __call__ in subclasses).
+            Must be called after the environment is fixed (see \_\_call\_\_ in subclasses).
             """
             # 初始化四种中间件
-            self._view_middleware = []
-            self._template_response_middleware = []
-            self._response_middleware = []
-            self._exception_middleware = []
+            self.\_view\_middleware = []
+            self.\_template\_response\_middleware = []
+            self.\_response\_middleware = []
+            self.\_exception\_middleware = []
     
-            # 临时的请求中间件, 因为在加入中间件的过程中, 可能会出现异常, 而出现异常都导致加载中间件的不成功, 因此将 self._request_middleware 的赋值放在最后, 表示已经成功.
-            request_middleware = []
+            # 临时的请求中间件, 因为在加入中间件的过程中, 可能会出现异常, 而出现异常都导致加载中间件的不成功, 因此将 self.\_request\_middleware 的赋值放在最后, 表示已经成功.
+            request\_middleware = []
     
-            # settings.MIDDLEWARE_CLASSES 设置项指定需要预装的中间件
-            for middleware_path in settings.MIDDLEWARE_CLASSES:
+            # settings.MIDDLEWARE\_CLASSES 设置项指定需要预装的中间件
+            for middleware\_path in settings.MIDDLEWARE\_CLASSES:
                 try:
-                    mw_module, mw_classname = middleware_path.rsplit('.', 1)
+                    mw\_module, mw\_classname = middleware\_path.rsplit('.', 1)
                 except ValueError:
-                    raise exceptions.ImproperlyConfigured('%s isn\'t a middleware module' % middleware_path)
+                    raise exceptions.ImproperlyConfigured('%s isn\'t a middleware module' % middleware\_path)
     
                 try:
                     尝试导入中间件所在模块.
-                    mod = import_module(mw_module)
+                    mod = import\_module(mw\_module)
                 except ImportError as e:
-                    raise exceptions.ImproperlyConfigured('Error importing middleware %s: "%s"' % (mw_module, e))
+                    raise exceptions.ImproperlyConfigured('Error importing middleware %s: "%s"' % (mw\_module, e))
     
                 try:
                     尝试得到某种中间件类
-                    mw_class = getattr(mod, mw_classname)
+                    mw\_class = getattr(mod, mw\_classname)
                 except AttributeError:
-                    raise exceptions.ImproperlyConfigured('Middleware module "%s" does not define a "%s" class' % (mw_module, mw_classname))
+                    raise exceptions.ImproperlyConfigured('Middleware module "%s" does not define a "%s" class' % (mw\_module, mw\_classname))
     
                 try:
                     尝试实例化
-                    mw_instance = mw_class()
+                    mw\_instance = mw\_class()
                 except exceptions.MiddlewareNotUsed:
                     continue
     
                 和 urllib 的处理方法类似: 请求预处理, 视图处理?, 模版处理, 相应处理, 错误处理(详见我的 urllib 源码剖析)
-                if hasattr(mw_instance, 'process_request'):
-                    # 这里 request_middleware 用的是 append(), 这里是有讲究的:
+                if hasattr(mw\_instance, 'process\_request'):
+                    # 这里 request\_middleware 用的是 append(), 这里是有讲究的:
                     # django 规定, 多个请求中间件调用的次序是其出现的次序, 下同
-                    request_middleware.append(mw_instance.process_request)
+                    request\_middleware.append(mw\_instance.process\_request)
     
-                if hasattr(mw_instance, 'process_view'):
-                    self._view_middleware.append(mw_instance.process_view)
+                if hasattr(mw\_instance, 'process\_view'):
+                    self.\_view\_middleware.append(mw\_instance.process\_view)
     
-                if hasattr(mw_instance, 'process_template_response'):
-                    # 这里 _template_response_middleware 用的是 insert() 头插法, 这里是有讲究的:
+                if hasattr(mw\_instance, 'process\_template\_response'):
+                    # 这里 \_template\_response\_middleware 用的是 insert() 头插法, 这里是有讲究的:
                     # django 规定, 多个模版相应中间件调用的次序是其出现次序的逆序, 下同
-                    self._template_response_middleware.insert(0, mw_instance.process_template_response)
+                    self.\_template\_response\_middleware.insert(0, mw\_instance.process\_template\_response)
     
-                if hasattr(mw_instance, 'process_response'):
-                    self._response_middleware.insert(0, mw_instance.process_response)
+                if hasattr(mw\_instance, 'process\_response'):
+                    self.\_response\_middleware.insert(0, mw\_instance.process\_response)
     
-                if hasattr(mw_instance, 'process_exception'):
-                    self._exception_middleware.insert(0, mw_instance.process_exception)
+                if hasattr(mw\_instance, 'process\_exception'):
+                    self.\_exception\_middleware.insert(0, mw\_instance.process\_exception)
     
             # We only assign to this when initialization is complete as it is used
             # as a flag for initialization being complete.
             # 结束的标识, 表明中间件加载成功
-            self._request_middleware = request_middleware
+            self.\_request\_middleware = request\_middleware
     
         # 处理请求的函数, 并返回 response
-        def get_response(self, request):
+        def get\_response(self, request):
             "Returns an HttpResponse object for the given HttpRequest"
             根据请求, 得到响应
     
@@ -121,11 +121,11 @@ BaseHandler 在 django.core.handlers.base.py 中定义, 有两个核心的成员
                 # variable" exception in the event an exception is raised before
                 # resolver is set
     
-                #ROOT_URLCONF = 'mysite.urls'
-                urlconf = settings.ROOT_URLCONF
+                #ROOT\_URLCONF = 'mysite.urls'
+                urlconf = settings.ROOT\_URLCONF
     
-                # set_urlconf() 会设置 url 配置即 settings.ROOT_URLCONF
-                urlresolvers.set_urlconf(urlconf)
+                # set\_urlconf() 会设置 url 配置即 settings.ROOT\_URLCONF
+                urlresolvers.set\_urlconf(urlconf)
     
                 # 实例化 RegexURLResolver, 暂且将其理解为一个 url 的匹配处理器, 下节展开
                 resolver = urlresolvers.RegexURLResolver(r'^/', urlconf)
@@ -134,8 +134,8 @@ BaseHandler 在 django.core.handlers.base.py 中定义, 有两个核心的成员
                     response = None
     
                     # Apply request middleware 调用请求中间件
-                    for middleware_method in self._request_middleware:
-                        response = middleware_method(request)
+                    for middleware\_method in self.\_request\_middleware:
+                        response = middleware\_method(request)
     
                         # 如果此 response 有效, 即不走下面的逻辑
                         if response:
@@ -147,20 +147,20 @@ BaseHandler 在 django.core.handlers.base.py 中定义, 有两个核心的成员
                         if hasattr(request, 'urlconf'):
                             # Reset url resolver with a custom urlconf. 自定义的 urlconf
                             urlconf = request.urlconf
-                            urlresolvers.set_urlconf(urlconf)
+                            urlresolvers.set\_urlconf(urlconf)
                             resolver = urlresolvers.RegexURLResolver(r'^/', urlconf)
                         # 调用 RegexURLResolver.resolve(), 可以理解为启动匹配的函数; 返回 ResolverMatch 实例
-                        resolver_match = resolver.resolve(request.path_info)
+                        resolver\_match = resolver.resolve(request.path\_info)
     
-                        # resolver_match 对象中存储了有用的信息, 譬如 callback 就是我们在 views.py 中定义的函数.
-                        callback, callback_args, callback_kwargs = resolver_match
+                        # resolver\_match 对象中存储了有用的信息, 譬如 callback 就是我们在 views.py 中定义的函数.
+                        callback, callback\_args, callback\_kwargs = resolver\_match
     
-                        # 将返回的 resolver_match 挂钩到 request
-                        request.resolver_match = resolver_match
+                        # 将返回的 resolver\_match 挂钩到 request
+                        request.resolver\_match = resolver\_match
     
                         # Apply view middleware 调用视图中间件
-                        for middleware_method in self._view_middleware:
-                            response = middleware_method(request, callback, callback_args, callback_kwargs)
+                        for middleware\_method in self.\_view\_middleware:
+                            response = middleware\_method(request, callback, callback\_args, callback\_kwargs)
     
                             # 如果此 response 有效, 即不走下面的逻辑
                             if response:
@@ -170,7 +170,7 @@ BaseHandler 在 django.core.handlers.base.py 中定义, 有两个核心的成员
                     if response is None:
                         try:
                             # 这里调用的是真正的处理函数, 我们一般在 view.py 中定义这些函数
-                            response = callback(request, *callback_args, **callback_kwargs)
+                            response = callback(request, *callback\_args, **callback\_kwargs)
     
                         except Exception as e:
                             # If the view raised an exception, run it through exception
@@ -178,8 +178,8 @@ BaseHandler 在 django.core.handlers.base.py 中定义, 有两个核心的成员
                             # response, use that. Otherwise, reraise the exception.
     
                             # 出现异常, 调用异常中间件
-                            for middleware_method in self._exception_middleware:
-                                response = middleware_method(request, e)
+                            for middleware\_method in self.\_exception\_middleware:
+                                response = middleware\_method(request, e)
     
                                 # 如果此 response 有效, 即不走下面的逻辑
                                 if response:
@@ -192,53 +192,53 @@ BaseHandler 在 django.core.handlers.base.py 中定义, 有两个核心的成员
                     # Complain if the view returned None (a common error).
                     if response is None:
                         if isinstance(callback, types.FunctionType):    # FBV
-                            view_name = callback.__name__
+                            view\_name = callback.\_\_name\_\_
                         else:                                           # CBV
-                            view_name = callback.__class__.__name__ + '.__call__'
-                        raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+                            view\_name = callback.\_\_class\_\_.\_\_name\_\_ + '.\_\_call\_\_'
+                        raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.\_\_module\_\_, view\_name))
     
                     # If the response supports deferred rendering, apply template
                     # response middleware and the render the response 如果 response 实现了 render, 那么渲染返回.
                     if hasattr(response, 'render') and callable(response.render):
-                        for middleware_method in self._template_response_middleware:
-                            response = middleware_method(request, response)
+                        for middleware\_method in self.\_template\_response\_middleware:
+                            response = middleware\_method(request, response)
                         response = response.render()
     
                 except http.Http404 as e:
                     logger.warning('Not Found: %s', request.path,
                                 extra=\{
-                                    'status_code': 404,
+                                    'status\_code': 404,
                                     'request': request
                                 \})
     
                     # 如果是调试下, 直接要返回 404 页面
                     if settings.DEBUG:
-                        response = debug.technical_404_response(request, e)
+                        response = debug.technical\_404\_response(request, e)
                     else:
                         try:
                             # 非调试模式下, 获取 url 处理器的默认 404 处理
-                            callback, param_dict = resolver.resolve404()
-                            response = callback(request, **param_dict)
+                            callback, param\_dict = resolver.resolve404()
+                            response = callback(request, **param\_dict)
                         except:
-                            signals.got_request_exception.send(sender=self.__class__, request=request)
-                            response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+                            signals.got\_request\_exception.send(sender=self.\_\_class\_\_, request=request)
+                            response = self.handle\_uncaught\_exception(request, resolver, sys.exc\_info())
     
                 # 访问拒绝
                 except exceptions.PermissionDenied:
                     logger.warning(
                         'Forbidden (Permission denied): %s', request.path,
                         extra=\{
-                            'status_code': 403,
+                            'status\_code': 403,
                             'request': request
                         \})
                     try:
-                        callback, param_dict = resolver.resolve403()
-                        response = callback(request, **param_dict)
+                        callback, param\_dict = resolver.resolve403()
+                        response = callback(request, **param\_dict)
                     except:
-                        signals.got_request_exception.send(
-                                sender=self.__class__, request=request)
-                        response = self.handle_uncaught_exception(request,
-                                resolver, sys.exc_info())
+                        signals.got\_request\_exception.send(
+                                sender=self.\_\_class\_\_, request=request)
+                        response = self.handle\_uncaught\_exception(request,
+                                resolver, sys.exc\_info())
     
                 except SystemExit:
                     # Allow sys.exit() to actually exit. See tickets #1023 and #4701
@@ -246,27 +246,27 @@ BaseHandler 在 django.core.handlers.base.py 中定义, 有两个核心的成员
     
                 except: # Handle everything else, including SuspiciousOperation, etc.
                     # Get the exception info now, in case another exception is thrown later.
-                    signals.got_request_exception.send(sender=self.__class__, request=request)
-                    response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+                    signals.got\_request\_exception.send(sender=self.\_\_class\_\_, request=request)
+                    response = self.handle\_uncaught\_exception(request, resolver, sys.exc\_info())
             finally:
                 # Reset URLconf for this thread on the way out for complete
                 # isolation of request.urlconf 重置, 因为前面有两种 url resolver 的可能, 拒绝混淆
-                urlresolvers.set_urlconf(None)
+                urlresolvers.set\_urlconf(None)
     
             try:
                 # Apply response middleware, regardless of the response 调用响应中间件
-                for middleware_method in self._response_middleware:
-                    response = middleware_method(request, response)
+                for middleware\_method in self.\_response\_middleware:
+                    response = middleware\_method(request, response)
     
-                response = self.apply_response_fixes(request, response)
+                response = self.apply\_response\_fixes(request, response)
     
             except: # Any exception should be gathered and handled
-                signals.got_request_exception.send(sender=self.__class__, request=request)
-                response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+                signals.got\_request\_exception.send(sender=self.\_\_class\_\_, request=request)
+                response = self.handle\_uncaught\_exception(request, resolver, sys.exc\_info())
     
             return response
     
-        def handle_uncaught_exception(self, request, resolver, exc_info):
+        def handle\_uncaught\_exception(self, request, resolver, exc\_info):
             """
             处理未能捕捉的错误
     
@@ -278,37 +278,37 @@ BaseHandler 在 django.core.handlers.base.py 中定义, 有两个核心的成员
             caused by anything, so assuming something like the database is always
             available would be an error.
             """
-            if settings.DEBUG_PROPAGATE_EXCEPTIONS:
+            if settings.DEBUG\_PROPAGATE\_EXCEPTIONS:
                 raise
     
             logger.error('Internal Server Error: %s', request.path,
-                exc_info=exc_info,
+                exc\_info=exc\_info,
                 extra=\{
-                    'status_code': 500,
+                    'status\_code': 500,
                     'request': request
                 \}
             )
     
             调试模式特殊处理
             if settings.DEBUG:
-                return debug.technical_500_response(request, *exc_info)
+                return debug.technical\_500\_response(request, *exc\_info)
     
             # If Http500 handler is not installed, re-raise last exception 如果http500 处理器都没有安装, 可能会崩溃
-            if resolver.urlconf_module is None:
-                six.reraise(*exc_info)
+            if resolver.urlconf\_module is None:
+                six.reraise(*exc\_info)
     
             # Return an HttpResponse that displays a friendly error message.
             #这是自定义的 500 处理器
-            callback, param_dict = resolver.resolve500()
-            return callback(request, **param_dict)
+            callback, param\_dict = resolver.resolve500()
+            return callback(request, **param\_dict)
     
-        def apply_response_fixes(self, request, response):
+        def apply\_response\_fixes(self, request, response):
             """
-            Applies each of the functions in self.response_fixes to the request and
+            Applies each of the functions in self.response\_fixes to the request and
             response, modifying the response in the process. Returns the new
             response.
             """
-            for func in self.response_fixes:
+            for func in self.response\_fixes:
                 response = func(request, response)
             return response
 
@@ -318,10 +318,10 @@ BaseHandler 在 django.core.handlers.base.py 中定义, 有两个核心的成员
 ### 故此总结
 
 
-load_middleware() 函数会根据 mysite.settings.py 中的 MIDDLEWARE_CLASSES 导入所有的中间件. 在 eclipse + pydev 创建 django 的默认设置当中就有默认的中间件:
+load\_middleware() 函数会根据 mysite.settings.py 中的 MIDDLEWARE\_CLASSES 导入所有的中间件. 在 eclipse + pydev 创建 django 的默认设置当中就有默认的中间件:
 
     
-    MIDDLEWARE_CLASSES = (
+    MIDDLEWARE\_CLASSES = (
         'django.middleware.common.CommonMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.middleware.csrf.CsrfViewMiddleware',
@@ -332,9 +332,9 @@ load_middleware() 函数会根据 mysite.settings.py 中的 MIDDLEWARE_CLASSES 
     )
 
 
-每一个中间件都是一个类, 其内部会实现 process_request(),process_view(),process_template_response(),process_response() 或者 process_exception() 方法. 不一定都实现, 看需求. 而这些方法如果存在, 都会被保存响应的函数列表中, 待将来调用.
+每一个中间件都是一个类, 其内部会实现 process\_request(),process\_view(),process\_template\_response(),process\_response() 或者 process\_exception() 方法. 不一定都实现, 看需求. 而这些方法如果存在, 都会被保存响应的函数列表中, 待将来调用.
 
-get_response() 方法, 中间件调用执行的顺序是请求中间件, 视图中间件, 模版中间件, 异常中间件(可选), 响应中间件. 习惯上, 我把这些简称为请求预处理和响应善后处理.get_response() 返回了 response, 但一长串的 url 是如何匹配的, 并且自己在 views.py 中的函数是在什么时候调用的?
+get\_response() 方法, 中间件调用执行的顺序是请求中间件, 视图中间件, 模版中间件, 异常中间件(可选), 响应中间件. 习惯上, 我把这些简称为请求预处理和响应善后处理.get\_response() 返回了 response, 但一长串的 url 是如何匹配的, 并且自己在 views.py 中的函数是在什么时候调用的?
 
 我已经在 github 备份了 Django 源码的注释: [Decode-Django](https://github.com/daoluan/Decode-Django), 有兴趣的童鞋 fork 吧.
 

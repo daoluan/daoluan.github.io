@@ -13,11 +13,11 @@ tags:
 - 《STL源码剖析》
 ---
 
-一句话之Hashtable：哈希表（散列表）能通过键值对数据进行访问的数据结构；其在C++0X标准中未出现，可能是考虑到哈希表效率低下，出于其广泛用于工程中，C++11将其纳入了标准库。C++11的新特性：[http://en.wikipedia.org/wiki/C%2B%2B11](http://en.wikipedia.org/wiki/C%2B%2B11)，C++11中哈希表的说明：[http://en.wikipedia.org/wiki/C%2B%2B11#Hash_tables](http://en.wikipedia.org/wiki/C%2B%2B11#Hash_tables)；我们知道，通过哈希表来索引目标是很高效的，但这样会出现碰撞问题（即对不同的关键字可能得到同一哈希地址）。常用的解决碰撞的方法有四：线性探测、二次探测、再散列和开链法。而STL中的哈希表所采用的是开链法（也叫链地址法）。
+一句话之Hashtable：哈希表（散列表）能通过键值对数据进行访问的数据结构；其在C++0X标准中未出现，可能是考虑到哈希表效率低下，出于其广泛用于工程中，C++11将其纳入了标准库。C++11的新特性：[http://en.wikipedia.org/wiki/C%2B%2B11](http://en.wikipedia.org/wiki/C%2B%2B11)，C++11中哈希表的说明：[http://en.wikipedia.org/wiki/C%2B%2B11#Hash\_tables](http://en.wikipedia.org/wiki/C%2B%2B11#Hash\_tables)；我们知道，通过哈希表来索引目标是很高效的，但这样会出现碰撞问题（即对不同的关键字可能得到同一哈希地址）。常用的解决碰撞的方法有四：线性探测、二次探测、再散列和开链法。而STL中的哈希表所采用的是开链法（也叫链地址法）。
 
 <!-- more -->
 
-[caption id="" align="aligncenter" width="315"]![](http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/315px-Hash_table_3_1_1_0_1_0_0_SP.svg.png) 哈希表[/caption]
+[caption id="" align="aligncenter" width="315"]![](http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash\_table\_3\_1\_1\_0\_1\_0\_0\_SP.svg/315px-Hash\_table\_3\_1\_1\_0\_1\_0\_0\_SP.svg.png) 哈希表[/caption]
 
 
 ### Hashtable的查找，插入，删除
@@ -59,9 +59,9 @@ tags:
 
 开链法，动态非连续空间（single list），不存在线性探测和二次探测的第一个问题；在确定地址过后，只需要对相应的single list作插入，删除，修改操作，这样碰撞的问题就转化为single list的寻访，速度可观。STL Hashtable就是采用开链法。
 
-[caption id="attachment_1238" align="aligncenter" width="236"][![](http://daoluan.net/blog/wp-content/uploads/2012/10/Hashtable_with_slist.jpg)](http://daoluan.net/blog/stl-hashtable/hashtable_with_slist/) 链地址法[/caption]
+[caption id="attachment\_1238" align="aligncenter" width="236"][![](http://daoluan.net/blog/wp-content/uploads/2012/10/Hashtable\_with\_slist.jpg)](http://daoluan.net/blog/stl-hashtable/hashtable\_with\_slist/) 链地址法[/caption]
 
-后来我们将看到，STL中的hash_set和hash_map皆由Hashtable作为底层容器。
+后来我们将看到，STL中的hash\_set和hash\_map皆由Hashtable作为底层容器。
 
 
 ### 哈希表的应用

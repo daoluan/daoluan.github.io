@@ -46,43 +46,43 @@ tags:
 
 socket不成功怎么办，bind不成功怎么办，listen不成功怎么办...都有相应的出错处理，编程过程中养成这种“考虑周细”的习惯（考虑所有的情况，比如出错的时候打印错误信息），对调试很有帮助。
 
-[http://www.gnu.org/software/libc/manual/html_node/Internet-Address-Formats.html](http://www.gnu.org/software/libc/manual/html_node/Internet-Address-Formats.html)
+[http://www.gnu.org/software/libc/manual/html\_node/Internet-Address-Formats.html](http://www.gnu.org/software/libc/manual/html\_node/Internet-Address-Formats.html)
 
 
-> — Data Type: **struct sockaddr_in**
+> — Data Type: **struct sockaddr\_in**
 
 This is the data type used to represent socket addresses in the Internet namespace. It has the following members:
 
 
 > 
-> `sa_family_t sin_family`
->     This identifies the address family or format of the socket address. You should store the value `AF_INET` in this member. See [Socket Addresses](http://www.gnu.org/software/libc/manual/html_node/Socket-Addresses.html#Socket-Addresses).
-> `struct in_addr sin_addr`
->     This is the Internet address of the host machine. See [Host Addresses](http://www.gnu.org/software/libc/manual/html_node/Host-Addresses.html#Host-Addresses), and [Host Names](http://www.gnu.org/software/libc/manual/html_node/Host-Names.html#Host-Names), for how to get a value to store here.
-> `unsigned short int sin_port`
->     This is the port number. See [Ports](http://www.gnu.org/software/libc/manual/html_node/Ports.html#Ports).
+> `sa\_family\_t sin\_family`
+>     This identifies the address family or format of the socket address. You should store the value `AF\_INET` in this member. See [Socket Addresses](http://www.gnu.org/software/libc/manual/html\_node/Socket-Addresses.html#Socket-Addresses).
+> `struct in\_addr sin\_addr`
+>     This is the Internet address of the host machine. See [Host Addresses](http://www.gnu.org/software/libc/manual/html\_node/Host-Addresses.html#Host-Addresses), and [Host Names](http://www.gnu.org/software/libc/manual/html\_node/Host-Names.html#Host-Names), for how to get a value to store here.
+> `unsigned short int sin\_port`
+>     This is the port number. See [Ports](http://www.gnu.org/software/libc/manual/html\_node/Ports.html#Ports).
 
 
-注：sockaddr_in此类型数据在使用之前请务必bzero
+注：sockaddr\_in此类型数据在使用之前请务必bzero
 
-其中sin_addr是结构体，
+其中sin\_addr是结构体，
 
-[http://www.gnu.org/software/libc/manual/html_node/Host-Address-Data-Type.html](http://www.gnu.org/software/libc/manual/html_node/Host-Address-Data-Type.html)
-
-
-> — Data Type: **struct in_addr**
-
-This data type is used in certain contexts to contain an IPv4 Internet host address. It has just one field, named `s_addr`, which records the host address number as an `uint32_t`.
+[http://www.gnu.org/software/libc/manual/html\_node/Host-Address-Data-Type.html](http://www.gnu.org/software/libc/manual/html\_node/Host-Address-Data-Type.html)
 
 
-inet_pton和inet—_ntop方便点分十进制IP地址字符串和uint32_t（IP地址是4字节，应为网络字节序）的转换。
+> — Data Type: **struct in\_addr**
+
+This data type is used in certain contexts to contain an IPv4 Internet host address. It has just one field, named `s\_addr`, which records the host address number as an `uint32\_t`.
+
+
+inet\_pton和inet—\_ntop方便点分十进制IP地址字符串和uint32\_t（IP地址是4字节，应为网络字节序）的转换。
 
 
 # select
 
 
 如上所述要求，“因为客户端提交了运算要求过后，服务端可能要等会才能回送计算结果，这时要求客户端阻塞等候”，select经常扮演阻塞的角色。
-[http://www.gnu.org/software/libc/manual/html_node/Waiting-for-I_002fO.html（文档很详细）](http://www.gnu.org/software/libc/manual/html_node/Waiting-for-I_002fO.html（文档很详细）)
+[http://www.gnu.org/software/libc/manual/html\_node/Waiting-for-I\_002fO.html（文档很详细）](http://www.gnu.org/software/libc/manual/html\_node/Waiting-for-I\_002fO.html（文档很详细）)
 因此客户端提交运算要求之后，需要将其socket读功能阻塞，直到有数据（即服务端回送的结果）时才进行读取。如果用轮询的方法，很浪费CPU。
 
 
@@ -91,15 +91,15 @@ inet_pton和inet—_ntop方便点分十进制IP地址字符串和uint32_t（IP�
 
 服务器启动
 
-[![1_thumb.png](http://daoluan.net/blog/wp-content/uploads/2012/08/1_thumb.png)](http://daoluan.net/blog/wp-content/uploads/2012/08/1_thumb.png)
+[![1\_thumb.png](http://daoluan.net/blog/wp-content/uploads/2012/08/1\_thumb.png)](http://daoluan.net/blog/wp-content/uploads/2012/08/1\_thumb.png)
 
 客户端启动，太快了，结果都出来了
 
-[![2_thumb.png](http://daoluan.net/blog/wp-content/uploads/2012/08/2_thumb.png)](http://daoluan.net/blog/wp-content/uploads/2012/08/2_thumb.png)
+[![2\_thumb.png](http://daoluan.net/blog/wp-content/uploads/2012/08/2\_thumb.png)](http://daoluan.net/blog/wp-content/uploads/2012/08/2\_thumb.png)
 
 服务器处理结束，退出
 
-[![3_thumb.png](http://daoluan.net/blog/wp-content/uploads/2012/08/3_thumb.png)](http://daoluan.net/blog/wp-content/uploads/2012/08/3_thumb.png)
+[![3\_thumb.png](http://daoluan.net/blog/wp-content/uploads/2012/08/3\_thumb.png)](http://daoluan.net/blog/wp-content/uploads/2012/08/3\_thumb.png)
 
 计算器要求：客户需要传递后缀表达式简单运算（如上图），服务器直接运行就即可。
 缺陷：此计算器只服务于一个客户，其他不给予处理；此计算器进一步改进可以实现接受不只一个客户的请求。
@@ -118,7 +118,7 @@ client
     
     #define MAXSLEEP 1024
     
-    int connect_retry(int sockfd,const struct sockaddr * addr,socklen_t alen)
+    int connect\_retry(int sockfd,const struct sockaddr * addr,socklen\_t alen)
     \{
         int nsec;
     
@@ -145,20 +145,20 @@ client
         \}// if
     
         int fd;    
-        struct sockaddr_in si,server;
+        struct sockaddr\_in si,server;
         char addr[20],buf[20],bufrecv[20];
     
         bzero(bufrecv,sizeof(bufrecv));
         sprintf(addr,"127.0.0.1");
     
-        fd = socket(AF_INET,SOCK_STREAM,0);//   create socker fd;
+        fd = socket(AF\_INET,SOCK\_STREAM,0);//   create socker fd;
         printf("socket ok\n");
     
     //prepare server addr
         bzero(&server,sizeof(server));
-        server.sin_family = AF_INET;
-        server.sin_port = htons(6000);
-        inet_pton(AF_INET,addr,(void *)&server.sin_addr);
+        server.sin\_family = AF\_INET;
+        server.sin\_port = htons(6000);
+        inet\_pton(AF\_INET,addr,(void *)&server.sin\_addr);
         printf("server ok\n");
     
     //prepare request data
@@ -166,7 +166,7 @@ client
         sprintf(buf,"%c%c%c",argv[1][0],argv[2][0],argv[3][0]);
     
     //connect
-        if(connect_retry(fd,(struct sockaddr *)&server,sizeof(server)) < 0)
+        if(connect\_retry(fd,(struct sockaddr *)&server,sizeof(server)) < 0)
         \{
             printf("connect error\n");
             return 1;
@@ -180,12 +180,12 @@ client
         \}// if
     
     //select
-        fd_set readfd;
-        FD_ZERO(&readfd);
-        FD_SET(fd,&readfd);
+        fd\_set readfd;
+        FD\_ZERO(&readfd);
+        FD\_SET(fd,&readfd);
         int t;
     
-        if((t = select(FD_SETSIZE,&readfd,NULL,NULL,NULL)) < 0)
+        if((t = select(FD\_SETSIZE,&readfd,NULL,NULL,NULL)) < 0)
         \{
             printf("select error\n");
             return 1;
@@ -215,12 +215,12 @@ server
     
     char bufret[20];
     
-    int initserver(int type,const struct sockaddr * addr,socklen_t alen,int qlen)
+    int initserver(int type,const struct sockaddr * addr,socklen\_t alen,int qlen)
     \{
         int fd;
         int err = 0;
     
-        if((fd = socket(addr->sa_family,type,0)) < 0)
+        if((fd = socket(addr->sa\_family,type,0)) < 0)
             return -1;
     
         printf("binding\n");
@@ -231,7 +231,7 @@ server
         \}// if
         printf("bind succeed \n");
     
-        if(type == SOCK_STREAM || type == SOCK_SEQPACKET)
+        if(type == SOCK\_STREAM || type == SOCK\_SEQPACKET)
         \{
             printf("listening\n");
             if(listen(fd,1) < 0)
@@ -255,8 +255,8 @@ server
         int a,b;
         char op,buf[25];
     
-        int ret,addrlen = sizeof(struct sockaddr_in),clfd; 
-        struct sockaddr_in client;
+        int ret,addrlen = sizeof(struct sockaddr\_in),clfd; 
+        struct sockaddr\_in client;
     
         bzero(&client,sizeof(client));
     
@@ -304,15 +304,15 @@ server
         bzero(addr,sizeof(addr));
         sprintf(addr,"127.0.0.1");
     
-        struct sockaddr_in server;
+        struct sockaddr\_in server;
         bzero(&server,sizeof(server));
-        server.sin_family = AF_INET;
-        server.sin_port = htons(6000);
-        //server.sin_addr.s_addr = htonl(INADDR_ANY);
-        inet_pton(AF_INET,addr,(void *)&server.sin_addr);
+        server.sin\_family = AF\_INET;
+        server.sin\_port = htons(6000);
+        //server.sin\_addr.s\_addr = htonl(INADDR\_ANY);
+        inet\_pton(AF\_INET,addr,(void *)&server.sin\_addr);
     
     //prepare server
-        if((sockfd = initserver(SOCK_STREAM,(struct sockaddr *)&server,sizeof(server),1)) < 0)
+        if((sockfd = initserver(SOCK\_STREAM,(struct sockaddr *)&server,sizeof(server),1)) < 0)
         \{
             printf("initserver error\n");
             return 0;

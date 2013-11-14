@@ -33,7 +33,7 @@ tags:
 
 > 下面的文件是/ect/init/tty1.conf，这足以说明init的动作。
 
-[![image](http://www.daoluan.net/blog/wp-content/uploads/2012/07/image_thumb.png)](http://www.daoluan.net/blog/wp-content/uploads/2012/07/image.png)
+[![image](http://www.daoluan.net/blog/wp-content/uploads/2012/07/image\_thumb.png)](http://www.daoluan.net/blog/wp-content/uploads/2012/07/image.png)
 
 
 <!-- more -->
@@ -87,14 +87,14 @@ login已完成使命（主要是以上步骤），shell登场（exec）。
 
 根据上面的第二条：
 
-[![image](http://www.daoluan.net/blog/wp-content/uploads/2012/07/image_thumb1.png)](http://www.daoluan.net/blog/wp-content/uploads/2012/07/image1.png)
+[![image](http://www.daoluan.net/blog/wp-content/uploads/2012/07/image\_thumb1.png)](http://www.daoluan.net/blog/wp-content/uploads/2012/07/image1.png)
 
 我在.profile第九行添加“Daoluan Logins In Succeed!”，在进入命令提示符的前一行，就有显示这一字符串，说明这是初始化的必经之地。经常我们需要自定义我们的工作环境的时候，通常要在工作目录下的.bashrc（在.profile文件里有一个行执行.bashrc的代码），从而达到自定义环境的目的。
 
 
 > 用apue上一幅图来结束这篇学习总结！
 
-[![image](http://www.daoluan.net/blog/wp-content/uploads/2012/07/image_thumb2.png)](http://www.daoluan.net/blog/wp-content/uploads/2012/07/image2.png)
+[![image](http://www.daoluan.net/blog/wp-content/uploads/2012/07/image\_thumb2.png)](http://www.daoluan.net/blog/wp-content/uploads/2012/07/image2.png)
 
 上面是终端登录的过程；网络登录的话，会有伪终端设备驱动程序，配合talnet来对终端进行仿真。
 

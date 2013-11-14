@@ -14,26 +14,26 @@ tags:
 - GTD项目实录
 ---
 
-STL算法提供求两个容器中的数据的交集、并集、差集和对称差集，分别是set_intersection，set_union，set_difference，set_symmetric_difference。
+STL算法提供求两个容器中的数据的交集、并集、差集和对称差集，分别是set\_intersection，set\_union，set\_difference，set\_symmetric\_difference。
 
 四个函数用法一样，详情可以参考C++ Reference：
 
-[http://www.cplusplus.com/reference/algorithm/set_intersection/](http://www.cplusplus.com/reference/algorithm/set_intersection/)
+[http://www.cplusplus.com/reference/algorithm/set\_intersection/](http://www.cplusplus.com/reference/algorithm/set\_intersection/)
 
-[http://www.cplusplus.com/reference/algorithm/set_union/](http://www.cplusplus.com/reference/algorithm/set_union/)
+[http://www.cplusplus.com/reference/algorithm/set\_union/](http://www.cplusplus.com/reference/algorithm/set\_union/)
 
-[http://www.cplusplus.com/reference/algorithm/set_difference/](http://www.cplusplus.com/reference/algorithm/set_difference/)
+[http://www.cplusplus.com/reference/algorithm/set\_difference/](http://www.cplusplus.com/reference/algorithm/set\_difference/)
 
-[http://www.cplusplus.com/reference/algorithm/set_symmetric_difference/](http://www.cplusplus.com/reference/algorithm/set_symmetric_difference/)
+[http://www.cplusplus.com/reference/algorithm/set\_symmetric\_difference/](http://www.cplusplus.com/reference/algorithm/set\_symmetric\_difference/)
 
 或者参看其他网友的一些讲解：[stl set求交集 并集 差集](http://blog.chinaunix.net/uid-9950859-id-99130.html)[
 ](http://blog.chinaunix.net/uid-9950859-id-99130.html)
 
-以set_union为例，实现算法不难：
+以set\_union为例，实现算法不难：
 
     
     template <class InputIterator1, class InputIterator2, class OutputIterator>
-      OutputIterator set_union (InputIterator1 first1, InputIterator1 last1,
+      OutputIterator set\_union (InputIterator1 first1, InputIterator1 last1,
                                 InputIterator2 first2, InputIterator2 last2,
                                 OutputIterator result)
     \{
@@ -50,20 +50,20 @@ STL算法提供求两个容器中的数据的交集、并集、差集和对称�
     \}
 
 
-细心就会发现，在set_union中有「*first1<*first2」，也就是要求，iterator所对应的的数据必须实现运算符重载「operator <」。C++内置类型比如int，char，long等都可以直接进行比较，但实际需求可能要求必须有更为复杂的数据类型，譬如：
+细心就会发现，在set\_union中有「*first1<*first2」，也就是要求，iterator所对应的的数据必须实现运算符重载「operator <」。C++内置类型比如int，char，long等都可以直接进行比较，但实际需求可能要求必须有更为复杂的数据类型，譬如：
 
     
-    struct datastruct_t
+    struct datastruct\_t
     \{
     	int nID;
     	string name;
     \};
 
 
-此时调用set_union不能通过编译！
+此时调用set\_union不能通过编译！
 
     
-    set_union(a.begin(),a.end(),b,begin(),b.end(),c.begin);
+    set\_union(a.begin(),a.end(),b,begin(),b.end(),c.begin);
 
 
 本文有待补充。

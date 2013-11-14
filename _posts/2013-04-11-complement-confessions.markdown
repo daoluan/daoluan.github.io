@@ -16,7 +16,7 @@ tags:
 - 补码
 ---
 
-[caption id="" align="aligncenter" width="443"][![myidea](http://daoluan.net/blog/wp-content/uploads/2013/04/myidea_thumb.gif)](http://daoluan.net/blog/wp-content/uploads/2013/04/myidea.gif) 沿着线条走，你能否发现各种溢出？！[/caption]
+[caption id="" align="aligncenter" width="443"][![myidea](http://daoluan.net/blog/wp-content/uploads/2013/04/myidea\_thumb.gif)](http://daoluan.net/blog/wp-content/uploads/2013/04/myidea.gif) 沿着线条走，你能否发现各种溢出？！[/caption]
 
 二进制数据的表示方法有原码，反码，补码。
 

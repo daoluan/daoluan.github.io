@@ -38,7 +38,7 @@ sof 上的帖子，原文链接：[Why is processing a sorted array faster than 
         std::sort(data, data + arraySize);
     
         // Test
-        clock_t start = clock();
+        clock\_t start = clock();
         long long sum = 0;
     
         for (unsigned i = 0; i < 100000; ++i)
@@ -51,7 +51,7 @@ sof 上的帖子，原文链接：[Why is processing a sorted array faster than 
             \}
         \}
     
-        double elapsedTime = static_cast<double>(clock() - start) / CLOCKS_PER_SEC;
+        double elapsedTime = static\_cast<double>(clock() - start) / CLOCKS\_PER\_SEC;
     
         std::cout << elapsedTime << std::endl;
         std::cout << "sum = " << sum << std::endl;
@@ -141,7 +141,7 @@ sof 上的帖子，原文链接：[Why is processing a sorted array faster than 
 
 ![铁路的交合处](http://i.stack.imgur.com/muxnt.jpg)
 
-图片网址：[http://commons.wikimedia.org/wiki/File:Entroncamento_do_Transpraia.JPG](http://commons.wikimedia.org/wiki/File:Entroncamento_do_Transpraia.JPG)
+图片网址：[http://commons.wikimedia.org/wiki/File:Entroncamento\_do\_Transpraia.JPG](http://commons.wikimedia.org/wiki/File:Entroncamento\_do\_Transpraia.JPG)
 
 为了方便讨论，假设回到 19 世纪，即在长途无线通信之前。
 
@@ -209,7 +209,7 @@ sof 上的帖子，原文链接：[Why is processing a sorted array faster than 
 
 好多应用的分支预测表现不错。现在的分支预测可以达到 90% 的命中率。但面对未知的数据，无迹可寻，分支预测就没用了。
 
-延伸阅读：[http://en.wikipedia.org/wiki/Branch_predictor](http://en.wikipedia.org/wiki/Branch_predictor)
+延伸阅读：[http://en.wikipedia.org/wiki/Branch\_predictor](http://en.wikipedia.org/wiki/Branch\_predictor)
 
 
 

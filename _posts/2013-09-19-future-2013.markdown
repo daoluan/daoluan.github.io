@@ -10,7 +10,7 @@ categories:
 - 随笔
 ---
 
-[caption id="attachment_2005" align="aligncenter" width="550"][![锤子工作室](http://daoluan.net/blog/wp-content/uploads/2013/09/yonghaoluo.jpg)](http://daoluan.net/blog/wp-content/uploads/2013/09/yonghaoluo.jpg) 锤子工作室[/caption]
+[caption id="attachment\_2005" align="aligncenter" width="550"][![锤子工作室](http://daoluan.net/blog/wp-content/uploads/2013/09/yonghaoluo.jpg)](http://daoluan.net/blog/wp-content/uploads/2013/09/yonghaoluo.jpg) 锤子工作室[/caption]
 
 还有几天，我将结束我愉快的实习旅程。
 

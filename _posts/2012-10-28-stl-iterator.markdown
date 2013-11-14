@@ -24,24 +24,24 @@ STL表现的如此出色的，迭代器（iterator）做出了很大的贡献，
 STL中会定义迭代器：
 
     
-    template <class _Ty>		/*_Ty：节点元素类型。*/
-    struct container_iterator
+    template <class \_Ty>		/*\_Ty：节点元素类型。*/
+    struct container\_iterator
     \{
     	/*五种与数据元先关的描述。*/
     	......
-    	typedef container_iterator<_Ty> iterator;
+    	typedef container\_iterator<\_Ty> iterator;
     
-    	typedef bidirectional_iterator_tag itetator_category;
-    	typedef _Ty value_type;
-    	typedef Node<_Ty>* link_type;
-    	typedef size_t size_type;
-    	typedef ptrdiff_t difference_type;
+    	typedef bidirectional\_iterator\_tag itetator\_category;
+    	typedef \_Ty value\_type;
+    	typedef Node<\_Ty>* link\_type;
+    	typedef size\_t size\_type;
+    	typedef ptrdiff\_t difference\_type;
     
-    	link_type node;
+    	link\_type node;
     
     	/*迭代器构造函数。*/
     	......
-    	container_iterator(link_type x):node(x)\{\}
+    	container\_iterator(link\_type x):node(x)\{\}
     	...
     	......
     
@@ -50,17 +50,17 @@ STL中会定义迭代器：
     \};
 
 
-[caption id="attachment_1344" align="aligncenter" width="334"][![](http://daoluan.net/blog/wp-content/uploads/2012/10/iterator_op.jpg)](http://daoluan.net/blog/stl-iterator/iterator_op/) iterator_op[/caption]
+[caption id="attachment\_1344" align="aligncenter" width="334"][![](http://daoluan.net/blog/wp-content/uploads/2012/10/iterator\_op.jpg)](http://daoluan.net/blog/stl-iterator/iterator\_op/) iterator\_op[/caption]
 
-从中看出，迭代器不包含数据实体，它只是能表现和操作数据实体。因为上述container_iterator操控的的实现，因此当手头有一container_iterator的时候，你可以“*ite”来获得数据元的引用，可以“ite->”获得数据元的指针，“++”可以另ite自动前进一步，“--”可以另ite后退一步。。。
+从中看出，迭代器不包含数据实体，它只是能表现和操作数据实体。因为上述container\_iterator操控的的实现，因此当手头有一container\_iterator的时候，你可以“*ite”来获得数据元的引用，可以“ite->”获得数据元的指针，“++”可以另ite自动前进一步，“--”可以另ite后退一步。。。
 
 通过模板，迭代器可以为任何数据元服务。一个有趣的地方便是迭代器的构造函数：
 
     
-    container_iterator(link_type x):node(x)\{\}
+    container\_iterator(link\_type x):node(x)\{\}
 
 
-在container（以下展示）的元素操作当中，很多时候会直截返回指向数据元的指针，**这时可能此操作的函数可能需要返回的是container_iterator类型，**而不是返回一个指向数据元的指针（这种做法不上道，太龌龊），于是会临时构造（调用迭代器的构造函数）一个迭代器作为返回值。
+在container（以下展示）的元素操作当中，很多时候会直截返回指向数据元的指针，**这时可能此操作的函数可能需要返回的是container\_iterator类型，**而不是返回一个指向数据元的指针（这种做法不上道，太龌龊），于是会临时构造（调用迭代器的构造函数）一个迭代器作为返回值。
 
 意即：
 
@@ -70,11 +70,11 @@ STL中会定义迭代器：
     public:  
     	Node(int nAge = 0)  
     	\{  
-    		m_nAge = nAge;  
+    		m\_nAge = nAge;  
     	\}  
     	......
     private:  
-    	int m_nAge;  
+    	int m\_nAge;  
     \};  
     
     Node foo(int i)
@@ -92,66 +92,66 @@ STL中会定义迭代器：
 下面是container：
 
     
-    template <class _Ty,class alloc>		/*T：节点元素类型。*/
+    template <class \_Ty,class alloc>		/*T：节点元素类型。*/
     class container
     \{
     	/*container数据结构*/
-    	typedef container_iterator<_Ty> iterator;
-    	typedef const container_iterator<_Ty> const_iterator;
+    	typedef container\_iterator<\_Ty> iterator;
+    	typedef const container\_iterator<\_Ty> const\_iterator;
     
-    	typedef Node<_Ty>* link_type;
+    	typedef Node<\_Ty>* link\_type;
     
-    	typedef _Ty value_type;
-    	typedef Node<_Ty>* link_type;
-    	typedef size_t size_type;
-    	typedef ptrdiff_t difference_type;
+    	typedef \_Ty value\_type;
+    	typedef Node<\_Ty>* link\_type;
+    	typedef size\_t size\_type;
+    	typedef ptrdiff\_t difference\_type;
     
     private:
-    	link_type head;		/*头指针。*/
-    	link_type tail;		/*为指针。*/
+    	link\_type head;		/*头指针。*/
+    	link\_type tail;		/*为指针。*/
     
     	iterator begin();
     	iterator end();
     
     	bool empty();
-    	size_type size()const ;
+    	size\_type size()const ;
     	......
     
-    	/*元素的操作。push_front,push_back,pop_front,pop_back,insert,earse等根据容器的不同各取所需。*/
-    	iterator insert(const _Ty& x);
+    	/*元素的操作。push\_front,push\_back,pop\_front,pop\_back,insert,earse等根据容器的不同各取所需。*/
+    	iterator insert(const \_Ty& x);
     	iterator earse(iterator position);
-    	void push_back(const _Ty& x);
-    	void push_front(const _Ty& x);
-    	void pop_back();
-    	void pop_front();
+    	void push\_back(const \_Ty& x);
+    	void push\_front(const \_Ty& x);
+    	void pop\_back();
+    	void pop\_front();
     	......
     \};
 
 
-container内部实现的大多数是元素的操作函数，它们有充分利用container_iterator，包括container_iterator内部实现的各种元素的操控（++，--，*，->等等）。
+container内部实现的大多数是元素的操作函数，它们有充分利用container\_iterator，包括container\_iterator内部实现的各种元素的操控（++，--，*，->等等）。
 
-container和container_iterator就是这样结合起来的。还剩下一STL中的镇库之宝：算法。**通用的的算法中，**少不了迭代器。如何能做到通用？不同的容器对应不同的迭代器，那是否对于一个算法，要实现多个迭代器的版本？不，不需要，这就是**泛化编程**的好处，根据传入的迭代器（一般的STL算法会以迭代器作为参数）来推导出相应的迭代器类型。以最为简单的find()算法为例：会通过_InIt _First来推导出迭代器的类型，推导出迭代器的类型，也就推导出了相应的容器。
+container和container\_iterator就是这样结合起来的。还剩下一STL中的镇库之宝：算法。**通用的的算法中，**少不了迭代器。如何能做到通用？不同的容器对应不同的迭代器，那是否对于一个算法，要实现多个迭代器的版本？不，不需要，这就是**泛化编程**的好处，根据传入的迭代器（一般的STL算法会以迭代器作为参数）来推导出相应的迭代器类型。以最为简单的find()算法为例：会通过\_InIt \_First来推导出迭代器的类型，推导出迭代器的类型，也就推导出了相应的容器。
 
     
     /*摘自c++ standard library。*/
-    template<class _InIt, class _Ty>
+    template<class \_InIt, class \_Ty>
     inline
-    _InIt find(_InIt _First, _InIt _Last, const _Ty& _Val)
-    \{	// find first matching _Val
-    	_ASSIGN_FROM_BASE(_First,
-    		_Find(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Val));
-    	return (_First);
+    \_InIt find(\_InIt \_First, \_InIt \_Last, const \_Ty& \_Val)
+    \{	// find first matching \_Val
+    	\_ASSIGN\_FROM\_BASE(\_First,
+    		\_Find(\_CHECKED\_BASE(\_First), \_CHECKED\_BASE(\_Last), \_Val));
+    	return (\_First);
     \}
     
-    template<class _InIt, class _Ty>
+    template<class \_InIt, class \_Ty>
     inline
-    _InIt _Find(_InIt _First, _InIt _Last, const _Ty& _Val)
-    \{	// find first matching _Val
-    	_DEBUG_RANGE(_First, _Last);
-    	for (; _First != _Last; ++_First)
-    		if (*_First == _Val)
+    \_InIt \_Find(\_InIt \_First, \_InIt \_Last, const \_Ty& \_Val)
+    \{	// find first matching \_Val
+    	\_DEBUG\_RANGE(\_First, \_Last);
+    	for (; \_First != \_Last; ++\_First)
+    		if (*\_First == \_Val)
     			break;
-    	return (_First);
+    	return (\_First);
     \}
 
 

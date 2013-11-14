@@ -24,7 +24,7 @@ C-------------M-------------S
 
 
 
-[caption id="" align="aligncenter" width="280"]![前向代理](http://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Proxy_concept_en.svg/280px-Proxy_concept_en.svg.png) 前向代理[/caption]
+[caption id="" align="aligncenter" width="280"]![前向代理](http://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Proxy\_concept\_en.svg/280px-Proxy\_concept\_en.svg.png) 前向代理[/caption]
 
 **对请求进行简化或者其他处理**意味着可以无视某些请求，譬如：学校发现 abc.com 站点上的内容很黄很暴力，为了在校学生的身心健康，在学校的代理服务器上对 abc.com 做限制，于是学生就不能访问 abc.com 站点了，也可以说 abc.com 被和谐了。除此之外，前向代理还有：
 

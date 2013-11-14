@@ -26,7 +26,7 @@ categories:
 
 显然，**只要将 arr1 的所有正数和 arr2 的所有负数交换就好了**，为了不打乱原有正数/负数的次序，而且不借用任何其他的空间，考虑用《编程珠玑》中提到的 Doug Mcllroy 提出的翻手例子：
 
-[![0_1320473198JbmS](http://daoluan.net/blog/wp-content/uploads/2013/05/0_1320473198JbmS_thumb.gif)](http://daoluan.net/blog/wp-content/uploads/2013/05/0_1320473198JbmS.gif)
+[![0\_1320473198JbmS](http://daoluan.net/blog/wp-content/uploads/2013/05/0\_1320473198JbmS\_thumb.gif)](http://daoluan.net/blog/wp-content/uploads/2013/05/0\_1320473198JbmS.gif)
 
 翻手代码在时间和空间上都很高效，而且代码非常的简短，很难出错。
 

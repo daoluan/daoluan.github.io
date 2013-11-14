@@ -96,7 +96,7 @@ categories:
 
 产生的带锚链接的文章开始，**需要自己重命名标题**，因为时间关系，没有设计抓取<h3></h3>之间的标题文本。文章末尾有源代码，有兴趣的同学可以帮我升级下，抠门的细节太多了~~
 
-[![](http://daoluan.net/blog/wp-content/uploads/2012/09/AutoAnchor_bug.jpg)](http://daoluan.net/blog/archives/1049/autoanchor_bug)
+[![](http://daoluan.net/blog/wp-content/uploads/2012/09/AutoAnchor\_bug.jpg)](http://daoluan.net/blog/archives/1049/autoanchor\_bug)
 
 缺陷：除非修改源代码，不然只支持<h3>的标题检测，就是说只能为<h3>标题添加锚链接。
 

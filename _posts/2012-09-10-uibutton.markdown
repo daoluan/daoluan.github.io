@@ -48,12 +48,12 @@ categories:
     else
     \{
     	CPaintDC dc(this);
-    	if(m_btn.IsValid())
+    	if(m\_btn.IsValid())
     	\{
-    		m_btn.Create(this,&dc,CRect(10,10,49,30),"关闭");
-    		m_btn.InitilizeMem(L"./img/btn.png");
+    		m\_btn.Create(this,&dc,CRect(10,10,49,30),"关闭");
+    		m\_btn.InitilizeMem(L"./img/btn.png");
     	\}
-    	m_btn.Refresh(&dc);
+    	m\_btn.Refresh(&dc);
     	CDialog::OnPaint();
     \}
 
@@ -67,14 +67,14 @@ categories:
     void CUIButtonAppDlg::OnLButtonDown(UINT nFlags, CPoint point)
     \{
     	// TODO: 在此添加消息处理程序代码和/或调用默认值
-    	m_btn.OnLButtonDown(nFlags,point);
+    	m\_btn.OnLButtonDown(nFlags,point);
     	CDialog::OnLButtonDown(nFlags, point);
     \}
     
     void CUIButtonAppDlg::OnLButtonUp(UINT nFlags, CPoint point)
     \{
     	// TODO: 在此添加消息处理程序代码和/或调用默认值
-    	if(m_btn.OnLButtonUp(nFlags,point))
+    	if(m\_btn.OnLButtonUp(nFlags,point))
     		OnbtnClose();
     	CDialog::OnLButtonUp(nFlags, point);
     \}
@@ -82,21 +82,21 @@ categories:
     void CUIButtonAppDlg::OnMouseMove(UINT nFlags, CPoint point)
     \{
     	// TODO: 在此添加消息处理程序代码和/或调用默认值
-    	m_btn.OnMouseMove(nFlags,point);
+    	m\_btn.OnMouseMove(nFlags,point);
     	CDialog::OnMouseMove(nFlags, point);
     \}
     
     void CUIButtonAppDlg::OnMouseHover(UINT nFlags, CPoint point)
     \{
     	// TODO: 在此添加消息处理程序代码和/或调用默认值
-    	m_btn.OnMouseHover(nFlags,point);
+    	m\_btn.OnMouseHover(nFlags,point);
     	CDialog::OnMouseHover(nFlags, point);
     \}
     
     void CUIButtonAppDlg::OnMouseLeave()
     \{
     	// TODO: 在此添加消息处理程序代码和/或调用默认值
-    	m_btn.OnMouseLeave();
+    	m\_btn.OnMouseLeave();
     	CDialog::OnMouseLeave();
     \}
 
@@ -107,7 +107,7 @@ categories:
   5. （可选）主窗口重载PreTranslateMessage，添加：
 
     
-    m_btn.ToolTipRelayEvent(pMsg);
+    m\_btn.ToolTipRelayEvent(pMsg);
 
 
 

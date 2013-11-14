@@ -21,11 +21,11 @@ tags:
 
 根据上一节的红黑树分析, 结合 sgi stl map 的实现, 看看红黑树的源码是如何实现的. 以下主要以代码的注释为主.
 
-sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置了 _M_header, 用于记录红黑树中的根节点, 最小节点和最大节点. 在插入删除中都会对其进行维护. 找到一副美艳的图片:
+sgi stl map 底层实现是 \_Rb\_tree类, 为了方便管理, \_Rb\_tree 内置了 \_M\_header, 用于记录红黑树中的根节点, 最小节点和最大节点. 在插入删除中都会对其进行维护. 找到一副美艳的图片:
 
-[![rbtree_header](http://daoluan.net/blog/wp-content/uploads/2013/09/rbtree_header.jpg)](http://daoluan.net/blog/wp-content/uploads/2013/09/rbtree_header.jpg)
+[![rbtree\_header](http://daoluan.net/blog/wp-content/uploads/2013/09/rbtree\_header.jpg)](http://daoluan.net/blog/wp-content/uploads/2013/09/rbtree\_header.jpg)
 
-我只会展开插入和删除的代码. _Rb_tree 有 insert_unique() 和 insert_equal() 两种, 前者不允许有重复值, 后者可以. insert_unique() 判断是否有重复值的方法利用了二叉搜索树的性质. 细节请参看下面的代码.
+我只会展开插入和删除的代码. \_Rb\_tree 有 insert\_unique() 和 insert\_equal() 两种, 前者不允许有重复值, 后者可以. insert\_unique() 判断是否有重复值的方法利用了二叉搜索树的性质. 细节请参看下面的代码.
 
 
 ### 为什么选择红黑树作为底层实现
@@ -43,381 +43,381 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
 
 
     
-    // sgi stl _Rb_tree 插入算法 insert_equal() 实现.
-    // 策略概述: insert_equal() 在红黑树找到自己的位置,
-    // 然后交由 _M_insert() 来处理接下来的工作.
-    // _M_insert() 会将节点插入红黑树中, 接着调整红黑树,
+    // sgi stl \_Rb\_tree 插入算法 insert\_equal() 实现.
+    // 策略概述: insert\_equal() 在红黑树找到自己的位置,
+    // 然后交由 \_M\_insert() 来处理接下来的工作.
+    // \_M\_insert() 会将节点插入红黑树中, 接着调整红黑树,
     // 维持性质.
-    template <class _Key, class _Value, class _KeyOfValue,
-              class _Compare, class _Alloc>
-    typename _Rb_tree<_Key,_Value,_KeyOfValue,_Compare,_Alloc>::iterator
-    _Rb_tree<_Key,_Value,_KeyOfValue,_Compare,_Alloc>
-      ::insert_equal(const _Value& __v)
+    template <class \_Key, class \_Value, class \_KeyOfValue,
+              class \_Compare, class \_Alloc>
+    typename \_Rb\_tree<\_Key,\_Value,\_KeyOfValue,\_Compare,\_Alloc>::iterator
+    \_Rb\_tree<\_Key,\_Value,\_KeyOfValue,\_Compare,\_Alloc>
+      ::insert\_equal(const \_Value& \_\_v)
     \{
       // 在红黑树中有头结点和根节点的概念, 头结点位于根节点之上,
       // 头结点只为管理而存在, 根节点是真正存储数据的地方. 头结点和根节点互为父节点,
        // 是一种实现的技巧.
-      _Link_type __y = _M_header; // 指向头结点
-      _Link_type __x = _M_root(); // _M_header->_M_parent, 即指向根节点
+      \_Link\_type \_\_y = \_M\_header; // 指向头结点
+      \_Link\_type \_\_x = \_M\_root(); // \_M\_header->\_M\_parent, 即指向根节点
     
       // 寻找插入的位置
-      while (__x != 0) \{
-        __y = __x;
+      while (\_\_x != 0) \{
+        \_\_y = \_\_x;
     
         // 小于当前节点要走左边, 大于等于当前节点走右边
-        __x = _M_key_compare(_KeyOfValue()(__v), _S_key(__x)) ?
-                _S_left(__x) : _S_right(__x);
+        \_\_x = \_M\_key\_compare(\_KeyOfValue()(\_\_v), \_S\_key(\_\_x)) ?
+                \_S\_left(\_\_x) : \_S\_right(\_\_x);
       \}
-      // __x 为需要插入的节点的位置, __y 为其父节点
-      return _M_insert(__x, __y, __v);
+      // \_\_x 为需要插入的节点的位置, \_\_y 为其父节点
+      return \_M\_insert(\_\_x, \_\_y, \_\_v);
     \}
     
-    // sgi stl _Rb_tree 插入算法 insert_unique() 实现.
-    // 策略概述: insert_unique() 同样也在红黑树中找到自己的位置; 我们知道,
+    // sgi stl \_Rb\_tree 插入算法 insert\_unique() 实现.
+    // 策略概述: insert\_unique() 同样也在红黑树中找到自己的位置; 我们知道,
     // 如果小于等于当前节点会往右走, 所以遇到一个相同键值的节点后, 会往右走一步,
     // 接下来一直往左走, 所以下面的实现会对往左走的情况做特殊的处理.
-    template <class _Key, class _Value, class _KeyOfValue,
-              class _Compare, class _Alloc>
-    pair<typename _Rb_tree<_Key,_Value,_KeyOfValue,_Compare,_Alloc>::iterator,
+    template <class \_Key, class \_Value, class \_KeyOfValue,
+              class \_Compare, class \_Alloc>
+    pair<typename \_Rb\_tree<\_Key,\_Value,\_KeyOfValue,\_Compare,\_Alloc>::iterator,
          bool>
-    _Rb_tree<_Key,_Value,_KeyOfValue,_Compare,_Alloc>
-      ::insert_unique(const _Value& __v)
+    \_Rb\_tree<\_Key,\_Value,\_KeyOfValue,\_Compare,\_Alloc>
+      ::insert\_unique(const \_Value& \_\_v)
     \{
-      _Link_type __y = _M_header; // 指向头结点
-      _Link_type __x = _M_root(); // 指向根节点, 可能为空
-      bool __comp = true;
+      \_Link\_type \_\_y = \_M\_header; // 指向头结点
+      \_Link\_type \_\_x = \_M\_root(); // 指向根节点, 可能为空
+      bool \_\_comp = true;
     
       // 寻找插入的位置
-      while (__x != 0) \{
-        __y = __x;
-        __comp = _M_key_compare(_KeyOfValue()(__v), _S_key(__x));
+      while (\_\_x != 0) \{
+        \_\_y = \_\_x;
+        \_\_comp = \_M\_key\_compare(\_KeyOfValue()(\_\_v), \_S\_key(\_\_x));
     
         // 小于当前节点要走左边, 大于等于当前节点走右边
-        __x = __comp ? _S_left(__x) : _S_right(__x);
+        \_\_x = \_\_comp ? \_S\_left(\_\_x) : \_S\_right(\_\_x);
       \}
     
-      iterator __j = iterator(__y); // 在 __y 上建立迭代器
+      iterator \_\_j = iterator(\_\_y); // 在 \_\_y 上建立迭代器
     
       // 我认为下面判断树中是否有存在键值的情况有点绕,
       // 它充分利用了二叉搜索树的性质, 如此做很 hack, 但不易理解.
       // 要特别注意往左边插入的情况.
     
       // HACKS:
-      // 下面的 if 语句是比 __x 小走左边的情况: 会发现, 如果插入一个已存在的键的话,
-      // __y 最终会定位到已存在键的右子树的最左子树.
+      // 下面的 if 语句是比 \_\_x 小走左边的情况: 会发现, 如果插入一个已存在的键的话,
+      // \_\_y 最终会定位到已存在键的右子树的最左子树.
       // 譬如, 红黑树中已经存在一个键为 100 的节点, 其右孩子节点为 101,
       // 此时如果再插入键为 100 的节点, 因为 100<=100, 所以会往右走到达 101 节点,
       // 有 100<101, 继而往左走, 会一直往左走.大家稍微画一个例子就能理解.
-      if (__comp)
-        // 特殊情况, 如果 __j 指向了最左孩子, 那么肯定要插入新节点.
-        if (__j == begin())
-          return pair<iterator,bool>(_M_insert(__x, __y, __v), true);
+      if (\_\_comp)
+        // 特殊情况, 如果 \_\_j 指向了最左孩子, 那么肯定要插入新节点.
+        if (\_\_j == begin())
+          return pair<iterator,bool>(\_M\_insert(\_\_x, \_\_y, \_\_v), true);
         // 其他情况, 这个时候也是往左边插入, 如果存在重复的键值,
-        // 那么 --__j 能定位到此重复的键的节点.
+        // 那么 --\_\_j 能定位到此重复的键的节点.
         else
-          --__j;
+          --\_\_j;
     
-      // HACKS: 这里比较的是 __j 和 __v, 如果存在键值, 那么 __j == __v,
-      // 会跳过 if 语句. 否则执行插入. 也就是说如果存在重复的键, 那么 __j
-      // 的值肯定是等于 __v
-      if (_M_key_compare(_S_key(__j._M_node), _KeyOfValue()(__v)))
-        return pair<iterator,bool>(_M_insert(__x, __y, __v), true);
+      // HACKS: 这里比较的是 \_\_j 和 \_\_v, 如果存在键值, 那么 \_\_j == \_\_v,
+      // 会跳过 if 语句. 否则执行插入. 也就是说如果存在重复的键, 那么 \_\_j
+      // 的值肯定是等于 \_\_v
+      if (\_M\_key\_compare(\_S\_key(\_\_j.\_M\_node), \_KeyOfValue()(\_\_v)))
+        return pair<iterator,bool>(\_M\_insert(\_\_x, \_\_y, \_\_v), true);
     
-      // 此时 __y.value = __v, 不允许插入, 返回键值所在位置
-      return pair<iterator,bool>(__j, false);
+      // 此时 \_\_y.value = \_\_v, 不允许插入, 返回键值所在位置
+      return pair<iterator,bool>(\_\_j, false);
     \}
     
-    // _M_insert() 是真正执行插入的地方.
+    // \_M\_insert() 是真正执行插入的地方.
     // 策略概述: 插入策略已经在上篇中详述, 可以根据上篇文章的描述,
     // 和下面代码的注释, 加深对红黑树插入算法里理解
-    template <class _Key, class _Value, class _KeyOfValue,
-              class _Compare, class _Alloc>
-    typename _Rb_tree<_Key,_Value,_KeyOfValue,_Compare,_Alloc>::iterator
-    _Rb_tree<_Key,_Value,_KeyOfValue,_Compare,_Alloc>
-      ::_M_insert(_Base_ptr __x_, _Base_ptr __y_, const _Value& __v)
+    template <class \_Key, class \_Value, class \_KeyOfValue,
+              class \_Compare, class \_Alloc>
+    typename \_Rb\_tree<\_Key,\_Value,\_KeyOfValue,\_Compare,\_Alloc>::iterator
+    \_Rb\_tree<\_Key,\_Value,\_KeyOfValue,\_Compare,\_Alloc>
+      ::\_M\_insert(\_Base\_ptr \_\_x\_, \_Base\_ptr \_\_y\_, const \_Value& \_\_v)
     \{
-      _Link_type __x = (_Link_type) __x_; // 新节点插入的位置.
-      // 关于 __x 的疑问:
+      \_Link\_type \_\_x = (\_Link\_type) \_\_x\_; // 新节点插入的位置.
+      // 关于 \_\_x 的疑问:
       // 1. 它被放到下面的, 第一个 if 语句中, 我觉得是没有必要的,
-      // 因为从调用 _M_insert() 的函数来看, __x 总是为空.
-      // 2. 既然 __x 是新节点插入的位置, 那么为什么不直接在 __x 上创建节点,
+      // 因为从调用 \_M\_insert() 的函数来看, \_\_x 总是为空.
+      // 2. 既然 \_\_x 是新节点插入的位置, 那么为什么不直接在 \_\_x 上创建节点,
       // 还要在下面通过比较来决定新节点是左孩子还是右孩子;
       // 不如直接用指针的指针或者指针的引用来完成, 省去了下面的判断.
     
-      _Link_type __y = (_Link_type) __y_; // 新节点的父节点
-      _Link_type __z; // 新节点的位置
+      \_Link\_type \_\_y = (\_Link\_type) \_\_y\_; // 新节点的父节点
+      \_Link\_type \_\_z; // 新节点的位置
     
-      if (__y == _M_header || __x != 0 ||
-          _M_key_compare(_KeyOfValue()(__v), _S_key(__y))) \{
+      if (\_\_y == \_M\_header || \_\_x != 0 ||
+          \_M\_key\_compare(\_KeyOfValue()(\_\_v), \_S\_key(\_\_y))) \{
       // 新节点应该为左孩子
-        __z = _M_create_node(__v);
-        _S_left(__y) = __z;               // also makes _M_leftmost() = __z
-                                          //    when __y == _M_header
-        if (__y == _M_header) \{
-          _M_root() = __z;
-          _M_rightmost() = __z;
+        \_\_z = \_M\_create\_node(\_\_v);
+        \_S\_left(\_\_y) = \_\_z;               // also makes \_M\_leftmost() = \_\_z
+                                          //    when \_\_y == \_M\_header
+        if (\_\_y == \_M\_header) \{
+          \_M\_root() = \_\_z;
+          \_M\_rightmost() = \_\_z;
         \}
-        else if (__y == _M_leftmost())
-          _M_leftmost() = __z;   // maintain _M_leftmost() pointing to min node
+        else if (\_\_y == \_M\_leftmost())
+          \_M\_leftmost() = \_\_z;   // maintain \_M\_leftmost() pointing to min node
       \}
       // 新节点应该为右孩子
       else \{
-        __z = _M_create_node(__v);
-        _S_right(__y) = __z;
-        if (__y == _M_rightmost())
-          _M_rightmost() = __z;  // maintain _M_rightmost() pointing to max node
+        \_\_z = \_M\_create\_node(\_\_v);
+        \_S\_right(\_\_y) = \_\_z;
+        if (\_\_y == \_M\_rightmost())
+          \_M\_rightmost() = \_\_z;  // maintain \_M\_rightmost() pointing to max node
       \}
-      _S_parent(__z) = __y;
-      _S_left(__z) = 0;
-      _S_right(__z) = 0;
+      \_S\_parent(\_\_z) = \_\_y;
+      \_S\_left(\_\_z) = 0;
+      \_S\_right(\_\_z) = 0;
     
       // 重新调整
-      _Rb_tree_rebalance(__z, _M_header->_M_parent);
+      \_Rb\_tree\_rebalance(\_\_z, \_M\_header->\_M\_parent);
     
       // 更新红黑树节点数
-      ++_M_node_count;
+      ++\_M\_node\_count;
     
       // 返回迭代器类型
-      return iterator(__z);
+      return iterator(\_\_z);
     \}
     
-    // 插入新节点后, 可能会破坏红黑树性质, _Rb_tree_rebalance() 负责维持性质.
+    // 插入新节点后, 可能会破坏红黑树性质, \_Rb\_tree\_rebalance() 负责维持性质.
     // 其中:
-    // __x 新插入的节点
-    // __root 根节点
+    // \_\_x 新插入的节点
+    // \_\_root 根节点
     // 策略概述: 红黑树插入重新调整的策略已经在上篇中讲述,
     // 可以结合上篇文章和这里的代码注释,
     // 理解红黑树的插入算法.
     inline void
-    _Rb_tree_rebalance(_Rb_tree_node_base* __x, _Rb_tree_node_base*& __root)
+    \_Rb\_tree\_rebalance(\_Rb\_tree\_node\_base* \_\_x, \_Rb\_tree\_node\_base*& \_\_root)
     \{
       // 将新插入的节点染成红色
-      __x->_M_color = _S_rb_tree_red;
+      \_\_x->\_M\_color = \_S\_rb\_tree\_red;
     
-      while (__x != __root && __x->_M_parent->_M_color == _S_rb_tree_red) \{
-        // __x 的父节点也是红色的情况. 提示: 如果是黑色节点, 不会破坏红黑树性质.
+      while (\_\_x != \_\_root && \_\_x->\_M\_parent->\_M\_color == \_S\_rb\_tree\_red) \{
+        // \_\_x 的父节点也是红色的情况. 提示: 如果是黑色节点, 不会破坏红黑树性质.
     
-        if (__x->_M_parent == __x->_M_parent->_M_parent->_M_left) \{
+        if (\_\_x->\_M\_parent == \_\_x->\_M\_parent->\_M\_parent->\_M\_left) \{
           // 叔父节点
-          _Rb_tree_node_base* __y = __x->_M_parent->_M_parent->_M_right;
+          \_Rb\_tree\_node\_base* \_\_y = \_\_x->\_M\_parent->\_M\_parent->\_M\_right;
     
-          if (__y && __y->_M_color == _S_rb_tree_red) \{
+          if (\_\_y && \_\_y->\_M\_color == \_S\_rb\_tree\_red) \{
             // 第 1 种情况, N,P,U 都红(G 肯定黑).
             // 策略: G->红, N,P->黑. 此时, G 红, 如果 G 的父亲也是红, 性质又被破坏了,
             // HACK: 可以将 GPUN 看成一个新的红色 N 节点, 如此递归调整下去;
             // 特俗的, 如果碰巧将根节点染成了红色, 可以在算法的最后强制 root->红.
-            __x->_M_parent->_M_color = _S_rb_tree_black;
-            __y->_M_color = _S_rb_tree_black;
-            __x->_M_parent->_M_parent->_M_color = _S_rb_tree_red;
-            __x = __x->_M_parent->_M_parent;
+            \_\_x->\_M\_parent->\_M\_color = \_S\_rb\_tree\_black;
+            \_\_y->\_M\_color = \_S\_rb\_tree\_black;
+            \_\_x->\_M\_parent->\_M\_parent->\_M\_color = \_S\_rb\_tree\_red;
+            \_\_x = \_\_x->\_M\_parent->\_M\_parent;
           \}
           else \{
     
-            if (__x == __x->_M_parent->_M_right) \{
+            if (\_\_x == \_\_x->\_M\_parent->\_M\_right) \{
             // 第 2 种情况, P 为红, N 为 P 右孩子, U 为黑或缺少.
             // 策略: 旋转变换, 从而进入下一种情况:
-              __x = __x->_M_parent;
-              _Rb_tree_rotate_left(__x, __root);
+              \_\_x = \_\_x->\_M\_parent;
+              \_Rb\_tree\_rotate\_left(\_\_x, \_\_root);
             \}
             // 第 3 种情况, 可能由第二种变化而来, 但不是一定: P 为红, N 为红.
             // 策略: 旋转, 交换 P,G 颜色, 调整后, 因为 P 为黑色, 所以不怕
             // P 的父节点是红色的情况. over
-            __x->_M_parent->_M_color = _S_rb_tree_black;
-            __x->_M_parent->_M_parent->_M_color = _S_rb_tree_red;
-            _Rb_tree_rotate_right(__x->_M_parent->_M_parent, __root);
+            \_\_x->\_M\_parent->\_M\_color = \_S\_rb\_tree\_black;
+            \_\_x->\_M\_parent->\_M\_parent->\_M\_color = \_S\_rb\_tree\_red;
+            \_Rb\_tree\_rotate\_right(\_\_x->\_M\_parent->\_M\_parent, \_\_root);
           \}
         \}
         else \{ // 下面的代码是镜像得出的, 脑补吧.
-          _Rb_tree_node_base* __y = __x->_M_parent->_M_parent->_M_left;
-          if (__y && __y->_M_color == _S_rb_tree_red) \{
-            __x->_M_parent->_M_color = _S_rb_tree_black;
-            __y->_M_color = _S_rb_tree_black;
-            __x->_M_parent->_M_parent->_M_color = _S_rb_tree_red;
-            __x = __x->_M_parent->_M_parent;
+          \_Rb\_tree\_node\_base* \_\_y = \_\_x->\_M\_parent->\_M\_parent->\_M\_left;
+          if (\_\_y && \_\_y->\_M\_color == \_S\_rb\_tree\_red) \{
+            \_\_x->\_M\_parent->\_M\_color = \_S\_rb\_tree\_black;
+            \_\_y->\_M\_color = \_S\_rb\_tree\_black;
+            \_\_x->\_M\_parent->\_M\_parent->\_M\_color = \_S\_rb\_tree\_red;
+            \_\_x = \_\_x->\_M\_parent->\_M\_parent;
           \}
           else \{
-            if (__x == __x->_M_parent->_M_left) \{
-              __x = __x->_M_parent;
-              _Rb_tree_rotate_right(__x, __root);
+            if (\_\_x == \_\_x->\_M\_parent->\_M\_left) \{
+              \_\_x = \_\_x->\_M\_parent;
+              \_Rb\_tree\_rotate\_right(\_\_x, \_\_root);
             \}
-            __x->_M_parent->_M_color = _S_rb_tree_black;
-            __x->_M_parent->_M_parent->_M_color = _S_rb_tree_red;
-            _Rb_tree_rotate_left(__x->_M_parent->_M_parent, __root);
+            \_\_x->\_M\_parent->\_M\_color = \_S\_rb\_tree\_black;
+            \_\_x->\_M\_parent->\_M\_parent->\_M\_color = \_S\_rb\_tree\_red;
+            \_Rb\_tree\_rotate\_left(\_\_x->\_M\_parent->\_M\_parent, \_\_root);
           \}
         \}
       \}
-      __root->_M_color = _S_rb_tree_black;
+      \_\_root->\_M\_color = \_S\_rb\_tree\_black;
     \}
     
-    // 删除算法, 直接调用底层的删除实现 _Rb_tree_rebalance_for_erase().
-    template <class _Key, class _Value, class _KeyOfValue,
-              class _Compare, class _Alloc>
-    inline void _Rb_tree<_Key,_Value,_KeyOfValue,_Compare,_Alloc>
-      ::erase(iterator __position)
+    // 删除算法, 直接调用底层的删除实现 \_Rb\_tree\_rebalance\_for\_erase().
+    template <class \_Key, class \_Value, class \_KeyOfValue,
+              class \_Compare, class \_Alloc>
+    inline void \_Rb\_tree<\_Key,\_Value,\_KeyOfValue,\_Compare,\_Alloc>
+      ::erase(iterator \_\_position)
     \{
-      _Link_type __y =
-        (_Link_type) _Rb_tree_rebalance_for_erase(__position._M_node,
-                                                  _M_header->_M_parent,
-                                                  _M_header->_M_left,
-                                                  _M_header->_M_right);
-      destroy_node(__y);
-      --_M_node_count;
+      \_Link\_type \_\_y =
+        (\_Link\_type) \_Rb\_tree\_rebalance\_for\_erase(\_\_position.\_M\_node,
+                                                  \_M\_header->\_M\_parent,
+                                                  \_M\_header->\_M\_left,
+                                                  \_M\_header->\_M\_right);
+      destroy\_node(\_\_y);
+      --\_M\_node\_count;
     \}
     
     // 删除节点底层实现, 删除可能会破坏红黑树性质,
-    // _Rb_tree_rebalance()
+    // \_Rb\_tree\_rebalance()
     // 负责维持性质. 其中:
-    // __z 需要删除的节点
-    // __root 根节点
-    // __leftmost 红黑树内部数据, 即最左子树
-    // __rightmost 红黑树内部数据, 即最右子树
-    // 策略概述: _Rb_tree_rebalance_for_erase() 会根据
+    // \_\_z 需要删除的节点
+    // \_\_root 根节点
+    // \_\_leftmost 红黑树内部数据, 即最左子树
+    // \_\_rightmost 红黑树内部数据, 即最右子树
+    // 策略概述: \_Rb\_tree\_rebalance\_for\_erase() 会根据
     // 删除节点的位置在红黑树中找到顶替删除节点的节点,
     // 即无非是删除节点左子树的最大节点或右子树中的最小节点,
     // 此处用的是有一种策略. 接着, 会调整红黑树以维持性质.
     // 调整的算法已经在上篇文章中详述, 可以根据上篇文章的描述
     // 和此篇的代码注释, 加深对红黑树删除算法的理解.
-    inline _Rb_tree_node_base*
-    _Rb_tree_rebalance_for_erase(_Rb_tree_node_base* __z,
-                                 _Rb_tree_node_base*& __root,
-                                 _Rb_tree_node_base*& __leftmost,
-                                 _Rb_tree_node_base*& __rightmost)
+    inline \_Rb\_tree\_node\_base*
+    \_Rb\_tree\_rebalance\_for\_erase(\_Rb\_tree\_node\_base* \_\_z,
+                                 \_Rb\_tree\_node\_base*& \_\_root,
+                                 \_Rb\_tree\_node\_base*& \_\_leftmost,
+                                 \_Rb\_tree\_node\_base*& \_\_rightmost)
     \{
-      // __z 是要删除的节点
+      // \_\_z 是要删除的节点
     
-      // __y 最终会指向要删除的节点
-      _Rb_tree_node_base* __y = __z;
+      // \_\_y 最终会指向要删除的节点
+      \_Rb\_tree\_node\_base* \_\_y = \_\_z;
       // N 节点
-      _Rb_tree_node_base* __x = 0;
+      \_Rb\_tree\_node\_base* \_\_x = 0;
       // 记录 N 节点的父节点
-      _Rb_tree_node_base* __x_parent = 0;
+      \_Rb\_tree\_node\_base* \_\_x\_parent = 0;
     
       // 只有一个孩子或者没有孩子的情况
-      if (__y->_M_left == 0)     // __z has at most one non-null child. y == z.
-        __x = __y->_M_right;     // __x might be null.
+      if (\_\_y->\_M\_left == 0)     // \_\_z has at most one non-null child. y == z.
+        \_\_x = \_\_y->\_M\_right;     // \_\_x might be null.
       else
-        if (__y->_M_right == 0)  // __z has exactly one non-null child. y == z.
-          __x = __y->_M_left;    // __x is not null.
+        if (\_\_y->\_M\_right == 0)  // \_\_z has exactly one non-null child. y == z.
+          \_\_x = \_\_y->\_M\_left;    // \_\_x is not null.
     
         // 有两个非空孩子
-        else \{                   // __z has two non-null children.  Set __y to
-          __y = __y->_M_right;   //   __z's successor.  __x might be null.
+        else \{                   // \_\_z has two non-null children.  Set \_\_y to
+          \_\_y = \_\_y->\_M\_right;   //   \_\_z's successor.  \_\_x might be null.
     
-          // __y 取右孩子中的最小节点, __x 记录他的右孩子(可能存在右孩子)
-          while (__y->_M_left != 0)
-            __y = __y->_M_left;
-          __x = __y->_M_right;
+          // \_\_y 取右孩子中的最小节点, \_\_x 记录他的右孩子(可能存在右孩子)
+          while (\_\_y->\_M\_left != 0)
+            \_\_y = \_\_y->\_M\_left;
+          \_\_x = \_\_y->\_M\_right;
         \}
     
-      // __y != __z 说明有两个非空孩子的情况,
+      // \_\_y != \_\_z 说明有两个非空孩子的情况,
       // 此时的删除策略就和文中提到的普通二叉搜索树删除策略一样:
-      // __y 记录了 __z 右子树中最小的节点
-      // __x 记录了 __y 的右孩子
-      // 用 __y 顶替 __z 的位置, __x 顶替 __y 的位置, 最后用 __y 指向 __z,
-      // 从而 __y 指向了要删除的节点
-      if (__y != __z) \{          // relink y in place of z.  y is z's successor
+      // \_\_y 记录了 \_\_z 右子树中最小的节点
+      // \_\_x 记录了 \_\_y 的右孩子
+      // 用 \_\_y 顶替 \_\_z 的位置, \_\_x 顶替 \_\_y 的位置, 最后用 \_\_y 指向 \_\_z,
+      // 从而 \_\_y 指向了要删除的节点
+      if (\_\_y != \_\_z) \{          // relink y in place of z.  y is z's successor
     
-        // 将 __z 的记录转移至 __y 节点
-        __z->_M_left->_M_parent = __y;
-        __y->_M_left = __z->_M_left;
+        // 将 \_\_z 的记录转移至 \_\_y 节点
+        \_\_z->\_M\_left->\_M\_parent = \_\_y;
+        \_\_y->\_M\_left = \_\_z->\_M\_left;
     
-        // 如果 __y 不是 __z 的右孩子, __z->_M_right 有左孩子
-        if (__y != __z->_M_right) \{
+        // 如果 \_\_y 不是 \_\_z 的右孩子, \_\_z->\_M\_right 有左孩子
+        if (\_\_y != \_\_z->\_M\_right) \{
     
-          __x_parent = __y->_M_parent;
+          \_\_x\_parent = \_\_y->\_M\_parent;
     
-          // 如果 __y 有右孩子 __x, 必须有那个 __x 替换 __y 的位置
-          if (__x)
-            // 替换 __y 的位置
-            __x->_M_parent = __y->_M_parent;
+          // 如果 \_\_y 有右孩子 \_\_x, 必须有那个 \_\_x 替换 \_\_y 的位置
+          if (\_\_x)
+            // 替换 \_\_y 的位置
+            \_\_x->\_M\_parent = \_\_y->\_M\_parent;
     
-          __y->_M_parent->_M_left = __x;      // __y must be a child of _M_left
-          __y->_M_right = __z->_M_right;
-          __z->_M_right->_M_parent = __y;
+          \_\_y->\_M\_parent->\_M\_left = \_\_x;      // \_\_y must be a child of \_M\_left
+          \_\_y->\_M\_right = \_\_z->\_M\_right;
+          \_\_z->\_M\_right->\_M\_parent = \_\_y;
         \}
-        // __y == __z->_M_right
+        // \_\_y == \_\_z->\_M\_right
         else
-          __x_parent = __y;
+          \_\_x\_parent = \_\_y;
     
-        // 如果 __z 是根节点
-        if (__root == __z)
-          __root = __y;
+        // 如果 \_\_z 是根节点
+        if (\_\_root == \_\_z)
+          \_\_root = \_\_y;
     
-        // __z 是左孩子
-        else if (__z->_M_parent->_M_left == __z)
-          __z->_M_parent->_M_left = __y;
+        // \_\_z 是左孩子
+        else if (\_\_z->\_M\_parent->\_M\_left == \_\_z)
+          \_\_z->\_M\_parent->\_M\_left = \_\_y;
     
-        // __z 是右孩子
+        // \_\_z 是右孩子
         else
-          __z->_M_parent->_M_right = __y;
+          \_\_z->\_M\_parent->\_M\_right = \_\_y;
     
-        __y->_M_parent = __z->_M_parent;
-        // 交换需要删除节点 __z 和 替换节点 __y 的颜色
-        __STD::swap(__y->_M_color, __z->_M_color);
-        __y = __z;
-        // __y now points to node to be actually deleted
+        \_\_y->\_M\_parent = \_\_z->\_M\_parent;
+        // 交换需要删除节点 \_\_z 和 替换节点 \_\_y 的颜色
+        \_\_STD::swap(\_\_y->\_M\_color, \_\_z->\_M\_color);
+        \_\_y = \_\_z;
+        // \_\_y now points to node to be actually deleted
       \}
-      // __y == __z 说明至多一个孩子
-      else \{                        // __y == __z
-        __x_parent = __y->_M_parent;
-        if (__x) __x->_M_parent = __y->_M_parent;
+      // \_\_y == \_\_z 说明至多一个孩子
+      else \{                        // \_\_y == \_\_z
+        \_\_x\_parent = \_\_y->\_M\_parent;
+        if (\_\_x) \_\_x->\_M\_parent = \_\_y->\_M\_parent;
     
-        // 将 __z 的父亲指向 __x
-        if (__root == __z)
-          __root = __x;
+        // 将 \_\_z 的父亲指向 \_\_x
+        if (\_\_root == \_\_z)
+          \_\_root = \_\_x;
         else
-          if (__z->_M_parent->_M_left == __z)
-            __z->_M_parent->_M_left = __x;
+          if (\_\_z->\_M\_parent->\_M\_left == \_\_z)
+            \_\_z->\_M\_parent->\_M\_left = \_\_x;
           else
-            __z->_M_parent->_M_right = __x;
+            \_\_z->\_M\_parent->\_M\_right = \_\_x;
     
-        // __leftmost 和 __rightmost 是红黑树的内部数据, 因为 __z 可能是
-        // __leftmost 或者 __rightmost, 因此需要更新.
-        if (__leftmost == __z)
-          if (__z->_M_right == 0)        // __z->_M_left must be null also
-            // __z 左右孩子都为空, 没有孩子
-            __leftmost = __z->_M_parent;
-        // makes __leftmost == _M_header if __z == __root
+        // \_\_leftmost 和 \_\_rightmost 是红黑树的内部数据, 因为 \_\_z 可能是
+        // \_\_leftmost 或者 \_\_rightmost, 因此需要更新.
+        if (\_\_leftmost == \_\_z)
+          if (\_\_z->\_M\_right == 0)        // \_\_z->\_M\_left must be null also
+            // \_\_z 左右孩子都为空, 没有孩子
+            \_\_leftmost = \_\_z->\_M\_parent;
+        // makes \_\_leftmost == \_M\_header if \_\_z == \_\_root
           else
-            __leftmost = _Rb_tree_node_base::_S_minimum(__x);
+            \_\_leftmost = \_Rb\_tree\_node\_base::\_S\_minimum(\_\_x);
     
-        if (__rightmost == __z)
-          if (__z->_M_left == 0)         // __z->_M_right must be null also
-            __rightmost = __z->_M_parent;
-        // makes __rightmost == _M_header if __z == __root
-          else                      // __x == __z->_M_left
-            __rightmost = _Rb_tree_node_base::_S_maximum(__x);
+        if (\_\_rightmost == \_\_z)
+          if (\_\_z->\_M\_left == 0)         // \_\_z->\_M\_right must be null also
+            \_\_rightmost = \_\_z->\_M\_parent;
+        // makes \_\_rightmost == \_M\_header if \_\_z == \_\_root
+          else                      // \_\_x == \_\_z->\_M\_left
+            \_\_rightmost = \_Rb\_tree\_node\_base::\_S\_maximum(\_\_x);
     
-        // __y 同样已经指向要删除的节点
+        // \_\_y 同样已经指向要删除的节点
       \}
     
-      // __y 指向要删除的节点
-      // __x 即为 N 节点
-      // __x_parent 指向 __x 的父亲, 即 N 节点的父亲
-      if (__y->_M_color != _S_rb_tree_red) \{
-        // __y 的颜色为黑色的时候, 会破坏红黑树性质
+      // \_\_y 指向要删除的节点
+      // \_\_x 即为 N 节点
+      // \_\_x\_parent 指向 \_\_x 的父亲, 即 N 节点的父亲
+      if (\_\_y->\_M\_color != \_S\_rb\_tree\_red) \{
+        // \_\_y 的颜色为黑色的时候, 会破坏红黑树性质
     
-        while (__x != __root && (__x == 0 || __x->_M_color == _S_rb_tree_black))
-          // __x 不为红色, 即为空或者为黑. 提示: 如果 __x 是红色, 直接将 __x 替换成黑色
+        while (\_\_x != \_\_root && (\_\_x == 0 || \_\_x->\_M\_color == \_S\_rb\_tree\_black))
+          // \_\_x 不为红色, 即为空或者为黑. 提示: 如果 \_\_x 是红色, 直接将 \_\_x 替换成黑色
     
-          if (__x == __x_parent->_M_left) \{ // 如果 __x 是左孩子
+          if (\_\_x == \_\_x\_parent->\_M\_left) \{ // 如果 \_\_x 是左孩子
     
-            _Rb_tree_node_base* __w = __x_parent->_M_right; // 兄弟节点
+            \_Rb\_tree\_node\_base* \_\_w = \_\_x\_parent->\_M\_right; // 兄弟节点
     
-            if (__w->_M_color == _S_rb_tree_red) \{
+            if (\_\_w->\_M\_color == \_S\_rb\_tree\_red) \{
               //第 2 情况, S 红, 根据红黑树性质P,SL,SR 一定黑.
               // 策略: 旋转, 交换 P,S 颜色.
     
-              __w->_M_color = _S_rb_tree_black;
-              __x_parent->_M_color = _S_rb_tree_red; // 交换颜色
-              _Rb_tree_rotate_left(__x_parent, __root); // 旋转
-              __w = __x_parent->_M_right; // 调整关系
+              \_\_w->\_M\_color = \_S\_rb\_tree\_black;
+              \_\_x\_parent->\_M\_color = \_S\_rb\_tree\_red; // 交换颜色
+              \_Rb\_tree\_rotate\_left(\_\_x\_parent, \_\_root); // 旋转
+              \_\_w = \_\_x\_parent->\_M\_right; // 调整关系
             \}
     
-            if ((__w->_M_left == 0 ||
-                 __w->_M_left->_M_color == _S_rb_tree_black) &&
-                (__w->_M_right == 0 ||
-                 __w->_M_right->_M_color == _S_rb_tree_black)) \{
+            if ((\_\_w->\_M\_left == 0 ||
+                 \_\_w->\_M\_left->\_M\_color == \_S\_rb\_tree\_black) &&
+                (\_\_w->\_M\_right == 0 ||
+                 \_\_w->\_M\_right->\_M\_color == \_S\_rb\_tree\_black)) \{
               // 提示: 这是 第 1 情况和第 2.1 情况的合并, 因为处理的过程是一样的.
               // 但他们的情况还是要分门别类的. 已经在文章中详细支出,
               // 似乎大多数的博文中没有提到这一点.
@@ -438,72 +438,72 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
               // HACKS: 这就是合并情况的好处, 因为就算此时父节点是红色,
               // 而且也将兄弟节点颜色改为红色, 你也可以将 PS,PN 看成一个红色的 N 节点,
               // 这样在下一个循环当中, 这个 N 节点也会变成黑色. 因为此函数最后有一句话:
-              // if (__x) __x->_M_color = _S_rb_tree_black;
+              // if (\_\_x) \_\_x->\_M\_color = \_S\_rb\_tree\_black;
               // 合并情况, 节省代码量
     
               // 当然是可以分开写的
     
               // 兄弟节点染成红色
-              __w->_M_color = _S_rb_tree_red;
+              \_\_w->\_M\_color = \_S\_rb\_tree\_red;
     
               // 调整关系
-              __x = __x_parent;
-              __x_parent = __x_parent->_M_parent;
+              \_\_x = \_\_x\_parent;
+              \_\_x\_parent = \_\_x\_parent->\_M\_parent;
             \} else \{
-              if (__w->_M_right == 0 ||
-                  __w->_M_right->_M_color == _S_rb_tree_black) \{
+              if (\_\_w->\_M\_right == 0 ||
+                  \_\_w->\_M\_right->\_M\_color == \_S\_rb\_tree\_black) \{
                 // 第 2.2.1 情况, S,SR 黑, SL 红.
                 // 策略: 旋转, 变换 SL,S 颜色.
     
-                if (__w->_M_left) __w->_M_left->_M_color = _S_rb_tree_black;
-                __w->_M_color = _S_rb_tree_red;
-                _Rb_tree_rotate_right(__w, __root);
+                if (\_\_w->\_M\_left) \_\_w->\_M\_left->\_M\_color = \_S\_rb\_tree\_black;
+                \_\_w->\_M\_color = \_S\_rb\_tree\_red;
+                \_Rb\_tree\_rotate\_right(\_\_w, \_\_root);
     
                 // 调整关系
-                __w = __x_parent->_M_right;
+                \_\_w = \_\_x\_parent->\_M\_right;
               \}
     
               // 第 2.2.2 情况, S 黑, SR 红.
               // 策略: 旋转, 交换 S,P 颜色, SR->黑色, 重新获得平衡.
-              __w->_M_color = __x_parent->_M_color;
-              __x_parent->_M_color = _S_rb_tree_black;
-              if (__w->_M_right) __w->_M_right->_M_color = _S_rb_tree_black;
-              _Rb_tree_rotate_left(__x_parent, __root);
+              \_\_w->\_M\_color = \_\_x\_parent->\_M\_color;
+              \_\_x\_parent->\_M\_color = \_S\_rb\_tree\_black;
+              if (\_\_w->\_M\_right) \_\_w->\_M\_right->\_M\_color = \_S\_rb\_tree\_black;
+              \_Rb\_tree\_rotate\_left(\_\_x\_parent, \_\_root);
               break;
             \}                        // 下面的代码是镜像得出的, 脑补吧.
-          \} else \{                  // same as above, with _M_right <-> _M_left.
-            _Rb_tree_node_base* __w = __x_parent->_M_left;
-            if (__w->_M_color == _S_rb_tree_red) \{
-              __w->_M_color = _S_rb_tree_black;
-              __x_parent->_M_color = _S_rb_tree_red;
-              _Rb_tree_rotate_right(__x_parent, __root);
-              __w = __x_parent->_M_left;
+          \} else \{                  // same as above, with \_M\_right <-> \_M\_left.
+            \_Rb\_tree\_node\_base* \_\_w = \_\_x\_parent->\_M\_left;
+            if (\_\_w->\_M\_color == \_S\_rb\_tree\_red) \{
+              \_\_w->\_M\_color = \_S\_rb\_tree\_black;
+              \_\_x\_parent->\_M\_color = \_S\_rb\_tree\_red;
+              \_Rb\_tree\_rotate\_right(\_\_x\_parent, \_\_root);
+              \_\_w = \_\_x\_parent->\_M\_left;
             \}
-            if ((__w->_M_right == 0 ||
-                 __w->_M_right->_M_color == _S_rb_tree_black) &&
-                (__w->_M_left == 0 ||
-                 __w->_M_left->_M_color == _S_rb_tree_black)) \{
-              __w->_M_color = _S_rb_tree_red;
-              __x = __x_parent;
-              __x_parent = __x_parent->_M_parent;
+            if ((\_\_w->\_M\_right == 0 ||
+                 \_\_w->\_M\_right->\_M\_color == \_S\_rb\_tree\_black) &&
+                (\_\_w->\_M\_left == 0 ||
+                 \_\_w->\_M\_left->\_M\_color == \_S\_rb\_tree\_black)) \{
+              \_\_w->\_M\_color = \_S\_rb\_tree\_red;
+              \_\_x = \_\_x\_parent;
+              \_\_x\_parent = \_\_x\_parent->\_M\_parent;
             \} else \{
-              if (__w->_M_left == 0 ||
-                  __w->_M_left->_M_color == _S_rb_tree_black) \{
-                if (__w->_M_right) __w->_M_right->_M_color = _S_rb_tree_black;
-                __w->_M_color = _S_rb_tree_red;
-                _Rb_tree_rotate_left(__w, __root);
-                __w = __x_parent->_M_left;
+              if (\_\_w->\_M\_left == 0 ||
+                  \_\_w->\_M\_left->\_M\_color == \_S\_rb\_tree\_black) \{
+                if (\_\_w->\_M\_right) \_\_w->\_M\_right->\_M\_color = \_S\_rb\_tree\_black;
+                \_\_w->\_M\_color = \_S\_rb\_tree\_red;
+                \_Rb\_tree\_rotate\_left(\_\_w, \_\_root);
+                \_\_w = \_\_x\_parent->\_M\_left;
               \}
-              __w->_M_color = __x_parent->_M_color;
-              __x_parent->_M_color = _S_rb_tree_black;
-              if (__w->_M_left) __w->_M_left->_M_color = _S_rb_tree_black;
-              _Rb_tree_rotate_right(__x_parent, __root);
+              \_\_w->\_M\_color = \_\_x\_parent->\_M\_color;
+              \_\_x\_parent->\_M\_color = \_S\_rb\_tree\_black;
+              if (\_\_w->\_M\_left) \_\_w->\_M\_left->\_M\_color = \_S\_rb\_tree\_black;
+              \_Rb\_tree\_rotate\_right(\_\_x\_parent, \_\_root);
               break;
             \}
           \}
-        if (__x) __x->_M_color = _S_rb_tree_black;
+        if (\_\_x) \_\_x->\_M\_color = \_S\_rb\_tree\_black;
       \}
-      return __y;
+      return \_\_y;
     \}
 
 

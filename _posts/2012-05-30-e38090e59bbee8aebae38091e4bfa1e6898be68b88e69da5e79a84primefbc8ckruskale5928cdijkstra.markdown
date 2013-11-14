@@ -48,7 +48,7 @@ prim的伪代码：
     	dist[i] = tab[0][i]
     visit[0] = true
     for i=[1,n)
-    	min = MAX_VALUE
+    	min = MAX\_VALUE
     	for j=[0,n)
     		if !visit[j] && min>dist[j]
     			min = dist[j]
@@ -249,7 +249,7 @@ kruskal的伪代码：
     	parent[i] = i
     //	根据权值升序排序
     sort
-    while set_count>1
+    while set\_count>1
     	if find(u)!=find(v)
     		minprice+=w(u,v)
     		makeset(u,v)
@@ -327,7 +327,7 @@ dijkstra的过程
     
     for i=[1,n)
     	//	寻找最短路径(s,t)，同时把t加入S集合
-    	min = MAX_VALUE
+    	min = MAX\_VALUE
     	for j=[0,n)
     		if !visit[j] && dist[j]<min
     			min = dist[j]

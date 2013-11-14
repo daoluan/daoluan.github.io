@@ -13,15 +13,15 @@ tags:
 - 《STL源码剖析》
 ---
 
-一句话set：容器set底层是由RB_TREE实现的，它和（deque--->stack、queue）模式一样；色set的元素不允许重复；set中键值就是实值，实值就是键值，而键值是不可以更改的（但MS STL不这样做），所以set不允许对其中的元素进行更新；
+一句话set：容器set底层是由RB\_TREE实现的，它和（deque--->stack、queue）模式一样；色set的元素不允许重复；set中键值就是实值，实值就是键值，而键值是不可以更改的（但MS STL不这样做），所以set不允许对其中的元素进行更新；
 
-一句话map：容器map底层也由RB_TREE实现，它和（deque--->stack、queue）模式一样；map中一个键值对应一个实值，不允许键值上的重复，内部是按键值来进行排序存储的，其中键值不允许被更改。
+一句话map：容器map底层也由RB\_TREE实现，它和（deque--->stack、queue）模式一样；map中一个键值对应一个实值，不允许键值上的重复，内部是按键值来进行排序存储的，其中键值不允许被更改。
 
-[caption id="" align="aligncenter" width="450"][![](http://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Red-black_tree_example.svg/450px-Red-black_tree_example.svg.png)](http://zh.wikipedia.org/wiki/%E7%BA%A2%E9%BB%91%E6%A0%91) 红黑树[/caption]
+[caption id="" align="aligncenter" width="450"][![](http://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Red-black\_tree\_example.svg/450px-Red-black\_tree\_example.svg.png)](http://zh.wikipedia.org/wiki/%E7%BA%A2%E9%BB%91%E6%A0%91) 红黑树[/caption]
 
 <!-- more -->
 
-网络上有关于红黑树详细的解说，特别是复杂的红黑树元素操作算法，推荐@[JULY](http://weibo.com/julyweibo?s=6cm7D0) 的文章：[http://blog.csdn.net/v_JULY_v/article/details/6105630](http://blog.csdn.net/v_JULY_v/article/details/6105630)。本文主要介绍STL set/map的用法和笔者对其在实现上技巧实现技法的摘录，欢迎斧正。
+网络上有关于红黑树详细的解说，特别是复杂的红黑树元素操作算法，推荐@[JULY](http://weibo.com/julyweibo?s=6cm7D0) 的文章：[http://blog.csdn.net/v\_JULY\_v/article/details/6105630](http://blog.csdn.net/v\_JULY\_v/article/details/6105630)。本文主要介绍STL set/map的用法和笔者对其在实现上技巧实现技法的摘录，欢迎斧正。
 
 
 ### **AVL 树和 RB 树区别**
@@ -33,7 +33,7 @@ AVL 从概念可以知道它是高度平衡的树，所以会涉及较多的调�
 ### set和map的创建与遍历
 
 
-set和map都是由非线性空间来存储的，属于Bidrectional Iterator;测试添加元素的时候，故意添加已存在的键值，发现被拒绝，RB_TREE内部有insert_equal()和insert_unique()两个版本，set/map都调用后者。
+set和map都是由非线性空间来存储的，属于Bidrectional Iterator;测试添加元素的时候，故意添加已存在的键值，发现被拒绝，RB\_TREE内部有insert\_equal()和insert\_unique()两个版本，set/map都调用后者。
 
 set：
 
@@ -83,7 +83,7 @@ map：
 ### set和map的查找
 
 
-RB_TREE本身就是一个搜索树，加之它能时刻保持良好的平衡，所以查找效率高。set和map内部**已经实现**了find()查找。而STL <algorithm>find()效率低很多。
+RB\_TREE本身就是一个搜索树，加之它能时刻保持良好的平衡，所以查找效率高。set和map内部**已经实现**了find()查找。而STL <algorithm>find()效率低很多。
 
 
 ### 有趣的实现
@@ -95,42 +95,42 @@ RB_TREE本身就是一个搜索树，加之它能时刻保持良好的平衡，�
     /*摘自MS STL。*/
     
     		// TEMPLATE STRUCT pair
-    template<class _Ty1,
-    	class _Ty2> struct pair
+    template<class \_Ty1,
+    	class \_Ty2> struct pair
     	\{	// store a pair of values
-    	typedef pair<_Ty1, _Ty2> _Myt;
-    	typedef _Ty1 first_type;
-    	typedef _Ty2 second_type;
+    	typedef pair<\_Ty1, \_Ty2> \_Myt;
+    	typedef \_Ty1 first\_type;
+    	typedef \_Ty2 second\_type;
     
     	pair()
-    		: first(_Ty1()), second(_Ty2())
+    		: first(\_Ty1()), second(\_Ty2())
     		\{	// construct from defaults
     		\}
     	......
-    	_Ty1 first;	// the first stored value
-    	_Ty2 second;	// the second stored value
+    	\_Ty1 first;	// the first stored value
+    	\_Ty2 second;	// the second stored value
     	\};
 
 
 有趣的地方是，它不仅仅用在insert()的参数中，还应用在insert()的返回值和map的“[]”运算符重载中。
 
     
-    typedef pair<iterator, bool> _Pairib;
+    typedef pair<iterator, bool> \_Pairib;
     ......
-    _Pairib insert(const value_type& _Val);
+    \_Pairib insert(const value\_type& \_Val);
 
 
-所以在insert()过后，如果插入成功，_Pairib的iterator会指向元素插入的位置，bool被置为true；否则，iterator指向重复的元素的位置，且bool为false.所以，“[]”重载函数可以通过insert()间接实现的。但在MS STL中，它没有采用这种方法，其内部虽也通过insert()间接实现，但其采用以map<T1,T2>::iterator为返回值的insert()版本。
+所以在insert()过后，如果插入成功，\_Pairib的iterator会指向元素插入的位置，bool被置为true；否则，iterator指向重复的元素的位置，且bool为false.所以，“[]”重载函数可以通过insert()间接实现的。但在MS STL中，它没有采用这种方法，其内部虽也通过insert()间接实现，但其采用以map<T1,T2>::iterator为返回值的insert()版本。
 
     
-    mapped_type& operator[](const key_type& _Keyval)
-    	\{	// find element matching _Keyval or insert with default mapped
-    	iterator _Where = this->lower_bound(_Keyval);
-    	if (_Where == this->end()
-    		|| this->comp(_Keyval, this->_Key(_Where._Mynode())))
-    		_Where = this->insert(_Where,
-    			value_type(_Keyval, mapped_type()));
-    	return ((*_Where).second);
+    mapped\_type& operator[](const key\_type& \_Keyval)
+    	\{	// find element matching \_Keyval or insert with default mapped
+    	iterator \_Where = this->lower\_bound(\_Keyval);
+    	if (\_Where == this->end()
+    		|| this->comp(\_Keyval, this->\_Key(\_Where.\_Mynode())))
+    		\_Where = this->insert(\_Where,
+    			value\_type(\_Keyval, mapped\_type()));
+    	return ((*\_Where).second);
     	\}
 
 
@@ -174,37 +174,37 @@ RB_TREE本身就是一个搜索树，加之它能时刻保持良好的平衡，�
 
     
     /*摘自MS STL。*/
-    typedef typename _Mybase::iterator iterator;
+    typedef typename \_Mybase::iterator iterator;
 
 
 不仅如此，在set的模板声明中也可以看出端倪：
 
     
     /*摘自MS STL。*/
-    template<class _Kty,
-    	class _Pr = less<_Kty>,
-    	class _Alloc = allocator<_Kty> >
+    template<class \_Kty,
+    	class \_Pr = less<\_Kty>,
+    	class \_Alloc = allocator<\_Kty> >
     	class set
-    		: public _Tree<_Tset_traits<_Kty, _Pr, _Alloc, false> >
+    		: public \_Tree<\_Tset\_traits<\_Kty, \_Pr, \_Alloc, false> >
     	\{	// ordered red-black tree of key values, unique keys
 
 
 所以如果需要禁止用户通过迭代器修改键值，那么可以将迭代器声明为const：（笔者认为这样可行的）
 
     
-    typedef typename _Mybase::const_iterator iterator;
+    typedef typename \_Mybase::const\_iterator iterator;
 
 
 而map把关得很好，它强行将pair中的第一元素（注意，只是第一元素而已）定义为const：
 
     
     /*摘自MS STL。*/
-    template<class _Kty,
-    	class _Ty,
-    	class _Pr = less<_Kty>,
-    	class _Alloc = allocator<pair<const _Kty, _Ty> > >
+    template<class \_Kty,
+    	class \_Ty,
+    	class \_Pr = less<\_Kty>,
+    	class \_Alloc = allocator<pair<const \_Kty, \_Ty> > >
     	class map
-    		: public _Tree<_Tmap_traits<_Kty, _Ty, _Pr, _Alloc, false> >
+    		: public \_Tree<\_Tmap\_traits<\_Kty, \_Ty, \_Pr, \_Alloc, false> >
     	\{	// ordered red-black tree of \{key, mapped\} values, unique keys
     ......
 

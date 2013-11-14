@@ -15,7 +15,7 @@ tags:
 
 一句话list：list是我们在数据结构中接触过的双向循环链表，应用有[约瑟夫环](http://zh.wikipedia.org/wiki/%E7%BA%A6%E7%91%9F%E5%A4%AB%E6%96%AF%E9%97%AE%E9%A2%98)；可见其空间非连续的，但可以动态扩充，效率很高，只是不支持随机访问，必须通过迭代器找到指定的元素。总的来说，list用起来比较顺手。
 
-[caption id="attachment_1166" align="aligncenter" width="310"][![](http://daoluan.net/blog/wp-content/uploads/2012/10/list_node.jpg)](http://daoluan.net/blog/stl-list/list_node/) list_node[/caption]
+[caption id="attachment\_1166" align="aligncenter" width="310"][![](http://daoluan.net/blog/wp-content/uploads/2012/10/list\_node.jpg)](http://daoluan.net/blog/stl-list/list\_node/) list\_node[/caption]
 
 <!-- more -->
 
@@ -29,12 +29,12 @@ tags:
     ......
     list<int> il;
     
-    il.push_back(5);
-    il.push_back(98);
-    il.push_back(7);
-    il.push_back(20);
-    il.push_back(22);
-    il.push_back(17);
+    il.push\_back(5);
+    il.push\_back(98);
+    il.push\_back(7);
+    il.push\_back(20);
+    il.push\_back(22);
+    il.push\_back(17);
     
     list<int>::iterator ite;
     ite = find(il.begin(),il.end(),20);
@@ -62,12 +62,12 @@ list的遍历使用迭代器，如下：
     	unsigned int i;
     	list<int> il;
     
-    	il.push_back(5);
-    	il.push_back(98);
-    	il.push_back(7);
-    	il.push_back(20);
-    	il.push_back(22);
-    	il.push_back(17);
+    	il.push\_back(5);
+    	il.push\_back(98);
+    	il.push\_back(7);
+    	il.push\_back(20);
+    	il.push\_back(22);
+    	il.push\_back(17);
     
     	list<int>::iterator ite;
     	for(ite = il.begin(); ite != il.end(); ite++)
@@ -84,7 +84,7 @@ list在空间拓展的时候，没有经历vector式的空间倒腾，所以只�
 ### list元素操作
 
 
-list有提供pop_back,erase,clear,insert等实用的元素操作，不一一复述，给出有用的文档：[http://www.cplusplus.com/reference/stl/list/](http://www.cplusplus.com/reference/stl/list/)
+list有提供pop\_back,erase,clear,insert等实用的元素操作，不一一复述，给出有用的文档：[http://www.cplusplus.com/reference/stl/list/](http://www.cplusplus.com/reference/stl/list/)
 
 
 ### list排序
@@ -96,12 +96,12 @@ STL算法（<algorithm>）实现的sort只适用于支持随机访问的数据�
     unsigned int i;
     list<int> il;
     
-    il.push_back(5);
-    il.push_back(98);
-    il.push_back(7);
-    il.push_back(20);
-    il.push_back(22);
-    il.push_back(17);
+    il.push\_back(5);
+    il.push\_back(98);
+    il.push\_back(7);
+    il.push\_back(20);
+    il.push\_back(22);
+    il.push\_back(17);
     
     list<int>::iterator ite;
     for(ite = il.begin(); ite != il.end(); ite++)

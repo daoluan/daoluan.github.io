@@ -30,12 +30,12 @@ tags:
 Linux c中的setsockopt函数可以解决这个问题。在socket()得到套接字后，调用此函数即可：
 
     
-    int sock_reusr = 1;
+    int sock\_reusr = 1;
     setsockopt(*listenfd ,
-        SOL_SOCKET,
-        SO_REUSEADDR,
-        (char *)&sock_reuse,
-        sizeof(sock_reuse));
+        SOL\_SOCKET,
+        SO\_REUSEADDR,
+        (char *)&sock\_reuse,
+        sizeof(sock\_reuse));
 
 
 之前，没有接触这一函数，在后台开发上浪费了很多的时间。

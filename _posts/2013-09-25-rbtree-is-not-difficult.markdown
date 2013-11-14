@@ -16,7 +16,7 @@ tags:
 
 红黑树并没有想象的那么难, 初学者觉得晦涩难读可能是因为情况太多. 红黑树的情况可以通过归结, 通过合并来得到更少的情况, 如此可以加深对红黑树的理解. 网络上的大部分红黑树的讲解因为没有「合并」. 红黑树的五个性质:
 
-[![](http://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Red-black_tree_example.svg/450px-Red-black_tree_example.svg.png)](http://zh.wikipedia.org/wiki/File:Red-black_tree_example.svg)
+[![](http://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Red-black\_tree\_example.svg/450px-Red-black\_tree\_example.svg.png)](http://zh.wikipedia.org/wiki/File:Red-black\_tree\_example.svg)
 
 
 > 性质1. 节点是红色或黑色。
@@ -38,38 +38,38 @@ tags:
 摘自 sgi stl 红黑树数据结构定义:
 
     
-    typedef bool _Rb_tree_Color_type;
-    const _Rb_tree_Color_type _S_rb_tree_red = false;
-    const _Rb_tree_Color_type _S_rb_tree_black = true;
+    typedef bool \_Rb\_tree\_Color\_type;
+    const \_Rb\_tree\_Color\_type \_S\_rb\_tree\_red = false;
+    const \_Rb\_tree\_Color\_type \_S\_rb\_tree\_black = true;
     
-    struct _Rb_tree_node_base
+    struct \_Rb\_tree\_node\_base
     \{
-      typedef _Rb_tree_Color_type _Color_type;
-      typedef _Rb_tree_node_base* _Base_ptr;
+      typedef \_Rb\_tree\_Color\_type \_Color\_type;
+      typedef \_Rb\_tree\_node\_base* \_Base\_ptr;
     
-      _Color_type _M_color;
-      _Base_ptr _M_parent;
-      _Base_ptr _M_left;
-      _Base_ptr _M_right;
+      \_Color\_type \_M\_color;
+      \_Base\_ptr \_M\_parent;
+      \_Base\_ptr \_M\_left;
+      \_Base\_ptr \_M\_right;
     
-      static _Base_ptr _S_minimum(_Base_ptr __x)
+      static \_Base\_ptr \_S\_minimum(\_Base\_ptr \_\_x)
       \{
-        while (__x->_M_left != 0) __x = __x->_M_left;
-        return __x;
+        while (\_\_x->\_M\_left != 0) \_\_x = \_\_x->\_M\_left;
+        return \_\_x;
       \}
     
-      static _Base_ptr _S_maximum(_Base_ptr __x)
+      static \_Base\_ptr \_S\_maximum(\_Base\_ptr \_\_x)
       \{
-        while (__x->_M_right != 0) __x = __x->_M_right;
-        return __x;
+        while (\_\_x->\_M\_right != 0) \_\_x = \_\_x->\_M\_right;
+        return \_\_x;
       \}
     \};
     
-    template <class _Value>
-    struct _Rb_tree_node : public _Rb_tree_node_base
+    template <class \_Value>
+    struct \_Rb\_tree\_node : public \_Rb\_tree\_node\_base
     \{
-      typedef _Rb_tree_node<_Value>* _Link_type;
-      _Value _M_value_field;
+      typedef \_Rb\_tree\_node<\_Value>* \_Link\_type;
+      \_Value \_M\_value\_field;
     \};
 
 
@@ -207,9 +207,9 @@ tags:
         // 调整节点关系
         N = P
         N.parent = P.parent
-        S = P.paernt.another_child
-        SL = S.left_child
-        SR = S.right_child
+        S = P.paernt.another\_child
+        SL = S.left\_child
+        SR = S.right\_child
         continue;
     
     // 第 2 情况, S 红, 根据红黑树性质 P,SR,SL 一定黑. 旋转, 交换 P,S 颜色. 此时关注的范围缩小, 下面的情况对应下面的框图, 算法从框图重新开始.
@@ -218,9 +218,9 @@ tags:
         swap(P.color,S.color);
     
         // 调整节点关系
-        S = P.another_child
-        SL = S.left_child
-        SR = S.right_child
+        S = P.another\_child
+        SL = S.left\_child
+        SR = S.right\_child
     
     // 第 2.1 情况, S,SL,SR 都黑. 策略: P->黑. S->红, 因为通过 N 的路径多了一个黑节点, 通过 S 的黑节点个数不变, 所以维持了性质 5. over. 将看到, sgi stl map 源代码中将第 2.1 和第 1 情况合并成一种情况, 下节展开.
     if S,SL,SR.color == BLACK:
@@ -235,8 +235,8 @@ tags:
     
         // 调整节点关系
         S = SL
-        SL = S.left_child
-        SR = S.right_child
+        SL = S.left\_child
+        SR = S.right\_child
     
     // 第 2.2.2 情况, S 黑, SR 红. 策略: 旋转, 交换 S,P 颜色.
     if S.color == BLACK && SR.color == RED:

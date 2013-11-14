@@ -38,7 +38,7 @@ tags:
   * 初探libevent网络库
 
 	
-  * c++ __FILE__，__LINE__和__FUNCTION__的使用方法
+  * c++ \_\_FILE\_\_，\_\_LINE\_\_和\_\_FUNCTION\_\_的使用方法
 
 
 
@@ -49,10 +49,10 @@ tags:
 
 
 
-## 初探c++ __FILE__，__LINE__和__FUNCTION__的使用方法
+## 初探c++ \_\_FILE\_\_，\_\_LINE\_\_和\_\_FUNCTION\_\_的使用方法
 
 
-[c++ __FILE__，__LINE__和__FUNCTION__的使用方法](http://daoluan.net/blog/archives/1095) 在stackoverflow上一个有趣不错的帖子。曾经也在一年前某公司的面试题目遇到这些字眼，可见它可以是c++程序猿基本的素质。__FILE__，__LINE__，__FUNCTION__ 这三个c++内置扩展宏对程序调试非常有好处。日后会尝试着写一个比较通用的c++程序测试工具。
+[c++ \_\_FILE\_\_，\_\_LINE\_\_和\_\_FUNCTION\_\_的使用方法](http://daoluan.net/blog/archives/1095) 在stackoverflow上一个有趣不错的帖子。曾经也在一年前某公司的面试题目遇到这些字眼，可见它可以是c++程序猿基本的素质。\_\_FILE\_\_，\_\_LINE\_\_，\_\_FUNCTION\_\_ 这三个c++内置扩展宏对程序调试非常有好处。日后会尝试着写一个比较通用的c++程序测试工具。
 
 2012-09-27
 
@@ -84,7 +84,7 @@ tags:
 
 [漫谈界面和数据](http://daoluan.net/blog/archives/1029) 第二篇报告。
 
-![](http://daoluan.net/blog/wp-content/uploads/2012/09/UI_data_combine.png)
+![](http://daoluan.net/blog/wp-content/uploads/2012/09/UI\_data\_combine.png)
 
 PC前端开发当中对数据的掌控变得不那么得心了。之前就有听说过MFC很难做到界面元素和业务逻辑的分离，可是纵观下来，觉得这个项目还有令人满意的地方：
 
@@ -110,7 +110,7 @@ PC前端开发当中对数据的掌控变得不那么得心了。之前就有听
 
 
 
-[![](http://daoluan.net/blog/wp-content/uploads/2012/09/UI_data_detach.png)](http://daoluan.net/blog/archives/975/ui_data_detach)
+[![](http://daoluan.net/blog/wp-content/uploads/2012/09/UI\_data\_detach.png)](http://daoluan.net/blog/archives/975/ui\_data\_detach)
 
 
 
@@ -129,7 +129,7 @@ PC前端开发当中对数据的掌控变得不那么得心了。之前就有听
 
 项目前端已经完成60%（不含优化部分），等待其他代码的同时，接下来主要是服务器和数据库部分。下面是前端部署（乱画的）：
 
-[![](http://daoluan.net/blog/wp-content/uploads/2012/09/gtd_client.png)](http://daoluan.net/blog/archives/975/gtd_client)
+[![](http://daoluan.net/blog/wp-content/uploads/2012/09/gtd\_client.png)](http://daoluan.net/blog/archives/975/gtd\_client)
 
 2012-09-10
 

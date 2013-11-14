@@ -68,7 +68,7 @@ style.css文件里的body内的属性还有很多是可以自定义的，比如�
 
 效果图：
 
-[![image_thumb.png](http://daoluan.net/blog/wp-content/uploads/2012/07/image_thumb3.png)](http://daoluan.net/blog/wp-content/uploads/2012/07/image_thumb3.png)
+[![image\_thumb.png](http://daoluan.net/blog/wp-content/uploads/2012/07/image\_thumb3.png)](http://daoluan.net/blog/wp-content/uploads/2012/07/image\_thumb3.png)
 
 CSS支持非常灵活的样式组合，如果样式名（选择器）为非内置（body，h1等是内置的），比如自定义mystyle样式（它被定义在.css文件里）。比如，同样在桌面新建default.html和style.css两个文件，用记事本进行编辑：
 
@@ -101,7 +101,7 @@ CSS支持非常灵活的样式组合，如果样式名（选择器）为非内�
 
 效果图：
 
-[![image_thumb.png](http://daoluan.net/blog/wp-content/uploads/2012/07/image_thumb4.png)](http://daoluan.net/blog/wp-content/uploads/2012/07/image_thumb4.png)
+[![image\_thumb.png](http://daoluan.net/blog/wp-content/uploads/2012/07/image\_thumb4.png)](http://daoluan.net/blog/wp-content/uploads/2012/07/image\_thumb4.png)
 
 REF:[http://zh.html.net/tutorials/css/lesson2.php](http://zh.html.net/tutorials/css/lesson2.php)
 

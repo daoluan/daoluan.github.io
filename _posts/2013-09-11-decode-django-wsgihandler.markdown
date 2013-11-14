@@ -19,32 +19,32 @@ WSGI 有三个部分, 分别为服务器(server), 应用程序(application) 和�
 ### Django 中的应用程序
 
 
-任何的 WSGI 应用程序,  都必须是一个 start_response(status, response_headers, exc_info=None) 形式的函数或者定义了 __call__ 的类. 而 django.core.handlers 就用后一种方式实现了应用程序: WSGIHandler.  在这之前, Django 是如何指定自己的 application 的, 在一个具体的 Django 项目中, 它的方式如下:
+任何的 WSGI 应用程序,  都必须是一个 start\_response(status, response\_headers, exc\_info=None) 形式的函数或者定义了 \_\_call\_\_ 的类. 而 django.core.handlers 就用后一种方式实现了应用程序: WSGIHandler.  在这之前, Django 是如何指定自己的 application 的, 在一个具体的 Django 项目中, 它的方式如下:
 
 在 mysite.settings.py 中能找到如下设置:
 
     
     # Python dotted path to the WSGI application used by Django's runserver.
-    WSGI_APPLICATION = 'tomato.wsgi.application'
+    WSGI\_APPLICATION = 'tomato.wsgi.application'
 
 
-如你所见, WSGI_APPLICATION 就指定了应用程序. 而按图索骥下去, 找到项目中的 wsgi.py, 已经除去了所有的注释:
+如你所见, WSGI\_APPLICATION 就指定了应用程序. 而按图索骥下去, 找到项目中的 wsgi.py, 已经除去了所有的注释:
 
     
     import os
     
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "tomato.settings")
+    os.environ.setdefault("DJANGO\_SETTINGS\_MODULE", "tomato.settings")
     
-    from django.core.wsgi import get_wsgi_application
-    application = get_wsgi_application()
+    from django.core.wsgi import get\_wsgi\_application
+    application = get\_wsgi\_application()
 
 
-因此, WSGI_APPLICATION 所指定的即为 wsgi.py 中的全局变量 application. 故伎重演, 继续找下去. 在 django.core 模块中的 wsgi.py 中找到 get_wsgi_application() 函数的实现:
+因此, WSGI\_APPLICATION 所指定的即为 wsgi.py 中的全局变量 application. 故伎重演, 继续找下去. 在 django.core 模块中的 wsgi.py 中找到 get\_wsgi\_application() 函数的实现:
 
     
     from django.core.handlers.wsgi import WSGIHandler
     
-    def get_wsgi_application():
+    def get\_wsgi\_application():
         """
         The public interface to Django's WSGI support. Should return a WSGI
         callable.
@@ -54,13 +54,13 @@ WSGI 有三个部分, 分别为服务器(server), 应用程序(application) 和�
     
         """
         """
-        # 继承, 但只实现了 __call__ 方法, 方便使用
+        # 继承, 但只实现了 \_\_call\_\_ 方法, 方便使用
         class WSGIHandler(base.BaseHandler):
         """
         return WSGIHandler()
 
 
-在 get_wsgi_application() 中实例化了 WSGIHandler, 并无其他操作.
+在 get\_wsgi\_application() 中实例化了 WSGIHandler, 并无其他操作.
 
 
 ### WSGIHandler
@@ -69,79 +69,79 @@ WSGI 有三个部分, 分别为服务器(server), 应用程序(application) 和�
 紧接着在 django.core.handler 的 base.py 中找到 WSGIHandler 的实现.
 
     
-    # 继承, 但只实现了 __call__ 方法, 方便使用
+    # 继承, 但只实现了 \_\_call\_\_ 方法, 方便使用
     class WSGIHandler(base.BaseHandler):
         initLock = Lock()
     
         # 关于此, 日后展开, 可以将其视为一个代表 http 请求的类
-        request_class = WSGIRequest
+        request\_class = WSGIRequest
     
         # WSGIHandler 也可以作为函数来调用
-        def __call__(self, environ, start_response):
+        def \_\_call\_\_(self, environ, start\_response):
             # Set up middleware if needed. We couldn't do this earlier, because
             # settings weren't available.
     
-            # 这里的检测: 因为 self._request_middleware 是最后才设定的, 所以如果为空,
-            # 很可能是因为 self.load_middleware() 没有调用成功.
-            if self._request_middleware is None:
+            # 这里的检测: 因为 self.\_request\_middleware 是最后才设定的, 所以如果为空,
+            # 很可能是因为 self.load\_middleware() 没有调用成功.
+            if self.\_request\_middleware is None:
                 with self.initLock:
                     try:
                         # Check that middleware is still uninitialised.
-                        if self._request_middleware is None:
-                            因为 load_middleware() 可能没有调用, 调用一次.
-                            self.load_middleware()
+                        if self.\_request\_middleware is None:
+                            因为 load\_middleware() 可能没有调用, 调用一次.
+                            self.load\_middleware()
                     except:
                         # Unload whatever middleware we got
-                        self._request_middleware = None
+                        self.\_request\_middleware = None
                         raise
     
-            set_script_prefix(base.get_script_name(environ))
-            signls.request_started.send(sender=self.__class__) # __class__ 代表自己的类
+            set\_script\_prefix(base.get\_script\_name(environ))
+            signls.request\_started.send(sender=self.\_\_class\_\_) # \_\_class\_\_ 代表自己的类
     
             try:
-                # 实例化 request_class = WSGIRequest, 将在日后文章中展开, 可以将其视为一个代表 http 请求的类
-                request = self.request_class(environ)
+                # 实例化 request\_class = WSGIRequest, 将在日后文章中展开, 可以将其视为一个代表 http 请求的类
+                request = self.request\_class(environ)
     
             except UnicodeDecodeError:
                 logger.warning('Bad Request (UnicodeDecodeError)',
-                    exc_info=sys.exc_info(),
+                    exc\_info=sys.exc\_info(),
                     extra=\{
-                        'status_code': 400,
+                        'status\_code': 400,
                     \}
                 )
                 response = http.HttpResponseBadRequest()
             else:
-                # 调用 self.get_response(), 将会返回一个相应对象 response
+                # 调用 self.get\_response(), 将会返回一个相应对象 response
                 ############# 关键的操作, self.response() 可以获取响应数据.          
-                response = self.get_response(request)
+                response = self.get\_response(request)
     
             # 将 self 挂钩到 response 对象
-            response._handler_class = self.__class__
+            response.\_handler\_class = self.\_\_class\_\_
     
             try:
-                status_text = STATUS_CODE_TEXT[response.status_code]
+                status\_text = STATUS\_CODE\_TEXT[response.status\_code]
             except KeyError:
-                status_text = 'UNKNOWN STATUS CODE'
+                status\_text = 'UNKNOWN STATUS CODE'
     
              # 状态码
-            status = '%s %s' % (response.status_code, status_text)
+            status = '%s %s' % (response.status\_code, status\_text)
     
-            response_headers = [(str(k), str(v)) for k, v in response.items()]
+            response\_headers = [(str(k), str(v)) for k, v in response.items()]
     
             # 对于每个一个 cookie, 都在 header 中设置: Set-cookie xxx=yyy
             for c in response.cookies.values():
-                response_headers.append((str('Set-Cookie'), str(c.output(header=''))))
+                response\_headers.append((str('Set-Cookie'), str(c.output(header=''))))
     
-            # start_response() 操作已经在上节中介绍了
-            start_response(force_str(status), response_headers)
+            # start\_response() 操作已经在上节中介绍了
+            start\_response(force\_str(status), response\_headers)
     
             # 成功返回相应对象
             return response
 
 
-WSGIHandler 类只实现了 def __call__(self, environ, start_response), 使它本身能够成为 WSGI 中的应用程序, 并且实现 __call__ 能让类的行为跟函数一样, 详见 python __call__ 方法.
+WSGIHandler 类只实现了 def \_\_call\_\_(self, environ, start\_response), 使它本身能够成为 WSGI 中的应用程序, 并且实现 \_\_call\_\_ 能让类的行为跟函数一样, 详见 python \_\_call\_\_ 方法.
 
-** def __call__(self, environ, start_response) 方法中调用了 WSGIHandler.get_response() 方法以获取响应数据对象 response.** 从 WSGIHandler 的实现来看, 它并不是最为底层的: WSGIHandler 继承自 base.BaseHandler, 在 django.core.handler 的 base.py 中可以找到: class BaseHandler(object):...
+** def \_\_call\_\_(self, environ, start\_response) 方法中调用了 WSGIHandler.get\_response() 方法以获取响应数据对象 response.** 从 WSGIHandler 的实现来看, 它并不是最为底层的: WSGIHandler 继承自 base.BaseHandler, 在 django.core.handler 的 base.py 中可以找到: class BaseHandler(object):...
 
 这一节服务器部分已经结束, 接下来的便是中间件和应用程序了, 相关内容会在下节的 BaseHandler 中展开. 我已经在 github 备份了 Django 源码的注释: [Decode-Django](https://github.com/daoluan/Decode-Django), 有兴趣的童鞋 fork 吧.
 

@@ -23,7 +23,7 @@ tags:
 
 工欲善其事，必先利其器，剖析STL你需要做什么？剖析STL可能需要熟悉c++的基本的语法，了解泛型编程等。最后是[《STL源码剖析》](http://book.douban.com/subject/1110934/)。
 
-此系列的文章无意巨细分析STL内部具体实现，因为互联网上有很多大牛（@[July](http://blog.csdn.net/v_JULY_v) @[MoreWindows](http://blog.csdn.net/MoreWindows) 待补充，他们的文章链接会在对应的文章中给出）的作品，STL内的一些算法和实现都已经解释的很详细了，不再班门弄斧。相反，此系列意在为STL中的每一部件作**简要**的总结说明，并穿插其中实现的技巧**。**
+此系列的文章无意巨细分析STL内部具体实现，因为互联网上有很多大牛（@[July](http://blog.csdn.net/v\_JULY\_v) @[MoreWindows](http://blog.csdn.net/MoreWindows) 待补充，他们的文章链接会在对应的文章中给出）的作品，STL内的一些算法和实现都已经解释的很详细了，不再班门弄斧。相反，此系列意在为STL中的每一部件作**简要**的总结说明，并穿插其中实现的技巧**。**
 
 
 
@@ -55,7 +55,7 @@ tags:
   9. [私房STL算法之快速幂](http://daoluan.net/blog/?p=1265)
 
 	
-  10. [私房STL之hash_set和hash_map](http://daoluan.net/blog/?p=1271)
+  10. [私房STL之hash\_set和hash\_map](http://daoluan.net/blog/?p=1271)
 
 	
   11. [私房STL之左值和右值](http://daoluan.net/blog/?p=1285)

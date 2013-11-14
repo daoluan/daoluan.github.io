@@ -20,16 +20,16 @@ Django 内置服务器在 django.core.servers 和 django.core.handlers, 这两�
 E:\DECODE-DJANGO\DJANGO-1.5.1\DJANGO\CORE\SERVERS
 basehttp.py 重写 ServerHandler,WSGIServer,WSGIRequestHandler,定义 run() 函数
 fastcgi.py
-__init__.py
+\_\_init\_\_.py
 
 下面的代码足以说明「百分之七八十」:
 
     
-    class ServerHandler(simple_server.ServerHandler, object):
+    class ServerHandler(simple\_server.ServerHandler, object):
     ...
-    class WSGIServer(simple_server.WSGIServer, object):
+    class WSGIServer(simple\_server.WSGIServer, object):
     ...
-    class WSGIRequestHandler(simple_server.WSGIRequestHandler, object):
+    class WSGIRequestHandler(simple\_server.WSGIRequestHandler, object):
 
 
 具体内部做了一些变更:
@@ -49,39 +49,39 @@ __init__.py
 都是无关痛痒, 不详细展开了.这里定义了一个很有意思的函数 run():
 
     
-    def run(addr, port, wsgi_handler, ipv6=False, threading=False):
-        server_address = (addr, port)
+    def run(addr, port, wsgi\_handler, ipv6=False, threading=False):
+        server\_address = (addr, port)
     
         if threading:
-            httpd_cls = type(str('WSGIServer'), (socketserver.ThreadingMixIn, WSGIServer), \{\})
+            httpd\_cls = type(str('WSGIServer'), (socketserver.ThreadingMixIn, WSGIServer), \{\})
         else:
-            httpd_cls = WSGIServer
+            httpd\_cls = WSGIServer
     
-        httpd = httpd_cls(server_address, WSGIRequestHandler, ipv6=ipv6)
-        httpd.set_app(wsgi_handler)
-        httpd.serve_forever() 永久运行
+        httpd = httpd\_cls(server\_address, WSGIRequestHandler, ipv6=ipv6)
+        httpd.set\_app(wsgi\_handler)
+        httpd.serve\_forever() 永久运行
 
 
-这和上一篇 if __name__ == '__main__': 中的代码效果类似, 实例化服务器类, 让它跑起来. 在 run() 函数中可以根据喜好配置:
+这和上一篇 if \_\_name\_\_ == '\_\_main\_\_': 中的代码效果类似, 实例化服务器类, 让它跑起来. 在 run() 函数中可以根据喜好配置:
 
 add: 地址, 可传入 ip 地址, 一般是 127.0.0.1
 
 port: 端口, 自定义端口
 
-wsgi_handler: 上节提到的 application, 在 django.core.handlers 中定义
+wsgi\_handler: 上节提到的 application, 在 django.core.handlers 中定义
 
-ipv6: 如果为 true, 会将协议地址族换成是 AF_INET6
+ipv6: 如果为 true, 会将协议地址族换成是 AF\_INET6
 
 threading: 如果为 true, 服务器会被强制成 type(str('WSGIServer'), (socketserver.ThreadingMixIn, WSGIServer), \{\})(这个我漏讲了, 但功能是这样), 能处理多线程处理请求.
 
 所以, 调用这个函数可以让一个自定义服务器跑起来.
 
-wsgi_handler 参数定义了 application, 而 application 必须是一个 start_response(status, response_headers, exc_info=None) 形式的函数或者定义了 __call__ 的类. 而 django.core.handlers 就用后一种方式实现了 application.
+wsgi\_handler 参数定义了 application, 而 application 必须是一个 start\_response(status, response\_headers, exc\_info=None) 形式的函数或者定义了 \_\_call\_\_ 的类. 而 django.core.handlers 就用后一种方式实现了 application.
 
 E:\DECODE-DJANGO\DJANGO-1.5.1\DJANGO\CORE\HANDLERS
 base.py application 的基类 BaseHandler
-wsgi.py 实现 WSGIHandler 类, 定义了 __call__, 这样就名正言顺的 WSGI 中的 application 了
-__init__.py
+wsgi.py 实现 WSGIHandler 类, 定义了 \_\_call\_\_, 这样就名正言顺的 WSGI 中的 application 了
+\_\_init\_\_.py
 
 事实上, 在 WSGI 中除了 application,server 外, 还有一个 middleware, 名曰中间件. 在上一篇中故意漏了, 因为没有涉及到.最后我疏离一下上边提到的类模块等等, 方便大家找源码, 整理如下:
 
@@ -89,20 +89,20 @@ __init__.py
 > C:\PYTHON27\LIB\WSGIREF
 handlers.py 定义了 BaseHandler, SimpleHandler 类
 headers.py
-simple_server.py 定义了 ServerHandler, WSGIRequestHandler 类, demo_app(), make_server()
+simple\_server.py 定义了 ServerHandler, WSGIRequestHandler 类, demo\_app(), make\_server()
 util.py
 validate.py
-__init__.py
+\_\_init\_\_.py
 
 E:\DECODE-DJANGO\DJANGO-1.5.1\DJANGO\CORE\SERVERS
 basehttp.py 重写 ServerHandler,WSGIServer,WSGIRequestHandler,定义 run() 函数
 fastcgi.py
-__init__.py
+\_\_init\_\_.py
 
 E:\DECODE-DJANGO\DJANGO-1.5.1\DJANGO\CORE\HANDLERS
 base.py application 的基类 BaseHandler
-wsgi.py 实现 WSGIHandler 类, 定义了 __call__, 这样就名正言顺的 WSGI 中的 application 了
-__init__.py
+wsgi.py 实现 WSGIHandler 类, 定义了 \_\_call\_\_, 这样就名正言顺的 WSGI 中的 application 了
+\_\_init\_\_.py
 
 
 ps: 目录根据实际情况会不同, 看具体情况.我已经在 github 备份了 Django 源码的注释: [Decode-Django](https://github.com/daoluan/Decode-Django), 有兴趣的童鞋 fork 吧.

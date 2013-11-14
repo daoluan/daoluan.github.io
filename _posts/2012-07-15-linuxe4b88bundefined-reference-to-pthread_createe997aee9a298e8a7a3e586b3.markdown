@@ -13,7 +13,7 @@ tags:
 - Linux
 ---
 
-接触了Linux系统编程中的线程编程模块，可gcc sample.c（习惯把书上的sample代码写进sample.c文件中）出现“undefined reference to 'pthread_create'”，所有关于线程的函数都会有此错误，导致无法编译通过。
+接触了Linux系统编程中的线程编程模块，可gcc sample.c（习惯把书上的sample代码写进sample.c文件中）出现“undefined reference to 'pthread\_create'”，所有关于线程的函数都会有此错误，导致无法编译通过。
 
 问题的原因：pthread不是Linux下的默认的库，也就是在链接的时候，无法找到phread库中哥函数的入口地址，于是链接会失败。
 
@@ -25,17 +25,17 @@ tags:
     #include <stdio.h> 
     #include <pthread.h> 
     #include <unistd.h> 
-    pthread_t ntid; 
+    pthread\_t ntid; 
     void printids(const char * s) 
     \{ 
-        pid_t pid; 
-        pthread_t tid; 
+        pid\_t pid; 
+        pthread\_t tid; 
         pid = getpid(); 
-        tid = pthread_self(); 
+        tid = pthread\_self(); 
         printf("%s pid %u tid %u (0x%x)\n",s,(unsigned int)pid, 
                 (unsigned int)tid,(unsigned int)tid); 
     \} 
-    void * thr_fn(void * arg) 
+    void * thr\_fn(void * arg) 
     \{ 
         printids("new thread:"); 
         return ((void *)0); 
@@ -43,9 +43,9 @@ tags:
     int main(void) 
     \{ 
         int err; 
-        err = pthread_create(&ntid,NULL,thr_fn,NULL); 
+        err = pthread\_create(&ntid,NULL,thr\_fn,NULL); 
         if(err != 0) 
-            printf("pthread_create error \n"); 
+            printf("pthread\_create error \n"); 
         printids("main thread:"); 
         sleep(1); 
         return 0; 
@@ -54,7 +54,7 @@ tags:
 
 **root@daoluan:/code/pthreadid# gcc sample.c**
 /tmp/cc1WztL9.o: In function `main':
-sample.c:(.text+0x83): undefined reference to `pthread_create'
+sample.c:(.text+0x83): undefined reference to `pthread\_create'
 collect2: ld returned 1 exit status
 
 **root@daoluan:/code/pthreadid# gcc -lpthread sample.c**

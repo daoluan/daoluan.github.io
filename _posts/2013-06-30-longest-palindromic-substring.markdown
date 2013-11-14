@@ -23,7 +23,7 @@ categories:
     
     for i in range(0,len(str))
          for j in range(i,len(str)
-                   is_palindromic_number(i,j)//这里有个循环
+                   is\_palindromic\_number(i,j)//这里有个循环
 
 
 但算法的复杂度是 O(n^3)。

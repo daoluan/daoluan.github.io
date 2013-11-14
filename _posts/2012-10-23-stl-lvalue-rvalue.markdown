@@ -74,34 +74,34 @@ i++的操作：
     public:  
     	Node(int nAge = 0)  
     	\{  
-    		m_nAge = nAge;  
+    		m\_nAge = nAge;  
     	\}  
     
     	int GetAge()const
     	\{  
-    		return m_nAge;  
+    		return m\_nAge;  
     	\}  
     
     	Node operator ++ (int n)	/*i++*/
     	\{
     		Node temp = *this;
-    		m_nAge ++;
+    		m\_nAge ++;
     		return temp;
     	\}
     
     	Node& operator ++ ()		/*++i*//*你知道为什么要返回reference吗？*/
     	\{
-    		m_nAge ++;
+    		m\_nAge ++;
     		return *this;
     	\}
     
     	Node& operator = (int n)
     	\{
-    		m_nAge = n;
+    		m\_nAge = n;
     		return *this;
     	\}
     private:  
-    	int m_nAge;  
+    	int m\_nAge;  
     \};
 
 
@@ -116,19 +116,19 @@ C++规定，Node& operator ++ ()是重载前缀自增运算符（++i），而Nod
 
     
     ......
-    Node node(23);	/*node.m_nAge初值为23。*/
+    Node node(23);	/*node.m\_nAge初值为23。*/
     
     node ++ = 1;
-    cout << "node ++ = 1;执行过后，node.m_nAge = " << node.GetAge() << endl;
+    cout << "node ++ = 1;执行过后，node.m\_nAge = " << node.GetAge() << endl;
     ++ node = 1;
-    cout << "++ node = 1;执行过后，node.m_nAge = " << node.GetAge() << endl;
+    cout << "++ node = 1;执行过后，node.m\_nAge = " << node.GetAge() << endl;
     ......
 
 
 
 
-> node ++ = 1;执行过后，node.m_nAge = 24
-++ node = 1;执行过后，node.m_nAge = 1
+> node ++ = 1;执行过后，node.m\_nAge = 24
+++ node = 1;执行过后，node.m\_nAge = 1
 请按任意键继续. . .
 
 
@@ -139,9 +139,9 @@ node++ = 1;执行过后，node没有被“=1”影响。那可不可以反其道
     Node& operator ++ (int n)	/*i++*//*修改i++的行为，让它也返回左值*/
     \{
     	//Node temp = *this;
-    	//m_nAge ++;
+    	//m\_nAge ++;
     	//return temp;
-    	m_nAge ++;
+    	m\_nAge ++;
     	return *this;
     \}
     ......
@@ -149,8 +149,8 @@ node++ = 1;执行过后，node没有被“=1”影响。那可不可以反其道
 
 
 
-> node ++ = 1;执行过后，node.m_nAge = 1
-++ node = 1;执行过后，node.m_nAge = 1
+> node ++ = 1;执行过后，node.m\_nAge = 1
+++ node = 1;执行过后，node.m\_nAge = 1
 请按任意键继续. . .
 
 

@@ -22,9 +22,9 @@ tags:
 django url 匹配处理机制主要由一下模块实现: django.conf.urls 和 django.core.urlresolver.py. 有需要摘取上一节中的代码:
 
     
-    # BaseHandler.get_response() 的定义
+    # BaseHandler.get\_response() 的定义
     # 处理请求的函数, 并返回 response
-    def get_response(self, request):
+    def get\_response(self, request):
         "Returns an HttpResponse object for the given HttpRequest"
         根据请求, 得到响应
     
@@ -35,12 +35,12 @@ django url 匹配处理机制主要由一下模块实现: django.conf.urls 和 d
             # variable" exception in the event an exception is raised before
             # resolver is set
     
-            #ROOT_URLCONF = 'mysite.urls'
-            urlconf = settings.ROOT_URLCONF
+            #ROOT\_URLCONF = 'mysite.urls'
+            urlconf = settings.ROOT\_URLCONF
     
-            # set_urlconf() 会设置 url 配置即 settings.ROOT_URLCONF
+            # set\_urlconf() 会设置 url 配置即 settings.ROOT\_URLCONF
             # 会设置一个线程共享变量, 存储 urlconf
-            urlresolvers.set_urlconf(urlconf)
+            urlresolvers.set\_urlconf(urlconf)
     
             # 实例化 RegexURLResolver, 暂且将其理解为一个 url 的匹配处理器, 下节展开
             resolver = urlresolvers.RegexURLResolver(r'^/', urlconf)
@@ -57,26 +57,26 @@ django url 匹配处理机制主要由一下模块实现: django.conf.urls 和 d
                     if hasattr(request, 'urlconf'):
                         # Reset url resolver with a custom urlconf. 自定义的 urlconf
                         urlconf = request.urlconf
-                        urlresolvers.set_urlconf(urlconf)
+                        urlresolvers.set\_urlconf(urlconf)
                         resolver = urlresolvers.RegexURLResolver(r'^/', urlconf)
                     # 调用 RegexURLResolver.resolve(), 可以理解为启动匹配的函数; 返回 ResolverMatch 实例
-                    resolver_match = resolver.resolve(request.path_info)
+                    resolver\_match = resolver.resolve(request.path\_info)
     
-                    # resolver_match 对象中存储了有用的信息, 譬如 callback 就是我们在 views.py 中定义的函数.
-                    callback, callback_args, callback_kwargs = resolver_match
+                    # resolver\_match 对象中存储了有用的信息, 譬如 callback 就是我们在 views.py 中定义的函数.
+                    callback, callback\_args, callback\_kwargs = resolver\_match
     
-                    # 将返回的 resolver_match 挂钩到 request
-                    request.resolver_match = resolver_match
+                    # 将返回的 resolver\_match 挂钩到 request
+                    request.resolver\_match = resolver\_match
     
                     # Apply view middleware 调用视图中间件
                     ......
 
 
-可以简单的理解为 get_response() 中构造了 RegexURLResolver 对象并调用了 RegexURLResolver.resolve(path) 启动解析. 从上面的代码中, 可以获知 urlconf 默认使用的是 mysite.settings.py 中的 ROOT_URLCONF, 而也确实可以在 mysite.settings.py 中找到对应的设置项, 并且做出修改.
+可以简单的理解为 get\_response() 中构造了 RegexURLResolver 对象并调用了 RegexURLResolver.resolve(path) 启动解析. 从上面的代码中, 可以获知 urlconf 默认使用的是 mysite.settings.py 中的 ROOT\_URLCONF, 而也确实可以在 mysite.settings.py 中找到对应的设置项, 并且做出修改.
 
 从上, 至少可以知道, 真正发挥匹配作用的是 RegexURLResolver 对象, 并调用 RegexURLResolver.resolve() 启动了解析, 一切从这里开始. 从 urlresolver.py 中抽取主干部分, 可以得到下面的 UML 图:
 
-[![url_dispatcher_uml](http://daoluan.net/blog/wp-content/uploads/2013/09/url_dispatcher_uml.jpg)](http://daoluan.net/blog/wp-content/uploads/2013/09/url_dispatcher_uml.jpg)
+[![url\_dispatcher\_uml](http://daoluan.net/blog/wp-content/uploads/2013/09/url\_dispatcher\_uml.jpg)](http://daoluan.net/blog/wp-content/uploads/2013/09/url\_dispatcher\_uml.jpg)
 
 LocaleRegexProvider 类只为地区化而存在, 他持有 regex 属性, 但在 RegexURLResolver 和 RegexURLPattern 中发挥不同的作用:
 
@@ -102,63 +102,63 @@ LocaleRegexProvider 类只为地区化而存在, 他持有 regex 属性, 但在 
 
     
     # url 里面可以用 incude 函数
-    def include(arg, namespace=None, app_name=None):
+    def include(arg, namespace=None, app\_name=None):
         if isinstance(arg, tuple):
             # callable returning a namespace hint
             if namespace:
                 raise ImproperlyConfigured('Cannot override the namespace for a dynamic module that provides a namespace')
     
             # 获取 urlconf 模块文件, 应用名, 命名空间
-            urlconf_module, app_name, namespace = arg
+            urlconf\_module, app\_name, namespace = arg
         else:
             # No namespace hint - use manually provided namespace
-            urlconf_module = arg
+            urlconf\_module = arg
     
-        if isinstance(urlconf_module, six.string_types):
+        if isinstance(urlconf\_module, six.string\_types):
             # 尝试导入模块
-            urlconf_module = import_module(urlconf_module)
+            urlconf\_module = import\_module(urlconf\_module)
     
-        # 在 urlconf_module 中导入 urlpatterns
-        # 在 urlconf_module 中肯定会有 urlpatterns 这个变量
-        patterns = getattr(urlconf_module, 'urlpatterns', urlconf_module)
+        # 在 urlconf\_module 中导入 urlpatterns
+        # 在 urlconf\_module 中肯定会有 urlpatterns 这个变量
+        patterns = getattr(urlconf\_module, 'urlpatterns', urlconf\_module)
     
         # Make sure we can iterate through the patterns (without this, some
         # testcases will break).
         if isinstance(patterns, (list, tuple)):
-            for url_pattern in patterns:
+            for url\_pattern in patterns:
                 # Test if the LocaleRegexURLResolver is used within the include;
                 # this should throw an error since this is not allowed!
-                if isinstance(url_pattern, LocaleRegexURLResolver):
+                if isinstance(url\_pattern, LocaleRegexURLResolver):
                     raise ImproperlyConfigured(
-                        'Using i18n_patterns in an included URLconf is not allowed.')
+                        'Using i18n\_patterns in an included URLconf is not allowed.')
     
         # 返回模块, app 名 ,命名空间
-        return (urlconf_module, app_name, namespace)
+        return (urlconf\_module, app\_name, namespace)
     
     def patterns(prefix, *args): 特意留一个 prefix
-        pattern_list = []
+        pattern\_list = []
         for t in args:
             if isinstance(t, (list, tuple)):
                 t = url(prefix=prefix, *t) 自动转换
     
             elif isinstance(t, RegexURLPattern):
-                t.add_prefix(prefix)
+                t.add\_prefix(prefix)
     
-            pattern_list.append(t)
+            pattern\_list.append(t)
     
         # 返回 RegexURLResolver 或者 RegexURLPattern 对象的列表
-        return pattern_list
+        return pattern\_list
     
     # url 函数
     def url(regex, view, kwargs=None, name=None, prefix=''):
         if isinstance(view, (list,tuple)): 如果是 list 或者 tuple
             # For include(...) processing. 处理包含 include(...)
-            urlconf_module, app_name, namespace = view
+            urlconf\_module, app\_name, namespace = view
     
             # 此处返回 RegexURLResolver, 区分下面返回 RegexURLPattern
-            return RegexURLResolver(regex, urlconf_module, kwargs, app_name=app_name, namespace=namespace)
+            return RegexURLResolver(regex, urlconf\_module, kwargs, app\_name=app\_name, namespace=namespace)
         else:
-            if isinstance(view, six.string_types):
+            if isinstance(view, six.string\_types):
                 if not view:
                     raise ImproperlyConfigured('Empty URL pattern view name not permitted (for pattern %r)' % regex)
                 if prefix:
@@ -185,70 +185,70 @@ LocaleRegexProvider 类只为地区化而存在, 他持有 regex 属性, 但在 
     
         if match:
             # 去除前缀
-            new_path = path[match.end():]
+            new\_path = path[match.end():]
     
-            for pattern in self.url_patterns: # 穷举所有的 url pattern
+            for pattern in self.url\_patterns: # 穷举所有的 url pattern
                 # pattern 是 RegexURLPattern 实例
                 try:
     
-    """在 RegexURLResolver.resolve() 中的一句: sub_match = pattern.resolve(new_path) 最为关键.
+    """在 RegexURLResolver.resolve() 中的一句: sub\_match = pattern.resolve(new\_path) 最为关键.
     从上面 patterns() 函数的作用知道, pattern 可以是 RegexURLPattern 对象或者 RegexURLResolver 对象. 当为 RegexURLResolver 对象的时候, 就是启动子 url 匹配处理器, 于是又回到了上面.
     
     RegexURLPattern 和 RegexURLResolver 都有一个 resolve() 函数, 所以, 下面的一句 resolve() 调用, 可以是调用 RegexURLPattern.resolve() 或者 RegexURLResolver.resolve()"""
     
                     # 返回 ResolverMatch 实例
-                    sub_match = pattern.resolve(new_path)
+                    sub\_match = pattern.resolve(new\_path)
     
                 except Resolver404 as e:
                     # 搜集已经尝试过的匹配器, 在出错的页面中会显示错误信息
-                    sub_tried = e.args[0].get('tried')
+                    sub\_tried = e.args[0].get('tried')
     
-                    if sub_tried is not None:
-                        tried.extend([[pattern] + t for t in sub_tried])
+                    if sub\_tried is not None:
+                        tried.extend([[pattern] + t for t in sub\_tried])
                     else:
                         tried.append([pattern])
                 else:
                     # 是否成功匹配
-                    if sub_match:
+                    if sub\_match:
                         # match.groupdict()
                         # Return a dictionary containing all the named subgroups of the match,
                         # keyed by the subgroup name.
     
                         # 如果在 urls.py 的正则表达式中使用了变量, match.groupdict() 返回即为变量和值.
-                        sub_match_dict = dict(match.groupdict(), **self.default_kwargs)
+                        sub\_match\_dict = dict(match.groupdict(), **self.default\_kwargs)
     
-                        sub_match_dict.update(sub_match.kwargs)
+                        sub\_match\_dict.update(sub\_match.kwargs)
     
                         # 返回 ResolverMatch 对象, 如你所知, 得到此对象将可以执行真正的逻辑操作, 即 views.py 内定义的函数.
-                        return ResolverMatch(sub_match.func,
-                            sub_match.args, sub_match_dict,
-                            sub_match.url_name, self.app_name or sub_match.app_name,
-                            [self.namespace] + sub_match.namespaces)
+                        return ResolverMatch(sub\_match.func,
+                            sub\_match.args, sub\_match\_dict,
+                            sub\_match.url\_name, self.app\_name or sub\_match.app\_name,
+                            [self.namespace] + sub\_match.namespaces)
     
                     tried.append([pattern])
     
             # 如果没有匹配成功的项目, 将异常
-            raise Resolver404(\{'tried': tried, 'path': new_path\})
+            raise Resolver404(\{'tried': tried, 'path': new\_path\})
     
         raise Resolver404(\{'path' : path\})
     
-    # 修饰 urlconf_module, 返回 self._urlconf_module, 即 urlpatterns 变量所在的文件
+    # 修饰 urlconf\_module, 返回 self.\_urlconf\_module, 即 urlpatterns 变量所在的文件
     @property
-    def urlconf_module(self):
+    def urlconf\_module(self):
         try:
-            return self._urlconf_module
+            return self.\_urlconf\_module
         except AttributeError:
-            self._urlconf_module = import_module(self.urlconf_name)
-            return self._urlconf_module
+            self.\_urlconf\_module = import\_module(self.urlconf\_name)
+            return self.\_urlconf\_module
     
     # 返回指定文件中的 urlpatterns 变量
     @property
-    def url_patterns(self):
-        patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+    def url\_patterns(self):
+        patterns = getattr(self.urlconf\_module, "urlpatterns", self.urlconf\_module)
         try:
             iter(patterns) # 是否可以迭代
         except TypeError:
-            raise ImproperlyConfigured("The included urlconf %s doesn't have any patterns in it" % self.urlconf_name)
+            raise ImproperlyConfigured("The included urlconf %s doesn't have any patterns in it" % self.urlconf\_name)
     
         # patterns 实际上是 RegexURLPattern 对象和 RegexURLResolver 对象的集合
         return patterns
@@ -269,20 +269,20 @@ LocaleRegexProvider 类只为地区化而存在, 他持有 regex 属性, 但在 
             else:
                 args = match.groups()
     
-            # In both cases, pass any extra_kwargs as **kwargs.
-            kwargs.update(self.default_args)
+            # In both cases, pass any extra\_kwargs as **kwargs.
+            kwargs.update(self.default\_args)
     
             # 成功, 返回匹配结果类; 否则返回 None
             return ResolverMatch(self.callback, args, kwargs, self.name)
     
-    # 对 callback 进行修饰, 如果 self._callback 不是一个可调用的对象, 则可能还是一个字符串, 需要解析得到可调用的对象
+    # 对 callback 进行修饰, 如果 self.\_callback 不是一个可调用的对象, 则可能还是一个字符串, 需要解析得到可调用的对象
     @property
     def callback(self):
-        if self._callback is not None:
-            return self._callback
+        if self.\_callback is not None:
+            return self.\_callback
     
-        self._callback = get_callable(self._callback_str)
-        return self._callback
+        self.\_callback = get\_callable(self.\_callback\_str)
+        return self.\_callback
     
     ResolverMatch 不贴代码了, 它包装了匹配成功所需要的信息, 如 views.py 中定义的函数.
 
@@ -322,13 +322,13 @@ LocaleRegexProvider 类只为地区化而存在, 他持有 regex 属性, 但在 
 当访问 http://exapmle.com/people/daoluan/ 的时候 URL dispatcher 的调度过程(蓝色部分):
 
 
-[![urldispatcher_example](http://daoluan.net/blog/wp-content/uploads/2013/09/urldispatcher_example.gif)](http://daoluan.net/blog/wp-content/uploads/2013/09/urldispatcher_example.gif)
+[![urldispatcher\_example](http://daoluan.net/blog/wp-content/uploads/2013/09/urldispatcher\_example.gif)](http://daoluan.net/blog/wp-content/uploads/2013/09/urldispatcher\_example.gif)
 
-对应上面的例子 url 调度器机制的具体工作过程如下, 从 BaseHandler.get_response() 开始说起:
+对应上面的例子 url 调度器机制的具体工作过程如下, 从 BaseHandler.get\_response() 开始说起:
 
-1. BaseHandler.get_response() 中根据 settings.py 中的 ROOT_URLCONF 设置选项构造 RegexURLResolver 对象, 并调用 RegexURLResolver.resolve("/people/daoluan/") 启动解析, 其中 RegexURLResolver.regex = "^\", 也就是说它会过滤 "\", url 变为 "people/daoluan/";
+1. BaseHandler.get\_response() 中根据 settings.py 中的 ROOT\_URLCONF 设置选项构造 RegexURLResolver 对象, 并调用 RegexURLResolver.resolve("/people/daoluan/") 启动解析, 其中 RegexURLResolver.regex = "^\", 也就是说它会过滤 "\", url 变为 "people/daoluan/";
 
-2. resolve() 中调用 RegexURLResolver.url_patterns(), 加载了所有的匹配信息如下(和图中一样):
+2. resolve() 中调用 RegexURLResolver.url\_patterns(), 加载了所有的匹配信息如下(和图中一样):
 
 
 
@@ -348,11 +348,11 @@ LocaleRegexProvider 类只为地区化而存在, 他持有 regex 属性, 但在 
   * RegexURLPattern [^update/]
 
 
-语句 for pattern in self.url_patterns: 开始依次匹配. 第一个因为是 RegexURLPattern 对象, 调用 resolve() 为 RegexURLPattern.resolve(): 它直接用 [^$] 去匹配 "people/daoluan/", 结果当然是不匹配.
+语句 for pattern in self.url\_patterns: 开始依次匹配. 第一个因为是 RegexURLPattern 对象, 调用 resolve() 为 RegexURLPattern.resolve(): 它直接用 [^$] 去匹配 "people/daoluan/", 结果当然是不匹配.
 
 3. 下一个 pattern 过程同上.
 
-4. 第三个 pattern 因为是  RegexURLResolver 对象, 所以 resolve() 调用的是 RegexURLResolver.resolve(), 而非上面两个例子中的 RegexURLPattern.resolve().  因为第三个 pattern.regex = "^people/", 所以会将 "people/daoluan/" 过滤为 "daoluan/". pattern.resolve() 中会调用 RegexURLResolver.url_patterns(), 加载了所有的匹配信息如下(和图中一样):
+4. 第三个 pattern 因为是  RegexURLResolver 对象, 所以 resolve() 调用的是 RegexURLResolver.resolve(), 而非上面两个例子中的 RegexURLPattern.resolve().  因为第三个 pattern.regex = "^people/", 所以会将 "people/daoluan/" 过滤为 "daoluan/". pattern.resolve() 中会调用 RegexURLResolver.url\_patterns(), 加载了所有的匹配信息如下(和图中一样):
 
 	
   * RegexURLPattern [^daoluan$]
@@ -364,12 +364,12 @@ LocaleRegexProvider 类只为地区化而存在, 他持有 regex 属性, 但在 
   * RegexURLPattern [^jenny$]
 
 
-语句 for pattern in self.url_patterns: 开始依次匹配. 第一个就中, 过程和刚开始的过程一样. 因此构造 ResolverMatch 对象返回. 于是 BaseHandler.get_response() 就顺利得到 ResolverMatch 对象, 其中记录了有用的信息. **在 BaseHandler.get_response() 中有足够的信息让你知道开发人员在 views.py 中定义的函数是 def daoluan(request): 在什么时候调用的:**
+语句 for pattern in self.url\_patterns: 开始依次匹配. 第一个就中, 过程和刚开始的过程一样. 因此构造 ResolverMatch 对象返回. 于是 BaseHandler.get\_response() 就顺利得到 ResolverMatch 对象, 其中记录了有用的信息. **在 BaseHandler.get\_response() 中有足够的信息让你知道开发人员在 views.py 中定义的函数是 def daoluan(request): 在什么时候调用的:**
 
     
-    # BaseHandler.get_response() 的定义
+    # BaseHandler.get\_response() 的定义
     # 处理请求的函数, 并返回 response
-    def get_response(self, request):
+    def get\_response(self, request):
         ......
     
         # 实例化 RegexURLResolver, 暂且将其理解为一个 url 的匹配处理器, 下节展开
@@ -377,15 +377,15 @@ LocaleRegexProvider 类只为地区化而存在, 他持有 regex 属性, 但在 
         ......
     
         # 调用 RegexURLResolver.resolve(), 可以理解为启动匹配的函数; 返回 ResolverMatch 实例
-        resolver_match = resolver.resolve(request.path_info)
+        resolver\_match = resolver.resolve(request.path\_info)
         ......
     
-        # resolver_match 对象中存储了有用的信息, 譬如 callback 就是我们在 views.py 中定义的函数.
-        callback, callback_args, callback_kwargs = resolver_match
+        # resolver\_match 对象中存储了有用的信息, 譬如 callback 就是我们在 views.py 中定义的函数.
+        callback, callback\_args, callback\_kwargs = resolver\_match
         ......
     
         # 这里调用的是真正的处理函数, 我们一般在 view.py 中定义这些函数
-        response = callback(request, *callback_args, **callback_kwargs)
+        response = callback(request, *callback\_args, **callback\_kwargs)
         ......
     
         return response

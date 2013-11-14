@@ -49,15 +49,15 @@ tags:
 
 服务器启动
 
-[![](http://daoluan.net/blog/wp-content/uploads/2012/08/1_thumb1.png)](http://daoluan.net/blog/archives/787/1_thumb1)
+[![](http://daoluan.net/blog/wp-content/uploads/2012/08/1\_thumb1.png)](http://daoluan.net/blog/archives/787/1\_thumb1)
 
 客户端方面，将client1、client2和client3（编译链接自同一个代码）写进脚本。运行
 
-[![](http://daoluan.net/blog/wp-content/uploads/2012/08/2_thumb1.png)](http://daoluan.net/blog/archives/787/2_thumb1)
+[![](http://daoluan.net/blog/wp-content/uploads/2012/08/2\_thumb1.png)](http://daoluan.net/blog/archives/787/2\_thumb1)
 
 服务端服务多个客户请求
 
-[![](http://daoluan.net/blog/wp-content/uploads/2012/08/3_thumb1.png)](http://daoluan.net/blog/archives/787/3_thumb1)
+[![](http://daoluan.net/blog/wp-content/uploads/2012/08/3\_thumb1.png)](http://daoluan.net/blog/archives/787/3\_thumb1)
 
 client
 
@@ -73,7 +73,7 @@ client
     
     #define MAXSLEEP 1024
     
-    int connect_retry(int sockfd,const struct sockaddr * addr,socklen_t alen)
+    int connect\_retry(int sockfd,const struct sockaddr * addr,socklen\_t alen)
     \{
         int nsec;
     
@@ -100,20 +100,20 @@ client
         \}// if
     
         int fd;    
-        struct sockaddr_in si,server;
+        struct sockaddr\_in si,server;
         char addr[20],buf[20],bufrecv[20];
     
         bzero(bufrecv,sizeof(bufrecv));
         sprintf(addr,"127.0.0.1");
     
-        fd = socket(AF_INET,SOCK_STREAM,0);//   create socker fd;
+        fd = socket(AF\_INET,SOCK\_STREAM,0);//   create socker fd;
         printf("socket ok\n");
     
     //prepare server addr
         bzero(&server,sizeof(server));
-        server.sin_family = AF_INET;
-        server.sin_port = htons(6000);
-        inet_pton(AF_INET,addr,(void *)&server.sin_addr);
+        server.sin\_family = AF\_INET;
+        server.sin\_port = htons(6000);
+        inet\_pton(AF\_INET,addr,(void *)&server.sin\_addr);
         printf("server ok\n");
     
     //prepare request data
@@ -121,7 +121,7 @@ client
         sprintf(buf,"%c%c%c",argv[1][0],argv[2][0],argv[3][0]);
     
     //connect
-        if(connect_retry(fd,(struct sockaddr *)&server,sizeof(server)) < 0)
+        if(connect\_retry(fd,(struct sockaddr *)&server,sizeof(server)) < 0)
         \{
             printf("connect error\n");
             return 1;
@@ -135,12 +135,12 @@ client
         \}// if
     
     //select
-        fd_set readfd;
-        FD_ZERO(&readfd);
-        FD_SET(fd,&readfd);
+        fd\_set readfd;
+        FD\_ZERO(&readfd);
+        FD\_SET(fd,&readfd);
         int t;
     
-        if((t = select(FD_SETSIZE,&readfd,NULL,NULL,NULL)) < 0)
+        if((t = select(FD\_SETSIZE,&readfd,NULL,NULL,NULL)) < 0)
         \{
             printf("select error\n");
             return 1;
@@ -170,12 +170,12 @@ server
     
     char bufret[20];
     
-    int initserver(int type,const struct sockaddr * addr,socklen_t alen,int qlen)
+    int initserver(int type,const struct sockaddr * addr,socklen\_t alen,int qlen)
     \{
         int fd;
         int err = 0;
     
-        if((fd = socket(addr->sa_family,type,0)) < 0)
+        if((fd = socket(addr->sa\_family,type,0)) < 0)
             return -1;
     
         printf("binding\n");
@@ -186,7 +186,7 @@ server
         \}// if
         printf("bind succeed \n");
     
-        if(type == SOCK_STREAM || type == SOCK_SEQPACKET)
+        if(type == SOCK\_STREAM || type == SOCK\_SEQPACKET)
         \{
             printf("listening\n");
             if(listen(fd,1) < 0)
@@ -210,8 +210,8 @@ server
         int a,b;
         char op,buf[25];
     
-        int ret,addrlen = sizeof(struct sockaddr_in),clfd; 
-        struct sockaddr_in client;
+        int ret,addrlen = sizeof(struct sockaddr\_in),clfd; 
+        struct sockaddr\_in client;
     
         bzero(&client,sizeof(client));
     
@@ -259,23 +259,23 @@ server
         bzero(addr,sizeof(addr));
         sprintf(addr,"127.0.0.1");
     
-        struct sockaddr_in server;
+        struct sockaddr\_in server;
         bzero(&server,sizeof(server));
-        server.sin_family = AF_INET;
-        server.sin_port = htons(6000);
-        //server.sin_addr.s_addr = htonl(INADDR_ANY);
-        inet_pton(AF_INET,addr,(void *)&server.sin_addr);
+        server.sin\_family = AF\_INET;
+        server.sin\_port = htons(6000);
+        //server.sin\_addr.s\_addr = htonl(INADDR\_ANY);
+        inet\_pton(AF\_INET,addr,(void *)&server.sin\_addr);
     
     //prepare server
     	while(1)
     	\{
-    	    if((sockfd = initserver(SOCK_STREAM,(struct sockaddr *)&server,sizeof(server),1)) < 0)
+    	    if((sockfd = initserver(SOCK\_STREAM,(struct sockaddr *)&server,sizeof(server),1)) < 0)
     	    \{
     	        printf("initserver error\n");
     	        return 0;
     	   	\}// if
     
-    	   	pid_t pid;
+    	   	pid\_t pid;
     	   	if(pid = fork() < 0)	//	fork error
     	   	\{
     	   		close(sockfd);

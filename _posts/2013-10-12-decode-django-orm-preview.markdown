@@ -62,10 +62,10 @@ tags:
         ----manager.py ORM 的管理器
         ----options.py 数据库表选项, 譬如主键等
         ----query.py 数据库查询集类
-        ----query_utils.py 小工具
+        ----query\_utils.py 小工具
         ----related.py 与`表关联`相关
         ----signals.py
-        ----__init__.py
+        ----\_\_init\_\_.py
 
 
 django ORM 底层的实现都在 django.db.models 中. 如你所知, 数据库操作的选项很多, 这里并不专注展开这些选项在 django ORM 中是如何实现的, 而**将展开的是 django ORM 的实现的框架**, 当用 django ORM 执行一个简单的查询操作时, 里面是如何工作的, 工具类之间是如何协调的. 了解这些, 使用 django ORM 会更游刃有余.

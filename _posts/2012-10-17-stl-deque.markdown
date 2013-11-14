@@ -15,11 +15,11 @@ tags:
 
 一句话deque：deque是双端队列，它的空间构造并非一个vector式的长数组，而是“分段存储，整体维护”的方式；STL允许在deque中任意位置操作元素（删除添加）（这超出了deque的概念，最原始的deque将元素操作限定在队列两端），允许遍历，允许随机访问（这是假象）；我们将看到，deque将是STL中stack和queue的幕后功臣，对deque做适当的修正，便可以实现stack和queue。
 
-[![](http://daoluan.net/blog/wp-content/uploads/2012/10/deque_in_mind.jpg)](http://daoluan.net/blog/stl-deque/deque_in_mind/)
+[![](http://daoluan.net/blog/wp-content/uploads/2012/10/deque\_in\_mind.jpg)](http://daoluan.net/blog/stl-deque/deque\_in\_mind/)
 
 <!-- more -->
 
-[caption id="attachment_1173" align="aligncenter" width="451"][![](http://daoluan.net/blog/wp-content/uploads/2012/10/deque_in_real.jpg)](http://daoluan.net/blog/stl-deque/deque_in_real/) bug,deque_in_real[/caption]
+[caption id="attachment\_1173" align="aligncenter" width="451"][![](http://daoluan.net/blog/wp-content/uploads/2012/10/deque\_in\_real.jpg)](http://daoluan.net/blog/stl-deque/deque\_in\_real/) bug,deque\_in\_real[/caption]
 
 
 ### deque的迭代器
@@ -29,11 +29,11 @@ deque的迭代器与一般的迭代器不同，并不是vector或者list的普�
 
     
     ......
-    typedef T** map_pointer;
+    typedef T** map\_pointer;
     T* cur;//指向当前元素
     T* first;//指向缓冲区头
     T* last;//指向缓冲区尾巴
-    map_pointer node;//二级指针，指向缓冲区地址表中的位置
+    map\_pointer node;//二级指针，指向缓冲区地址表中的位置
     ......
 
 
@@ -67,12 +67,12 @@ STL中deque有提供多种版本的构造函数，一把使用缺省构造函数
     ......
     deque<int> id;
     
-    id.push_back(1);
-    id.push_back(2);
-    id.push_back(3);
-    id.push_back(4);
-    id.push_back(5);
-    id.push_back(6);
+    id.push\_back(1);
+    id.push\_back(2);
+    id.push\_back(3);
+    id.push\_back(4);
+    id.push\_back(5);
+    id.push\_back(6);
     
     cout << id[2] << endl;	/*3*/
     ......
@@ -89,9 +89,9 @@ STL中deque有提供多种版本的构造函数，一把使用缺省构造函数
     ......
     deque<int> id;
     
-    id.push_back(1);
-    id.push_back(2);
-    id.push_back(6);
+    id.push\_back(1);
+    id.push\_back(2);
+    id.push\_back(6);
     
     deque<int>::iterator ite;
     

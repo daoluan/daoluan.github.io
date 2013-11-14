@@ -16,7 +16,7 @@ tags:
 
 vnode ("virtual node")仅在文件打开的时候，才出现的；而inode定位文件在磁盘的位置，它的信息本身是存储在磁盘等上的，当打开文件的时候从磁盘上读入内存。
 
-[![fs](http://www.daoluan.net/blog/wp-content/uploads/2012/07/fs_thumb.jpg)](http://www.daoluan.net/blog/wp-content/uploads/2012/07/fs.jpg)
+[![fs](http://www.daoluan.net/blog/wp-content/uploads/2012/07/fs\_thumb.jpg)](http://www.daoluan.net/blog/wp-content/uploads/2012/07/fs.jpg)
 
 <!-- more -->
 
@@ -33,24 +33,24 @@ inode信息就存储在磁盘的某个分区上。下图是上图的一个扩展
   * 多个文件共用一个 inode ，同样可以实现链接？！这就是硬链接的原理， inode 中有链接计数器，当增加一个文件指向这个 inode 时，计数器增1。特别的，当计数器为 0 时候，即所有的文件都删除，文件才真正从磁盘删除；当然，修改其中任何一个文件，都会作用在其他硬链接文件上。
 
 
-[![较详细的柱面组的i节点和数据块](http://www.daoluan.net/blog/wp-content/uploads/2012/07/i_thumb.png)](http://www.daoluan.net/blog/wp-content/uploads/2012/07/i.png)
+[![较详细的柱面组的i节点和数据块](http://www.daoluan.net/blog/wp-content/uploads/2012/07/i\_thumb.png)](http://www.daoluan.net/blog/wp-content/uploads/2012/07/i.png)
 
-ext3_inode上的数据结构如下：它记录了很多关于文件的信息，比如文件长度，文件所在的设备，文件的物理位置，创建、修改和更新时间等等，**特别的，它不包含文件名！**
+ext3\_inode上的数据结构如下：它记录了很多关于文件的信息，比如文件长度，文件所在的设备，文件的物理位置，创建、修改和更新时间等等，**特别的，它不包含文件名！**
 
     
-    struct ext3_inode \{
-    	__le16 i_mode; File mode
-    	__le16 i_uid; Low 16 bits of Owner Uid
-    	__le32 i_size; Size in bytes
-    	__le32 i_atime; Access time 
-    	__le32 i_ctime; Creation time
-    	__le32 i_mtime; Modification time
+    struct ext3\_inode \{
+    	\_\_le16 i\_mode; File mode
+    	\_\_le16 i\_uid; Low 16 bits of Owner Uid
+    	\_\_le32 i\_size; Size in bytes
+    	\_\_le32 i\_atime; Access time 
+    	\_\_le32 i\_ctime; Creation time
+    	\_\_le32 i\_mtime; Modification time
     
-    	__le32 i_dtime; Deletion Time
-    	__le16 i_gid; Low 16 bits of Group Id
-    	__le16 i_links_count; Links count
+    	\_\_le32 i\_dtime; Deletion Time
+    	\_\_le16 i\_gid; Low 16 bits of Group Id
+    	\_\_le16 i\_links\_count; Links count
     	......
-    	__le32 i_block[EXT2_N_BLOCKS]; Pointers to blocks
+    	\_\_le32 i\_block[EXT2\_N\_BLOCKS]; Pointers to blocks
     	......
     \};
 
@@ -66,29 +66,29 @@ Linux上有dentry，中文的意思就是目录项，它粘合了内存中文件
 
 A dentry is the glue that holds inodes and files together by relating inode numbers to file names. Dentries also play a role in directory caching which, ideally, keeps the most frequently used files on-hand for faster access. File system traversal is another aspect of the dentry as it maintains a relationship between directories and their files.下面是一副很有趣的图片：
 
-[![inode和dentry](http://www.daoluan.net/blog/wp-content/uploads/2012/07/inodedentry_thumb.jpg)](http://www.daoluan.net/blog/wp-content/uploads/2012/07/inodedentry.jpg)
+[![inode和dentry](http://www.daoluan.net/blog/wp-content/uploads/2012/07/inodedentry\_thumb.jpg)](http://www.daoluan.net/blog/wp-content/uploads/2012/07/inodedentry.jpg)
 
 
 
     
     struct dentry \{
-    	atomic_t d_count; 目录项对象使用计数器
-    	unsigned int d_flags; 目录项标志
-    	struct inode * d_inode; 与文件名关联的索引节点
-    	struct dentry * d_parent; 父目录的目录项对象
-    	struct list_head d_hash; 散列表表项的指针
-    	struct list_head d_lru; 未使用链表的指针
-    	struct list_head d_child; 父目录中目录项对象的链表的指针
-    	struct list_head d_subdirs;对目录而言，表示子目录目录项对象的链表
-    	struct list_head d_alias; 相关索引节点（别名）的链表
-    	int d_mounted; 对于安装点而言，表示被安装文件系统根项
-    	struct qstr d_name; 文件名
-    	unsigned long d_time; // used by d_revalidate
-    	struct dentry_operations *d_op; 目录项方法
-    	struct super_block * d_sb; 文件的超级块对象
-    	vunsigned long d_vfs_flags;
-    	void * d_fsdata;与文件系统相关的数据
-    	unsigned char d_iname [DNAME_INLINE_LEN]; 存放短文件名
+    	atomic\_t d\_count; 目录项对象使用计数器
+    	unsigned int d\_flags; 目录项标志
+    	struct inode * d\_inode; 与文件名关联的索引节点
+    	struct dentry * d\_parent; 父目录的目录项对象
+    	struct list\_head d\_hash; 散列表表项的指针
+    	struct list\_head d\_lru; 未使用链表的指针
+    	struct list\_head d\_child; 父目录中目录项对象的链表的指针
+    	struct list\_head d\_subdirs;对目录而言，表示子目录目录项对象的链表
+    	struct list\_head d\_alias; 相关索引节点（别名）的链表
+    	int d\_mounted; 对于安装点而言，表示被安装文件系统根项
+    	struct qstr d\_name; 文件名
+    	unsigned long d\_time; // used by d\_revalidate
+    	struct dentry\_operations *d\_op; 目录项方法
+    	struct super\_block * d\_sb; 文件的超级块对象
+    	vunsigned long d\_vfs\_flags;
+    	void * d\_fsdata;与文件系统相关的数据
+    	unsigned char d\_iname [DNAME\_INLINE\_LEN]; 存放短文件名
     \};
 
 

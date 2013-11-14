@@ -71,19 +71,19 @@ h b c d e f g
     ......
     vector<int> iv(3,3);
     
-    iv.push_back(10);	/*3,3,3,10*/
+    iv.push\_back(10);	/*3,3,3,10*/
     
     vector<int>::iterator beg = iv.begin(),
     	end = --iv.end();
     
     cout << iv.size() << " " << *beg << " " << *end << endl;	/*4 3 10*/
     
-    iv.push_back(20);
+    iv.push\_back(20);
     cout << iv.size() << " " << *beg << " " << *end << endl;	/*bomb.invalid iterator.*/
     ......
 
 
-[caption id="attachment_1150" align="alignnone" width="400"][![](http://daoluan.net/blog/wp-content/uploads/2012/10/vector_bomb.gif)](http://daoluan.net/blog/stl-vector/vector_bomb/) bomb！！！[/caption]
+[caption id="attachment\_1150" align="alignnone" width="400"][![](http://daoluan.net/blog/wp-content/uploads/2012/10/vector\_bomb.gif)](http://daoluan.net/blog/stl-vector/vector\_bomb/) bomb！！！[/caption]
 
 
 ### vector元素排序
@@ -102,9 +102,9 @@ h b c d e f g
     	unsigned int i;
     
     	/*add new elem.*/
-    	iv.push_back(10);
-    	iv.push_back(9);
-    	iv.push_back(0);
+    	iv.push\_back(10);
+    	iv.push\_back(9);
+    	iv.push\_back(0);
     
     	vector<int>::iterator beg = iv.begin(),
     		end = iv.end();
@@ -146,9 +146,9 @@ h b c d e f g
     unsigned int i;
     
     /*add new elem.*/
-    iv.push_back(10);
-    iv.push_back(9);
-    iv.push_back(0);
+    iv.push\_back(10);
+    iv.push\_back(9);
+    iv.push\_back(0);
     
     vector<int>::iterator beg = iv.begin(),
     	end = iv.end(),
