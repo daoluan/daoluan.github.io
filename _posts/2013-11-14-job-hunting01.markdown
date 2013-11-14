@@ -1,10 +1,8 @@
-
-# YAML Front Matter
 ---
 layout: post
 author: daoluan
-comments: true
 title: 找工作(上)
+comments: true
 date: 2013-11-14 17:11:52
 ---
 
