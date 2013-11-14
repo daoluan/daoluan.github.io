@@ -13,7 +13,7 @@ tags:
 - 《STL源码剖析》
 ---
 
-全排列问题：从n个不同元素中任取m（m≤n）个元素，按照一定的顺序排列起来，叫做从n个不同元素中取出m个元素的一个排列。当m＝n时所有的排列情况叫全排列。譬如，考虑{a，b，c}的全排列有abc，acb，bac，bca，cab，cba六（3！）种情况。
+全排列问题：从n个不同元素中任取m（m≤n）个元素，按照一定的顺序排列起来，叫做从n个不同元素中取出m个元素的一个排列。当m＝n时所有的排列情况叫全排列。譬如，考虑\{a，b，c\}的全排列有abc，acb，bac，bca，cab，cba六（3！）种情况。
 
 首先要声明，STL没有实现全排列的函数，但描述了全排列的核心算法，分别是[next_permutation](http://www.cplusplus.com/reference/algorithm/next_permutation/)和[prev_permutation](http://www.cplusplus.com/reference/algorithm/prev_permutation/)，两者实际上一样，只不过情况不同。全排列实现可以是递归和迭代两个版本。STL算法中的next_permutation便也是全排列算法迭代版本的核心。
 
@@ -28,20 +28,20 @@ tags:
     
     /*全排列递归版本*/
     void foo1(char *str,int k,int n)
-    {
+    \{
     	if(k == n)	//	print str when it reaches the last character.
-    	{
+    	\{
     		cout << str << " ";
     		return;
-    	}//	if
+    	\}//	if
     
     	for(int i=k; i<n; i++)
-    	{
+    	\{
     		swap(str[k],str[i]);
     		foo1(str,k+1,n);	//	next character.
     		swap(str[k],str[i]);
-    	}//	for
-    }
+    	\}//	for
+    \}
 
 
 
@@ -55,7 +55,7 @@ cdab cdba dbca dbac dcba dcab dacb dabc 请按任意键继续. . .
 ### 迭代实现全排列
 
 
-因为[next_permutation](http://www.cplusplus.com/reference/algorithm/next_permutation/)和[prev_permutation](http://www.cplusplus.com/reference/algorithm/prev_permutation/)实际上换汤不换药，因此只描述[next_permutation](http://www.cplusplus.com/reference/algorithm/next_permutation/)算法。在下笔之前，next_permutation()函数的作用是取下一个排列组合。同样，考虑{a，b，c}的全排列：abc，acb，bac，bca，cab，cba，以“bac”作为参考，那么next_permutation()所得到的下一个排列组合是bca，prev_permutation()所得到的前一个排列组合是“acb”，之于“前一个”和“后一个”，是按字典进行排序的。
+因为[next_permutation](http://www.cplusplus.com/reference/algorithm/next_permutation/)和[prev_permutation](http://www.cplusplus.com/reference/algorithm/prev_permutation/)实际上换汤不换药，因此只描述[next_permutation](http://www.cplusplus.com/reference/algorithm/next_permutation/)算法。在下笔之前，next_permutation()函数的作用是取下一个排列组合。同样，考虑\{a，b，c\}的全排列：abc，acb，bac，bca，cab，cba，以“bac”作为参考，那么next_permutation()所得到的下一个排列组合是bca，prev_permutation()所得到的前一个排列组合是“acb”，之于“前一个”和“后一个”，是按字典进行排序的。
 
 next_permutation()算法描述：
 
@@ -79,21 +79,21 @@ next_permutation()算法描述：
     
     /*全排列迭代归版本*/
     void reverse(char *str)
-    {
+    \{
     	int len = strlen(str),i;
     	for(i=0; i<len/2; i++)
     		swap(*(str+i),*(str+len-1-i));
-    }
+    \}
     
     /*阶乘*/
     int factorial(int n)
-    {
+    \{
     	if(n == 1)	return 1;
     	return n * factorial(n-1);
-    }
+    \}
     
     void foo2(char *p)
-    {
+    \{
     	int len = strlen(p),cnt = 1;
     	char *i,*ii,*j;
     
@@ -101,7 +101,7 @@ next_permutation()算法描述：
     
     	/*STL <algorithm> next_permutation()函数的核心算法*/
     	while(++cnt <= factorial(len))
-    	{
+    	\{
     		i = p + len - 2,ii = p + len - 1,j = ii;
     		while(*i >= *ii)	i--,ii--;	/*find *i and *ii.*/
     		while(*i >= *j)	j--;			/*find *j.*/
@@ -110,8 +110,8 @@ next_permutation()算法描述：
     
     		reverse(ii);		/*reverse.*/
     		cout << p << " ";
-    	}//	while
-    }
+    	\}//	while
+    \}
 
 
 

@@ -26,7 +26,7 @@ sof 上的帖子，原文链接：[Why is processing a sorted array faster than 
     #include <iostream>
     
     int main()
-    {
+    \{
         // Generate data
         const unsigned arraySize = 32768;
         int data[arraySize];
@@ -42,20 +42,20 @@ sof 上的帖子，原文链接：[Why is processing a sorted array faster than 
         long long sum = 0;
     
         for (unsigned i = 0; i < 100000; ++i)
-        {
+        \{
             // Primary loop
             for (unsigned c = 0; c < arraySize; ++c)
-            {
+            \{
                 if (data[c] >= 128)
                     sum += data[c];
-            }
-        }
+            \}
+        \}
     
         double elapsedTime = static_cast<double>(clock() - start) / CLOCKS_PER_SEC;
     
         std::cout << elapsedTime << std::endl;
         std::cout << "sum = " << sum << std::endl;
-    }
+    \}
 
 
 
@@ -79,9 +79,9 @@ sof 上的帖子，原文链接：[Why is processing a sorted array faster than 
 
     
     public class Main
-    {
+    \{
         public static void main(String[] args)
-        {
+        \{
             // Generate data
             int arraySize = 32768;
             int data[] = new int[arraySize];
@@ -98,19 +98,19 @@ sof 上的帖子，原文链接：[Why is processing a sorted array faster than 
             long sum = 0;
     
             for (int i = 0; i < 100000; ++i)
-            {
+            \{
                 // Primary loop
                 for (int c = 0; c < arraySize; ++c)
-                {
+                \{
                     if (data[c] >= 128)
                         sum += data[c];
-                }
-            }
+                \}
+            \}
     
             System.out.println((System.nanoTime() - start) / 1000000000.0);
             System.out.println("sum = " + sum);
-        }
-    }
+        \}
+    \}
 
 
 虽然时间少点，但差别不大，数量级是一样的。

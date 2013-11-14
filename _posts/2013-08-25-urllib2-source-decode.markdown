@@ -253,7 +253,7 @@ tips:结合上面的 open() 方法，http_request 中传入的参数 request 是
 
 
 结果是：
-{}
+\{\}
 Date: Sun, 25 Aug 2013 03:06:56 GMT
 Server: BWS/1.0
 Content-Length: 10433

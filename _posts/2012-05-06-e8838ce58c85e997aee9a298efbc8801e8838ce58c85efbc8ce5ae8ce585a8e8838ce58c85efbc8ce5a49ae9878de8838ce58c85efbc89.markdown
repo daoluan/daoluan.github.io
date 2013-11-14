@@ -80,7 +80,7 @@ tags:
 思路：每个物品无非是装入背包或者不装入背包，那么就一个一个物品陆续放入背包中。可以有
 
 
-> **tab[i][j] = max(tab[i-1][j-weight[i]]+value[i],tab[i-1][j]) ({i,j|0<i<=n,0<=j<=total}) **
+> **tab[i][j] = max(tab[i-1][j-weight[i]]+value[i],tab[i-1][j]) (\{i,j|0<i<=n,0<=j<=total\}) **
 
 
 其中i表示放第i个物品，j表示背包所容纳的重量，那么tab[i-1][j-weight[i]]+value[i]表示放入第i物品，刚开始接触会有疑问，tab[i-1][j-weight[i]]这个值，可以这样理解：tab[i-1][j]为装到上一个物品在背包j容量时的最佳值，那么如果我要在j容量的时候放入现在的i物品，那么是不是要j-weight[i]，所以tab[i-1][j-weight[i]]+value[i]为放入第i物品的价值；tab[i-1][j]就是不放入第i个物品。
@@ -470,7 +470,7 @@ tags:
 有了上面01背包的式子，这题会变的容易理解很多，只是这个式子要有小小的改动。01背包在二维数组上操作，就是为了防止一个物品被放入多次的情况。因此一维数组可以满足完全背包的问题。如下：
 
 
-> **tab[j] = max(tab[j-weight[i]]+value[i],tab[j]);({i,j|0<i<=n,0<=j<=total})**
+> **tab[j] = max(tab[j-weight[i]]+value[i],tab[j]);(\{i,j|0<i<=n,0<=j<=total\})**
 
 
 根本就是一样的，只不过物品可以被放多次。

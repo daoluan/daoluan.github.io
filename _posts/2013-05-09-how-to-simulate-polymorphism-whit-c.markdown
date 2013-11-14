@@ -29,36 +29,36 @@ C++ 中的多态是指「通过基类对象的指针或者基类对象的引用�
 
     
     struct Animal
-    {
+    \{
          void (*move)();
-    };
+    \};
 
 
 此时 Animal 中的 move 只是一个指针，并没有赋值，也就是说它不能代表任何的行为，但我们可以在 main 函数中对其进行赋值，赋予相应的行为。
 
     
     void Animal_move()
-    {
+    \{
          printf("Animal move.\n");
-    }
+    \}
 
 
 再假定一个结构体 struct Rabbit，我们可以暂且把它看作（因为 C 中没有继承概念）struct Animal 的派生类，声明如下：
 
     
     struct Rabbit
-    {
+    \{
          void (*move)();
-    };
+    \};
 
 
 同样我们可以给 Rabbit 的 move 预定义一个行为：
 
     
     void Rabbit_move()
-    {
+    \{
          printf("Rabbit move.\n");
-    }
+    \}
 
 
 struct Animal 和 struct Rabbit 在内容上完全一致，而且变量对齐上也完全一致，可以通过将 struct Rabbit 类型的指针强制转换为 struct Animal 类型的指针，即：
@@ -76,7 +76,7 @@ struct Animal 和 struct Rabbit 在内容上完全一致，而且变量对齐上
 
     
     int main(void)
-    {
+    \{
          Animal *panimal;
     
          Rabbit rabbit;
@@ -86,7 +86,7 @@ struct Animal 和 struct Rabbit 在内容上完全一致，而且变量对齐上
          panimal = (Animal*)&rabbit;
     
          panimal->move();
-    }
+    \}
 
 
 Rabbit move.
@@ -100,10 +100,10 @@ Rabbit move.
 
     
     struct Animal
-    {
+    \{
          int age;
          void (*move)();
-    };
+    \};
 
 
 **运行崩溃了**，并不能得到上面的执行结果，原因是 move 函数指针 在struct Animal 中和 struct Rabbit 中的偏移量不同，结构体是根据变量在结构体的偏移量来读取或者修改变量的。当执行 panimal->move(); 的时候，实际上引用了非法的地址：

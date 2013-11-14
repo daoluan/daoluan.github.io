@@ -105,7 +105,7 @@ root@daoluan:~# apt-get install libmysqlclient16-dev
     #include <mysql/mysql.h>
     
     int main(int argc, char *argv[])
-    {
+    \{
     	/* declare structures and variables */
         MYSQL *conn_ptr;
     	MYSQL_ROW  row;
@@ -131,19 +131,19 @@ root@daoluan:~# apt-get install libmysqlclient16-dev
     
     	/* print result set */
         while((row = mysql_fetch_row(result)) != NULL)
-        {
+        \{
             for(i=0; i<num_fields; i++)
-            {
+            \{
                 printf("%s ",row[i]!=NULL?row[i]:"NULL");
-            }// for
+            \}// for
             printf("\n");
-        }// while
+        \}// while
     
     	/* clean up */
     	mysql_free_result(result);
         mysql_close(conn_ptr);
         return EXIT_SUCCESS;
-    }
+    \}
 
 
 将上面的代码存档为sample.c

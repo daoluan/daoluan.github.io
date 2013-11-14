@@ -26,7 +26,7 @@ tags:
     
     //项目随手摘录的一个构造插入指定对象数据的INSERT语句的方法。
     int gtd_genInsertSql(struct task_t &toinsert,char *sql, int nUserID)
-    {
+    \{
         int curr = 0;
     
         //task_id | user_id | strtext
@@ -44,7 +44,7 @@ tags:
         *(sql + curr) = ')';
         curr++;
         return curr;
-    }
+    \}
 
 
 ORM，即对象关系映射，ORM的设计就是数据库持久层的设计。目前流行有一些成熟的ORM框架，对应各种语言都有。
@@ -90,7 +90,7 @@ c版本Simple MySQL ORM是用python的脚本完成的，它可以用来连接已
     
     dbname = "ex1"
     name = "db"
-    tables = { }
+    tables = \{ \}
 
 
 在接下来，让它执行吧 :P
@@ -102,15 +102,15 @@ c版本Simple MySQL ORM是用python的脚本完成的，它可以用来连接已
 当然，比起真正的rock，少点听觉享受。可能你会问，笔者到底要怎么连接到数据库啊？当然，那些只是默认用户写的……但看看我们得到的结果。我们可以已经有两个文件产生了，分别是：db.h和db.c。前者包含是象征数据库表的数据结构声明和操作这些数据结构的方法；后者包含了方法的定义，接着的是数据初始化的语句。我们来看看：
 
     
-    typedef struct db_ex_customer {
+    typedef struct db_ex_customer \{
             int id;
             char * name;
-    } db_ex_customer;
+    \} db_ex_customer;
     
-    typedef struct db_ex_item {
+    typedef struct db_ex_item \{
             int customer_id;
             char * itemname;
-    } db_ex_item;
+    \} db_ex_item;
 
 
 相信没有进一步解释这些东西的必要。让我们使用它们吧！笔者新建了ex1.c文件。注意：为了更容易读懂代码，笔者没有处理错误的返回值：
@@ -122,7 +122,7 @@ c版本Simple MySQL ORM是用python的脚本完成的，它可以用来连接已
     #include <time.h>
     
     int main (int argc, char **argv)
-    {
+    \{
     	int ret;
     	MYSQL global_mysql;
     	MYSQL *m;
@@ -178,7 +178,7 @@ c版本Simple MySQL ORM是用python的脚本完成的，它可以用来连接已
     	db_ex_item__free (item2);
     
     	return (0);
-    }
+    \}
 
 
 编译下：
@@ -197,7 +197,7 @@ c版本Simple MySQL ORM是用python的脚本完成的，它可以用来连接已
     #include <time.h>
     
     int main (int argc, char **argv)
-    {
+    \{
     	int ret;
     	MYSQL global_mysql;
     	MYSQL *m;
@@ -212,13 +212,13 @@ c版本Simple MySQL ORM是用python的脚本完成的，它可以用来连接已
     	ret = db_init (& global_mysql);
     
     	cust1 = db_ex_customer__get_by_id (3);
-    	if (cust1) {
+    	if (cust1) \{
     		fprintf (stdout, "I have customer named \'%s\'\n", cust1->name);
     		db_ex_customer__free (cust1);
-    	}
+    	\}
     
     	return (0);
-    }
+    \}
 
 
 跟前边一样，编译，然后执行：
@@ -233,10 +233,10 @@ c版本Simple MySQL ORM是用python的脚本完成的，它可以用来连接已
     
     dbname = "ex1"
     name = "db"
-    tables = {
+    tables = \{
     		"ex_item" :[("get", "get_customer_items",
     			[("INTEGER", "customer_id")], "SELECT ex_item.* FROM ex_item WHERE customer_id = ?")]
-    	}
+    	\}
 
 
 重新执行db.puy脚本会添加新的db_ex_item__get_customer_items_*方法集。这些方法灵活之处在于，可以增加INTEGER类型的参数，在特定的SQL上打开游标：从游标读取一行记录，关闭游标。我们扩展ex2.c：
@@ -249,7 +249,7 @@ c版本Simple MySQL ORM是用python的脚本完成的，它可以用来连接已
     #include <time.h>
     
     int main (int argc, char **argv)
-    {
+    \{
     	int ret;
     	MYSQL global_mysql;
     	MYSQL *m;
@@ -264,22 +264,22 @@ c版本Simple MySQL ORM是用python的脚本完成的，它可以用来连接已
     	ret = db_init (& global_mysql);
     
     	cust1 = db_ex_customer__get_by_id (3);
-    	if (cust1) {
+    	if (cust1) \{
     		fprintf (stdout, "I have customer named \'%s\'..\n", cust1->name);
     
     		db_ex_item__get_customer_items_open (cust1->id);
     
-    		while ((item1 = db_ex_item__get_customer_items_fetch ()) != NULL) {
+    		while ((item1 = db_ex_item__get_customer_items_fetch ()) != NULL) \{
     			fprintf (stdout, ".. and found his item named \'%s\'\n", item1->itemname);
     			db_ex_item__free (item1);
-    		}
+    		\}
     		db_ex_item__get_customer_items_close ();
     
     		db_ex_customer__free (cust1);
-    	}
+    	\}
     
     	return (0);
-    }
+    \}
 
 
 得偿所愿，它打印的结果：

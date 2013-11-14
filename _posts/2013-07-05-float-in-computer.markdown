@@ -45,14 +45,14 @@ tags:
     const int kTestCount = 5000;
     
     int  main(int argc, char const *argv[])
-    {
+    \{
     	float a = 100.3f,
     		b = 100.0f;
     
     	float c = a - b;
     	printf("%f\n", c);
     	return 0;
-    }
+    \}
 
 
 结果是 0.300003 看！还是有稍微的差错的，并不是完全是 0.3。

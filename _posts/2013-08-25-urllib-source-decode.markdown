@@ -41,7 +41,7 @@ urllib 最简单的使用，我也从下面的语句中开始：
 
     
     import urllib
-    params = urllib.urlencode({'spam': 1, 'eggs': 2, 'bacon': 0})
+    params = urllib.urlencode(\{'spam': 1, 'eggs': 2, 'bacon': 0\})
     f = urllib.urlopen("http://www.musi-cal.com/cgi-bin/query?%s" % params)
     print f.read()
 

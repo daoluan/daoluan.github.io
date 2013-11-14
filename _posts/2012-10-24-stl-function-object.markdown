@@ -54,12 +54,12 @@ plus<int>()(10,10)；中，第一个括号是为了产生struct plus的临时对
     template<class _Ty>
     	struct plus
     		: public binary_function<_Ty, _Ty, _Ty>
-    	{	// functor for operator+
+    	\{	// functor for operator+
     	_Ty operator()(const _Ty& _Left, const _Ty& _Right) const
-    		{	// apply operator+ to operands
+    		\{	// apply operator+ to operands
     		return (_Left + _Right);
-    		}
-    	};
+    		\}
+    	\};
 
 
 
@@ -73,12 +73,12 @@ plus<int>()(10,10)；中，第一个括号是为了产生struct plus的临时对
     template<class _Ty>
     struct square
     	: public unary_function<_Ty, _Ty>
-    {	
+    \{	
     	_Ty operator()(const _Ty& Arg) const
-    	{	
+    	\{	
     		return (Arg * Arg);
-    	}
-    };
+    	\}
+    \};
     
     ......
     cout << "10^2 = " << square<int>()(10) << endl;

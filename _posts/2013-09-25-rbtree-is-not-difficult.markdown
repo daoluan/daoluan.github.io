@@ -43,7 +43,7 @@ tags:
     const _Rb_tree_Color_type _S_rb_tree_black = true;
     
     struct _Rb_tree_node_base
-    {
+    \{
       typedef _Rb_tree_Color_type _Color_type;
       typedef _Rb_tree_node_base* _Base_ptr;
     
@@ -53,24 +53,24 @@ tags:
       _Base_ptr _M_right;
     
       static _Base_ptr _S_minimum(_Base_ptr __x)
-      {
+      \{
         while (__x->_M_left != 0) __x = __x->_M_left;
         return __x;
-      }
+      \}
     
       static _Base_ptr _S_maximum(_Base_ptr __x)
-      {
+      \{
         while (__x->_M_right != 0) __x = __x->_M_right;
         return __x;
-      }
-    };
+      \}
+    \};
     
     template <class _Value>
     struct _Rb_tree_node : public _Rb_tree_node_base
-    {
+    \{
       typedef _Rb_tree_node<_Value>* _Link_type;
       _Value _M_value_field;
-    };
+    \};
 
 
 

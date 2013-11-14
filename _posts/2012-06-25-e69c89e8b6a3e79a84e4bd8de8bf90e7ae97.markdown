@@ -44,17 +44,17 @@ tags:
     #include<iostream> 
     using namespace std; 
     int main() 
-    { 
+    \{ 
         int cnt = 0, 
             a = 45; 
         for(int i=0; i<32; i++) 
-        { 
+        \{ 
             if(a&1) 
                 cnt++; 
             a>>=1; 
-        }// for 
+        \}// for 
         cout << cnt << endl; 
-    }
+    \}
 
 
 有一个更高效的做法就是，发现x&=(x-1)，可以去除x中最右边的值为1的一个二进制位（也就把最右边为1的位变为0），譬如：
@@ -79,16 +79,16 @@ XXX000000
     #include<iostream> 
     using namespace std; 
     int main() 
-    { 
+    \{ 
         int cnt = 0, 
             a = 45; 
         while(a!=0) 
-        { 
+        \{ 
             cnt++; 
             a&=(a-1); 
-        }// while 
+        \}// while 
         cout << cnt << endl; 
-    }
+    \}
 
 
 左移，右移和非运算的配合将很容易得到我们需要的屏蔽位，以32位整数为例，我们要将低字节的3～8为设置为屏蔽位：

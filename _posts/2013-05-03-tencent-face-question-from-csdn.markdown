@@ -34,7 +34,7 @@ categories:
 
     
     void merge(int *arr,int left,int middle,int right)
-    {
+    \{
         /*全负数*/    /*全正数*/
         if(!(arr[middle]>0 && arr[middle+1]<0))
             return;
@@ -42,15 +42,15 @@ categories:
         //    找到 +++++ ----- 区域
         int pos1 = left,pos2 = middle + 1;
         for(int i=left; i<=middle; i++)
-            if(arr[i] > 0)    {pos1 = i;break;}
+            if(arr[i] > 0)    \{pos1 = i;break;\}
         for(i=middle+1; i<=right; i++)
-            if(arr[i] > 0)    {pos2 = i-1;break;}
+            if(arr[i] > 0)    \{pos2 = i-1;break;\}
     
         //    翻手定律，你懂得
         reverse(arr+pos1,middle - pos1+1);
         reverse(arr+middle+1,pos2 - middle);
         reverse(arr+pos1,pos2 - pos1 + 1);
-    }
+    \}
 
 
 **迭代**
@@ -81,7 +81,7 @@ categories:
 
     
     void myfunc(int *arr,int left,int right)
-    {
+    \{
         if(right <= left)
             return;
     
@@ -93,9 +93,9 @@ categories:
             negcount = 0;    //    负数统计
     
         for(int i = 0; i<=right; i++)
-        {
+        \{
             if(arr[i]>0)
-            {
+            \{
                 if(posbeg < 0)
                     posend = posbeg = i;
                 posend = i;
@@ -104,11 +104,11 @@ categories:
                     else break;
                 f = true;
                 i = posend + 1;
-            }
+            \}
     
             if(arr[i] < 0 && i <= right)
-            {
-                if(!f){negcount++;continue;}
+            \{
+                if(!f)\{negcount++;continue;\}
                 negend = negbeg = i;
                 for(int j=i+1; j<=right; j++)
                     if(arr[j]<0)negend++,negcount++;
@@ -121,10 +121,10 @@ categories:
                 f = false;print(arr,14);
                 posend = negend;
                 posbeg = negcount + 1;
-            }
+            \}
     
-        }//    while
-    }
+        \}//    while
+    \}
 
 
 **算法复杂度**

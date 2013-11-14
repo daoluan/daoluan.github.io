@@ -44,10 +44,10 @@ tags:
     is.push(0);
     
     while(!is.empty())
-    {
+    \{
     	cout << is.top() << " ";
     	is.pop();
-    }//	while	/*0 1 2 3 4*/
+    \}//	while	/*0 1 2 3 4*/
     .....
 
 
@@ -71,10 +71,10 @@ stack不允许遍历！
     cout << iq.back() << endl;	/*0*/
     
     while(!iq.empty())
-    {
+    \{
     	cout << iq.front() << " ";
     	iq.pop();
-    }//	while	/*4 3 2 1 0*/
+    \}//	while	/*4 3 2 1 0*/
     ......
 
 
@@ -96,8 +96,8 @@ stack/queue不允许遍历！
     ......
     Sequence c;		//	底层容器
     ......
-    reference top()	{	return c.back();	}
-    void pop()	{	c.pop_back();	}
+    reference top()	\{	return c.back();	\}
+    void pop()	\{	c.pop_back();	\}
     ......
 
 
@@ -114,10 +114,10 @@ stack/queue不允许遍历！
     is.push(0);
     
     while(!is.empty())
-    {
+    \{
     	cout << is.top() << " ";
     	is.pop();
-    }//	while	/*0 1 2 3 4*/
+    \}//	while	/*0 1 2 3 4*/
     ......
 
 

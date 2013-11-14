@@ -44,20 +44,20 @@ tags:
 i++的操作：
 
     
-    {
+    \{
     	int temp = i;
     	++i;
     	return temp;
-    }
+    \}
 
 
 ++i的操作：
 
     
-    {
+    \{
     	i = i + 1;
     	return i;
-    }
+    \}
 
 
 因此i++ = 1是不合法的，因为i++返回的是临时值，不是i自己，为了消除歧义，i++坚决返回右值，也就是说它只能放置在等式右边。而++i = 1是合法的，从上面操作的展开来看，++i确实返回了它自己，因此它是一个左值，既能是在等式的左边，也能是右边。
@@ -70,39 +70,39 @@ i++的操作：
 
     
     class Node  
-    {  
+    \{  
     public:  
     	Node(int nAge = 0)  
-    	{  
+    	\{  
     		m_nAge = nAge;  
-    	}  
+    	\}  
     
     	int GetAge()const
-    	{  
+    	\{  
     		return m_nAge;  
-    	}  
+    	\}  
     
     	Node operator ++ (int n)	/*i++*/
-    	{
+    	\{
     		Node temp = *this;
     		m_nAge ++;
     		return temp;
-    	}
+    	\}
     
     	Node& operator ++ ()		/*++i*//*你知道为什么要返回reference吗？*/
-    	{
+    	\{
     		m_nAge ++;
     		return *this;
-    	}
+    	\}
     
     	Node& operator = (int n)
-    	{
+    	\{
     		m_nAge = n;
     		return *this;
-    	}
+    	\}
     private:  
     	int m_nAge;  
-    };
+    \};
 
 
 C++规定，Node& operator ++ ()是重载前缀自增运算符（++i），而Node operator ++ (int n)是重载后缀自增运算符（i++）。细心发现，重载前缀自增运算符返回的是reference引用，而重载后缀自增运算符返回的是临时变量。换句话说，如果有Node对象node，我希望++node（前缀）返回的是左值，node++（后缀）返回的右值。意即希望，注意是希望：
@@ -137,13 +137,13 @@ node++ = 1;执行过后，node没有被“=1”影响。那可不可以反其道
     
     ......
     Node& operator ++ (int n)	/*i++*//*修改i++的行为，让它也返回左值*/
-    {
+    \{
     	//Node temp = *this;
     	//m_nAge ++;
     	//return temp;
     	m_nAge ++;
     	return *this;
-    }
+    \}
     ......
 
 

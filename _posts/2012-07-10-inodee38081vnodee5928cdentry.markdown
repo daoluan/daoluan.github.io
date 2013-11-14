@@ -38,7 +38,7 @@ inode信息就存储在磁盘的某个分区上。下图是上图的一个扩展
 ext3_inode上的数据结构如下：它记录了很多关于文件的信息，比如文件长度，文件所在的设备，文件的物理位置，创建、修改和更新时间等等，**特别的，它不包含文件名！**
 
     
-    struct ext3_inode {
+    struct ext3_inode \{
     	__le16 i_mode; File mode
     	__le16 i_uid; Low 16 bits of Owner Uid
     	__le32 i_size; Size in bytes
@@ -52,7 +52,7 @@ ext3_inode上的数据结构如下：它记录了很多关于文件的信息，�
     	......
     	__le32 i_block[EXT2_N_BLOCKS]; Pointers to blocks
     	......
-    };
+    \};
 
 
 引入vnode：早期版本的Unix是这样做的，但是Linux并没有。vnode一般包含了文件类型和对此文件进行各种操作的函数的指针。[![打开文件的内核数据结构](http://www.daoluan.net/blog/wp-content/uploads/2012/07/thumb.jpg)](http://www.daoluan.net/blog/wp-content/uploads/2012/07/2f1e41c3b813.jpg)
@@ -71,7 +71,7 @@ A dentry is the glue that holds inodes and files together by relating inode numb
 
 
     
-    struct dentry {
+    struct dentry \{
     	atomic_t d_count; 目录项对象使用计数器
     	unsigned int d_flags; 目录项标志
     	struct inode * d_inode; 与文件名关联的索引节点
@@ -89,7 +89,7 @@ A dentry is the glue that holds inodes and files together by relating inode numb
     	vunsigned long d_vfs_flags;
     	void * d_fsdata;与文件系统相关的数据
     	unsigned char d_iname [DNAME_INLINE_LEN]; 存放短文件名
-    };
+    \};
 
 
 诸如文件名，父目录等。dentry可以描述目录的树状结构。

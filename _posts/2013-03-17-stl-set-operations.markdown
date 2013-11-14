@@ -36,28 +36,28 @@ STL算法提供求两个容器中的数据的交集、并集、差集和对称�
       OutputIterator set_union (InputIterator1 first1, InputIterator1 last1,
                                 InputIterator2 first2, InputIterator2 last2,
                                 OutputIterator result)
-    {
+    \{
       while (true)
-      {
+      \{
         if (first1==last1) return std::copy(first2,last2,result);
         if (first2==last2) return std::copy(first1,last1,result);
     
-        if (*first1<*first2) { *result = *first1; ++first1; }
-        else if (*first2<*first1) { *result = *first2; ++first2; }
-        else { *result = *first1; ++first1; ++first2; }
+        if (*first1<*first2) \{ *result = *first1; ++first1; \}
+        else if (*first2<*first1) \{ *result = *first2; ++first2; \}
+        else \{ *result = *first1; ++first1; ++first2; \}
         ++result;
-      }
-    }
+      \}
+    \}
 
 
 细心就会发现，在set_union中有「*first1<*first2」，也就是要求，iterator所对应的的数据必须实现运算符重载「operator <」。C++内置类型比如int，char，long等都可以直接进行比较，但实际需求可能要求必须有更为复杂的数据类型，譬如：
 
     
     struct datastruct_t
-    {
+    \{
     	int nID;
     	string name;
-    };
+    \};
 
 
 此时调用set_union不能通过编译！

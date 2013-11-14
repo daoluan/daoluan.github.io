@@ -97,7 +97,7 @@ h b c d e f g
     using namespace std;
     
     int main()
-    {	
+    \{	
     	vector<int> iv(3,3);
     	unsigned int i;
     
@@ -123,7 +123,7 @@ h b c d e f g
     	cout << endl;
     
     	return 0;
-    }
+    \}
 
 
 

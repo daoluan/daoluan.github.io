@@ -35,9 +35,9 @@ libevent 采用的就是 Reactor 的设计思想。其 **Reactor 的中心思�
     /*accept callback function.*/
     void accept_callback(int fd,
     					 short ev,void *arg)
-    {
+    \{
         ......
-    }
+    \}
     ......
     struct event accept_event;
     event_set(&accept_event,

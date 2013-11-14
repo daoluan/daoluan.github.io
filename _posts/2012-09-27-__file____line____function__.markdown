@@ -43,21 +43,21 @@ tags:
     using namespace std;
     
     void foo()
-    {
+    \{
     	cout << __FUNCTION__ << endl;
     	cout << __LINE__ << endl;
     	cout << __FILE__ << endl;
-    }
+    \}
     
     int main()
-    {
+    \{
     	cout << __FUNCTION__ << endl;
     	cout << __LINE__ << endl;
     	cout << __FILE__ << endl;
     
     	foo();
     	return 0;
-    }
+    \}
 
 
 下面是执行效果

@@ -228,9 +228,9 @@ LocaleRegexProvider 类只为地区化而存在, 他持有 regex 属性, 但在 
                     tried.append([pattern])
     
             # 如果没有匹配成功的项目, 将异常
-            raise Resolver404({'tried': tried, 'path': new_path})
+            raise Resolver404(\{'tried': tried, 'path': new_path\})
     
-        raise Resolver404({'path' : path})
+        raise Resolver404(\{'path' : path\})
     
     # 修饰 urlconf_module, 返回 self._urlconf_module, 即 urlpatterns 变量所在的文件
     @property
