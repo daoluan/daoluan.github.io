@@ -1,0 +1,82 @@
+---
+author: daoluan
+comments: true
+date: 2012-10-22 11:35:32+00:00
+layout: post
+slug: stl-power
+title: 私房STL算法之快速幂
+wordpress_id: 1265
+categories:
+- C/C++
+tags:
+- C/C++
+- 《STL源码剖析》
+---
+
+STL中的[pow](http://www.cplusplus.com/reference/clibrary/cmath/pow/)用来计算某数的n幂次方。
+
+幂运算中，如AK，需要作k次乘法，可以试着用二分法减少乘法的次数，乘法因为机器性能的不同所占的时钟周期数有10~40不等，所以降低乘法的次数，等于是节省CPU的资源，虽然在大多数情况这些无足轻重。
+
+计算A23，可以依次计算A1b，A10b，A100b，A101b，A1010b，A1011b，A10110b，A10111b得到结果。在计算过程中，刻意将指数转化为二进制的形式，以更好理解二分法快速幂。这里可以呈现的是快速幂的递归算法，发现：
+
+<!-- more -->
+
+当指数n为偶数时，A^n = A^(n/2) * A^(n/2)；
+
+当指数n为奇数时，A^n = A^(n/2) * A^(n/2) * A 。
+
+从上面的例子中，即10111b为奇数，A10111b=(A10110b)2 * A；10110b为偶数，A10110b=(A1011b)2 ，依次类推。。。。
+
+    
+    typedef unsigned int UINT;
+    UINT power(UINT A,UINT n)
+    {
+    	if(n == 1)		
+    		return A;
+    
+    	UINT tmp = power(A,n>>1);	/*calculate pow(A,n/2).*/
+    	return (n & 1) 
+    		? tmp * tmp * A			/*odd.*/
+    		:tmp * tmp;				/*even.*/
+    }
+
+
+上面是递归的思路，迭代的也一样，同样可以举一个翔实的例子。计算A23，23用二进制展开：
+
+
+> 
+
+> 
+> 23 = 1 * 24 + 0 * 23 + 1 * 22 + 1 * 21 + 1 * 20,
+> 
+> 
+
+
+
+
+
+迭代从低位开始，第k位为0，即不操作；第k位为1，tmp *2k-1。
+
+
+
+
+    
+    UINT power(UINT A,UINT n)
+    {
+    	UINT tmp = 1,base = 2;
+    	while(n)
+    	{
+    		if(n&1)			/*低位为1*/
+    			tmp *= base;
+    		n >>= 1;		/*右移*/
+    		base <<= 1;
+    	}//	while
+    	return tmp;
+    }
+
+
+把原来O(N)降低为O(lnN)，很划得来。欢迎斧正。
+
+本文完 2012-10-22
+
+捣乱小子 [http://www.daoluan.net/](http://www.daoluan.net/)
