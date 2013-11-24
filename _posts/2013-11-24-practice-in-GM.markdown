@@ -1,7 +1,7 @@
 ---
 layout: post
 author: daoluan
-title: GMC 实习(一)
+title: GM 实习(一)
 comments: true
 date: 2013-11-24 14:26:31
 ---
