@@ -7,7 +7,7 @@ slug: stl-stack-queue
 title: 私房STL之stack与queue
 wordpress_id: 1187
 categories:
-- C++
+- cplusplus
 tags:
 - C/C++
 - 《STL源码剖析》

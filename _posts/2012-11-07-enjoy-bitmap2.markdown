@@ -7,7 +7,7 @@ slug: enjoy-bitmap2
 title: 玩转位图（bitmap）2
 wordpress_id: 1445
 categories:
-- C++
+- cplusplus
 - VC
 tags:
 - 开源应用

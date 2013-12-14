@@ -7,7 +7,7 @@ slug: stl-hash_set-and-hash_map
 title: 私房STL之hash_set和hash_map
 wordpress_id: 1271
 categories:
-- C++
+- cplusplus
 tags:
 - C/C++
 - 《STL源码剖析》

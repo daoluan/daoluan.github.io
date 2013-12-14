@@ -7,7 +7,7 @@ slug: confidential-stl
 title: 数据结构利器之私房STL
 wordpress_id: 1508
 categories:
-- C++
+- cplusplus
 - 学习总结
 - 算法
 tags:

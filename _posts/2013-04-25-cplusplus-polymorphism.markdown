@@ -7,7 +7,7 @@ slug: cplusplus-polymorphism
 title: C++ 多态实现机制
 wordpress_id: 1720
 categories:
-- C++
+- cplusplus
 tags:
 - C/C++
 - 多态

@@ -7,7 +7,7 @@ slug: how-to-simulate-polymorphism-whit-c
 title: C 语言实现 C++ 多态
 wordpress_id: 1746
 categories:
-- C++
+- cplusplus
 tags:
 - C/C++
 ---

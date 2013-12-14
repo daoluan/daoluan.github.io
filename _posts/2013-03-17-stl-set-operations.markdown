@@ -7,7 +7,7 @@ slug: stl-set-operations
 title: STL求交集、并集、差集和对称差集
 wordpress_id: 1608
 categories:
-- C++
+- cplusplus
 - Linux
 tags:
 - C/C++

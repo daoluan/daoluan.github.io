@@ -7,7 +7,7 @@ slug: stl-algorithm-full-array
 title: 私房STL算法之全排列
 wordpress_id: 1247
 categories:
-- C++
+- cplusplus
 tags:
 - C/C++
 - 《STL源码剖析》

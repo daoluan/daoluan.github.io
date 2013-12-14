@@ -7,7 +7,7 @@ slug: stl-lvalue-rvalue
 title: 私房STL之左值和右值
 wordpress_id: 1285
 categories:
-- C++
+- cplusplus
 tags:
 - C/C++
 - 《STL源码剖析》

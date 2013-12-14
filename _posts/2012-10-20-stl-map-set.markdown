@@ -7,7 +7,7 @@ slug: stl-map-set
 title: 私房STL之map和set
 wordpress_id: 1218
 categories:
-- C++
+- cplusplus
 tags:
 - C/C++
 - 《STL源码剖析》

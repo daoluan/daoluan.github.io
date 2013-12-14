@@ -7,7 +7,7 @@ slug: hava-a-look-at-libevent
 title: 初探libevent网络库
 wordpress_id: 1089
 categories:
-- C++
+- cplusplus
 - Linux
 tags:
 - GTD项目实录

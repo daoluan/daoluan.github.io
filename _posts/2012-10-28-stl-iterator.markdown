@@ -7,7 +7,7 @@ slug: stl-iterator
 title: 私房STL之迭代器
 wordpress_id: 1341
 categories:
-- C++
+- cplusplus
 tags:
 - C/C++
 - 《STL源码剖析》
