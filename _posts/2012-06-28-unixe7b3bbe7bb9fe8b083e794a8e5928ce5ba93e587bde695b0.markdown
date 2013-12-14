@@ -1,0 +1,33 @@
+---
+author: daoluan
+comments: true
+date: 2012-06-28 05:14:24+00:00
+layout: post
+published: false
+slug: unix%e7%b3%bb%e7%bb%9f%e8%b0%83%e7%94%a8%e5%92%8c%e5%ba%93%e5%87%bd%e6%95%b0
+title: UNIX系统调用和库函数
+wordpress_id: 604
+categories:
+- Linux
+tags:
+- apue 学习总结
+- Linux
+---
+
+[![UNIX系统调用和库函数1](http://www.daoluan.net/blog/wp-content/uploads/2012/07/UNIX1_thumb.png)](http://www.daoluan.net/blog/wp-content/uploads/2012/07/UNIX1.png)我们学c/c++的时候用过不少的库函数，而当初的概念也只停留在函数，而忽略了系统调用。个系统调用指程序向操作系统内核请求**需要更高权限运行的服务。它是操作系统留给用户进程的一个接口。**
+
+系统调用提供比较纯粹直接的高级服务，为了保证内核精悍，这一点上必须的。因为如果想要更人性化，更符合特定情况的功能就必须由用户我们来进行定义，库函数由此诞生，它把部分系统调用包装起来，一方面把系统调用抽象了，一方面方便了用户级的调用。系统调用和库函数在执行的效果上很相似（当然库函数会更符合需求），但是系统调用是运行于内核状态；而库函数由用户调用，运行于用户态。
+
+<!-- more -->
+
+[![UNIX系统调用和库函数2](http://www.daoluan.net/blog/wp-content/uploads/2012/07/UNIX2_thumb.png)](http://www.daoluan.net/blog/wp-content/uploads/2012/07/UNIX2.png)
+
+这幅图很好的描述了库函数和系统调用之间的关系，在执行库函数的时候是处于用户态；但当进入库函数进入系统调用接口的时候，就会通过“软中断陷入内核态”，从而进行系统调用。
+
+[![UNIX系统调用和库函数3](http://www.daoluan.net/blog/wp-content/uploads/2012/07/UNIX3_thumb.png)](http://www.daoluan.net/blog/wp-content/uploads/2012/07/UNIX3.png)
+
+C语言中的malloc就是一个标准c库函数，它执行的时候i，调用了sbrk系统调用，从而实现“个性化的内存分配”。
+
+本文完 2012-06-28
+
+捣乱小子 [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)
