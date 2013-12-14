@@ -7,7 +7,7 @@ slug: simple-mysql-orm-for-c-translation
 title: 【译】Simple MySQL ORM for C
 wordpress_id: 1613
 categories:
-- C/C++
+- C++
 - Linux
 tags:
 - C/C++

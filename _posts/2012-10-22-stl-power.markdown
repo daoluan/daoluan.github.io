@@ -7,7 +7,7 @@ slug: stl-power
 title: 私房STL算法之快速幂
 wordpress_id: 1265
 categories:
-- C/C++
+- C++
 tags:
 - C/C++
 - 《STL源码剖析》

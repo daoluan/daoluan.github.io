@@ -7,7 +7,7 @@ slug: __file____line____function__
 title: c++ __FILE__，__LINE__和__FUNCTION__的使用方法
 wordpress_id: 1095
 categories:
-- C/C++
+- C++
 tags:
 - C/C++
 - GTD项目实录

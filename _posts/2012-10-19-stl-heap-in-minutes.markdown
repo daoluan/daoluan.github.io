@@ -7,7 +7,7 @@ slug: stl-heap-in-minutes
 title: 私房STL之一分钟的heap
 wordpress_id: 1196
 categories:
-- C/C++
+- C++
 tags:
 - C/C++
 - 《STL源码剖析》

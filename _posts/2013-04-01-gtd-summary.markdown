@@ -7,7 +7,7 @@ slug: gtd-summary
 title: GTD时间管理作品总结
 wordpress_id: 1633
 categories:
-- C/C++
+- C++
 - Linux
 - 学习总结
 - 网络编程

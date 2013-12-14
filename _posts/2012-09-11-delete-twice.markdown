@@ -7,7 +7,7 @@ slug: delete-twice
 title: C++ 一不小心被delete两次
 wordpress_id: 1019
 categories:
-- C/C++
+- C++
 - 学习总结
 - 随笔
 tags:

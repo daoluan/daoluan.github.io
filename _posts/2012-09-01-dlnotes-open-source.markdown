@@ -7,7 +7,7 @@ slug: dlnotes-open-source
 title: DL便签V0.3源码发布
 wordpress_id: 946
 categories:
-- C/C++
+- C++
 - VC
 tags:
 - 开源应用

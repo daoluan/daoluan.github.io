@@ -7,7 +7,7 @@ slug: enjoy-bitmap
 title: 玩转位图（bitmap）
 wordpress_id: 1350
 categories:
-- C/C++
+- C++
 - VC
 ---
 

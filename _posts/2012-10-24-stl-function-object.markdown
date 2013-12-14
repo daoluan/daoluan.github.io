@@ -7,7 +7,7 @@ slug: stl-function-object
 title: 私房STL之函数对象
 wordpress_id: 1301
 categories:
-- C/C++
+- C++
 tags:
 - C/C++
 - 《STL源码剖析》

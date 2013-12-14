@@ -7,7 +7,7 @@ slug: stl-hashtable
 title: 私房STL之Hashtable
 wordpress_id: 1234
 categories:
-- C/C++
+- C++
 tags:
 - C/C++
 - 《STL源码剖析》

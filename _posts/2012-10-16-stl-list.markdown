@@ -7,7 +7,7 @@ slug: stl-list
 title: 私房STL之list
 wordpress_id: 1159
 categories:
-- C/C++
+- C++
 tags:
 - C/C++
 - 《STL源码剖析》

@@ -7,7 +7,7 @@ slug: stl-vector
 title: 私房STL之vector
 wordpress_id: 1149
 categories:
-- C/C++
+- C++
 tags:
 - C/C++
 - 《STL源码剖析》

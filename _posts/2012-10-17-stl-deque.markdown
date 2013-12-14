@@ -7,7 +7,7 @@ slug: stl-deque
 title: 私房STL之deque
 wordpress_id: 1170
 categories:
-- C/C++
+- C++
 tags:
 - C/C++
 - 《STL源码剖析》

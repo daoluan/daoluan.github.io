@@ -7,7 +7,7 @@ slug: uibutton
 title: UIButton 简易的UI
 wordpress_id: 1006
 categories:
-- C/C++
+- C++
 - VC
 - 学习总结
 ---

@@ -7,7 +7,7 @@ slug: stl-function-adapter
 title: 私房STL之函数配接器
 wordpress_id: 1312
 categories:
-- C/C++
+- C++
 tags:
 - C/C++
 - 《STL源码剖析》

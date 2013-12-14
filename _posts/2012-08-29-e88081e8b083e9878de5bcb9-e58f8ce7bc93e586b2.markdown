@@ -7,7 +7,7 @@ slug: '%e8%80%81%e8%b0%83%e9%87%8d%e5%bc%b9-%e5%8f%8c%e7%bc%93%e5%86%b2'
 title: 老调重弹--双缓冲
 wordpress_id: 914
 categories:
-- C/C++
+- C++
 - VC
 ---
 
