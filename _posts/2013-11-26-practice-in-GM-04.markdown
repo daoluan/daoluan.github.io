@@ -1,7 +1,7 @@
 ---
 layout: post
 author: daoluan
-title: GM 实习(三)
+title: GM 实习(四)
 comments: true
 date: 2013-12-17 20:36:16
 ---
