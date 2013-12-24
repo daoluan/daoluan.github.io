@@ -1,10 +1,10 @@
 ---
-destination : /Users/mreid/Sites/mark.reid.name
+destination : /Users/daoluan/Sites/daoluan.github.io
 auto        : false
 lsi         : false
 pygments    : true
 permalink   : none
-markdown    : maruku
+markdown    : rdiscount
 
 maruku:
     use_divs: true
