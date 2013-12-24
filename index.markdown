@@ -16,6 +16,8 @@ title: Home
 </ul>
 {% endfor %}
 
+联系我：
+=====
 [weibo](http://weibo.com/daoluanxiaozi)  
 [github](http://github.com/daoluan)  
 [email](g.daoluan#gmail.com)  
