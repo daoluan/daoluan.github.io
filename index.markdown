@@ -1,10 +1,11 @@
 ---
 layout: name
 title: Home
+---
 
-<img class='inset right' src='/images/mark_reid.jpg' title='Mark Reid' alt='Photo of Mark Reid drinking a coffee' width='120px' />
+<img class='inset right' src='/images/daoluan.png' title='daoluan' width='120px' />
 
-Blogs
+最近的文章：
 =====
 {% for post in site.categories.iem limit:3 %}
 <ul class="compact recent">
@@ -16,4 +17,5 @@ Blogs
 {% endfor %}
 
 [weibo](http://weibo.com/daoluanxiaozi)
-
+[github](http://github.com/daoluan)
+[email](g.daoluan#gmail.com)
