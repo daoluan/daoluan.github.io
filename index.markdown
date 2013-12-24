@@ -16,6 +16,6 @@ title: Home
 </ul>
 {% endfor %}
 
-[weibo](http://weibo.com/daoluanxiaozi)
-[github](http://github.com/daoluan)
-[email](g.daoluan#gmail.com)
+[weibo](http://weibo.com/daoluanxiaozi)  
+[github](http://github.com/daoluan)  
+[email](g.daoluan#gmail.com)  
