@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: iem-post
 author: daoluan
 title: 找工作(上)
 comments: true
