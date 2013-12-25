@@ -4,17 +4,17 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>Inductio Ex Machina</title>
- <link href="http://mark.reid.name/iem/atom.xml" rel="self"/>
- <link href="http://mark.reid.name/iem/"/>
+ <title>捣乱的博客</title>
+ <link href="http://md.daoluan.net/iem/atom.xml" rel="self"/>
+ <link href="http://md.daoluan.net/iem/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://mark.reid.name/iem/</id>
+ <id>http://md.daoluan.net/iem/</id>
  <author>
-   <name>Mark Reid</name>
-   <email>mark@reid.name</email>
+   <name>捣乱</name>
+   <email>g.daoluan@gmail.com</email>
  </author>
  
- {% for post in site.categories.iem limit:5 %}
+ {% for post in site.posts limit:5 %}
  <entry>
    <title>{{ post.title }}</title>
    <link href="http://mark.reid.name{{ post.url }}"/>

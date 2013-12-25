@@ -1,5 +1,5 @@
 ---
-layout: iem-post
+layout: post
 author: daoluan
 title: GM 实习(三)
 comments: true

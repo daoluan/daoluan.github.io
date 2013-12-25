@@ -28,7 +28,10 @@ body {
 }
 
 /* Hack via Joel Spolsky to make image rescaling nicer in IE */
-img { -ms-interpolation-mode:bicubic; }
+img { -ms-interpolation-mode:bicubic;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
 
 /* IE6 ignores this and uses default size of 16pt */
 html>body { font-size:16px; }
@@ -131,6 +134,30 @@ blockquote {
 	color: #444;
 	font-size: 0.875em;
 	line-height: 1.714em;
+}
+
+table {
+    border-bottom: 1px solid #ededed;
+    color: #757575;
+    font-size: 12px;
+    font-size: 0.857142857rem;
+    line-height: 2;
+    margin: 0 0 24px;
+    margin: 0 0 1.714285714rem;
+    width: 100%;
+}
+
+tbody,tr,td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+td {
+    border-top: 1px solid #ededed;
+    padding: 6px 10px 6px 0;
 }
 
 .note {

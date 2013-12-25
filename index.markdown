@@ -1,6 +1,6 @@
 ---
 layout: name
-title : 捣乱的个人主页
+top : 捣乱的个人网站
 title: Home
 ---
 
