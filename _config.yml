@@ -1,3 +1,3 @@
 markdown    : rdiscount
 safe        : true
-permalink   : none
+permalink   : /:categories/:title/
