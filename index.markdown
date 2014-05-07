@@ -1,7 +1,7 @@
 ---
 layout: name
-top : 捣乱的个人网站
-title: Home
+title: 捣乱小子 - daoluan.net
+keywords: 捣乱小子,捣乱,郑思愿,郑思愿daoluan,daoluan,daoluan.net
 ---
 
 <img class='inset right' src='/images/daoluan.png' title='daoluan' width='120px' />
@@ -16,7 +16,7 @@ title: Home
 {% for post in site.posts limit:3 %}
 <li>
 	<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-	<span>{{ post.date | date_to_string }}</span> 
+	<span>{{ post.date | date_to_string }}</span>
 </li>
 {% endfor %}
 </ul>
