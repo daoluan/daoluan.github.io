@@ -1,0 +1,27 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>捣乱的博客</title>
+ <link href="http://md.daoluan.net/iem/atom.xml" rel="self"/>
+ <link href="http://md.daoluan.net/iem/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>http://md.daoluan.net/iem/</id>
+ <author>
+   <name>捣乱</name>
+   <email>g.daoluan@gmail.com</email>
+ </author>
+ 
+ {% for post in site.posts limit:5 %}
+ <entry>
+   <title>{{ post.title }}</title>
+   <link href="http://mark.reid.name{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>id:{{ post.id }}</id>
+   <content type="html">{{ post.content | xml_escape }}</content>
+ </entry>
+ {% endfor %}
+ 
+</feed>
