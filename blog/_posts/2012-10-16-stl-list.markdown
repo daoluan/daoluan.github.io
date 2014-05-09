@@ -1,0 +1,136 @@
+---
+author: daoluan
+comments: true
+date: 2012-10-16 11:36:45+00:00
+layout: post
+slug: stl-list
+title: 私房STL之list
+wordpress_id: 1159
+categories:
+- cplusplus
+tags:
+- C/C++
+- 《STL源码剖析》
+---
+
+一句话list：list是我们在数据结构中接触过的双向循环链表，应用有[约瑟夫环](http://zh.wikipedia.org/wiki/%E7%BA%A6%E7%91%9F%E5%A4%AB%E6%96%AF%E9%97%AE%E9%A2%98)；可见其空间非连续的，但可以动态扩充，效率很高，只是不支持随机访问，必须通过迭代器找到指定的元素。总的来说，list用起来比较顺手。
+
+[caption id="attachment_1166" align="aligncenter" width="310"][![](http://daoluan.net/blog/wp-content/uploads/2012/10/list_node.jpg)](http://daoluan.net/blog/stl-list/list_node/) list_node[/caption]
+
+<!-- more -->
+
+
+### list的查找
+
+
+按上述遍历元素的方法查找，复杂度为O(n)。STL算法实现了find()，可以在指定的迭代器始末寻找指定的元素。
+
+    
+    ......
+    list<int> il;
+    
+    il.push_back(5);
+    il.push_back(98);
+    il.push_back(7);
+    il.push_back(20);
+    il.push_back(22);
+    il.push_back(17);
+    
+    list<int>::iterator ite;
+    ite = find(il.begin(),il.end(),20);
+    cout << *ite << endl;/*20*/
+    ......
+
+
+
+
+### list创建与遍历
+
+
+STL中也为list实现了几个版本的构造函数：[http://www.cplusplus.com/reference/stl/list/list/](http://www.cplusplus.com/reference/stl/list/list/)，有最简单缺省的版本。
+
+list的遍历使用迭代器，如下：
+
+    
+    #include <iostream>
+    #include <list>
+    #include <algorithm>
+    using namespace std;
+    
+    int main()
+    \{	
+    	unsigned int i;
+    	list<int> il;
+    
+    	il.push_back(5);
+    	il.push_back(98);
+    	il.push_back(7);
+    	il.push_back(20);
+    	il.push_back(22);
+    	il.push_back(17);
+    
+    	list<int>::iterator ite;
+    	for(ite = il.begin(); ite != il.end(); ite++)
+    		cout << *ite << " ";
+    	cout << endl;
+    
+    	return 0;
+    \}
+
+
+list在空间拓展的时候，没有经历vector式的空间倒腾，所以只要不earse元素，指向它ite是不会失效的。
+
+
+### list元素操作
+
+
+list有提供pop_back,erase,clear,insert等实用的元素操作，不一一复述，给出有用的文档：[http://www.cplusplus.com/reference/stl/list/](http://www.cplusplus.com/reference/stl/list/)
+
+
+### list排序
+
+
+STL算法（<algorithm>）实现的sort只适用于支持随机访问的数据，所以它不适用于list，list不支持随机访问。所以list内部实现了自己的sort，内部排序使用使用迭代版本的快排。
+
+    
+    unsigned int i;
+    list<int> il;
+    
+    il.push_back(5);
+    il.push_back(98);
+    il.push_back(7);
+    il.push_back(20);
+    il.push_back(22);
+    il.push_back(17);
+    
+    list<int>::iterator ite;
+    for(ite = il.begin(); ite != il.end(); ite++)
+    	cout << *ite << " ";
+    cout << endl;
+    
+    il.sort();
+    
+    for(ite = il.begin(); ite != il.end(); ite++)
+    	cout << *ite << " ";
+    cout << endl;
+    
+    return 0;
+
+
+
+
+<blockquote>5 98 7 20 22 17
+5 7 17 20 22 98
+请按任意键继续. . .</blockquote>
+
+
+
+
+### 建议
+
+
+list使用轻松自如，硬伤是由于空间的个性（不连续），不能随机访问。
+
+本文完 2012-10-16
+
+捣乱小子 [http://www.daoluan.net/](http://www.daoluan.net/blog/)
