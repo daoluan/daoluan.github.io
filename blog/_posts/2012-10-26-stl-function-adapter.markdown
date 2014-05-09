@@ -25,7 +25,7 @@ tags:
     /*摘自C++ standard STL。*/
     
     ......
-    int ia[] = \{11,12,13,1,2,3,4,5,6,7\};
+    int ia[] = {11,12,13,1,2,3,4,5,6,7};
     vector<int> iv(ia,ia+10);
     cout << count_if(iv.begin(),iv.end(),bind2nd(less<int>(),10)) << endl;
     ......
@@ -45,15 +45,15 @@ tags:
     	class _Pr> inline
     	typename iterator_traits<_InIt>::difference_type
     		count_if(_InIt _First, _InIt _Last, _Pr _Pred)/*这里。*/
-    	\{	// count elements satisfying _Pred
+    	{	// count elements satisfying _Pred
     	return _Count_if(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Pred);
-    	\}
+    	}
     /*count_if()的底层函数。*/
     template<class _InIt,
     	class _Pr> inline
     	typename iterator_traits<_InIt>::difference_type
     		_Count_if(_InIt _First, _InIt _Last, _Pr _Pred)
-    	\{	// count elements satisfying _Pred
+    	{	// count elements satisfying _Pred
     	_DEBUG_RANGE(_First, _Last);
     	_DEBUG_POINTER(_Pred);
     	typename iterator_traits<_InIt>::difference_type _Count = 0;
@@ -62,7 +62,7 @@ tags:
     		if (_Pred(*_First))
     			++_Count;
     	return (_Count);
-    	\}
+    	}
 
 
 其中，_Pred就是函数对象binder2nd，它在return (std::binder2nd<_Fn2>(_Func, _Val));语句中，被构造出来，同时它重载了“()”操作符，再来看看bind2nd和binder2nd：
@@ -74,7 +74,7 @@ tags:
     	class binder2nd
     		: public unary_function<typename _Fn2::first_argument_type,
     			typename _Fn2::result_type>
-    	\{	// functor adapter _Func(left, stored)
+    	{	// functor adapter _Func(left, stored)
     public:
     	typedef unary_function<typename _Fn2::first_argument_type,
     		typename _Fn2::result_type> _Base;
@@ -84,32 +84,32 @@ tags:
     	binder2nd(const _Fn2& _Func,
     		const typename _Fn2::second_argument_type& _Right)
     		: op(_Func), value(_Right)
-    		\{	// construct from functor and right operand
-    		\}
+    		{	// construct from functor and right operand
+    		}
     
     	result_type operator()(const argument_type& _Left) const
-    		\{	// apply functor to operands
+    		{	// apply functor to operands
     		return (op(_Left, value));
-    		\}
+    		}
     
     	result_type operator()(argument_type& _Left) const
-    		\{	// apply functor to operands
+    		{	// apply functor to operands
     		return (op(_Left, value));
-    		\}
+    		}
     
     protected:
     	_Fn2 op;	// the functor to apply
     	typename _Fn2::second_argument_type value;	// the right operand
-    	\};
+    	};
     
     		// TEMPLATE FUNCTION bind2nd
     template<class _Fn2,
     	class _Ty> inline
     	binder2nd<_Fn2> bind2nd(const _Fn2& _Func, const _Ty& _Right)
-    	\{	// return a binder2nd functor adapter
+    	{	// return a binder2nd functor adapter
     	typename _Fn2::second_argument_type _Val(_Right);
     	return (std::binder2nd<_Fn2>(_Func, _Val));
-    	\}
+    	}
 
 
 bind2nd()是**辅助函数**，为的是使用binder2nd（真正的主角）更为方便。
@@ -124,13 +124,13 @@ count_if()函数在处理每一个元素的时候，实际调用binder2nd的“(
 
     
     bool less10(int i)
-    \{
+    {
     	if(i<10)
     		return true;
     	return false;
-    \}
+    }
     ......
-    int ia[] = \{11,12,13,1,2,3,4,5,6,7\};
+    int ia[] = {11,12,13,1,2,3,4,5,6,7};
     vector<int> iv(ia,ia+10);
     cout << count_if(iv.begin(),iv.end(),less10) << endl;
     ......

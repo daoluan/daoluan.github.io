@@ -121,28 +121,28 @@ etao.com 被重定向到了 www.etao.com；访问 www.etao.com 被重定向到 h
 成功登录 jd.com，会跳转到 jd.com，里面有一小段 js 代码发起了 jsonp 请求：
 
     
-    $.ajax(\{
+    $.ajax({
         url: ("https:" == document.location.protocol ? "https://" : "http://") + "passport." + pageConfig.FN_getDomain() + "/new/helloService.ashx?m=ls",
         dataType: "jsonp",
         scriptCharset: "gb2312",
-        success: function(a) \{
-                a && a.info && $("#loginbar").html(a.info), a && a.sso && $.each(a.sso, function() \{
+        success: function(a) {
+                a && a.info && $("#loginbar").html(a.info), a && a.sso && $.each(a.sso, function() {
                     $.getJSON(this)
-                \})
-        \}
-    \})
+                })
+        }
+    })
 
 
 ajax get 到数据自动调用预设值的回调函数。jsonp 返回的数据是：
 
     
-    jsonp1396084410330(\{"sso":[
+    jsonp1396084410330({"sso":[
          "http://sso.jd.com/setCookie?t=sso.360buy.com&callback=?",
          "http://sso.jd.com/setCookie?t=sso.wangyin.com&callback=?",
          "http://sso.jd.com/setCookie?t=sso.360top.com&callback=?",
          "http://sso.jd.com/setCookie?t=sso.minitiao.com&callback=?",
          "http://sso.jd.com/setCookie?t=sso.jcloud.com&callback=?"],
-         "info":"您好，买东西别坑爹！<a href="http://passport.jd.com/uc/login?ltype=logout" class="link-logout">[退出]</a>"\})
+         "info":"您好，买东西别坑爹！<a href="http://passport.jd.com/uc/login?ltype=logout" class="link-logout">[退出]</a>"})
 
 
 回调函数对 a.sso 中每一个连接执行 getJSON()。注：使用 jquery 的 getJSON() 进行跨域读取数据，实际上 getJSON() 方式的根本原理和 ajax 使用 jsonp 的方式一样。

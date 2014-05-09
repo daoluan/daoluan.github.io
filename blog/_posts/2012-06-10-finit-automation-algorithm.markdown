@@ -253,7 +253,7 @@ auto机就是一个协助匹配的状态表（或者图）。
 
 <blockquote>对于字串P，(k)P表示长度k的P的前缀；P(k)表示长度为k的P的后缀。比如P=abcdef，(3)P=abc，P(3)=def。
 
-对于字串T，alpha(T)=max\{k:T(k)==(k)P\}，可见这个涉及了两个字串，分别是文本T和匹配内容P。很恶心的公式，有例子，比如：P=abc，如果T=tab，那么alpha(T)=2；如果T=tabc，那么alpha(T)=3。</blockquote>
+对于字串T，alpha(T)=max{k:T(k)==(k)P}，可见这个涉及了两个字串，分别是文本T和匹配内容P。很恶心的公式，有例子，比如：P=abc，如果T=tab，那么alpha(T)=2；如果T=tabc，那么alpha(T)=3。</blockquote>
 
 
 整一个算法的思想就是基于这么一个理论：如若**alpha(T)=q（这个条件很重要）**,alpha(Ta)=alpha[(q)Pa]。这个搞定了，整个算法思想就通了。证明过程我只能用诸多“显然”的词汇来描述。 算法导论中有一个很经典的图：
@@ -272,7 +272,7 @@ auto机就是一个协助匹配的状态表（或者图）。
 # 一个具体的例子
 
 
-看一个具体的例子： 假定，匹配内容P=acbaca，其字符集只涉及了\{a,b,c\}，那么其对应的状态转换图：
+看一个具体的例子： 假定，匹配内容P=acbaca，其字符集只涉及了{a,b,c}，那么其对应的状态转换图：
 
 [![image_thumb.png](http://daoluan.net/blog/wp-content/uploads/2012/06/image_thumb1.png)](http://daoluan.net/blog/wp-content/uploads/2012/06/image_thumb1.png)
 

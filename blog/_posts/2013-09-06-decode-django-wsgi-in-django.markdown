@@ -53,7 +53,7 @@ __init__.py
         server_address = (addr, port)
     
         if threading:
-            httpd_cls = type(str('WSGIServer'), (socketserver.ThreadingMixIn, WSGIServer), \{\})
+            httpd_cls = type(str('WSGIServer'), (socketserver.ThreadingMixIn, WSGIServer), {})
         else:
             httpd_cls = WSGIServer
     
@@ -72,7 +72,7 @@ wsgi_handler: 上节提到的 application, 在 django.core.handlers 中定义
 
 ipv6: 如果为 true, 会将协议地址族换成是 AF_INET6
 
-threading: 如果为 true, 服务器会被强制成 type(str('WSGIServer'), (socketserver.ThreadingMixIn, WSGIServer), \{\})(这个我漏讲了, 但功能是这样), 能处理多线程处理请求.
+threading: 如果为 true, 服务器会被强制成 type(str('WSGIServer'), (socketserver.ThreadingMixIn, WSGIServer), {})(这个我漏讲了, 但功能是这样), 能处理多线程处理请求.
 
 所以, 调用这个函数可以让一个自定义服务器跑起来.
 

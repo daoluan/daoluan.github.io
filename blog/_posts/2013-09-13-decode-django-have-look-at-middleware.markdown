@@ -206,10 +206,10 @@ BaseHandler 在 django.core.handlers.base.py 中定义, 有两个核心的成员
     
                 except http.Http404 as e:
                     logger.warning('Not Found: %s', request.path,
-                                extra=\{
+                                extra={
                                     'status_code': 404,
                                     'request': request
-                                \})
+                                })
     
                     # 如果是调试下, 直接要返回 404 页面
                     if settings.DEBUG:
@@ -227,10 +227,10 @@ BaseHandler 在 django.core.handlers.base.py 中定义, 有两个核心的成员
                 except exceptions.PermissionDenied:
                     logger.warning(
                         'Forbidden (Permission denied): %s', request.path,
-                        extra=\{
+                        extra={
                             'status_code': 403,
                             'request': request
-                        \})
+                        })
                     try:
                         callback, param_dict = resolver.resolve403()
                         response = callback(request, **param_dict)
@@ -283,10 +283,10 @@ BaseHandler 在 django.core.handlers.base.py 中定义, 有两个核心的成员
     
             logger.error('Internal Server Error: %s', request.path,
                 exc_info=exc_info,
-                extra=\{
+                extra={
                     'status_code': 500,
                     'request': request
-                \}
+                }
             )
     
             调试模式特殊处理

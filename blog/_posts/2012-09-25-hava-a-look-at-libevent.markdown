@@ -53,24 +53,24 @@ libevent是基于消息事件的网络库。当指定一个文件描述符（可
     int debug = 0;
     
     struct client
-    \{
+    {
     	int fd;
     	struct bufferevent * buf_ev;
-    \};
+    };
     
     int setnonblock(int fd)
-    \{
+    {
     	int flags;
     
     	flags = fcntl(fd,F_GETFL);
     	flags |= O_NONBLOCK;
     	fcntl(fd,F_SETFL,flags);
-    \}
+    }
     
     /*read callback function .*/
     void buf_read_callback(struct bufferevent *incoming,
     					   void *arg)
-    \{
+    {
     	printf("this is called in buf_read_callback\n");
     	struct evbuffer * evreturn;
     	char *req;
@@ -86,29 +86,29 @@ libevent是基于消息事件的网络库。当指定一个文件描述符（可
     	bufferevent_write_buffer(incoming,evreturn);
     	evbuffer_free(evreturn);
     	free(req);
-    \}
+    }
     
     /*write callback function.*/
     void buf_write_callback(struct bufferevent *bev,
     						void *arg)
-    \{
+    {
     	printf("this is called in buf_write_callback\n");
-    \}
+    }
     
     /*error callback function.*/
     void buf_error_callback(struct bufferevent *bev,    
     						short what,void *arg)
-    \{
+    {
     	struct client *client = (struct client*)arg;
     	bufferevent_free(client->buf_ev);
     	close(client->fd);
     	free(client);
-    \}
+    }
     
     /*accept callback function.*/
     void accept_callback(int fd,
     					 short ev,void *arg)
-    \{
+    {
     	int client_fd;
     	struct sockaddr_in client_addr;
     	socklen_t client_len = sizeof(client_addr);
@@ -119,10 +119,10 @@ libevent是基于消息事件的网络库。当指定一个文件描述符（可
     		&client_len);
     
     	if(client_fd < 0)
-    	\{
+    	{
     		printf("Client:accept() faild\n");
     		return;
-    	\}
+    	}
     
     	/*set socket fd to none block.*/
     	setnonblock(client_fd);
@@ -130,10 +130,10 @@ libevent是基于消息事件的网络库。当指定一个文件描述符（可
     	/*new a struct client.*/
     	client = calloc(1,sizeof(*client));
     	if(client == NULL)
-    	\{
+    	{
     		printf("calloc error\n");
     		return;
-    	\}// if
+    	}// if
     	client->fd = client_fd;
     
     	client->buf_ev = bufferevent_new(client_fd,
@@ -143,11 +143,11 @@ libevent是基于消息事件的网络库。当指定一个文件描述符（可
     		client);
     
     	bufferevent_enable(client->buf_ev,EV_READ);
-    \}
+    }
     
     int main(int argc,
     		 char **argv)
-    \{
+    {
     	int socketlisten;
     	struct sockaddr_in addresslisten;
     	struct event accept_event;
@@ -159,10 +159,10 @@ libevent是基于消息事件的网络库。当指定一个文件描述符（可
     	socketlisten = socket(AF_INET, SOCK_STREAM, 0);
     
     	if (socketlisten < 0)
-    	\{
+    	{
     		fprintf(stderr,"Failed to create listen socket");
     		return 1;
-    	\}
+    	}
     
     	memset(&addresslisten, 0, sizeof(addresslisten));
     
@@ -173,16 +173,16 @@ libevent是基于消息事件的网络库。当指定一个文件描述符（可
     	if (bind(socketlisten,
     		(struct sockaddr *)&addresslisten,
     		sizeof(addresslisten)) < 0)
-    	\{
+    	{
     		fprintf(stderr,"Failed to bind");
     		return 1;
-    	\}
+    	}
     
     	if (listen(socketlisten, 5) < 0)
-    	\{
+    	{
     		fprintf(stderr,"Failed to listen to socket");
     		return 1;
-    	\}
+    	}
     
     	setsockopt(socketlisten,
     		SOL_SOCKET,
@@ -211,7 +211,7 @@ libevent是基于消息事件的网络库。当指定一个文件描述符（可
     
     	close(socketlisten);
     	return 0;
-    \}
+    }
 
 
 用telnet测试echo服务器。在使用telnet的时候指明IP地址和端口号便可以连接相应的服务程序。

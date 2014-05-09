@@ -88,73 +88,73 @@ tags:
 下面给出代码：
 
     
-    int table[20][20]=\{0\};		//	杨辉三角表
+    int table[20][20]={0};		//	杨辉三角表
     
     void yanghui()					//	计算杨辉三角
-    \{
+    {
     	table[0][0] = 1;
     	int u,v,j;
     	for(int i=1; i<11; i++)
-    	\{
+    	{
     		u = 0,v = table[i-1][0],j = 0;
     		while(u!=0||v!=0)
-    		\{
+    		{
     			table[i][j] = u + v;
     			u = table[i-1][j],v = table[i-1][++j];
-    		\}// while
-    	\}// for
-    \}
+    		}// while
+    	}// for
+    }
     
     int tab0000[20];			//	记录10，100，1000，10000.....的7的位数
     
     void filltab0000()			//	计算10，100，1000，10000.....的7的位数
-    \{
+    {
     	for(int i=1; i<=8; i++)		//	只算到10^8是因为溢出
-    	\{
+    	{
     		int t = 1,ret = 0;
     		while(t<=i)
-    		\{
+    		{
     			ret += table[i][t] * pow(9.0,i-t);
     			t++;
-    		\}// while
+    		}// while
     		tab0000[i] = ret;
-    	\}// for
-    \}
+    	}// for
+    }
     
     int main()
-    \{
+    {
     	yanghui();
     	filltab0000();
     
     	for(int i=0; i<=100000000; i++)
-    	\{
+    	{
     		int n = i,
     			size = log10(n*1.0),
     			ret1 = 0,
     			ret2 = 0;
     
     		while(n>10)
-    		\{
+    		{
     			int t10 = pow(10.0,size);		//	对于循环第一步
     			int t = n/t10;
     			int tt = n%t10;
     			if(tt==n)			//	防止x00yzd中间出现多个0的情况
-    			\{
+    			{
     				size--;
     				continue;
-    			\}// if
+    			}// if
     
     			ret1 += t*tab99[size];		//	对于循环第二步
     
     			if(t>7)								//	对应循环第三步
     				ret1 += 1*pow(9.0,size);
     			else if(t==7)					//	对应循环第四步
-    			\{
+    			{
     				ret1 = ret1 + tt;
     				break;
-    			\}// if
+    			}// if
     			n = tt;
-    		\}
+    		}
     
     		if(n>=7)
     			ret1++;
@@ -162,30 +162,30 @@ tags:
     		/*****下面一段代码是比对函数，是这个题目的最为朴素的算法*****/
     		n = i;
     		while(n)
-    		\{
+    		{
     			int t = n;
     			while(t)
-    			\{
+    			{
     				if((t%10)==7)
-    				\{
+    				{
     					ret2 ++;
     					break;
-    				\}
+    				}
     				else
     					t/=10;
-    			\}// while
+    			}// while
     			n--;
-    		\}
+    		}
     		/*****上面面一段代码是比对函数，是这个题目的最为朴素的算法*****/
     
     		if(ret1!=ret2)
-    		\{
+    		{
     			cout << i << " " << ret1 << " " << ret2 << " " << "不同" << endl;
     			break;
-    		\}// if
+    		}// if
     		cout << i << " " << ret1 <<  " " << ret2 << " " << "相同" << endl;
-    	\}// for
-    \}
+    	}// for
+    }
 
 
 我是在第二天才搞定，我们群里有个忒牛逼的数据库的老师，深夜里把答案甩在群里，第二天才看到，最后还是他先KO，非常的郁闷并且很不服。

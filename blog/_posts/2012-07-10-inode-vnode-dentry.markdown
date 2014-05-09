@@ -28,7 +28,7 @@ tags:
 ext3_inode上的数据结构如下：它记录了很多关于文件的信息，比如文件长度，文件所在的设备，文件的物理位置，创建、修改和更新时间等等，**特别的，它不包含文件名！**
 
     
-    struct ext3_inode \{
+    struct ext3_inode {
     	__le16 i_mode; File mode
     	__le16 i_uid; Low 16 bits of Owner Uid
     	__le32 i_size; Size in bytes
@@ -42,7 +42,7 @@ ext3_inode上的数据结构如下：它记录了很多关于文件的信息，�
     	......
     	__le32 i_block[EXT2_N_BLOCKS]; Pointers to blocks
     	......
-    \};
+    };
 
 
 引入vnode：早期版本的Unix是这样做的，但是Linux并没有。vnode一般包含了文件类型和对此文件进行各种操作的函数的指针。
@@ -59,7 +59,7 @@ Linux上有dentry，中文的意思就是目录项，它粘合了内存中文件
 
 
     
-    struct dentry \{
+    struct dentry {
     	atomic_t d_count; 目录项对象使用计数器
     	unsigned int d_flags; 目录项标志
     	struct inode * d_inode; 与文件名关联的索引节点
@@ -77,7 +77,7 @@ Linux上有dentry，中文的意思就是目录项，它粘合了内存中文件
     	vunsigned long d_vfs_flags;
     	void * d_fsdata;与文件系统相关的数据
     	unsigned char d_iname [DNAME_INLINE_LEN]; 存放短文件名
-    \};
+    };
 
 
 诸如文件名，父目录等。dentry可以描述目录的树状结构。 ps：本文只对inode，vnode和dentry作简单的介绍，具体的实现还有深入的原理并未做详细的解释。**欢迎斧正！**

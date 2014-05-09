@@ -105,9 +105,9 @@ WSGI 有三个部分, 分别为服务器(server), 应用程序(application) 和�
             except UnicodeDecodeError:
                 logger.warning('Bad Request (UnicodeDecodeError)',
                     exc_info=sys.exc_info(),
-                    extra=\{
+                    extra={
                         'status_code': 400,
-                    \}
+                    }
                 )
                 response = http.HttpResponseBadRequest()
             else:

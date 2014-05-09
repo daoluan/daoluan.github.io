@@ -23,20 +23,20 @@ tags:
 
     
     class A
-    \{
-         void func()\{\}
-    \};
+    {
+         void func(){}
+    };
     
     class B:public A
-    \{
-          void func()\{\}
-    \};
+    {
+          void func(){}
+    };
     
     int main(void)
-    \{
+    {
          cout << sizeof(A) << " " << sizeof(B) << endl;
          return 0;
-    \}
+    }
 
 
 输出结果是：1 1
@@ -45,20 +45,20 @@ tags:
 
     
     class A
-    \{
-         virtual void funcA()\{\}
-    \};
+    {
+         virtual void funcA(){}
+    };
     
     class B:public A
-    \{
-         virtual void funcB()\{\}
-    \};
+    {
+         virtual void funcB(){}
+    };
     
     int main(void)
-    \{
+    {
          cout << sizeof(A) << " " << sizeof(B) << endl;
          return 0;
-    \}
+    }
 
 
 输出结果是：4 4
@@ -67,20 +67,20 @@ tags:
 
     
     class A
-    \{
-         virtual void funcA()\{\}
-    \};
+    {
+         virtual void funcA(){}
+    };
     
     class B:virtual public A
-    \{
-         virtual void funcB()\{\}
-    \};
+    {
+         virtual void funcB(){}
+    };
     
     int main(void)
-    \{
+    {
          cout << sizeof(A) << " " << sizeof(B) << endl;
          return 0;
-    \}
+    }
 
 
 输出结果是：4 12
@@ -139,30 +139,30 @@ tags:
 
     
     class A
-    \{
+    {
     public:
     	int a;
-    	void foo()\{\}
-    	virtual void funcA()\{\}
+    	void foo(){}
+    	virtual void funcA(){}
     	virtual void func()
-    	\{cout << "class A's func." << endl;\}
-    \};
+    	{cout << "class A's func." << endl;}
+    };
     
     classB : public A
-    \{
+    {
     public:
     	int b;
-    	void foo()\{\}
-    	virtual void funcB()\{\}
+    	void foo(){}
+    	virtual void funcB(){}
     	virtual void func()
-    	\{cout << "class B's func." << endl;\}
-    \};
+    	{cout << "class B's func." << endl;}
+    };
     
     int main(void)
-    \{
+    {
     	A *pa = newB;
     	pa->func();
-    \}
+    }
 
 
 输出结果是：class B'sfunc.
@@ -268,39 +268,39 @@ class A 和 class B 的内存布局和 vptr 可能是下面的样子：
 
     
     class A
-    \{
+    {
     public:
-    	virtual ~A()\{cout << "A destruction" << endl;\}
+    	virtual ~A(){cout << "A destruction" << endl;}
     	int a;
-    	void fooA()\{\}
-    	virtual void func()\{cout << "A func." << endl;\};
-    	virtual void funcA()\{cout << "funcA." << endl;\}
-    \};
+    	void fooA(){}
+    	virtual void func(){cout << "A func." << endl;};
+    	virtual void funcA(){cout << "funcA." << endl;}
+    };
     
     class B
-    \{
+    {
     public:
-    	virtual ~B()\{cout << "B destruction" << endl;\}
+    	virtual ~B(){cout << "B destruction" << endl;}
     	int b;
-    	void fooB()\{\}
-    	virtual void func()\{cout << "B func." << endl;\};
-    	virtual void funcB()\{cout << "funcB." << endl;\}
-    \};
+    	void fooB(){}
+    	virtual void func(){cout << "B func." << endl;};
+    	virtual void funcB(){cout << "funcB." << endl;}
+    };
     
     class C : public A,public B
-    \{
+    {
     public:
-    	virtual ~C()\{cout << "C destruction" << endl;\}
+    	virtual ~C(){cout << "C destruction" << endl;}
     	int c;
-    	void fooC()\{\}
-    	virtual void func()\{cout << "C func." << endl;\};
-    	virtual void funcC()\{cout << "funcC." << endl;\}
-    \};
+    	void fooC(){}
+    	virtual void func(){cout << "C func." << endl;};
+    	virtual void funcC(){cout << "funcC." << endl;}
+    };
     
     int main(void) 
-    \{  
+    {  
     	return 0;
-    \}
+    }
 
 
 当用基类的指针指向一个派生类的实体地址，基类有两种情况，一种是 class A 和 class B，如果是 A，问题容易解决，几乎和上面单一继承情况类似；但倘若是 B，要做地址上的转换，情况会比前者复杂。先展现class A，B，C 的内存布局和 vptr：
@@ -443,7 +443,7 @@ class A 和 class B 的内存布局和 vptr 可能是下面的样子：
   1. int main(void)
 
 	
-  2. \{
+  2. {
 
 	
   3.      A *pa = new C;
@@ -477,7 +477,7 @@ class A 和 class B 的内存布局和 vptr 可能是下面的样子：
   13.      delete pc;
 
 	
-  14. \}
+  14. }
 
 
 输出结果是：
@@ -536,33 +536,33 @@ C++ 为实现多态引入虚函数机制，带来了空间和执行上的折损�
 
     
     class A
-    \{
+    {
     public:
-    	~A()\{cout << "A destruction" << endl;\}
+    	~A(){cout << "A destruction" << endl;}
     	int a;
-    \};
+    };
     
     class B
-    \{
+    {
     public:
-    	~B()\{cout << "B destruction" << endl;\}
-    \};
+    	~B(){cout << "B destruction" << endl;}
+    };
     
     class C : public A,public B
-    \{
+    {
     public:
-    	~C()\{cout << "C destruction" << endl;\}
-    \};
+    	~C(){cout << "C destruction" << endl;}
+    };
     
     int main(void)
-    \{
+    {
     	A *pa = new C;
     	B *pb = new C;
     	C *pc = new C;
     	delete pa;     // 没有问题
     	delete pb;     // 出错
     	delete pc;     // 没有问题
-    \}
+    }
 
 
 所说的「未定义」就在 delete pa; 和 delete pb; 体现出来。
@@ -586,25 +586,25 @@ C++ 为实现多态引入虚函数机制，带来了空间和执行上的折损�
 另外，虚拟继承在应用比较少应用，一个例子就是：
 
     
-    class ios \{...\};
+    class ios {...};
     
-    class istream : public virtual ios \{...\};
+    class istream : public virtual ios {...};
     
-    calss ostream : public virtual ios \{...\};
+    calss ostream : public virtual ios {...};
     
-    class iostream : public istream,public ostream \{...\};
+    class iostream : public istream,public ostream {...};
 
 
 这里 istream，ostream，iostream 共享同一份 ios。要和下面的情况区分开来：
 
     
-    class ios \{...\};
+    class ios {...};
     
-    class istream : public ios \{...\};
+    class istream : public ios {...};
     
-    calss ostream : public ios \{...\};
+    calss ostream : public ios {...};
     
-    class iostream : public istream,public ostream \{...\};
+    class iostream : public istream,public ostream {...};
 
 
 这里实际有两份 ios ！全文完。[daoluan.net](http://daoluan.net)

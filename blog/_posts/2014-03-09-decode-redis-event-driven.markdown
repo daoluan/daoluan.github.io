@@ -36,7 +36,7 @@ redis 事件驱动内部有四个主要的数据结构，分别是：事件循�
     
     // 文件事件结构体
     /* File event structure */
-    typedef struct aeFileEvent \{
+    typedef struct aeFileEvent {
         int mask; /* one of AE_(READABLE|WRITABLE) */
     
         // 回调函数指针
@@ -45,11 +45,11 @@ redis 事件驱动内部有四个主要的数据结构，分别是：事件循�
     
         // clientData 参数一般是指向 redisClient 的指针
         void *clientData;
-    \} aeFileEvent;
+    } aeFileEvent;
     
     // 时间事件结构体
     /* Time event structure */
-    typedef struct aeTimeEvent \{
+    typedef struct aeTimeEvent {
         long long id; /* time event identifier. */
         long when_sec; /* seconds */
         long when_ms; /* milliseconds */
@@ -65,18 +65,18 @@ redis 事件驱动内部有四个主要的数据结构，分别是：事件循�
     
         // 定时事件表采用链表来维护
         struct aeTimeEvent *next;
-    \} aeTimeEvent;
+    } aeTimeEvent;
     
     // 触发事件
     /* A fired event */
-    typedef struct aeFiredEvent \{
+    typedef struct aeFiredEvent {
         int fd;
         int mask;
-    \} aeFiredEvent;
+    } aeFiredEvent;
     
     // 事件循环结构体
     /* State of an event based program */
-    typedef struct aeEventLoop \{
+    typedef struct aeEventLoop {
         int maxfd;   /* highest file descriptor currently registered */
         int setsize; /* max number of file descriptors tracked */
     
@@ -103,7 +103,7 @@ redis 事件驱动内部有四个主要的数据结构，分别是：事件循�
     
         // 新的循环前需要执行的操作
         aeBeforeSleepProc *beforesleep;
-    \} aeEventLoop;
+    } aeEventLoop;
 
 
 上面的数据结构能给我们很好的提示：事件循环结构体维护 I/O 事件表，定时事件表和触发事件表。
@@ -115,7 +115,7 @@ redis 事件驱动内部有四个主要的数据结构，分别是：事件循�
 redis 的主函数中调用 initServer() 函数从而初始化事件循环中心（EventLoop），它的主要工作是在 aeCreateEventLoop() 中完成的。
 
     
-    aeEventLoop *aeCreateEventLoop(int setsize) \{
+    aeEventLoop *aeCreateEventLoop(int setsize) {
         aeEventLoop *eventLoop;
         int i;
     
@@ -154,13 +154,13 @@ redis 的主函数中调用 initServer() 函数从而初始化事件循环中心
         return eventLoop;
     
     err:
-        if (eventLoop) \{
+        if (eventLoop) {
             zfree(eventLoop->events);
             zfree(eventLoop->fired);
             zfree(eventLoop);
-        \}
+        }
         return NULL;
-    \}
+    }
 
 
 有上面初始化工作只是完成了一个空空的事件中心而已。要想驱动事件循环，还需要下面的工作。
@@ -176,11 +176,11 @@ redis 的主函数中调用 initServer() 函数从而初始化事件循环中心
     
     int aeCreateFileEvent(aeEventLoop *eventLoop, int fd, int mask,
             aeFileProc *proc, void *clientData)
-    \{
-        if (fd >= eventLoop->setsize) \{
+    {
+        if (fd >= eventLoop->setsize) {
             errno = ERANGE;
             return AE_ERR;
-        \}
+        }
         // 在 I/O 事件表中选择一个空间
         aeFileEvent *fe = &eventLoop->events[fd];
     
@@ -197,7 +197,7 @@ redis 的主函数中调用 initServer() 函数从而初始化事件循环中心
         if (fd > eventLoop->maxfd)
             eventLoop->maxfd = fd;
         return AE_OK;
-    \}
+    }
 
 
 对于不同版本的 I/O 多路复用，比如 epoll，select，kqueue 等，redis 有各自的版本，但接口统一，譬如 aeApiAddEvent()。
@@ -212,7 +212,7 @@ redis 的主函数中调用 initServer() 函数从而初始化事件循环中心
     long long aeCreateTimeEvent(aeEventLoop *eventLoop, long long milliseconds,
             aeTimeProc *proc, void *clientData,
             aeEventFinalizerProc *finalizerProc)
-    \{
+    {
     /*    自增
         timeEventNextId 会在处理执行定时事件时会用到，用于防止出现死循环。
         如果超过了最大 id，则跳过这个定时事件，为的是避免死循环，即：
@@ -239,7 +239,7 @@ redis 的主函数中调用 initServer() 函数从而初始化事件循环中心
         te->next = eventLoop->timeEventHead;
         eventLoop->timeEventHead = te;
         return id;
-    \}
+    }
 
 
 
@@ -258,14 +258,14 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
     
         // UNIX 域套接字
         /* Open the listening Unix domain socket. */
-        if (server.unixsocket != NULL) \{
+        if (server.unixsocket != NULL) {
             unlink(server.unixsocket); /* don't care if this fails */
             server.sofd = anetUnixServer(server.neterr,server.unixsocket,server.unixsocketperm);
-            if (server.sofd == ANET_ERR) \{
+            if (server.sofd == ANET_ERR) {
                 redisLog(REDIS_WARNING, "Opening socket: %s", server.neterr);
                 exit(1);
-            \}
-        \}
+            }
+        }
 
 
 从上面可以看出，redis 提供了 TCP 和 UNIX 域套接字两种工作方式。以 TCP 工作方式为例，listenPort() 创建绑定了套接字并启动了监听。
@@ -281,16 +281,16 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
         // TCP
         /* Create an event handler for accepting new connections in TCP and Unix
          * domain sockets. */
-        for (j = 0; j < server.ipfd_count; j++) \{
+        for (j = 0; j < server.ipfd_count; j++) {
     
             // acceptTcpHandler() tcp 连接接受处理函数
             if (aeCreateFileEvent(server.el, server.ipfd[j], AE_READABLE,
                 acceptTcpHandler,NULL) == AE_ERR)
-                \{
+                {
                     redisPanic(
                         "Unrecoverable error creating server.ipfd file event.");
-                \}
-        \}
+                }
+        }
     
         // UNIX 域套接字
         if (server.sofd > 0 && aeCreateFileEvent(server.el,server.sofd,AE_READABLE,
@@ -301,7 +301,7 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
 
     
     // 用于 TCP 接收请求的处理函数
-    void acceptTcpHandler(aeEventLoop *el, int fd, void *privdata, int mask) \{
+    void acceptTcpHandler(aeEventLoop *el, int fd, void *privdata, int mask) {
         int cport, cfd;
         char cip[REDIS_IP_STR_LEN];
         REDIS_NOTUSED(el);
@@ -312,17 +312,17 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
         cfd = anetTcpAccept(server.neterr, fd, cip, sizeof(cip), &cport);
     
         // 出错
-        if (cfd == AE_ERR) \{
+        if (cfd == AE_ERR) {
             redisLog(REDIS_WARNING,"Accepting client connection: %s", server.neterr);
             return;
-        \}
+        }
     
         // 记录
         redisLog(REDIS_VERBOSE,"Accepted %s:%d", cip, cport);
     
         // 真正有意思的地方
         acceptCommonHandler(cfd,0);
-    \}
+    }
 
 
 接收套接字与客户端建立连接后，调用 acceptCommonHandler()。acceptCommonHandler() 主要工作就是：
@@ -357,9 +357,9 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
 
 
     
-    void aeMain(aeEventLoop *eventLoop) \{
+    void aeMain(aeEventLoop *eventLoop) {
         eventLoop->stop = 0;
-        while (!eventLoop->stop) \{
+        while (!eventLoop->stop) {
     
             // 进入事件循环可能会进入睡眠状态。在睡眠之前，执行预设置的函数 aeSetBeforeSleepProc()。
             if (eventLoop->beforesleep != NULL)
@@ -367,12 +367,12 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
     
             // AE_ALL_EVENTS 表示处理所有的事件
             aeProcessEvents(eventLoop, AE_ALL_EVENTS);
-        \}
-    \}
+        }
+    }
     
     // 先处理定时事件，然后处理套接字事件
     int aeProcessEvents(aeEventLoop *eventLoop, int flags)
-    \{
+    {
         int processed = 0, numevents;
     
         /* Nothing to do? return ASAP */
@@ -383,7 +383,7 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
          * events, in order to sleep until the next time event is ready
          * to fire. */
         if (eventLoop->maxfd != -1 ||
-            ((flags & AE_TIME_EVENTS) && !(flags & AE_DONT_WAIT))) \{
+            ((flags & AE_TIME_EVENTS) && !(flags & AE_DONT_WAIT))) {
     
             int j;
             aeTimeEvent *shortest = NULL;
@@ -395,7 +395,7 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
                 shortest = aeSearchNearestTimer(eventLoop);
     
             // 计算睡眠的最短时间
-            if (shortest) \{ // 存在定时事件
+            if (shortest) { // 存在定时事件
                 long now_sec, now_ms;
     
                 /* Calculate the time missing for the nearest
@@ -404,36 +404,36 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
                 aeGetTime(&now_sec, &now_ms);
                 tvp = &tv;
                 tvp->tv_sec = shortest->when_sec - now_sec;
-                if (shortest->when_ms < now_ms) \{ // 需要借位
+                if (shortest->when_ms < now_ms) { // 需要借位
                     // 减法中的借位，毫秒向秒借位
                     tvp->tv_usec = ((shortest->when_ms+1000) - now_ms)*1000;
                     tvp->tv_sec --;
-                \} else \{ // 不需要借位，直接减
+                } else { // 不需要借位，直接减
                     tvp->tv_usec = (shortest->when_ms - now_ms)*1000;
-                \}
+                }
     
                 // 当前系统时间已经超过定时事件设定的时间
                 if (tvp->tv_sec < 0) tvp->tv_sec = 0;
                 if (tvp->tv_usec < 0) tvp->tv_usec = 0;
-            \} else \{
+            } else {
                 /* If we have to check for events but need to return
                  * ASAP because of AE_DONT_WAIT we need to set the timeout
                  * to zero */
                 // 如果没有定时事件，见机行事
-                if (flags & AE_DONT_WAIT) \{
+                if (flags & AE_DONT_WAIT) {
                     tv.tv_sec = tv.tv_usec = 0;
                     tvp = &tv;
-                \} else \{
+                } else {
                     /* Otherwise we can block */
                     tvp = NULL; /* wait forever */
-                \}
-            \}
+                }
+            }
     
             // 调用 IO 多路复用函数阻塞监听
             numevents = aeApiPoll(eventLoop, tvp);
     
             // 处理已经触发的事件
-            for (j = 0; j < numevents; j++) \{
+            for (j = 0; j < numevents; j++) {
                 // 找到 I/O 事件表中存储的数据
                 aeFileEvent *fe = &eventLoop->events[eventLoop->fired[j].fd];
                 int mask = eventLoop->fired[j].mask;
@@ -444,18 +444,18 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
                  * event removed an element that fired and we still didn't
                  * processed, so we check if the event is still valid. */
                 // 读事件
-                if (fe->mask & mask & AE_READABLE) \{
+                if (fe->mask & mask & AE_READABLE) {
                     rfired = 1;
                     fe->rfileProc(eventLoop,fd,fe->clientData,mask);
-                \}
+                }
                 // 写事件
-                if (fe->mask & mask & AE_WRITABLE) \{
+                if (fe->mask & mask & AE_WRITABLE) {
                     if (!rfired || fe->wfileProc != fe->rfileProc)
                         fe->wfileProc(eventLoop,fd,fe->clientData,mask);
-                \}
+                }
                 processed++;
-            \}
-        \}
+            }
+        }
     
         // 处理定时事件
         /* Check time events */
@@ -463,7 +463,7 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
             processed += processTimeEvents(eventLoop);
     
         return processed; /* return the number of processed file/time events */
-    \}
+    }
 
 
 
@@ -488,16 +488,16 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
 接下来的操作便是执行相应的回调函数，代码在上一段中已经贴出：先处理 I/O 事件，再处理定时事件。
 
     
-    static int aeApiPoll(aeEventLoop *eventLoop, struct timeval *tvp) \{
+    static int aeApiPoll(aeEventLoop *eventLoop, struct timeval *tvp) {
         aeApiState *state = eventLoop->apidata;
         int retval, j, numevents = 0;
     
         /*
         真有意思，在 aeApiState 结构中：
-        typedef struct aeApiState \{
+        typedef struct aeApiState {
             fd_set rfds, wfds;
             fd_set _rfds, _wfds;
-        \} aeApiState;
+        } aeApiState;
         在调用 select() 的时候传入的是 _rfds 和 _wfds，所有监听的数据在 rfds 和 wfds 中。
         在下次需要调用 selec() 的时候，会将 rfds 和 wfds 中的数据拷贝进 _rfds 和 _wfds 中。*/
         memcpy(&state->_rfds,&state->rfds,sizeof(fd_set));
@@ -505,9 +505,9 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
     
         retval = select(eventLoop->maxfd+1,
                     &state->_rfds,&state->_wfds,NULL,tvp);
-        if (retval > 0) \{
+        if (retval > 0) {
             // 轮询
-            for (j = 0; j <= eventLoop->maxfd; j++) \{
+            for (j = 0; j <= eventLoop->maxfd; j++) {
                 int mask = 0;
                 aeFileEvent *fe = &eventLoop->events[j];
     
@@ -521,10 +521,10 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
                 eventLoop->fired[numevents].fd = j;
                 eventLoop->fired[numevents].mask = mask;
                 numevents++;
-            \}
-        \}
+            }
+        }
         return numevents;
-    \}
+    }
 
 
 

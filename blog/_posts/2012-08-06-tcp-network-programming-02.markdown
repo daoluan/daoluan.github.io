@@ -74,30 +74,30 @@ client
     #define MAXSLEEP 1024
     
     int connect_retry(int sockfd,const struct sockaddr * addr,socklen_t alen)
-    \{
+    {
         int nsec;
     
         printf("connecting\n");
         for(nsec = 1; nsec <= MAXSLEEP; nsec<<=1)
-        \{
+        {
             if(connect(sockfd,addr,alen) == 0)
-            \{
+            {
                 printf("connected\n");
                 return 0;
-            \}// if
+            }// if
             if(nsec <= MAXSLEEP/2)//    delay
                 sleep(nsec);
-        \}// for:
+        }// for:
         return 0;
-    \}
+    }
     
     int main(int argc,char * argv[])
-    \{
+    {
         if(argc != 4)
-        \{
+        {
             printf("you must input 4 arg\n");
             return 1;
-        \}// if
+        }// if
     
         int fd;    
         struct sockaddr_in si,server;
@@ -122,17 +122,17 @@ client
     
     //connect
         if(connect_retry(fd,(struct sockaddr *)&server,sizeof(server)) < 0)
-        \{
+        {
             printf("connect error\n");
             return 1;
-        \}// if
+        }// if
     
     //send
         if(send(fd,buf,20,0) < 0) 
-        \{
+        {
             printf("client send error\n");
             return 1;
-        \}// if
+        }// if
     
     //select
         fd_set readfd;
@@ -141,10 +141,10 @@ client
         int t;
     
         if((t = select(FD_SETSIZE,&readfd,NULL,NULL,NULL)) < 0)
-        \{
+        {
             printf("select error\n");
             return 1;
-        \}// if
+        }// if
     
     //recv
         bzero(bufrecv,sizeof(bufrecv));
@@ -153,7 +153,7 @@ client
     
         close(fd);
         return 0;
-    \}
+    }
 
 
 server
@@ -171,7 +171,7 @@ server
     char bufret[20];
     
     int initserver(int type,const struct sockaddr * addr,socklen_t alen,int qlen)
-    \{
+    {
         int fd;
         int err = 0;
     
@@ -180,22 +180,22 @@ server
     
         printf("binding\n");
         if(bind(fd,addr,alen) < 0)
-        \{
+        {
             err = errno;
             goto errout;
-        \}// if
+        }// if
         printf("bind succeed \n");
     
         if(type == SOCK_STREAM || type == SOCK_SEQPACKET)
-        \{
+        {
             printf("listening\n");
             if(listen(fd,1) < 0)
-            \{
+            {
                 err = errno;
                 printf("listen error\n");
                 goto errout;
-            \}// if
-        \}// if
+            }// if
+        }// if
         printf("listened \n");
         return (fd);
     
@@ -203,10 +203,10 @@ server
         close(fd);
         errno = err;
         return -1;
-    \}
+    }
     
     int serve(int sockfd)
-    \{
+    {
         int a,b;
         char op,buf[25];
     
@@ -231,28 +231,28 @@ server
         op = buf[2];
     
         switch(op)
-        \{
+        {
             case '+':ret = a + b;break;
             case '-':ret = a - b;break;
             case '*':ret = a * b;break;
             case '/':ret = a / b;break;
-        \}// switch
+        }// switch
     
         sprintf(bufret,"the result:%d",ret);
     
     //send
         printf("sending\n");
         if(send(clfd,bufret,20,0) < 0)
-        \{
+        {
             printf("server send error\n");
             return -1;
-        \}// if
+        }// if
         printf("sended,server end\n");
         return 0;
-    \}
+    }
     
     int main(int argc,char * argv[])
-    \{
+    {
         int sockfd;
         char addr[20];
     
@@ -267,32 +267,32 @@ server
         inet_pton(AF_INET,addr,(void *)&server.sin_addr);
     
         if((sockfd = initserver(SOCK_STREAM,(struct sockaddr *)&server,sizeof(server),1)) < 0)
-        \{
+        {
             printf("initserver error\n");
             return 0;
-        \}// if
+        }// if
     
     //prepare server
         while(1)
-        \{
+        {
             pid_t pid;
             if(pid = fork() < 0)    //  fork error
-            \{
+            {
                 close(sockfd);
                 return -1;
-            \}
+            }
             else if(pid == 0)
-            \{
+            {
                 printf("serving\n");
                 serve(sockfd);
                 break;
-            \}// if
-        \}// while
+            }// if
+        }// while
     
     //serve
         close(sockfd);
         return 0;
-    \}
+    }
 
 
 test.sh

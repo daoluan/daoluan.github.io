@@ -66,7 +66,7 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
     typename _Rb_tree<_Key,_Value,_KeyOfValue,_Compare,_Alloc>::iterator
     _Rb_tree<_Key,_Value,_KeyOfValue,_Compare,_Alloc>
       ::insert_equal(const _Value& __v)
-    \{
+    {
       // 在红黑树中有头结点和根节点的概念, 头结点位于根节点之上,
       // 头结点只为管理而存在, 根节点是真正存储数据的地方. 头结点和根节点互为父节点,
        // 是一种实现的技巧.
@@ -74,16 +74,16 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
       _Link_type __x = _M_root(); // _M_header->_M_parent, 即指向根节点
     
       // 寻找插入的位置
-      while (__x != 0) \{
+      while (__x != 0) {
         __y = __x;
     
         // 小于当前节点要走左边, 大于等于当前节点走右边
         __x = _M_key_compare(_KeyOfValue()(__v), _S_key(__x)) ?
                 _S_left(__x) : _S_right(__x);
-      \}
+      }
       // __x 为需要插入的节点的位置, __y 为其父节点
       return _M_insert(__x, __y, __v);
-    \}
+    }
     
     // sgi stl _Rb_tree 插入算法 insert_unique() 实现.
     // 策略概述: insert_unique() 同样也在红黑树中找到自己的位置; 我们知道,
@@ -95,19 +95,19 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
          bool>
     _Rb_tree<_Key,_Value,_KeyOfValue,_Compare,_Alloc>
       ::insert_unique(const _Value& __v)
-    \{
+    {
       _Link_type __y = _M_header; // 指向头结点
       _Link_type __x = _M_root(); // 指向根节点, 可能为空
       bool __comp = true;
     
       // 寻找插入的位置
-      while (__x != 0) \{
+      while (__x != 0) {
         __y = __x;
         __comp = _M_key_compare(_KeyOfValue()(__v), _S_key(__x));
     
         // 小于当前节点要走左边, 大于等于当前节点走右边
         __x = __comp ? _S_left(__x) : _S_right(__x);
-      \}
+      }
     
       iterator __j = iterator(__y); // 在 __y 上建立迭代器
     
@@ -138,7 +138,7 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
     
       // 此时 __y.value = __v, 不允许插入, 返回键值所在位置
       return pair<iterator,bool>(__j, false);
-    \}
+    }
     
     // _M_insert() 是真正执行插入的地方.
     // 策略概述: 插入策略已经在上篇中详述, 可以根据上篇文章的描述,
@@ -148,7 +148,7 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
     typename _Rb_tree<_Key,_Value,_KeyOfValue,_Compare,_Alloc>::iterator
     _Rb_tree<_Key,_Value,_KeyOfValue,_Compare,_Alloc>
       ::_M_insert(_Base_ptr __x_, _Base_ptr __y_, const _Value& __v)
-    \{
+    {
       _Link_type __x = (_Link_type) __x_; // 新节点插入的位置.
       // 关于 __x 的疑问:
       // 1. 它被放到下面的, 第一个 if 语句中, 我觉得是没有必要的,
@@ -161,25 +161,25 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
       _Link_type __z; // 新节点的位置
     
       if (__y == _M_header || __x != 0 ||
-          _M_key_compare(_KeyOfValue()(__v), _S_key(__y))) \{
+          _M_key_compare(_KeyOfValue()(__v), _S_key(__y))) {
       // 新节点应该为左孩子
         __z = _M_create_node(__v);
         _S_left(__y) = __z;               // also makes _M_leftmost() = __z
                                           //    when __y == _M_header
-        if (__y == _M_header) \{
+        if (__y == _M_header) {
           _M_root() = __z;
           _M_rightmost() = __z;
-        \}
+        }
         else if (__y == _M_leftmost())
           _M_leftmost() = __z;   // maintain _M_leftmost() pointing to min node
-      \}
+      }
       // 新节点应该为右孩子
-      else \{
+      else {
         __z = _M_create_node(__v);
         _S_right(__y) = __z;
         if (__y == _M_rightmost())
           _M_rightmost() = __z;  // maintain _M_rightmost() pointing to max node
-      \}
+      }
       _S_parent(__z) = __y;
       _S_left(__z) = 0;
       _S_right(__z) = 0;
@@ -192,7 +192,7 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
     
       // 返回迭代器类型
       return iterator(__z);
-    \}
+    }
     
     // 插入新节点后, 可能会破坏红黑树性质, _Rb_tree_rebalance() 负责维持性质.
     // 其中:
@@ -203,18 +203,18 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
     // 理解红黑树的插入算法.
     inline void
     _Rb_tree_rebalance(_Rb_tree_node_base* __x, _Rb_tree_node_base*& __root)
-    \{
+    {
       // 将新插入的节点染成红色
       __x->_M_color = _S_rb_tree_red;
     
-      while (__x != __root && __x->_M_parent->_M_color == _S_rb_tree_red) \{
+      while (__x != __root && __x->_M_parent->_M_color == _S_rb_tree_red) {
         // __x 的父节点也是红色的情况. 提示: 如果是黑色节点, 不会破坏红黑树性质.
     
-        if (__x->_M_parent == __x->_M_parent->_M_parent->_M_left) \{
+        if (__x->_M_parent == __x->_M_parent->_M_parent->_M_left) {
           // 叔父节点
           _Rb_tree_node_base* __y = __x->_M_parent->_M_parent->_M_right;
     
-          if (__y && __y->_M_color == _S_rb_tree_red) \{
+          if (__y && __y->_M_color == _S_rb_tree_red) {
             // 第 1 种情况, N,P,U 都红(G 肯定黑).
             // 策略: G->红, N,P->黑. 此时, G 红, 如果 G 的父亲也是红, 性质又被破坏了,
             // HACK: 可以将 GPUN 看成一个新的红色 N 节点, 如此递归调整下去;
@@ -223,51 +223,51 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
             __y->_M_color = _S_rb_tree_black;
             __x->_M_parent->_M_parent->_M_color = _S_rb_tree_red;
             __x = __x->_M_parent->_M_parent;
-          \}
-          else \{
+          }
+          else {
     
-            if (__x == __x->_M_parent->_M_right) \{
+            if (__x == __x->_M_parent->_M_right) {
             // 第 2 种情况, P 为红, N 为 P 右孩子, U 为黑或缺少.
             // 策略: 旋转变换, 从而进入下一种情况:
               __x = __x->_M_parent;
               _Rb_tree_rotate_left(__x, __root);
-            \}
+            }
             // 第 3 种情况, 可能由第二种变化而来, 但不是一定: P 为红, N 为红.
             // 策略: 旋转, 交换 P,G 颜色, 调整后, 因为 P 为黑色, 所以不怕
             // P 的父节点是红色的情况. over
             __x->_M_parent->_M_color = _S_rb_tree_black;
             __x->_M_parent->_M_parent->_M_color = _S_rb_tree_red;
             _Rb_tree_rotate_right(__x->_M_parent->_M_parent, __root);
-          \}
-        \}
-        else \{ // 下面的代码是镜像得出的, 脑补吧.
+          }
+        }
+        else { // 下面的代码是镜像得出的, 脑补吧.
           _Rb_tree_node_base* __y = __x->_M_parent->_M_parent->_M_left;
-          if (__y && __y->_M_color == _S_rb_tree_red) \{
+          if (__y && __y->_M_color == _S_rb_tree_red) {
             __x->_M_parent->_M_color = _S_rb_tree_black;
             __y->_M_color = _S_rb_tree_black;
             __x->_M_parent->_M_parent->_M_color = _S_rb_tree_red;
             __x = __x->_M_parent->_M_parent;
-          \}
-          else \{
-            if (__x == __x->_M_parent->_M_left) \{
+          }
+          else {
+            if (__x == __x->_M_parent->_M_left) {
               __x = __x->_M_parent;
               _Rb_tree_rotate_right(__x, __root);
-            \}
+            }
             __x->_M_parent->_M_color = _S_rb_tree_black;
             __x->_M_parent->_M_parent->_M_color = _S_rb_tree_red;
             _Rb_tree_rotate_left(__x->_M_parent->_M_parent, __root);
-          \}
-        \}
-      \}
+          }
+        }
+      }
       __root->_M_color = _S_rb_tree_black;
-    \}
+    }
     
     // 删除算法, 直接调用底层的删除实现 _Rb_tree_rebalance_for_erase().
     template <class _Key, class _Value, class _KeyOfValue,
               class _Compare, class _Alloc>
     inline void _Rb_tree<_Key,_Value,_KeyOfValue,_Compare,_Alloc>
       ::erase(iterator __position)
-    \{
+    {
       _Link_type __y =
         (_Link_type) _Rb_tree_rebalance_for_erase(__position._M_node,
                                                   _M_header->_M_parent,
@@ -275,7 +275,7 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
                                                   _M_header->_M_right);
       destroy_node(__y);
       --_M_node_count;
-    \}
+    }
     
     // 删除节点底层实现, 删除可能会破坏红黑树性质,
     // _Rb_tree_rebalance()
@@ -295,7 +295,7 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
                                  _Rb_tree_node_base*& __root,
                                  _Rb_tree_node_base*& __leftmost,
                                  _Rb_tree_node_base*& __rightmost)
-    \{
+    {
       // __z 是要删除的节点
     
       // __y 最终会指向要删除的节点
@@ -313,14 +313,14 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
           __x = __y->_M_left;    // __x is not null.
     
         // 有两个非空孩子
-        else \{                   // __z has two non-null children.  Set __y to
+        else {                   // __z has two non-null children.  Set __y to
           __y = __y->_M_right;   //   __z's successor.  __x might be null.
     
           // __y 取右孩子中的最小节点, __x 记录他的右孩子(可能存在右孩子)
           while (__y->_M_left != 0)
             __y = __y->_M_left;
           __x = __y->_M_right;
-        \}
+        }
     
       // __y != __z 说明有两个非空孩子的情况,
       // 此时的删除策略就和文中提到的普通二叉搜索树删除策略一样:
@@ -328,14 +328,14 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
       // __x 记录了 __y 的右孩子
       // 用 __y 顶替 __z 的位置, __x 顶替 __y 的位置, 最后用 __y 指向 __z,
       // 从而 __y 指向了要删除的节点
-      if (__y != __z) \{          // relink y in place of z.  y is z's successor
+      if (__y != __z) {          // relink y in place of z.  y is z's successor
     
         // 将 __z 的记录转移至 __y 节点
         __z->_M_left->_M_parent = __y;
         __y->_M_left = __z->_M_left;
     
         // 如果 __y 不是 __z 的右孩子, __z->_M_right 有左孩子
-        if (__y != __z->_M_right) \{
+        if (__y != __z->_M_right) {
     
           __x_parent = __y->_M_parent;
     
@@ -347,7 +347,7 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
           __y->_M_parent->_M_left = __x;      // __y must be a child of _M_left
           __y->_M_right = __z->_M_right;
           __z->_M_right->_M_parent = __y;
-        \}
+        }
         // __y == __z->_M_right
         else
           __x_parent = __y;
@@ -369,9 +369,9 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
         __STD::swap(__y->_M_color, __z->_M_color);
         __y = __z;
         // __y now points to node to be actually deleted
-      \}
+      }
       // __y == __z 说明至多一个孩子
-      else \{                        // __y == __z
+      else {                        // __y == __z
         __x_parent = __y->_M_parent;
         if (__x) __x->_M_parent = __y->_M_parent;
     
@@ -402,22 +402,22 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
             __rightmost = _Rb_tree_node_base::_S_maximum(__x);
     
         // __y 同样已经指向要删除的节点
-      \}
+      }
     
       // __y 指向要删除的节点
       // __x 即为 N 节点
       // __x_parent 指向 __x 的父亲, 即 N 节点的父亲
-      if (__y->_M_color != _S_rb_tree_red) \{
+      if (__y->_M_color != _S_rb_tree_red) {
         // __y 的颜色为黑色的时候, 会破坏红黑树性质
     
         while (__x != __root && (__x == 0 || __x->_M_color == _S_rb_tree_black))
           // __x 不为红色, 即为空或者为黑. 提示: 如果 __x 是红色, 直接将 __x 替换成黑色
     
-          if (__x == __x_parent->_M_left) \{ // 如果 __x 是左孩子
+          if (__x == __x_parent->_M_left) { // 如果 __x 是左孩子
     
             _Rb_tree_node_base* __w = __x_parent->_M_right; // 兄弟节点
     
-            if (__w->_M_color == _S_rb_tree_red) \{
+            if (__w->_M_color == _S_rb_tree_red) {
               //第 2 情况, S 红, 根据红黑树性质P,SL,SR 一定黑.
               // 策略: 旋转, 交换 P,S 颜色.
     
@@ -425,12 +425,12 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
               __x_parent->_M_color = _S_rb_tree_red; // 交换颜色
               _Rb_tree_rotate_left(__x_parent, __root); // 旋转
               __w = __x_parent->_M_right; // 调整关系
-            \}
+            }
     
             if ((__w->_M_left == 0 ||
                  __w->_M_left->_M_color == _S_rb_tree_black) &&
                 (__w->_M_right == 0 ||
-                 __w->_M_right->_M_color == _S_rb_tree_black)) \{
+                 __w->_M_right->_M_color == _S_rb_tree_black)) {
               // 提示: 这是 第 1 情况和第 2.1 情况的合并, 因为处理的过程是一样的.
               // 但他们的情况还是要分门别类的. 已经在文章中详细支出,
               // 似乎大多数的博文中没有提到这一点.
@@ -462,9 +462,9 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
               // 调整关系
               __x = __x_parent;
               __x_parent = __x_parent->_M_parent;
-            \} else \{
+            } else {
               if (__w->_M_right == 0 ||
-                  __w->_M_right->_M_color == _S_rb_tree_black) \{
+                  __w->_M_right->_M_color == _S_rb_tree_black) {
                 // 第 2.2.1 情况, S,SR 黑, SL 红.
                 // 策略: 旋转, 变换 SL,S 颜色.
     
@@ -474,7 +474,7 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
     
                 // 调整关系
                 __w = __x_parent->_M_right;
-              \}
+              }
     
               // 第 2.2.2 情况, S 黑, SR 红.
               // 策略: 旋转, 交换 S,P 颜色, SR->黑色, 重新获得平衡.
@@ -483,41 +483,41 @@ sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置�
               if (__w->_M_right) __w->_M_right->_M_color = _S_rb_tree_black;
               _Rb_tree_rotate_left(__x_parent, __root);
               break;
-            \}                        // 下面的代码是镜像得出的, 脑补吧.
-          \} else \{                  // same as above, with _M_right <-> _M_left.
+            }                        // 下面的代码是镜像得出的, 脑补吧.
+          } else {                  // same as above, with _M_right <-> _M_left.
             _Rb_tree_node_base* __w = __x_parent->_M_left;
-            if (__w->_M_color == _S_rb_tree_red) \{
+            if (__w->_M_color == _S_rb_tree_red) {
               __w->_M_color = _S_rb_tree_black;
               __x_parent->_M_color = _S_rb_tree_red;
               _Rb_tree_rotate_right(__x_parent, __root);
               __w = __x_parent->_M_left;
-            \}
+            }
             if ((__w->_M_right == 0 ||
                  __w->_M_right->_M_color == _S_rb_tree_black) &&
                 (__w->_M_left == 0 ||
-                 __w->_M_left->_M_color == _S_rb_tree_black)) \{
+                 __w->_M_left->_M_color == _S_rb_tree_black)) {
               __w->_M_color = _S_rb_tree_red;
               __x = __x_parent;
               __x_parent = __x_parent->_M_parent;
-            \} else \{
+            } else {
               if (__w->_M_left == 0 ||
-                  __w->_M_left->_M_color == _S_rb_tree_black) \{
+                  __w->_M_left->_M_color == _S_rb_tree_black) {
                 if (__w->_M_right) __w->_M_right->_M_color = _S_rb_tree_black;
                 __w->_M_color = _S_rb_tree_red;
                 _Rb_tree_rotate_left(__w, __root);
                 __w = __x_parent->_M_left;
-              \}
+              }
               __w->_M_color = __x_parent->_M_color;
               __x_parent->_M_color = _S_rb_tree_black;
               if (__w->_M_left) __w->_M_left->_M_color = _S_rb_tree_black;
               _Rb_tree_rotate_right(__x_parent, __root);
               break;
-            \}
-          \}
+            }
+          }
         if (__x) __x->_M_color = _S_rb_tree_black;
-      \}
+      }
       return __y;
-    \}
+    }
 
 
 捣乱 2013-9-29

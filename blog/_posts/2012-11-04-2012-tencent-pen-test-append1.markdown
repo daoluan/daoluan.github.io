@@ -178,7 +178,7 @@ tags:
 
     
     int main()
-    \{	
+    {	
     #define  N 10
     	int a[N],b[N];
     	for(int i=0; i<10; i++)
@@ -196,7 +196,7 @@ tags:
     	cout << endl;
     
     	return 0;
-    \}
+    }
 
 
 

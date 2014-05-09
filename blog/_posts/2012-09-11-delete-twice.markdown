@@ -32,37 +32,37 @@ C++类中，有时候使用到传值调用（对象实体做参数），遇到�
     using namespace std;
     
     class Text
-    \{
+    {
     private:
     	char * str;
     
     public:
-    	Text()\{str = new char[20];::memset(str,0,20);\}
+    	Text(){str = new char[20];::memset(str,0,20);}
     	void SetText(char * str)
-    	\{
+    	{
     		strcpy(this->str,str);
-    	\}
-    	char * GetText() const\{return str;\}
+    	}
+    	char * GetText() const{return str;}
     	~Text()
-    	\{
+    	{
     		cout << "~Text Destruction" << endl;
     		delete [] str;
     		cout << "~Text Over" << endl;
-    	\}
-    \};
+    	}
+    };
     
     void Print(Text str)
-    \{
+    {
     	cout << str.GetText() << endl;
-    \}
+    }
     
     int main()
-    \{
+    {
     	Text t;
     	t.SetText("abc");
     	Print(t);
     	return 1;
-    \}
+    }
 
 
 上面执行的结果出现内存泄露。原因：
@@ -83,42 +83,42 @@ C++类中，有时候使用到传值调用（对象实体做参数），遇到�
     using namespace std;
     
     class Text
-    \{
+    {
     private:
     	char * str;
     
     public:
-    	Text()\{str = new char[20];::memset(str,0,20);\}
+    	Text(){str = new char[20];::memset(str,0,20);}
     	Text(Text &t)
-    	\{
+    	{
     		str = new char[20];
     		strcpy(str,t.GetText());
-    	\}
+    	}
     	void SetText(char * str)
-    	\{
+    	{
     		strcpy(this->str,str);
-    	\}
-    	char * GetText() const\{return str;\}
+    	}
+    	char * GetText() const{return str;}
     	~Text()
-    	\{
+    	{
     		cout << "~Text Destruction" << endl;
     		delete [] str;
     		cout << "~Text Over" << endl;
-    	\}
-    \};
+    	}
+    };
     
     void Print(Text str)
-    \{
+    {
     	cout << str.GetText() << endl;
-    \}
+    }
     
     int main()
-    \{
+    {
     	Text t;
     	t.SetText("abc");
     	Print(t);
     	return 1;
-    \}
+    }
 
 
 
@@ -128,9 +128,9 @@ C++类中，有时候使用到传值调用（对象实体做参数），遇到�
 
     
     void Print(Text &str)
-    \{
+    {
     	cout << str.GetText() << endl;
-    \}
+    }
 
 
 

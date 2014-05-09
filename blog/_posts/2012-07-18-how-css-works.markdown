@@ -19,7 +19,7 @@ tags:
     <body bgcolor=#FF0000>daoluan</body>
     
     /*CSS*/
-    body\{background-color:#FF0000;\}
+    body{background-color:#FF0000;}
 
 
 CSS中包括三个部分：样式名（标准说是“选择器”），属性名和属性值。那CSS的代码应该放在哪里？最为常用的方法就是把css代码独立于一个外部的.css文件中，跟其他文件一样，样式表文件放在Web服务器上或者本地硬盘上；
@@ -54,11 +54,11 @@ CSS中包括三个部分：样式名（标准说是“选择器”），属性�
 
     
     /*style.css*/
-    body \{ 
+    body { 
           background-color: #00FFEE; 
           font-size: 25px; 
           font-family: "微软雅黑"; 
-    \}
+    }
 
 
 style.css文件里的body内的属性还有很多是可以自定义的，比如字体颜色，背景图片等等（这些交给字典吧！）。
@@ -85,15 +85,15 @@ CSS支持非常灵活的样式组合，如果样式名（选择器）为非内�
 
     
     /*style.css，添加mystyle*/
-    body \{
+    body {
     	background-color: #00FFEE;
     	font-size: 25px;
     	font-family: "微软雅黑";
-    \}
+    }
     /*点作为前缀*/
-    .mystyle	\{
+    .mystyle	{
     	color: #FF0000;
-    \};
+    };
 
 
 效果图：

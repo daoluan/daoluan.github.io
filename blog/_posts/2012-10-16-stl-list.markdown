@@ -58,7 +58,7 @@ list的遍历使用迭代器，如下：
     using namespace std;
     
     int main()
-    \{	
+    {	
     	unsigned int i;
     	list<int> il;
     
@@ -75,7 +75,7 @@ list的遍历使用迭代器，如下：
     	cout << endl;
     
     	return 0;
-    \}
+    }
 
 
 list在空间拓展的时候，没有经历vector式的空间倒腾，所以只要不earse元素，指向它ite是不会失效的。

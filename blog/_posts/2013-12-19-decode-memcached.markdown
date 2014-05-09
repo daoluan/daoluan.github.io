@@ -115,7 +115,7 @@ memcached 服务一个客户的时候, 是怎么一个过程, 试着去调试模
 客户已经与 memcached 服务器建立了连接, 客户在终端(黑框框)敲击 get key + 回车键, 一个请求包就发出去了. 从**连接管理**中已经了解到所有连接套接字都会被注册回调函数为`event_handler()`, 因此`event_handler()`会被触发调用.
 
     
-    <code>void event_handler(const int fd, const short which, void *arg) \{
+    <code>void event_handler(const int fd, const short which, void *arg) {
         conn *c;
     
         c = (conn *)arg;
@@ -124,18 +124,18 @@ memcached 服务一个客户的时候, 是怎么一个过程, 试着去调试模
         c-&gt;which = which;
     
         /* sanity */
-        if (fd != c-&gt;sfd) \{
+        if (fd != c-&gt;sfd) {
             if (settings.verbose &gt; 0)
                 fprintf(stderr, "Catastrophic: event fd doesn't match conn fd!\n");
             conn_close(c);
             return;
-        \}
+        }
     
         drive_machine(c);
     
         /* wait for next event */
         return;
-    \}
+    }
     </code>
 
 
@@ -143,7 +143,7 @@ memcached 服务一个客户的时候, 是怎么一个过程, 试着去调试模
 
     
     <code>// 请求的开端. 当有新的连接的时候 event_handler() 会调用此函数.
-    static void drive_machine(conn *c) \{
+    static void drive_machine(conn *c) {
         bool stop = false;
         int sfd, flags = 1;
         socklen_t addrlen;
@@ -154,10 +154,10 @@ memcached 服务一个客户的时候, 是怎么一个过程, 试着去调试模
     
         assert(c != NULL);
     
-        while (!stop) \{
+        while (!stop) {
             // while 能保证一个命令被执行完成或者异常中断(譬如 IO 操作次数超出了一定的限制)
     
-            switch(c-&gt;state) \{
+            switch(c-&gt;state) {
             // 正在连接, 还没有 accept
             case conn_listening:
     
@@ -186,10 +186,10 @@ memcached 服务一个客户的时候, 是怎么一个过程, 试着去调试模
     
             // 连接结束. 一般出错或者客户显示结束服务的情况下回转换到此状态
             case conn_closing:
-            \}
-        \}
+            }
+        }
         return;
-    \}
+    }
     </code>
 
 

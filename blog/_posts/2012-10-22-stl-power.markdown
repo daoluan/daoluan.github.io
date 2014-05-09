@@ -30,7 +30,7 @@ STL中的[pow](http://www.cplusplus.com/reference/clibrary/cmath/pow/)用来计�
     
     typedef unsigned int UINT;
     UINT power(UINT A,UINT n)
-    \{
+    {
     	if(n == 1)		
     		return A;
     
@@ -38,7 +38,7 @@ STL中的[pow](http://www.cplusplus.com/reference/clibrary/cmath/pow/)用来计�
     	return (n & 1) 
     		? tmp * tmp * A			/*odd.*/
     		:tmp * tmp;				/*even.*/
-    \}
+    }
 
 
 上面是递归的思路，迭代的也一样，同样可以举一个翔实的例子。计算A23，23用二进制展开：
@@ -62,17 +62,17 @@ STL中的[pow](http://www.cplusplus.com/reference/clibrary/cmath/pow/)用来计�
 
     
     UINT power(UINT A,UINT n)
-    \{
+    {
     	UINT tmp = 1,base = 2;
     	while(n)
-    	\{
+    	{
     		if(n&1)			/*低位为1*/
     			tmp *= base;
     		n >>= 1;		/*右移*/
     		base <<= 1;
-    	\}//	while
+    	}//	while
     	return tmp;
-    \}
+    }
 
 
 把原来O(N)降低为O(lnN)，很划得来。欢迎斧正。

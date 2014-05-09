@@ -26,7 +26,7 @@ STL中会定义迭代器：
     
     template <class _Ty>		/*_Ty：节点元素类型。*/
     struct container_iterator
-    \{
+    {
     	/*五种与数据元先关的描述。*/
     	......
     	typedef container_iterator<_Ty> iterator;
@@ -41,13 +41,13 @@ STL中会定义迭代器：
     
     	/*迭代器构造函数。*/
     	......
-    	container_iterator(link_type x):node(x)\{\}
+    	container_iterator(link_type x):node(x){}
     	...
     	......
     
     	/*迭代器行为*/
     	/*+,-,++,--,+=,-=,->,&,[]等运算符重载各取所需 */
-    \};
+    };
 
 
 [caption id="attachment_1344" align="aligncenter" width="334"][![](http://daoluan.net/blog/wp-content/uploads/2012/10/iterator_op.jpg)](http://daoluan.net/blog/stl-iterator/iterator_op/) iterator_op[/caption]
@@ -57,7 +57,7 @@ STL中会定义迭代器：
 通过模板，迭代器可以为任何数据元服务。一个有趣的地方便是迭代器的构造函数：
 
     
-    container_iterator(link_type x):node(x)\{\}
+    container_iterator(link_type x):node(x){}
 
 
 在container（以下展示）的元素操作当中，很多时候会直截返回指向数据元的指针，**这时可能此操作的函数可能需要返回的是container_iterator类型，**而不是返回一个指向数据元的指针（这种做法不上道，太龌龊），于是会临时构造（调用迭代器的构造函数）一个迭代器作为返回值。
@@ -66,27 +66,27 @@ STL中会定义迭代器：
 
     
     class Node  
-    \{  
+    {  
     public:  
     	Node(int nAge = 0)  
-    	\{  
+    	{  
     		m_nAge = nAge;  
-    	\}  
+    	}  
     	......
     private:  
     	int m_nAge;  
-    \};  
+    };  
     
     Node foo(int i)
-    \{
+    {
     	return i;	/*直截返回一个int，但Node有Node(int)构造函数，因此会临时构造一个Node对象返回。*/
-    \}
+    }
     
     int main()
-    \{	
+    {	
     	Node i = foo(2);
     	return 0;
-    \}
+    }
 
 
 下面是container：
@@ -94,7 +94,7 @@ STL中会定义迭代器：
     
     template <class _Ty,class alloc>		/*T：节点元素类型。*/
     class container
-    \{
+    {
     	/*container数据结构*/
     	typedef container_iterator<_Ty> iterator;
     	typedef const container_iterator<_Ty> const_iterator;
@@ -125,7 +125,7 @@ STL中会定义迭代器：
     	void pop_back();
     	void pop_front();
     	......
-    \};
+    };
 
 
 container内部实现的大多数是元素的操作函数，它们有充分利用container_iterator，包括container_iterator内部实现的各种元素的操控（++，--，*，->等等）。
@@ -137,22 +137,22 @@ container和container_iterator就是这样结合起来的。还剩下一STL中�
     template<class _InIt, class _Ty>
     inline
     _InIt find(_InIt _First, _InIt _Last, const _Ty& _Val)
-    \{	// find first matching _Val
+    {	// find first matching _Val
     	_ASSIGN_FROM_BASE(_First,
     		_Find(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Val));
     	return (_First);
-    \}
+    }
     
     template<class _InIt, class _Ty>
     inline
     _InIt _Find(_InIt _First, _InIt _Last, const _Ty& _Val)
-    \{	// find first matching _Val
+    {	// find first matching _Val
     	_DEBUG_RANGE(_First, _Last);
     	for (; _First != _Last; ++_First)
     		if (*_First == _Val)
     			break;
     	return (_First);
-    \}
+    }
 
 
 我们看到，迭代器在算法中的表现，++，--，==。。。。

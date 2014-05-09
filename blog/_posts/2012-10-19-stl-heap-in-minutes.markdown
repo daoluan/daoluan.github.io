@@ -105,7 +105,7 @@ priority_queue带权值的queue，顺序入队之后，按照权值的大小出�
     	class _Container = vector<_Ty>,
     	class _Pr = less<typename _Container::value_type> >
     	class priority_queue
-    \{......\}
+    {......}
 
 
 本文完 2012-10-19

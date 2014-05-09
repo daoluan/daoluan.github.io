@@ -97,19 +97,19 @@ RB_TREE本身就是一个搜索树，加之它能时刻保持良好的平衡，�
     		// TEMPLATE STRUCT pair
     template<class _Ty1,
     	class _Ty2> struct pair
-    	\{	// store a pair of values
+    	{	// store a pair of values
     	typedef pair<_Ty1, _Ty2> _Myt;
     	typedef _Ty1 first_type;
     	typedef _Ty2 second_type;
     
     	pair()
     		: first(_Ty1()), second(_Ty2())
-    		\{	// construct from defaults
-    		\}
+    		{	// construct from defaults
+    		}
     	......
     	_Ty1 first;	// the first stored value
     	_Ty2 second;	// the second stored value
-    	\};
+    	};
 
 
 有趣的地方是，它不仅仅用在insert()的参数中，还应用在insert()的返回值和map的“[]”运算符重载中。
@@ -124,14 +124,14 @@ RB_TREE本身就是一个搜索树，加之它能时刻保持良好的平衡，�
 
     
     mapped_type& operator[](const key_type& _Keyval)
-    	\{	// find element matching _Keyval or insert with default mapped
+    	{	// find element matching _Keyval or insert with default mapped
     	iterator _Where = this->lower_bound(_Keyval);
     	if (_Where == this->end()
     		|| this->comp(_Keyval, this->_Key(_Where._Mynode())))
     		_Where = this->insert(_Where,
     			value_type(_Keyval, mapped_type()));
     	return ((*_Where).second);
-    	\}
+    	}
 
 
 
@@ -186,7 +186,7 @@ RB_TREE本身就是一个搜索树，加之它能时刻保持良好的平衡，�
     	class _Alloc = allocator<_Kty> >
     	class set
     		: public _Tree<_Tset_traits<_Kty, _Pr, _Alloc, false> >
-    	\{	// ordered red-black tree of key values, unique keys
+    	{	// ordered red-black tree of key values, unique keys
 
 
 所以如果需要禁止用户通过迭代器修改键值，那么可以将迭代器声明为const：（笔者认为这样可行的）
@@ -205,7 +205,7 @@ RB_TREE本身就是一个搜索树，加之它能时刻保持良好的平衡，�
     	class _Alloc = allocator<pair<const _Kty, _Ty> > >
     	class map
     		: public _Tree<_Tmap_traits<_Kty, _Ty, _Pr, _Alloc, false> >
-    	\{	// ordered red-black tree of \{key, mapped\} values, unique keys
+    	{	// ordered red-black tree of {key, mapped} values, unique keys
     ......
 
 
