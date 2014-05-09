@@ -27,214 +27,550 @@ tags:
 <table cellpadding="2" width="395" cellspacing="0" border="0" >
 <tbody >
 <tr >
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >b</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >c</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >b</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="29" valign="top" >b</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >c</td></tbody>
-<td width="28" valign="top" >k</td></tbody>
-</tr></tbody>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >b
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >c
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >b
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="29" valign="top" >b
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >c
+</td>
+
+<td width="28" valign="top" >k
+</td>
+</tr>
 <tr >
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >b</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >b</td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="29" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-</tr></tbody>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >b
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >b
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="29" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+</tr>
 <tr >
-<td width="28" valign="top" >匹配</td></tbody>
-<td width="28" valign="top" >1</td></tbody>
-<td width="28" valign="top" >2</td></tbody>
-<td width="28" valign="top" >3</td></tbody>
-<td width="28" valign="top" >0</td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="29" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-</tr></tbody>
-</tbody></tbody>
-</table></tbody>
+
+<td width="28" valign="top" >匹配
+</td>
+
+<td width="28" valign="top" >1
+</td>
+
+<td width="28" valign="top" >2
+</td>
+
+<td width="28" valign="top" >3
+</td>
+
+<td width="28" valign="top" >0
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="29" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+</tr>
+</tbody>
+</table>
 <!-- more -->如果此时有个提示，下一次匹配应从T字串的第三个字符开始匹配，因为从T的第二个字符开始匹配肯定是失败的。于是有：
 <table cellpadding="2" width="395" cellspacing="0" border="0" >
 <tbody >
 <tr >
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >b</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >c</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >b</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="29" valign="top" >b</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >c</td></tbody>
-<td width="28" valign="top" >k</td></tbody>
-</tr></tbody>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >b
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >c
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >b
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="29" valign="top" >b
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >c
+</td>
+
+<td width="28" valign="top" >k
+</td>
+</tr>
 <tr >
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >b</td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="29" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-</tr></tbody>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >b
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="29" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+</tr>
 <tr >
-<td width="28" valign="top" >匹配</td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" >1</td></tbody>
-<td width="28" valign="top" >0</td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="29" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-</tr></tbody>
-</tbody></tbody>
-</table></tbody>
+
+<td width="28" valign="top" >匹配
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >1
+</td>
+
+<td width="28" valign="top" >0
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="29" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+</tr>
+</tbody>
+</table>
 又有提示，下一次从T的第四个字符开始匹配：
 <table cellpadding="2" width="395" cellspacing="0" border="0" >
 <tbody >
 <tr >
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >b</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >c</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >b</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="29" valign="top" >b</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >c</td></tbody>
-<td width="28" valign="top" >k</td></tbody>
-</tr></tbody>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >b
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >c
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >b
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="29" valign="top" >b
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >c
+</td>
+
+<td width="28" valign="top" >k
+</td>
+</tr>
 <tr >
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >b</td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="29" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-</tr></tbody>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >b
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="29" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+</tr>
 <tr >
-<td width="28" valign="top" >匹配</td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" >1</td></tbody>
-<td width="28" valign="top" >0</td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="29" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-</tr></tbody>
-</tbody></tbody>
-</table></tbody>
+
+<td width="28" valign="top" >匹配
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >1
+</td>
+
+<td width="28" valign="top" >0
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="29" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+</tr>
+</tbody>
+</table>
 又有提示，下一次匹配，从T的第六个字符开始匹配：
 <table cellpadding="2" width="395" cellspacing="0" border="0" >
 <tbody >
 <tr >
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >b</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >c</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >b</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="29" valign="top" >b</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >c</td></tbody>
-<td width="28" valign="top" >k</td></tbody>
-</tr></tbody>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >b
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >c
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >b
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="29" valign="top" >b
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >c
+</td>
+
+<td width="28" valign="top" >k
+</td>
+</tr>
 <tr >
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="28" valign="top" >b</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="29" valign="top" >b</td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-</tr></tbody>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="28" valign="top" >b
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="29" valign="top" >b
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+</tr>
 <tr >
-<td width="28" valign="top" >匹配</td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" >1</td></tbody>
-<td width="28" valign="top" >2</td></tbody>
-<td width="28" valign="top" >3</td></tbody>
-<td width="29" valign="top" >4</td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
-</tr></tbody>
-</tbody></tbody>
-</table></tbody>
+
+<td width="28" valign="top" >匹配
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >1
+</td>
+
+<td width="28" valign="top" >2
+</td>
+
+<td width="28" valign="top" >3
+</td>
+
+<td width="29" valign="top" >4
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+</tr>
+</tbody>
+</table>
 于是匹配成功。你将看到匹配自动机就是这么做的。
 
 
@@ -282,178 +618,434 @@ auto机就是一个协助匹配的状态表（或者图）。
 <table cellpadding="2" width="387" cellspacing="0" border="0" >
 <tbody >
 <tr >
-<td width="39" valign="top" >acbacb</td></tbody>
-<td width="36" valign="top" >a</td></tbody>
-<td width="41" valign="top" >c</td></tbody>
-<td width="41" valign="top" >b</td></tbody>
-<td width="39" valign="top" >a</td></tbody>
-<td width="43" valign="top" >c</td></tbody>
-<td width="39" valign="top" >b</td></tbody>
-<td width="38" valign="top" >X</td></tbody>
-<td width="37" valign="top" >X</td></tbody>
-<td width="36" valign="top" >X</td></tbody>
-</tr></tbody>
+
+<td width="39" valign="top" >acbacb
+</td>
+
+<td width="36" valign="top" >a
+</td>
+
+<td width="41" valign="top" >c
+</td>
+
+<td width="41" valign="top" >b
+</td>
+
+<td width="39" valign="top" >a
+</td>
+
+<td width="43" valign="top" >c
+</td>
+
+<td width="39" valign="top" >b
+</td>
+
+<td width="38" valign="top" >X
+</td>
+
+<td width="37" valign="top" >X
+</td>
+
+<td width="36" valign="top" >X
+</td>
+</tr>
 <tr >
-<td width="39" valign="top" >P</td></tbody>
-<td width="37" valign="top" >X</td></tbody>
-<td width="42" valign="top" >X</td></tbody>
-<td width="42" valign="top" >X</td></tbody>
-<td width="40" valign="top" >a</td></tbody>
-<td width="43" valign="top" >c</td></tbody>
-<td width="39" valign="top" >b</td></tbody>
-<td width="40" valign="top" >a</td></tbody>
-<td width="39" valign="top" >c</td></tbody>
-<td width="40" valign="top" >a</td></tbody>
-</tr></tbody>
-</tbody></tbody>
-</table></tbody>
+
+<td width="39" valign="top" >P
+</td>
+
+<td width="37" valign="top" >X
+</td>
+
+<td width="42" valign="top" >X
+</td>
+
+<td width="42" valign="top" >X
+</td>
+
+<td width="40" valign="top" >a
+</td>
+
+<td width="43" valign="top" >c
+</td>
+
+<td width="39" valign="top" >b
+</td>
+
+<td width="40" valign="top" >a
+</td>
+
+<td width="39" valign="top" >c
+</td>
+
+<td width="40" valign="top" >a
+</td>
+</tr>
+</tbody>
+</table>
 绿色：alpha(acbaa)=1，
 <table cellpadding="2" width="378" cellspacing="0" border="0" >
 <tbody >
 <tr >
-<td width="66" valign="top" >acbaa</td></tbody>
-<td width="31" valign="top" >a</td></tbody>
-<td width="31" valign="top" >c</td></tbody>
-<td width="32" valign="top" >b</td></tbody>
-<td width="31" valign="top" >a</td></tbody>
-<td width="29" valign="top" >a</td></tbody>
-<td width="31" valign="top" >X</td></tbody>
-<td width="35" valign="top" >X</td></tbody>
-<td width="31" valign="top" >X</td></tbody>
-<td width="32" valign="top" >X</td></tbody>
-<td width="27" valign="top" >X</td></tbody>
-</tr></tbody>
+
+<td width="66" valign="top" >acbaa
+</td>
+
+<td width="31" valign="top" >a
+</td>
+
+<td width="31" valign="top" >c
+</td>
+
+<td width="32" valign="top" >b
+</td>
+
+<td width="31" valign="top" >a
+</td>
+
+<td width="29" valign="top" >a
+</td>
+
+<td width="31" valign="top" >X
+</td>
+
+<td width="35" valign="top" >X
+</td>
+
+<td width="31" valign="top" >X
+</td>
+
+<td width="32" valign="top" >X
+</td>
+
+<td width="27" valign="top" >X
+</td>
+</tr>
 <tr >
-<td width="65" valign="top" >P</td></tbody>
-<td width="32" valign="top" >X</td></tbody>
-<td width="32" valign="top" >X</td></tbody>
-<td width="32" valign="top" >X</td></tbody>
-<td width="32" valign="top" >X</td></tbody>
-<td width="30" valign="top" >a</td></tbody>
-<td width="32" valign="top" >c</td></tbody>
-<td width="35" valign="top" >b</td></tbody>
-<td width="31" valign="top" >a</td></tbody>
-<td width="32" valign="top" >c</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-</tr></tbody>
-</tbody></tbody>
-</table></tbody>
+
+<td width="65" valign="top" >P
+</td>
+
+<td width="32" valign="top" >X
+</td>
+
+<td width="32" valign="top" >X
+</td>
+
+<td width="32" valign="top" >X
+</td>
+
+<td width="32" valign="top" >X
+</td>
+
+<td width="30" valign="top" >a
+</td>
+
+<td width="32" valign="top" >c
+</td>
+
+<td width="35" valign="top" >b
+</td>
+
+<td width="31" valign="top" >a
+</td>
+
+<td width="32" valign="top" >c
+</td>
+
+<td width="28" valign="top" >a
+</td>
+</tr>
+</tbody>
+</table>
 于是对于T=ktfacbacbacbkk，有了上面的状态转换图，匹配过程简单明了
 <table cellpadding="2" width="395" cellspacing="0" border="0" >
 <tbody >
 <tr >
-<td width="53" valign="top" >T</td></tbody>
-<td width="25" valign="top" >k</td></tbody>
-<td width="23" valign="top" >t</td></tbody>
-<td width="23" valign="top" >f</td></tbody>
-<td width="26" valign="top" >a</td></tbody>
-<td width="26" valign="top" >c</td></tbody>
-<td width="28" valign="top" >b</td></tbody>
-<td width="26" valign="top" >a</td></tbody>
-<td width="26" valign="top" >c</td></tbody>
-<td width="28" valign="top" >b</td></tbody>
-<td width="25" valign="top" >a</td></tbody>
-<td width="25" valign="top" >c</td></tbody>
-<td width="25" valign="top" >b</td></tbody>
-<td width="17" valign="top" >k</td></tbody>
-<td width="17" valign="top" >k</td></tbody>
-</tr></tbody>
+
+<td width="53" valign="top" >T
+</td>
+
+<td width="25" valign="top" >k
+</td>
+
+<td width="23" valign="top" >t
+</td>
+
+<td width="23" valign="top" >f
+</td>
+
+<td width="26" valign="top" >a
+</td>
+
+<td width="26" valign="top" >c
+</td>
+
+<td width="28" valign="top" >b
+</td>
+
+<td width="26" valign="top" >a
+</td>
+
+<td width="26" valign="top" >c
+</td>
+
+<td width="28" valign="top" >b
+</td>
+
+<td width="25" valign="top" >a
+</td>
+
+<td width="25" valign="top" >c
+</td>
+
+<td width="25" valign="top" >b
+</td>
+
+<td width="17" valign="top" >k
+</td>
+
+<td width="17" valign="top" >k
+</td>
+</tr>
 <tr >
-<td width="53" valign="top" >alpha</td></tbody>
-<td width="25" valign="top" >0</td></tbody>
-<td width="23" valign="top" >0</td></tbody>
-<td width="23" valign="top" >0</td></tbody>
-<td width="26" valign="top" >1</td></tbody>
-<td width="26" valign="top" >2</td></tbody>
-<td width="28" valign="top" >3</td></tbody>
-<td width="27" valign="top" >**4**</td></tbody>
-<td width="27" valign="top" >**5**</td></tbody>
-<td width="29" valign="top" >**3**</td></tbody>
-<td width="25" valign="top" >**4**</td></tbody>
-<td width="25" valign="top" >**5**</td></tbody>
-<td width="25" valign="top" >**6**</td></tbody>
-<td width="18" valign="top" >0</td></tbody>
-<td width="18" valign="top" >0</td></tbody>
-</tr></tbody>
-</tbody></tbody>
-</table></tbody>
+
+<td width="53" valign="top" >alpha
+</td>
+
+<td width="25" valign="top" >0
+</td>
+
+<td width="23" valign="top" >0
+</td>
+
+<td width="23" valign="top" >0
+</td>
+
+<td width="26" valign="top" >1
+</td>
+
+<td width="26" valign="top" >2
+</td>
+
+<td width="28" valign="top" >3
+</td>
+
+<td width="27" valign="top" >**4**
+</td>
+
+<td width="27" valign="top" >**5**
+</td>
+
+<td width="29" valign="top" >**3**
+</td>
+
+<td width="25" valign="top" >**4**
+</td>
+
+<td width="25" valign="top" >**5**
+</td>
+
+<td width="25" valign="top" >**6**
+</td>
+
+<td width="18" valign="top" >0
+</td>
+
+<td width="18" valign="top" >0
+</td>
+</tr>
+</tbody>
+</table>
 加粗部分表示匹配成功。对于P=acbaca，T=ktfacb，把状态转换图变更会得到一个等价的表，这便于编程实现的：
 <table cellpadding="2" width="328" cellspacing="0" border="0" >
 <tbody >
 <tr >
-<td width="50" valign="top" ></td></tbody>
-<td width="53" valign="top" >k</td></tbody>
-<td width="47" valign="top" >t</td></tbody>
-<td width="46" valign="top" >f</td></tbody>
-<td width="45" valign="top" >a</td></tbody>
-<td width="44" valign="top" >c</td></tbody>
-<td width="43" valign="top" >b</td></tbody>
-</tr></tbody>
+
+<td width="50" valign="top" >
+</td>
+
+<td width="53" valign="top" >k
+</td>
+
+<td width="47" valign="top" >t
+</td>
+
+<td width="46" valign="top" >f
+</td>
+
+<td width="45" valign="top" >a
+</td>
+
+<td width="44" valign="top" >c
+</td>
+
+<td width="43" valign="top" >b
+</td>
+</tr>
 <tr >
-<td width="51" valign="top" >0</td></tbody>
-<td width="53" valign="top" >0</td></tbody>
-<td width="47" valign="top" >0</td></tbody>
-<td width="47" valign="top" >0</td></tbody>
-<td width="46" valign="top" >**1**</td></tbody>
-<td width="45" valign="top" >0</td></tbody>
-<td width="44" valign="top" >0</td></tbody>
-</tr></tbody>
+
+<td width="51" valign="top" >0
+</td>
+
+<td width="53" valign="top" >0
+</td>
+
+<td width="47" valign="top" >0
+</td>
+
+<td width="47" valign="top" >0
+</td>
+
+<td width="46" valign="top" >**1**
+</td>
+
+<td width="45" valign="top" >0
+</td>
+
+<td width="44" valign="top" >0
+</td>
+</tr>
 <tr >
-<td width="51" valign="top" >1</td></tbody>
-<td width="53" valign="top" >0</td></tbody>
-<td width="47" valign="top" >0</td></tbody>
-<td width="47" valign="top" >0</td></tbody>
-<td width="47" valign="top" >1</td></tbody>
-<td width="46" valign="top" >**2**</td></tbody>
-<td width="45" valign="top" >0</td></tbody>
-</tr></tbody>
+
+<td width="51" valign="top" >1
+</td>
+
+<td width="53" valign="top" >0
+</td>
+
+<td width="47" valign="top" >0
+</td>
+
+<td width="47" valign="top" >0
+</td>
+
+<td width="47" valign="top" >1
+</td>
+
+<td width="46" valign="top" >**2**
+</td>
+
+<td width="45" valign="top" >0
+</td>
+</tr>
 <tr >
-<td width="50" valign="top" >2</td></tbody>
-<td width="53" valign="top" >0</td></tbody>
-<td width="47" valign="top" >0</td></tbody>
-<td width="47" valign="top" >0</td></tbody>
-<td width="47" valign="top" >1</td></tbody>
-<td width="46" valign="top" >0</td></tbody>
-<td width="45" valign="top" >**3**</td></tbody>
-</tr></tbody>
+
+<td width="50" valign="top" >2
+</td>
+
+<td width="53" valign="top" >0
+</td>
+
+<td width="47" valign="top" >0
+</td>
+
+<td width="47" valign="top" >0
+</td>
+
+<td width="47" valign="top" >1
+</td>
+
+<td width="46" valign="top" >0
+</td>
+
+<td width="45" valign="top" >**3**
+</td>
+</tr>
 <tr >
-<td width="50" valign="top" >3</td></tbody>
-<td width="53" valign="top" >0</td></tbody>
-<td width="47" valign="top" >0</td></tbody>
-<td width="47" valign="top" >0</td></tbody>
-<td width="47" valign="top" >**4**</td></tbody>
-<td width="46" valign="top" >0</td></tbody>
-<td width="45" valign="top" >0</td></tbody>
-</tr></tbody>
+
+<td width="50" valign="top" >3
+</td>
+
+<td width="53" valign="top" >0
+</td>
+
+<td width="47" valign="top" >0
+</td>
+
+<td width="47" valign="top" >0
+</td>
+
+<td width="47" valign="top" >**4**
+</td>
+
+<td width="46" valign="top" >0
+</td>
+
+<td width="45" valign="top" >0
+</td>
+</tr>
 <tr >
-<td width="50" valign="top" >4</td></tbody>
-<td width="53" valign="top" >0</td></tbody>
-<td width="47" valign="top" >0</td></tbody>
-<td width="47" valign="top" >0</td></tbody>
-<td width="47" valign="top" >1</td></tbody>
-<td width="46" valign="top" >**5**</td></tbody>
-<td width="45" valign="top" >0</td></tbody>
-</tr></tbody>
+
+<td width="50" valign="top" >4
+</td>
+
+<td width="53" valign="top" >0
+</td>
+
+<td width="47" valign="top" >0
+</td>
+
+<td width="47" valign="top" >0
+</td>
+
+<td width="47" valign="top" >1
+</td>
+
+<td width="46" valign="top" >**5**
+</td>
+
+<td width="45" valign="top" >0
+</td>
+</tr>
 <tr >
-<td width="50" valign="top" >5</td></tbody>
-<td width="53" valign="top" >0</td></tbody>
-<td width="47" valign="top" >0</td></tbody>
-<td width="47" valign="top" >0</td></tbody>
-<td width="47" valign="top" >**6**</td></tbody>
-<td width="46" valign="top" >0</td></tbody>
-<td width="45" valign="top" >3</td></tbody>
-</tr></tbody>
+
+<td width="50" valign="top" >5
+</td>
+
+<td width="53" valign="top" >0
+</td>
+
+<td width="47" valign="top" >0
+</td>
+
+<td width="47" valign="top" >0
+</td>
+
+<td width="47" valign="top" >**6**
+</td>
+
+<td width="46" valign="top" >0
+</td>
+
+<td width="45" valign="top" >3
+</td>
+</tr>
 <tr >
-<td width="50" valign="top" >6</td></tbody>
-<td width="53" valign="top" >0</td></tbody>
-<td width="47" valign="top" >0</td></tbody>
-<td width="47" valign="top" >0</td></tbody>
-<td width="47" valign="top" >1</td></tbody>
-<td width="46" valign="top" >2</td></tbody>
-<td width="45" valign="top" >0</td></tbody>
-</tr></tbody>
-</tbody></tbody>
-</table></tbody>
+
+<td width="50" valign="top" >6
+</td>
+
+<td width="53" valign="top" >0
+</td>
+
+<td width="47" valign="top" >0
+</td>
+
+<td width="47" valign="top" >0
+</td>
+
+<td width="47" valign="top" >1
+</td>
+
+<td width="46" valign="top" >2
+</td>
+
+<td width="45" valign="top" >0
+</td>
+</tr>
+</tbody>
+</table>
 
 
 # 有限自动机进行字符串匹配的时间复杂度

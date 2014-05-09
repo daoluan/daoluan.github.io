@@ -115,7 +115,7 @@ memcached 服务一个客户的时候, 是怎么一个过程, 试着去调试模
 客户已经与 memcached 服务器建立了连接, 客户在终端(黑框框)敲击 get key + 回车键, 一个请求包就发出去了. 从**连接管理**中已经了解到所有连接套接字都会被注册回调函数为`event_handler()`, 因此`event_handler()`会被触发调用.
 
     
-    void event_handler(const int fd, const short which, void *arg) {
+    <code>void event_handler(const int fd, const short which, void *arg) {
         conn *c;
     
         c = (conn *)arg;
@@ -136,12 +136,13 @@ memcached 服务一个客户的时候, 是怎么一个过程, 试着去调试模
         /* wait for next event */
         return;
     }
+    </code>
 
 
 `event_handler()`调用了`drive_machine()`.`drive_machine()`是请求处理的开端, 特别的当有新的连接时, listen socket 也是有请求的, 所以建立新的连接也会调用`drive_machine()`, 这在连接管理有提到过. 下面是`drive_machine()`函数的骨架:
 
     
-    // 请求的开端. 当有新的连接的时候 event_handler() 会调用此函数.
+    <code>// 请求的开端. 当有新的连接的时候 event_handler() 会调用此函数.
     static void drive_machine(conn *c) {
         bool stop = false;
         int sfd, flags = 1;
@@ -189,11 +190,14 @@ memcached 服务一个客户的时候, 是怎么一个过程, 试着去调试模
         }
         return;
     }
+    </code>
+
 
 通过修改连接结构体状态 struct conn.state 执行相应的操作, 从而完成一个请求, 完成后 stop 会被设置为 true, 一个命令只有执行结束(无论结果如何)才会跳出这个循环. 我们看到 struct conn 有好多种状态, 一个正常执行的命令状态的转换是:
 
     
-    conn_new_cmd-&gt;conn_waiting-&gt;conn_read-&gt;conn_parse_cmd-&gt;conn_nread-&gt;conn_mwrite-&gt;conn_close
+    <code> conn_new_cmd-&gt;conn_waiting-&gt;conn_read-&gt;conn_parse_cmd-&gt;conn_nread-&gt;conn_mwrite-&gt;conn_close
+    </code>
 
 
 这个过程任何一个环节出了问题都会导致状态转变为 conn_close. 带着刚开始的问题把从客户连接到一个命令执行结束的过程是怎么样的:

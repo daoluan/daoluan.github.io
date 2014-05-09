@@ -31,37 +31,85 @@ tags:
 <table cellpadding="2" width="224" cellspacing="0" border="0" >
 <tbody >
 <tr >
-<td width="33" valign="top" ></td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="29" valign="top" >b</td></tbody>
-<td width="27" valign="top" >a</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="26" valign="top" >b</td></tbody>
-<td width="26" valign="top" >a</td></tbody>
-<td width="25" valign="top" >b</td></tbody>
-</tr></tbody>
+
+<td width="33" valign="top" >
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="29" valign="top" >b
+</td>
+
+<td width="27" valign="top" >a
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="26" valign="top" >b
+</td>
+
+<td width="26" valign="top" >a
+</td>
+
+<td width="25" valign="top" >b
+</td>
+</tr>
 <tr >
-<td width="33" valign="top" ></td></tbody>
-<td width="29" valign="top" >a</td></tbody>
-<td width="30" valign="top" >b</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="29" valign="top" >b</td></tbody>
-<td width="27" valign="top" ></td></tbody>
-<td width="26" valign="top" ></td></tbody>
-<td width="26" valign="top" ></td></tbody>
-</tr></tbody>
+
+<td width="33" valign="top" >
+</td>
+
+<td width="29" valign="top" >a
+</td>
+
+<td width="30" valign="top" >b
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="29" valign="top" >b
+</td>
+
+<td width="27" valign="top" >
+</td>
+
+<td width="26" valign="top" >
+</td>
+
+<td width="26" valign="top" >
+</td>
+</tr>
 <tr >
-<td width="33" valign="top" >第一次匹配</td></tbody>
-<td width="29" valign="top" >1</td></tbody>
-<td width="30" valign="top" >2</td></tbody>
-<td width="28" valign="top" >3</td></tbody>
-<td width="29" valign="top" >0</td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="26" valign="top" ></td></tbody>
-<td width="27" valign="top" ></td></tbody>
-</tr></tbody>
-</tbody></tbody>
-</table></tbody>
+
+<td width="33" valign="top" >第一次匹配
+</td>
+
+<td width="29" valign="top" >1
+</td>
+
+<td width="30" valign="top" >2
+</td>
+
+<td width="28" valign="top" >3
+</td>
+
+<td width="29" valign="top" >0
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="26" valign="top" >
+</td>
+
+<td width="27" valign="top" >
+</td>
+</tr>
+</tbody>
+</table>
 可以看到，第四个字符已经匹配失败了。此时如果采用最朴素的算法，也就是重新从第二字符开始匹配（不画表了）。
 
 KMP是这样做的：既然上面第四个字符已经匹配失败了，那么可以试着从已经匹配成功的前三个字符（即上面的“aba”）找到既是“aba”的后缀又是“aba”的前缀的字串，要求是此字串长度应该是所有满足条件中最大的，暂且记为π(“aba”)。很显然，π(“aba”)=1，因为
@@ -73,38 +121,86 @@ a b a
 <table cellpadding="2" width="224" cellspacing="0" border="0" >
 <tbody >
 <tr >
-<td width="33" valign="top" ></td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="29" valign="top" >b</td></tbody>
-<td width="27" valign="top" >a</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="26" valign="top" >b</td></tbody>
-<td width="26" valign="top" >a</td></tbody>
-<td width="25" valign="top" >b</td></tbody>
-</tr></tbody>
-<tr >
-<td width="34" valign="top" >第一次匹配</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="30" valign="top" >b</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="29" valign="top" >b</td></tbody>
-<td width="27" valign="top" ></td></tbody>
-<td width="27" valign="top" ></td></tbody>
-<td width="26" valign="top" ></td></tbody>
-</tr></tbody>
-<tr >
-<td width="33" valign="top" >第二次匹配</td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="30" valign="top" ></td></tbody>
-<td width="28" valign="top" >a</td></tbody>
+
+<td width="33" valign="top" >
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
 <td width="29" valign="top" >b
-</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="27" valign="top" >b</td></tbody>
-<td width="26" valign="top" ></td></tbody>
-</tr></tbody>
-</tbody></tbody>
-</table></tbody>
+</td>
+
+<td width="27" valign="top" >a
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="26" valign="top" >b
+</td>
+
+<td width="26" valign="top" >a
+</td>
+
+<td width="25" valign="top" >b
+</td>
+</tr>
+<tr >
+
+<td width="34" valign="top" >第一次匹配
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="30" valign="top" >b
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="29" valign="top" >b
+</td>
+
+<td width="27" valign="top" >
+</td>
+
+<td width="27" valign="top" >
+</td>
+
+<td width="26" valign="top" >
+</td>
+</tr>
+<tr >
+
+<td width="33" valign="top" >第二次匹配
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="30" valign="top" >
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="29" valign="top" >b
+
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="27" valign="top" >b
+</td>
+
+<td width="26" valign="top" >
+</td>
+</tr>
+</tbody>
+</table>
 好吧，结果是不成功，因为出现了T中的第四个字符匹配失败的情况。不过可以发现，KMP算法没有像朴素算法那样，从T的第二个字符开始匹配，转而从T的第三个字符开始匹配，那为什么不从第二个字符开始匹配呢，**因为从T的第三个字符开始匹配才有可能是成功的。如果你认为（或者说你有足够的证据证明）从第二字符开始匹配会成功，那么上面找“既前缀又后缀”的结果：**
 
 a b a
@@ -116,38 +212,86 @@ a b a
 <table cellpadding="2" width="224" cellspacing="0" border="0" >
 <tbody >
 <tr >
-<td width="33" valign="top" ></td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="29" valign="top" >b</td></tbody>
-<td width="27" valign="top" >a</td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="26" valign="top" >b</td></tbody>
-<td width="26" valign="top" >a</td></tbody>
-<td width="25" valign="top" >b</td></tbody>
-</tr></tbody>
+
+<td width="33" valign="top" >
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="29" valign="top" >b
+</td>
+
+<td width="27" valign="top" >a
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="26" valign="top" >b
+</td>
+
+<td width="26" valign="top" >a
+</td>
+
+<td width="25" valign="top" >b
+</td>
+</tr>
 <tr >
-<td width="34" valign="top" >第一次匹配</td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="30" valign="top" ></td></tbody>
-<td width="28" valign="top" >a</td></tbody>
-<td width="29" valign="top" >b</td></tbody>
-<td width="27" valign="top" ></td></tbody>
-<td width="27" valign="top" ></td></tbody>
-<td width="26" valign="top" ></td></tbody>
-</tr></tbody>
+
+<td width="34" valign="top" >第一次匹配
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="30" valign="top" >
+</td>
+
+<td width="28" valign="top" >a
+</td>
+
+<td width="29" valign="top" >b
+</td>
+
+<td width="27" valign="top" >
+</td>
+
+<td width="27" valign="top" >
+</td>
+
+<td width="26" valign="top" >
+</td>
+</tr>
 <tr >
-<td width="33" valign="top" >第二次匹配</td></tbody>
-<td width="28" valign="top" ></td></tbody>
-<td width="30" valign="top" ></td></tbody>
-<td width="28" valign="top" ></td></tbody>
+
+<td width="33" valign="top" >第二次匹配
+</td>
+
+<td width="28" valign="top" >
+</td>
+
+<td width="30" valign="top" >
+</td>
+
+<td width="28" valign="top" >
+</td>
+
 <td width="29" valign="top" >a
-</td></tbody>
-<td width="28" valign="top" >b</td></tbody>
-<td width="27" valign="top" >a</td></tbody>
-<td width="26" valign="top" >b</td></tbody>
-</tr></tbody>
-</tbody></tbody>
-</table></tbody>
+
+</td>
+
+<td width="28" valign="top" >b
+</td>
+
+<td width="27" valign="top" >a
+</td>
+
+<td width="26" valign="top" >b
+</td>
+</tr>
+</tbody>
+</table>
 于是匹配成功。你将看到KMP也是这么做的，关键是如何计算上面的说的“既前缀又后缀”的结果——其实就是帮助匹配的辅助表。
 
 

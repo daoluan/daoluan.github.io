@@ -23,137 +23,357 @@ tags:
 <table cellpadding="0" cellspacing="0" border="1" >
 <tbody >
 <tr >
-<td width="38" valign="top" >**b[0]**</td></tbody>
-<td width="22" valign="top" ></td></tbody>
-<td width="22" valign="top" >2</td></tbody>
-<td width="22" valign="top" >3</td></tbody>
-<td width="22" valign="top" >4</td></tbody>
-<td width="22" valign="top" >5</td></tbody>
-<td width="22" valign="top" >6</td></tbody>
-<td width="22" valign="top" >7</td></tbody>
-<td width="22" valign="top" >8</td></tbody>
-<td width="22" valign="top" >9</td></tbody>
-<td width="29" valign="top" >10</td></tbody>
-</tr></tbody>
+
+<td width="38" valign="top" >**b[0]**
+</td>
+
+<td width="22" valign="top" >
+</td>
+
+<td width="22" valign="top" >2
+</td>
+
+<td width="22" valign="top" >3
+</td>
+
+<td width="22" valign="top" >4
+</td>
+
+<td width="22" valign="top" >5
+</td>
+
+<td width="22" valign="top" >6
+</td>
+
+<td width="22" valign="top" >7
+</td>
+
+<td width="22" valign="top" >8
+</td>
+
+<td width="22" valign="top" >9
+</td>
+
+<td width="29" valign="top" >10
+</td>
+</tr>
 <tr >
-<td width="38" valign="top" >**b[1]**</td></tbody>
-<td width="22" valign="top" >1</td></tbody>
-<td width="22" valign="top" ></td></tbody>
-<td width="22" valign="top" >3</td></tbody>
-<td width="22" valign="top" >4</td></tbody>
-<td width="22" valign="top" >5</td></tbody>
-<td width="22" valign="top" >6</td></tbody>
-<td width="22" valign="top" >7</td></tbody>
-<td width="22" valign="top" >8</td></tbody>
-<td width="22" valign="top" >9</td></tbody>
-<td width="29" valign="top" >10</td></tbody>
-</tr></tbody>
+
+<td width="38" valign="top" >**b[1]**
+</td>
+
+<td width="22" valign="top" >1
+</td>
+
+<td width="22" valign="top" >
+</td>
+
+<td width="22" valign="top" >3
+</td>
+
+<td width="22" valign="top" >4
+</td>
+
+<td width="22" valign="top" >5
+</td>
+
+<td width="22" valign="top" >6
+</td>
+
+<td width="22" valign="top" >7
+</td>
+
+<td width="22" valign="top" >8
+</td>
+
+<td width="22" valign="top" >9
+</td>
+
+<td width="29" valign="top" >10
+</td>
+</tr>
 <tr >
-<td width="38" valign="top" >**b[2]**</td></tbody>
-<td width="22" valign="top" >1</td></tbody>
-<td width="22" valign="top" >2</td></tbody>
-<td width="22" valign="top" ></td></tbody>
-<td width="22" valign="top" >4</td></tbody>
-<td width="22" valign="top" >5</td></tbody>
-<td width="22" valign="top" >6</td></tbody>
-<td width="22" valign="top" >7</td></tbody>
-<td width="22" valign="top" >8</td></tbody>
-<td width="22" valign="top" >9</td></tbody>
-<td width="29" valign="top" >10</td></tbody>
-</tr></tbody>
+
+<td width="38" valign="top" >**b[2]**
+</td>
+
+<td width="22" valign="top" >1
+</td>
+
+<td width="22" valign="top" >2
+</td>
+
+<td width="22" valign="top" >
+</td>
+
+<td width="22" valign="top" >4
+</td>
+
+<td width="22" valign="top" >5
+</td>
+
+<td width="22" valign="top" >6
+</td>
+
+<td width="22" valign="top" >7
+</td>
+
+<td width="22" valign="top" >8
+</td>
+
+<td width="22" valign="top" >9
+</td>
+
+<td width="29" valign="top" >10
+</td>
+</tr>
 <tr >
-<td width="38" valign="top" >**b[3]**</td></tbody>
-<td width="22" valign="top" >1</td></tbody>
-<td width="22" valign="top" >2</td></tbody>
-<td width="22" valign="top" >3</td></tbody>
-<td width="22" valign="top" ></td></tbody>
-<td width="22" valign="top" >5</td></tbody>
-<td width="22" valign="top" >6</td></tbody>
-<td width="22" valign="top" >7</td></tbody>
-<td width="22" valign="top" >8</td></tbody>
-<td width="22" valign="top" >9</td></tbody>
-<td width="29" valign="top" >10</td></tbody>
-</tr></tbody>
+
+<td width="38" valign="top" >**b[3]**
+</td>
+
+<td width="22" valign="top" >1
+</td>
+
+<td width="22" valign="top" >2
+</td>
+
+<td width="22" valign="top" >3
+</td>
+
+<td width="22" valign="top" >
+</td>
+
+<td width="22" valign="top" >5
+</td>
+
+<td width="22" valign="top" >6
+</td>
+
+<td width="22" valign="top" >7
+</td>
+
+<td width="22" valign="top" >8
+</td>
+
+<td width="22" valign="top" >9
+</td>
+
+<td width="29" valign="top" >10
+</td>
+</tr>
 <tr >
-<td width="38" valign="top" >**b[4]**</td></tbody>
-<td width="22" valign="top" >1</td></tbody>
-<td width="22" valign="top" >2</td></tbody>
-<td width="22" valign="top" >3</td></tbody>
-<td width="22" valign="top" >4</td></tbody>
-<td width="22" valign="top" ></td></tbody>
-<td width="22" valign="top" >6</td></tbody>
-<td width="22" valign="top" >7</td></tbody>
-<td width="22" valign="top" >8</td></tbody>
-<td width="22" valign="top" >9</td></tbody>
-<td width="29" valign="top" >10</td></tbody>
-</tr></tbody>
+
+<td width="38" valign="top" >**b[4]**
+</td>
+
+<td width="22" valign="top" >1
+</td>
+
+<td width="22" valign="top" >2
+</td>
+
+<td width="22" valign="top" >3
+</td>
+
+<td width="22" valign="top" >4
+</td>
+
+<td width="22" valign="top" >
+</td>
+
+<td width="22" valign="top" >6
+</td>
+
+<td width="22" valign="top" >7
+</td>
+
+<td width="22" valign="top" >8
+</td>
+
+<td width="22" valign="top" >9
+</td>
+
+<td width="29" valign="top" >10
+</td>
+</tr>
 <tr >
-<td width="38" valign="top" >**b[5]**</td></tbody>
-<td width="22" valign="top" >1</td></tbody>
-<td width="22" valign="top" >2</td></tbody>
-<td width="22" valign="top" >3</td></tbody>
-<td width="22" valign="top" >4</td></tbody>
-<td width="22" valign="top" >5</td></tbody>
-<td width="22" valign="top" ></td></tbody>
-<td width="22" valign="top" >7</td></tbody>
-<td width="22" valign="top" >8</td></tbody>
-<td width="22" valign="top" >9</td></tbody>
-<td width="29" valign="top" >10</td></tbody>
-</tr></tbody>
+
+<td width="38" valign="top" >**b[5]**
+</td>
+
+<td width="22" valign="top" >1
+</td>
+
+<td width="22" valign="top" >2
+</td>
+
+<td width="22" valign="top" >3
+</td>
+
+<td width="22" valign="top" >4
+</td>
+
+<td width="22" valign="top" >5
+</td>
+
+<td width="22" valign="top" >
+</td>
+
+<td width="22" valign="top" >7
+</td>
+
+<td width="22" valign="top" >8
+</td>
+
+<td width="22" valign="top" >9
+</td>
+
+<td width="29" valign="top" >10
+</td>
+</tr>
 <tr >
-<td width="38" valign="top" >**b[6]**</td></tbody>
-<td width="22" valign="top" >1</td></tbody>
-<td width="22" valign="top" >2</td></tbody>
-<td width="22" valign="top" >3</td></tbody>
-<td width="22" valign="top" >4</td></tbody>
-<td width="22" valign="top" >5</td></tbody>
-<td width="22" valign="top" >6</td></tbody>
-<td width="22" valign="top" ></td></tbody>
-<td width="22" valign="top" >8</td></tbody>
-<td width="22" valign="top" >9</td></tbody>
-<td width="29" valign="top" >10</td></tbody>
-</tr></tbody>
+
+<td width="38" valign="top" >**b[6]**
+</td>
+
+<td width="22" valign="top" >1
+</td>
+
+<td width="22" valign="top" >2
+</td>
+
+<td width="22" valign="top" >3
+</td>
+
+<td width="22" valign="top" >4
+</td>
+
+<td width="22" valign="top" >5
+</td>
+
+<td width="22" valign="top" >6
+</td>
+
+<td width="22" valign="top" >
+</td>
+
+<td width="22" valign="top" >8
+</td>
+
+<td width="22" valign="top" >9
+</td>
+
+<td width="29" valign="top" >10
+</td>
+</tr>
 <tr >
-<td width="38" valign="top" >**b[7]**</td></tbody>
-<td width="22" valign="top" >1</td></tbody>
-<td width="22" valign="top" >2</td></tbody>
-<td width="22" valign="top" >3</td></tbody>
-<td width="22" valign="top" >4</td></tbody>
-<td width="22" valign="top" >5</td></tbody>
-<td width="22" valign="top" >6</td></tbody>
-<td width="22" valign="top" >7</td></tbody>
-<td width="22" valign="top" ></td></tbody>
-<td width="22" valign="top" >9</td></tbody>
-<td width="29" valign="top" >10</td></tbody>
-</tr></tbody>
+
+<td width="38" valign="top" >**b[7]**
+</td>
+
+<td width="22" valign="top" >1
+</td>
+
+<td width="22" valign="top" >2
+</td>
+
+<td width="22" valign="top" >3
+</td>
+
+<td width="22" valign="top" >4
+</td>
+
+<td width="22" valign="top" >5
+</td>
+
+<td width="22" valign="top" >6
+</td>
+
+<td width="22" valign="top" >7
+</td>
+
+<td width="22" valign="top" >
+</td>
+
+<td width="22" valign="top" >9
+</td>
+
+<td width="29" valign="top" >10
+</td>
+</tr>
 <tr >
-<td width="38" valign="top" >**b[8]**</td></tbody>
-<td width="22" valign="top" >1</td></tbody>
-<td width="22" valign="top" >2</td></tbody>
-<td width="22" valign="top" >3</td></tbody>
-<td width="22" valign="top" >4</td></tbody>
-<td width="22" valign="top" >5</td></tbody>
-<td width="22" valign="top" >6</td></tbody>
-<td width="22" valign="top" >7</td></tbody>
-<td width="22" valign="top" >8</td></tbody>
-<td width="22" valign="top" ></td></tbody>
-<td width="29" valign="top" >10</td></tbody>
-</tr></tbody>
+
+<td width="38" valign="top" >**b[8]**
+</td>
+
+<td width="22" valign="top" >1
+</td>
+
+<td width="22" valign="top" >2
+</td>
+
+<td width="22" valign="top" >3
+</td>
+
+<td width="22" valign="top" >4
+</td>
+
+<td width="22" valign="top" >5
+</td>
+
+<td width="22" valign="top" >6
+</td>
+
+<td width="22" valign="top" >7
+</td>
+
+<td width="22" valign="top" >8
+</td>
+
+<td width="22" valign="top" >
+</td>
+
+<td width="29" valign="top" >10
+</td>
+</tr>
 <tr >
-<td width="38" valign="top" >**b[9]**</td></tbody>
-<td width="22" valign="top" >1</td></tbody>
-<td width="22" valign="top" >2</td></tbody>
-<td width="22" valign="top" >3</td></tbody>
-<td width="22" valign="top" >4</td></tbody>
-<td width="22" valign="top" >5</td></tbody>
-<td width="22" valign="top" >6</td></tbody>
-<td width="22" valign="top" >7</td></tbody>
-<td width="22" valign="top" >8</td></tbody>
-<td width="22" valign="top" >9</td></tbody>
-<td width="29" valign="top" ></td></tbody>
-</tr></tbody>
-</tbody></tbody>
-</table></tbody>
+
+<td width="38" valign="top" >**b[9]**
+</td>
+
+<td width="22" valign="top" >1
+</td>
+
+<td width="22" valign="top" >2
+</td>
+
+<td width="22" valign="top" >3
+</td>
+
+<td width="22" valign="top" >4
+</td>
+
+<td width="22" valign="top" >5
+</td>
+
+<td width="22" valign="top" >6
+</td>
+
+<td width="22" valign="top" >7
+</td>
+
+<td width="22" valign="top" >8
+</td>
+
+<td width="22" valign="top" >9
+</td>
+
+<td width="29" valign="top" >
+</td>
+</tr>
+</tbody>
+</table>
 <!-- more -->
 
 关键不能使用除法，不能使用循环额外的变量，空间复杂的O(1)，时间复杂度O(n)。已上眼，倘若没有上述条件约束，可以在时间复杂度O(n)内完成。

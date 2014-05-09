@@ -91,121 +91,325 @@ tags:
 <table cellpadding="0" cellspacing="0" border="1" >
 <tbody >
 <tr >
-<td width="73" valign="top" >背包容量</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >1</td></tbody>
-<td width="33" valign="top" >2</td></tbody>
-<td width="33" valign="top" >3</td></tbody>
-<td width="33" valign="top" >4</td></tbody>
-<td width="33" valign="top" >5</td></tbody>
-<td width="33" valign="top" >6</td></tbody>
-<td width="33" valign="top" >7</td></tbody>
-<td width="33" valign="top" >8</td></tbody>
-<td width="33" valign="top" >9</td></tbody>
-<td width="33" valign="top" >10</td></tbody>
-<td width="33" valign="top" >11</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >13</td></tbody>
-<td width="33" valign="top" >14</td></tbody>
-<td width="33" valign="top" >15</td></tbody>
-</tr></tbody>
+
+<td width="73" valign="top" >背包容量
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >1
+</td>
+
+<td width="33" valign="top" >2
+</td>
+
+<td width="33" valign="top" >3
+</td>
+
+<td width="33" valign="top" >4
+</td>
+
+<td width="33" valign="top" >5
+</td>
+
+<td width="33" valign="top" >6
+</td>
+
+<td width="33" valign="top" >7
+</td>
+
+<td width="33" valign="top" >8
+</td>
+
+<td width="33" valign="top" >9
+</td>
+
+<td width="33" valign="top" >10
+</td>
+
+<td width="33" valign="top" >11
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >13
+</td>
+
+<td width="33" valign="top" >14
+</td>
+
+<td width="33" valign="top" >15
+</td>
+</tr>
 <tr >
-<td width="73" valign="top" >5物品</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >6</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >15</td></tbody>
-<td width="33" valign="top" >15</td></tbody>
-<td width="33" valign="top" >18</td></tbody>
-<td width="33" valign="top" >22</td></tbody>
-<td width="33" valign="top" >22</td></tbody>
-<td width="33" valign="top" >25</td></tbody>
-<td width="33" valign="top" >25</td></tbody>
-</tr></tbody>
+
+<td width="73" valign="top" >5物品
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >6
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >15
+</td>
+
+<td width="33" valign="top" >15
+</td>
+
+<td width="33" valign="top" >18
+</td>
+
+<td width="33" valign="top" >22
+</td>
+
+<td width="33" valign="top" >22
+</td>
+
+<td width="33" valign="top" >25
+</td>
+
+<td width="33" valign="top" >25
+</td>
+</tr>
 <tr >
-<td width="73" valign="top" >4物品</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >3</td></tbody>
-<td width="33" valign="top" >3</td></tbody>
-<td width="33" valign="top" >3</td></tbody>
-<td width="33" valign="top" >3</td></tbody>
-<td width="33" valign="top" >3</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >15</td></tbody>
-<td width="33" valign="top" >15</td></tbody>
-<td width="33" valign="top" >18</td></tbody>
-<td width="33" valign="top" >22</td></tbody>
-<td width="33" valign="top" >22</td></tbody>
-<td width="33" valign="top" >25</td></tbody>
-<td width="33" valign="top" >25</td></tbody>
-</tr></tbody>
+
+<td width="73" valign="top" >4物品
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >3
+</td>
+
+<td width="33" valign="top" >3
+</td>
+
+<td width="33" valign="top" >3
+</td>
+
+<td width="33" valign="top" >3
+</td>
+
+<td width="33" valign="top" >3
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >15
+</td>
+
+<td width="33" valign="top" >15
+</td>
+
+<td width="33" valign="top" >18
+</td>
+
+<td width="33" valign="top" >22
+</td>
+
+<td width="33" valign="top" >22
+</td>
+
+<td width="33" valign="top" >25
+</td>
+
+<td width="33" valign="top" >25
+</td>
+</tr>
 <tr >
-<td width="73" valign="top" >3物品</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >15</td></tbody>
-<td width="33" valign="top" >15</td></tbody>
-<td width="33" valign="top" >15</td></tbody>
-<td width="33" valign="top" >22</td></tbody>
-<td width="33" valign="top" >22</td></tbody>
-<td width="33" valign="top" >22</td></tbody>
-<td width="33" valign="top" >22</td></tbody>
-</tr></tbody>
+
+<td width="73" valign="top" >3物品
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >15
+</td>
+
+<td width="33" valign="top" >15
+</td>
+
+<td width="33" valign="top" >15
+</td>
+
+<td width="33" valign="top" >22
+</td>
+
+<td width="33" valign="top" >22
+</td>
+
+<td width="33" valign="top" >22
+</td>
+
+<td width="33" valign="top" >22
+</td>
+</tr>
 <tr >
-<td width="73" valign="top" >2物品</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >3</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >15</td></tbody>
-<td width="33" valign="top" >15</td></tbody>
-<td width="33" valign="top" >15</td></tbody>
-<td width="33" valign="top" >15</td></tbody>
-<td width="33" valign="top" >15</td></tbody>
-<td width="33" valign="top" >15</td></tbody>
-<td width="33" valign="top" >15</td></tbody>
-</tr></tbody>
+
+<td width="73" valign="top" >2物品
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >3
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >15
+</td>
+
+<td width="33" valign="top" >15
+</td>
+
+<td width="33" valign="top" >15
+</td>
+
+<td width="33" valign="top" >15
+</td>
+
+<td width="33" valign="top" >15
+</td>
+
+<td width="33" valign="top" >15
+</td>
+
+<td width="33" valign="top" >15
+</td>
+</tr>
 <tr >
-<td width="73" valign="top" >1物品</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-</tr></tbody>
-</tbody></tbody>
-</table></tbody>
+
+<td width="73" valign="top" >1物品
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >12
+</td>
+</tr>
+</tbody>
+</table>
 故有：
 
     
@@ -259,45 +463,113 @@ tags:
 <table cellpadding="0" cellspacing="0" border="1" >
 <tbody >
 <tr >
-<td width="73" valign="top" >背包容量</td></tbody>
-<td width="33" valign="top" >0</td></tbody>
-<td width="33" valign="top" >1</td></tbody>
-<td width="33" valign="top" >2</td></tbody>
-<td width="33" valign="top" >3</td></tbody>
-<td width="33" valign="top" >4</td></tbody>
-<td width="33" valign="top" >5</td></tbody>
-<td width="33" valign="top" >6</td></tbody>
-<td width="33" valign="top" >7</td></tbody>
-<td width="33" valign="top" >8</td></tbody>
-<td width="33" valign="top" >9</td></tbody>
-<td width="33" valign="top" >10</td></tbody>
-<td width="33" valign="top" >11</td></tbody>
-<td width="33" valign="top" >12</td></tbody>
-<td width="33" valign="top" >13</td></tbody>
-<td width="33" valign="top" >14</td></tbody>
-<td width="33" valign="top" >15</td></tbody>
-</tr></tbody>
+
+<td width="73" valign="top" >背包容量
+</td>
+
+<td width="33" valign="top" >0
+</td>
+
+<td width="33" valign="top" >1
+</td>
+
+<td width="33" valign="top" >2
+</td>
+
+<td width="33" valign="top" >3
+</td>
+
+<td width="33" valign="top" >4
+</td>
+
+<td width="33" valign="top" >5
+</td>
+
+<td width="33" valign="top" >6
+</td>
+
+<td width="33" valign="top" >7
+</td>
+
+<td width="33" valign="top" >8
+</td>
+
+<td width="33" valign="top" >9
+</td>
+
+<td width="33" valign="top" >10
+</td>
+
+<td width="33" valign="top" >11
+</td>
+
+<td width="33" valign="top" >12
+</td>
+
+<td width="33" valign="top" >13
+</td>
+
+<td width="33" valign="top" >14
+</td>
+
+<td width="33" valign="top" >15
+</td>
+</tr>
 <tr >
-<td width="73" valign="top" >i物品</td></tbody>
-<td width="33" valign="top" >X</td></tbody>
-<td width="33" valign="top" >X</td></tbody>
-<td width="33" valign="top" >X</td></tbody>
-<td width="33" valign="top" >X</td></tbody>
-<td width="33" valign="top" >X</td></tbody>
-<td width="33" valign="top" >X</td></tbody>
-<td width="33" valign="top" >X</td></tbody>
-<td width="33" valign="top" >X</td></tbody>
-<td width="33" valign="top" >X</td></tbody>
-<td width="33" valign="top" >X</td></tbody>
-<td width="33" valign="top" >X</td></tbody>
-<td width="33" valign="top" >X</td></tbody>
-<td width="33" valign="top" >X</td></tbody>
-<td width="33" valign="top" >X</td></tbody>
-<td width="33" valign="top" >X</td></tbody>
-<td width="33" valign="top" >X</td></tbody>
-</tr></tbody>
-</tbody></tbody>
-</table></tbody>
+
+<td width="73" valign="top" >i物品
+</td>
+
+<td width="33" valign="top" >X
+</td>
+
+<td width="33" valign="top" >X
+</td>
+
+<td width="33" valign="top" >X
+</td>
+
+<td width="33" valign="top" >X
+</td>
+
+<td width="33" valign="top" >X
+</td>
+
+<td width="33" valign="top" >X
+</td>
+
+<td width="33" valign="top" >X
+</td>
+
+<td width="33" valign="top" >X
+</td>
+
+<td width="33" valign="top" >X
+</td>
+
+<td width="33" valign="top" >X
+</td>
+
+<td width="33" valign="top" >X
+</td>
+
+<td width="33" valign="top" >X
+</td>
+
+<td width="33" valign="top" >X
+</td>
+
+<td width="33" valign="top" >X
+</td>
+
+<td width="33" valign="top" >X
+</td>
+
+<td width="33" valign="top" >X
+</td>
+</tr>
+</tbody>
+</table>
 故有：
 
     

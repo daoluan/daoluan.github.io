@@ -80,64 +80,152 @@ kruskal实现过程涉及了不相交子集的合并，可以开辟一个简单�
 <table cellpadding="2" width="402" cellspacing="0" border="0" >
 <tbody >
 <tr >
-<td width="35" valign="top" >i</td></tbody>
-<td width="38" valign="top" >0</td></tbody>
-<td width="38" valign="top" >1</td></tbody>
-<td width="38" valign="top" >2</td></tbody>
-<td width="36" valign="top" >3</td></tbody>
-<td width="36" valign="top" >4</td></tbody>
-<td width="36" valign="top" >5</td></tbody>
-<td width="36" valign="top" >6</td></tbody>
-<td width="36" valign="top" >7</td></tbody>
-<td width="36" valign="top" >8</td></tbody>
-<td width="35" valign="top" >9</td></tbody>
-</tr></tbody>
+
+<td width="35" valign="top" >i
+</td>
+
+<td width="38" valign="top" >0
+</td>
+
+<td width="38" valign="top" >1
+</td>
+
+<td width="38" valign="top" >2
+</td>
+
+<td width="36" valign="top" >3
+</td>
+
+<td width="36" valign="top" >4
+</td>
+
+<td width="36" valign="top" >5
+</td>
+
+<td width="36" valign="top" >6
+</td>
+
+<td width="36" valign="top" >7
+</td>
+
+<td width="36" valign="top" >8
+</td>
+
+<td width="35" valign="top" >9
+</td>
+</tr>
 <tr >
-<td width="35" valign="top" >parent</td></tbody>
-<td width="38" valign="top" >0</td></tbody>
-<td width="38" valign="top" >1</td></tbody>
-<td width="38" valign="top" >2</td></tbody>
-<td width="37" valign="top" >3</td></tbody>
-<td width="37" valign="top" >4</td></tbody>
-<td width="37" valign="top" >5</td></tbody>
-<td width="37" valign="top" >6</td></tbody>
-<td width="37" valign="top" >7</td></tbody>
-<td width="38" valign="top" >8</td></tbody>
-<td width="38" valign="top" >9</td></tbody>
-</tr></tbody>
-</tbody></tbody>
-</table></tbody>
+
+<td width="35" valign="top" >parent
+</td>
+
+<td width="38" valign="top" >0
+</td>
+
+<td width="38" valign="top" >1
+</td>
+
+<td width="38" valign="top" >2
+</td>
+
+<td width="37" valign="top" >3
+</td>
+
+<td width="37" valign="top" >4
+</td>
+
+<td width="37" valign="top" >5
+</td>
+
+<td width="37" valign="top" >6
+</td>
+
+<td width="37" valign="top" >7
+</td>
+
+<td width="38" valign="top" >8
+</td>
+
+<td width="38" valign="top" >9
+</td>
+</tr>
+</tbody>
+</table>
 假设一段时间后：0 1 2 0 0 0 6 7 1 1
 <table cellpadding="2" width="402" cellspacing="0" border="0" >
 <tbody >
 <tr >
-<td width="35" valign="top" >i</td></tbody>
-<td width="38" valign="top" >0</td></tbody>
-<td width="38" valign="top" >1</td></tbody>
-<td width="38" valign="top" >2</td></tbody>
-<td width="36" valign="top" >3</td></tbody>
-<td width="36" valign="top" >4</td></tbody>
-<td width="36" valign="top" >5</td></tbody>
-<td width="36" valign="top" >6</td></tbody>
-<td width="36" valign="top" >7</td></tbody>
-<td width="36" valign="top" >8</td></tbody>
-<td width="35" valign="top" >9</td></tbody>
-</tr></tbody>
+
+<td width="35" valign="top" >i
+</td>
+
+<td width="38" valign="top" >0
+</td>
+
+<td width="38" valign="top" >1
+</td>
+
+<td width="38" valign="top" >2
+</td>
+
+<td width="36" valign="top" >3
+</td>
+
+<td width="36" valign="top" >4
+</td>
+
+<td width="36" valign="top" >5
+</td>
+
+<td width="36" valign="top" >6
+</td>
+
+<td width="36" valign="top" >7
+</td>
+
+<td width="36" valign="top" >8
+</td>
+
+<td width="35" valign="top" >9
+</td>
+</tr>
 <tr >
-<td width="35" valign="top" >parent</td></tbody>
-<td width="38" valign="top" >0</td></tbody>
-<td width="38" valign="top" >1</td></tbody>
-<td width="38" valign="top" >2</td></tbody>
-<td width="37" valign="top" >0</td></tbody>
-<td width="37" valign="top" >0</td></tbody>
-<td width="37" valign="top" >0</td></tbody>
-<td width="37" valign="top" >6</td></tbody>
-<td width="37" valign="top" >7</td></tbody>
-<td width="38" valign="top" >1</td></tbody>
-<td width="38" valign="top" >1</td></tbody>
-</tr></tbody>
-</tbody></tbody>
-</table></tbody>
+
+<td width="35" valign="top" >parent
+</td>
+
+<td width="38" valign="top" >0
+</td>
+
+<td width="38" valign="top" >1
+</td>
+
+<td width="38" valign="top" >2
+</td>
+
+<td width="37" valign="top" >0
+</td>
+
+<td width="37" valign="top" >0
+</td>
+
+<td width="37" valign="top" >0
+</td>
+
+<td width="37" valign="top" >6
+</td>
+
+<td width="37" valign="top" >7
+</td>
+
+<td width="38" valign="top" >1
+</td>
+
+<td width="38" valign="top" >1
+</td>
+</tr>
+</tbody>
+</table>
 从上面的表可以判断顶点1，顶点8和顶点9同属于同一个集合；顶点0，顶点3，顶点4和顶点5同属于一个集合；凡是parent[i]=i都是单个点的集合，比如顶点2等。
 
 所以程序中设计了两个函数，find和makeset，find用于找到一个集合的root，比如find(9)=1，find(5)=0；而makeset用于合并两个不相交的子集，它的作用就是修改其中一个集合的root就可以了。需要注意的是，kruskal算法要防止出现环，所以，当发现最小的边(u,v)同属于一棵树的时候，不能将其makeset。

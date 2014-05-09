@@ -60,172 +60,265 @@ tags:
 <table cellpadding="2" width="100%" cellspacing="0" border="1" >
 <tbody >
 <tr >
+
 <td valign="top" >
 
 
 皇帝（boss）
 
-</td></tbody>
+</td>
+
 <td valign="top" >
 
 
 年号
 
-</td></tbody>
+</td>
+
 <td valign="top" >
 
 
 时间
 
-</td></tbody>
-</tr></tbody>
+</td>
+</tr>
 <tr >
+
 <td valign="top" >
 
 
 朱元璋
 
-</td></tbody>
+</td>
+
 <td valign="top" >
 
 
 洪武
 
-</td></tbody>
+</td>
+
 <td valign="top" >
 
 
 1367-1398
 
-</td></tbody>
-</tr></tbody>
+</td>
+</tr>
 <tr >
+
 <td valign="top" >
 
 
 朱允炆
 
-</td></tbody>
+</td>
+
 <td valign="top" >
 
 
 建文
 
-</td></tbody>
+</td>
+
 <td valign="top" >
 
 
 1398-1402
 
-</td></tbody>
-</tr></tbody>
+</td>
+</tr>
 <tr >
+
 <td valign="top" >
 
 
 朱棣（靖难干掉现任皇帝）
 
-</td></tbody>
+</td>
+
 <td valign="top" >
 
 
 永乐
 
-</td></tbody>
+</td>
+
 <td valign="top" >
 
 
 1402-1423
 
-</td></tbody>
-</tr></tbody>
+</td>
+</tr>
 <tr >
+
 <td valign="top" >
 
 
 朱高炽
 
-</td></tbody>
+</td>
+
 <td valign="top" >
 
 
 洪熙
 
-</td></tbody>
+</td>
+
 <td valign="top" >
 
 
 1425+10个月
 
-</td></tbody>
-</tr></tbody>
+</td>
+</tr>
 <tr >
-<td valign="top" >朱瞻基</td></tbody>
-<td valign="top" >宣德</td></tbody>
-<td valign="top" >1425-1435</td></tbody>
-</tr></tbody>
+
+<td valign="top" >朱瞻基
+</td>
+
+<td valign="top" >宣德
+</td>
+
+<td valign="top" >1425-1435
+</td>
+</tr>
 <tr >
-<td valign="top" >朱祁镇</td></tbody>
-<td valign="top" >正统</td></tbody>
-<td valign="top" >1436-1450</td></tbody>
-</tr></tbody>
+
+<td valign="top" >朱祁镇
+</td>
+
+<td valign="top" >正统
+</td>
+
+<td valign="top" >1436-1450
+</td>
+</tr>
 <tr >
-<td valign="top" >朱祁钰</td></tbody>
-<td valign="top" >景泰</td></tbody>
-<td valign="top" >1450-1458</td></tbody>
-</tr></tbody>
+
+<td valign="top" >朱祁钰
+</td>
+
+<td valign="top" >景泰
+</td>
+
+<td valign="top" >1450-1458
+</td>
+</tr>
 <tr >
-<td valign="top" >朱祁镇（夺门之变）</td></tbody>
-<td valign="top" >天顺</td></tbody>
-<td valign="top" >1459-1464</td></tbody>
-</tr></tbody>
+
+<td valign="top" >朱祁镇（夺门之变）
+</td>
+
+<td valign="top" >天顺
+</td>
+
+<td valign="top" >1459-1464
+</td>
+</tr>
 <tr >
-<td valign="top" >朱见深</td></tbody>
-<td valign="top" >成华</td></tbody>
-<td valign="top" >1465-1487</td></tbody>
-</tr></tbody>
+
+<td valign="top" >朱见深
+</td>
+
+<td valign="top" >成华
+</td>
+
+<td valign="top" >1465-1487
+</td>
+</tr>
 <tr >
-<td valign="top" >朱佑樘</td></tbody>
-<td valign="top" >弘治</td></tbody>
-<td valign="top" >1488-1505</td></tbody>
-</tr></tbody>
+
+<td valign="top" >朱佑樘
+</td>
+
+<td valign="top" >弘治
+</td>
+
+<td valign="top" >1488-1505
+</td>
+</tr>
 <tr >
-<td valign="top" >朱厚照</td></tbody>
-<td valign="top" >正德</td></tbody>
-<td valign="top" >1505-1521</td></tbody>
-</tr></tbody>
+
+<td valign="top" >朱厚照
+</td>
+
+<td valign="top" >正德
+</td>
+
+<td valign="top" >1505-1521
+</td>
+</tr>
 <tr >
-<td valign="top" >朱厚熜</td></tbody>
-<td valign="top" >嘉靖</td></tbody>
-<td valign="top" >1522-1565</td></tbody>
-</tr></tbody>
+
+<td valign="top" >朱厚熜
+</td>
+
+<td valign="top" >嘉靖
+</td>
+
+<td valign="top" >1522-1565
+</td>
+</tr>
 <tr >
-<td valign="top" >朱载垕</td></tbody>
-<td valign="top" >隆庆</td></tbody>
-<td valign="top" >1566-1572</td></tbody>
-</tr></tbody>
+
+<td valign="top" >朱载垕
+</td>
+
+<td valign="top" >隆庆
+</td>
+
+<td valign="top" >1566-1572
+</td>
+</tr>
 <tr >
-<td valign="top" >朱翊钧</td></tbody>
-<td valign="top" >万历</td></tbody>
-<td valign="top" >1572-1620</td></tbody>
-</tr></tbody>
+
+<td valign="top" >朱翊钧
+</td>
+
+<td valign="top" >万历
+</td>
+
+<td valign="top" >1572-1620
+</td>
+</tr>
 <tr >
-<td valign="top" >朱常洛</td></tbody>
-<td valign="top" >泰昌</td></tbody>
-<td valign="top" >1620-1620</td></tbody>
-</tr></tbody>
+
+<td valign="top" >朱常洛
+</td>
+
+<td valign="top" >泰昌
+</td>
+
+<td valign="top" >1620-1620
+</td>
+</tr>
 <tr >
-<td valign="top" >朱由校</td></tbody>
-<td valign="top" >天启</td></tbody>
-<td valign="top" >1620-1627</td></tbody>
-</tr></tbody>
+
+<td valign="top" >朱由校
+</td>
+
+<td valign="top" >天启
+</td>
+
+<td valign="top" >1620-1627
+</td>
+</tr>
 <tr >
-<td valign="top" >朱由检 明氏公司最后一任boss 煤山 自杀</td></tbody>
-<td valign="top" >崇祯</td></tbody>
-<td valign="top" >1611-1644</td></tbody>
-</tr></tbody>
-</tbody></tbody>
-</table></tbody>
+
+<td valign="top" >朱由检 明氏公司最后一任boss 煤山 自杀
+</td>
+
+<td valign="top" >崇祯
+</td>
+
+<td valign="top" >1611-1644
+</td>
+</tr>
+</tbody>
+</table>
 明朝是中国封建王朝中的极为耀眼，前有大蒙元朝，后有满贵清朝，汉人统治中古的王朝，明朝不可多得。在16世纪前期，明气数已尽，内遭叛乱（张献忠，李自成），外受侵辱（后金），最后还是被自己人（汉人）赶下历史舞台，而也让清军得逞，入关取而代之，明就此over。
 
 从此迷上历史。

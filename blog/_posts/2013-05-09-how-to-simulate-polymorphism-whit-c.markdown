@@ -118,19 +118,31 @@ panimal->move();
 <table cellpadding="2" width="50%" cellspacing="0" border="1" >
 <tbody >
 <tr >
-<td >struct Rabbit 结构</td></tbody>
-<td >调用</td></tbody>
-</tr></tbody>
+
+<td >struct Rabbit 结构
+</td>
+
+<td >调用
+</td>
+</tr>
 <tr >
-<td >void (*move )();</td></tbody>
-<td ><------ rabbit.move();</td></tbody>
-</tr></tbody>
+
+<td >void (*move )();
+</td>
+
+<td ><------ rabbit.move();
+</td>
+</tr>
 <tr >
-<td >非法地址</td></tbody>
-<td ><------ panimal->move();</td></tbody>
-</tr></tbody>
-</tbody></tbody>
-</table></tbody>
+
+<td >非法地址
+</td>
+
+<td ><------ panimal->move();
+</td>
+</tr>
+</tbody>
+</table>
 因此需要模拟多态，必须**保持函数指针变量对齐**。
 
 在一些 c 开源项目中经常用到这种设计，譬如 libevent。
