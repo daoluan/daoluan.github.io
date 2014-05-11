@@ -58,7 +58,7 @@ h2 {
 	font-weight:bold;
 }
 
-#page h1 {
+#entry-content h1 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
     margin-bottom: 60px;
     margin-bottom: 40px;
@@ -69,7 +69,7 @@ h2 {
     color: #666666;
 }
 
-#page h3 {
+#entry-content h3 {
     margin-top: 40px;
     margin-bottom: 30px;
     line-height: 150%;
