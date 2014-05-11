@@ -46,9 +46,7 @@ a.pdf:before {
 h1,h2,h3,h4 {
 	line-height:1em;
 	font-size:1.5em;
-	font-weight: normal;
 	clear: left;
-	font-family: 'lucida grande', sans-serif;
 }
 
 h1 { margin-bottom: 1em; }
