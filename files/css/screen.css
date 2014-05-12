@@ -31,6 +31,9 @@ body {
 img { -ms-interpolation-mode:bicubic;
     border-radius: 3px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+
+    max-width:100%;
+    height:auto;
 }
 
 /* IE6 ignores this and uses default size of 16pt */
@@ -64,15 +67,15 @@ h2 {
     margin-bottom: 40px;
     padding: 5px;
     border-bottom: 2px LightGrey solid;
-    width: 90%;
     line-height: 150%;
     color: #666666;
 }
 
 #entry-content h3 {
-    margin-top: 40px;
-    margin-bottom: 30px;
-    line-height: 150%;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	line-height: 150%;
+	font-size: 1.2em;
 }
 
 hr {
