@@ -66,9 +66,11 @@ h2 {
     margin-bottom: 60px;
     margin-bottom: 40px;
     padding: 5px;
-    border-bottom: 2px LightGrey solid;
+    /*border-bottom: 2px LightGrey solid;*/
+    padding-bottom: 10px;
+	border-bottom: 1px dotted #ccc;
     line-height: 150%;
-    color: #666666;
+    /*color: #666666;*/
 }
 
 #entry-content h3 {
