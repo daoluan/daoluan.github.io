@@ -5,16 +5,16 @@ top:    捣乱的个人网站
 ---
 
 <ul>
-{% for category in site.tags %}
-  <li><a href="#{{ category | first }}">{{ category | first }}</a></li>
+{% for tag in site.tags %}
+  <span>{{ category | first }}</span>
 {% endfor %}
 </ul>
 
 <h2>Categories:</h2>
 <ul>
-{% for category in site.categories %}
-  <li><a href="#{{ category | first }}">{{ category | first }}</a></li>
-{% endfor %}
+<li ng-repeat="category in categories">
+<a href="#/cat/{{category}}">{{category}}</a>
+</li>
 </ul>
 
 <h2>Articles by Category:</h2>
