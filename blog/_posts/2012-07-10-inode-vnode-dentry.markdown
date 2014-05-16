@@ -52,9 +52,9 @@ ext3_inode上的数据结构如下：它记录了很多关于文件的信息，�
 Linux上有dentry，中文的意思就是目录项，它粘合了内存中文件和磁盘中文件，同时它保存是经常访问的目录信息。
 
 
-<blockquote>[http://unix.stackexchange.com/questions/4402/what-is-a-superblock-inode-dentry-and-a-file](http://unix.stackexchange.com/questions/4402/what-is-a-superblock-inode-dentry-and-a-file) A dentry is the glue that holds inodes and files together by relating inode numbers to file names. Dentries also play a role in directory caching which, ideally, keeps the most frequently used files on-hand for faster access. File system traversal is another aspect of the dentry as it maintains a relationship between directories and their files.下面是一副很有趣的图片：
+<blockquote><a href="http://unix.stackexchange.com/questions/4402/what-is-a-superblock-inode-dentry-and-a-file">http://unix.stackexchange.com/questions/4402/what-is-a-superblock-inode-dentry-and-a-file</a> A dentry is the glue that holds inodes and files together by relating inode numbers to file names. Dentries also play a role in directory caching which, ideally, keeps the most frequently used files on-hand for faster access. File system traversal is another aspect of the dentry as it maintains a relationship between directories and their files.下面是一副很有趣的图片：
 
-[![inodedentry_thumb.jpg](http://daoluan.net/blog/wp-content/uploads/2012/07/inodedentry_thumb.jpg)](http://daoluan.net/blog/wp-content/uploads/2012/07/inodedentry_thumb.jpg)</blockquote>
+<a style="line-height: 1.714285714; font-size: 1rem;" href="http://daoluan.net/blog/wp-content/uploads/2012/07/inodedentry_thumb.jpg"><img class="alignnone size-full wp-image-625" alt="inodedentry_thumb.jpg" src="http://daoluan.net/blog/wp-content/uploads/2012/07/inodedentry_thumb.jpg" width="486" height="314" /></a></blockquote>
 
 
 
