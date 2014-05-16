@@ -1,14 +1,4 @@
 markdown    : rdiscount
 safe        : true
 permalink   : /blog/:categories/:title/
-baseurl: /
 encoding: utf-8
-exclude: ["node_modules", "Gruntfile.js", "package.json", "src"]
-markdown: maruku
-maruku:
-  use_tex:    false
-  use_divs:   false
-  png_engine: blahtex
-  png_dir:    images/latex
-  png_url:    /images/latex
-  fenced_code_blocks: true
