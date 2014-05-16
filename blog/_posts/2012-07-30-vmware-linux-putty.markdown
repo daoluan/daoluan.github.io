@@ -32,19 +32,18 @@ Linux选择了ubuntu 12。一般装上ubuntu，选用NAT网络连接，即可联
 
 	
   2. Linux设置静态IP
-vim /etc/network/interfaces根据第一步得到的信息，文件末尾添加如下：
-auto eth0
-iface eth0 inet static
-address 192.168.2.6（子网192.168.2.0）
-gateway 192.168.2.2（网关192.168.2.2）
-netmask 255.255.255.0（掩码）
+vim /etc/network/interfaces根据第一步得到的信息，文件末尾添加如下：  
+auto eth0  
+iface eth0 inet static  
+address 192.168.2.6（子网192.168.2.0）  
+gateway 192.168.2.2（网关192.168.2.2）  
+netmask 255.255.255.0（掩码）  
 [![2_thumb.png](http://daoluan.net/blog/wp-content/uploads/2012/07/2_thumb.png)](http://daoluan.net/blog/wp-content/uploads/2012/07/2_thumb.png)
 reboot下，确保上述设置生效
-
 	
   3. 设置Linux的DNS地址
-vim /etc/resolv.conf（指明dns地址）
-nameserver 192.168.2.2（第一步中查询到的网关）
+vim /etc/resolv.conf（指明dns地址）  
+nameserver 192.168.2.2（第一步中查询到的网关）  
 [![3_thumb.png](http://daoluan.net/blog/wp-content/uploads/2012/07/3_thumb.png)](http://daoluan.net/blog/wp-content/uploads/2012/07/3_thumb.png)
 
 	
