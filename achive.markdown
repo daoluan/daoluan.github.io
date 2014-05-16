@@ -6,13 +6,7 @@ top:    捣乱的个人网站
 
 <div>
 {% for category in site.categories %}
-<h2>{{ category | first }}</h2>
-</span>{{ category | last | size }}</span>
-<ul>
-    {% for post in category.last %}
-        <li>{{ post.date | date:"%d/%m/%Y"}}<a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-</ul>
+<span>{{ category | first }}</span>
 {% endfor %}
 </div>
 
