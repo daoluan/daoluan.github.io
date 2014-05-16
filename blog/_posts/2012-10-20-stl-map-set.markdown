@@ -17,7 +17,7 @@ tags:
 
 一句话map：容器map底层也由RB_TREE实现，它和（deque--->stack、queue）模式一样；map中一个键值对应一个实值，不允许键值上的重复，内部是按键值来进行排序存储的，其中键值不允许被更改。
 
-[caption id="" align="aligncenter" width="450"][![](http://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Red-black_tree_example.svg/450px-Red-black_tree_example.svg.png)](http://zh.wikipedia.org/wiki/%E7%BA%A2%E9%BB%91%E6%A0%91) 红黑树[/caption]
+[![](http://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Red-black_tree_example.svg/450px-Red-black_tree_example.svg.png)](http://zh.wikipedia.org/wiki/%E7%BA%A2%E9%BB%91%E6%A0%91) 红黑树
 
 <!-- more -->
 

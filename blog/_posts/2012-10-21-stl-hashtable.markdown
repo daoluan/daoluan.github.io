@@ -17,7 +17,7 @@ tags:
 
 <!-- more -->
 
-[caption id="" align="aligncenter" width="315"]![](http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/315px-Hash_table_3_1_1_0_1_0_0_SP.svg.png) 哈希表[/caption]
+(http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/315px-Hash_table_3_1_1_0_1_0_0_SP.svg.png) 哈希表
 
 
 ### Hashtable的查找，插入，删除
@@ -59,7 +59,7 @@ tags:
 
 开链法，动态非连续空间（single list），不存在线性探测和二次探测的第一个问题；在确定地址过后，只需要对相应的single list作插入，删除，修改操作，这样碰撞的问题就转化为single list的寻访，速度可观。STL Hashtable就是采用开链法。
 
-[caption id="attachment_1238" align="aligncenter" width="236"][![](http://daoluan.net/blog/wp-content/uploads/2012/10/Hashtable_with_slist.jpg)](http://daoluan.net/blog/stl-hashtable/hashtable_with_slist/) 链地址法[/caption]
+[![](http://daoluan.net/blog/wp-content/uploads/2012/10/Hashtable_with_slist.jpg)](http://daoluan.net/blog/stl-hashtable/hashtable_with_slist/) 链地址法
 
 后来我们将看到，STL中的hash_set和hash_map皆由Hashtable作为底层容器。
 

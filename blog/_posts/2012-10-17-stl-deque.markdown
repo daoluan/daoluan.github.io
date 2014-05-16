@@ -19,7 +19,7 @@ tags:
 
 <!-- more -->
 
-[caption id="attachment_1173" align="aligncenter" width="451"][![](http://daoluan.net/blog/wp-content/uploads/2012/10/deque_in_real.jpg)](http://daoluan.net/blog/stl-deque/deque_in_real/) bug,deque_in_real[/caption]
+[![](http://daoluan.net/blog/wp-content/uploads/2012/10/deque_in_real.jpg)](http://daoluan.net/blog/stl-deque/deque_in_real/) bug,deque_in_real
 
 
 ### deque的迭代器

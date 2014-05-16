@@ -147,9 +147,9 @@ ajax get 到数据自动调用预设值的回调函数。jsonp 返回的数据�
 
 回调函数对 a.sso 中每一个连接执行 getJSON()。注：使用 jquery 的 getJSON() 进行跨域读取数据，实际上 getJSON() 方式的根本原理和 ajax 使用 jsonp 的方式一样。
 
-[caption id="attachment_2291" align="alignnone" width="672"][![jquery jsonp 请求](http://daoluan.net/blog/wp-content/uploads/2014/03/jd_jsonp_network_01.png)](http://daoluan.net/blog/wp-content/uploads/2014/03/jd_jsonp_network_01.png) jquery jsonp 请求[/caption]
+[![jquery jsonp 请求](http://daoluan.net/blog/wp-content/uploads/2014/03/jd_jsonp_network_01.png)](http://daoluan.net/blog/wp-content/uploads/2014/03/jd_jsonp_network_01.png) jquery jsonp 请求
 
-[caption id="attachment_2292" align="alignnone" width="672"][![jquery jsonp 请求产生的重定向](http://daoluan.net/blog/wp-content/uploads/2014/03/jd_jsonp_network_011.png)](http://daoluan.net/blog/wp-content/uploads/2014/03/jd_jsonp_network_011.png) jquery jsonp 请求产生的重定向[/caption]
+[![jquery jsonp 请求产生的重定向](http://daoluan.net/blog/wp-content/uploads/2014/03/jd_jsonp_network_011.png)](http://daoluan.net/blog/wp-content/uploads/2014/03/jd_jsonp_network_011.png) jquery jsonp 请求产生的重定向
 
 以第一个参数为例，所产生的 request HTTP：
 

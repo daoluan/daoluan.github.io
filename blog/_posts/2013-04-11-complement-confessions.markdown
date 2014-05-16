@@ -16,7 +16,7 @@ tags:
 - 补码
 ---
 
-[caption id="" align="aligncenter" width="443"][![myidea](http://daoluan.net/blog/wp-content/uploads/2013/04/myidea_thumb.gif)](http://daoluan.net/blog/wp-content/uploads/2013/04/myidea.gif) 沿着线条走，你能否发现各种溢出？！[/caption]
+[![myidea](http://daoluan.net/blog/wp-content/uploads/2013/04/myidea_thumb.gif)](http://daoluan.net/blog/wp-content/uploads/2013/04/myidea.gif) 沿着线条走，你能否发现各种溢出？！
 
 二进制数据的表示方法有原码，反码，补码。
 
@@ -72,7 +72,7 @@ tags:
   3. 根据同余式性质，得到：-7+4≡9+4（mod 16）
 
 
-[caption id="" align="aligncenter" width="409"]![同余式性质 保持加法、减法和乘法](https://upload.wikimedia.org/math/c/6/5/c65406197980891e713d0d051ad4ce73.png) 同余式性质 保持加法、减法和乘法[/caption]
+(https://upload.wikimedia.org/math/c/6/5/c65406197980891e713d0d051ad4ce73.png) 同余式性质 保持加法、减法和乘法
 
 既然，对于模 16 ，4-7 和 4+9 的结果相同，CPU何不只设计只具备后者（加法）的部件？
 

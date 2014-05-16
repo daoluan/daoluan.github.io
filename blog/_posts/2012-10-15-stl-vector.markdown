@@ -83,7 +83,7 @@ h b c d e f g</blockquote>
     ......
 
 
-[caption id="attachment_1150" align="alignnone" width="400"][![](http://daoluan.net/blog/wp-content/uploads/2012/10/vector_bomb.gif)](http://daoluan.net/blog/stl-vector/vector_bomb/) bomb！！！[/caption]
+[![](http://daoluan.net/blog/wp-content/uploads/2012/10/vector_bomb.gif)](http://daoluan.net/blog/stl-vector/vector_bomb/) bomb！！！
 
 
 ### vector元素排序
