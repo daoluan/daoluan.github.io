@@ -98,7 +98,7 @@ categories:
 
 [![](http://daoluan.net/blog/wp-content/uploads/2012/09/AutoAnchor_bug.jpg)](http://daoluan.net/blog/archives/1049/autoanchor_bug)
 
-缺陷：除非修改源代码，不然只支持<h3>的标题检测，就是说只能为<h3>标题添加锚链接。
+<p><span style="color: #ff0000;">缺陷：除非修改源代码，不然只支持&lt;h3&gt;的标题检测，就是说只能为&lt;h3&gt;标题添加锚链接。</span></p>
 
 
 

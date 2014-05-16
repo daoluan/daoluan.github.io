@@ -164,15 +164,11 @@ root@daoluan:~# apt-get install libmysqlclient16-dev
 
 下面是有用的链接：
 
-[ttp://www.zhangliancheng.com/2011/04/build_mysql_c_develop_environment_in_ubuntu/](http://www.zhangliancheng.com/2011/04/build_mysql_c_develop_environment_in_ubuntu/)
-
-[Ubuntu安装配置Mysql - 武侯 - 博客园](http://www.cnblogs.com/wuhou/archive/2008/09/28/1301071.html)
-
-[MySQL C API](http://dev.mysql.com/doc/refman/5.6/en/c.html)
-
-[ubuntu下安装MySQL和connector过程 - ArtMath------数学是一门艺术 - 博客大巴](http://artmath.blogbus.com/logs/76621657.html)
-
-[Linux下安装使用mysql connector（C++） - cscmaker的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/cscmaker/article/details/7468374)
+[ttp://www.zhangliancheng.com/2011/04/build_mysql_c_develop_environment_in_ubuntu/](http://www.zhangliancheng.com/2011/04/build_mysql_c_develop_environment_in_ubuntu/)  
+[Ubuntu安装配置Mysql - 武侯 - 博客园](http://www.cnblogs.com/wuhou/archive/2008/09/28/1301071.html)  
+[MySQL C API](http://dev.mysql.com/doc/refman/5.6/en/c.html)  
+[ubuntu下安装MySQL和connector过程 - ArtMath------数学是一门艺术 - 博客大巴](http://artmath.blogbus.com/logs/76621657.html)  
+[Linux下安装使用mysql connector（C++） - cscmaker的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/cscmaker/article/details/7468374)  
 
 reference:《MySQL 完全手册》
 

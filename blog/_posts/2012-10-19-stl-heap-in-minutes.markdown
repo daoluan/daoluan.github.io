@@ -15,17 +15,12 @@ tags:
 
 一句话的heap：一种数据结构，完全二叉树（若二叉树高h，除过最底层h层，其他层1~h-1都是满的；并且最底层从左到右不能有空隙。），但在实现上，它没有选择一般的二叉树数据结构（即一个节点包含指向两个孩子的指针），使用的是数组；heap最为常用的操作是上溯和下溯，它们在“维持堆”和“堆排序”中经常用到。这篇文章能让你快速回顾heap。
 
-[![](http://daoluan.net/blog/wp-content/uploads/2012/10/complete-binary-tree.jpg)](http://daoluan.net/blog/stl-heap-in-minutes/complete-binary-tree/) 完全二叉树（左）和非完全二叉树（右）
-
-<!-- more -->
-
-
-===============================================
+[![](http://daoluan.net/blog/wp-content/uploads/2012/10/complete-binary-tree.jpg)](http://daoluan.net/blog/stl-heap-in-minutes/complete-binary-tree/)  
+完全二叉树（左）和非完全二叉树（右）
 
 
-
-
-[![](http://daoluan.net/blog/wp-content/uploads/2012/10/complete-binary-tree-in-array.jpg)](http://daoluan.net/blog/stl-heap-in-minutes/complete-binary-tree-in-array/) 完全二叉树的数组存储（对应上图左），X是实现上的技巧，刻意空出来
+[![](http://daoluan.net/blog/wp-content/uploads/2012/10/complete-binary-tree-in-array.jpg)](http://daoluan.net/blog/stl-heap-in-minutes/complete-binary-tree-in-array/)   
+完全二叉树的数组存储（对应上图左），X是实现上的技巧，刻意空出来
 
 如果某节点位于数组i处，那么那么2i即为其左子结点，2i+1即为其右子结点。
 

@@ -21,9 +21,6 @@ tags:
 
 2012-09-11 下午：本文曾出现很严重的错误，但不要紧，感谢园友们的即使指正。
 
-<!-- more -->
-
-不喜欢程序语言的
 
 C++类中，有时候使用到传值调用（对象实体做参数），遇到这种情况，可要小心了！特别是当你所传值的对象生命周期较长，而非临时对象（生命周期段）的时候。来看看下面的情况：
 
@@ -79,46 +76,46 @@ C++类中，有时候使用到传值调用（对象实体做参数），遇到�
   1. 重写浅拷贝。像一下版本，不同的情况要作出适当的调整：
 
     
-    #include <iostream>
-    using namespace std;
-    
-    class Text
-    {
-    private:
-    	char * str;
-    
-    public:
-    	Text(){str = new char[20];::memset(str,0,20);}
-    	Text(Text &t)
-    	{
-    		str = new char[20];
-    		strcpy(str,t.GetText());
-    	}
-    	void SetText(char * str)
-    	{
-    		strcpy(this->str,str);
-    	}
-    	char * GetText() const{return str;}
-    	~Text()
-    	{
-    		cout << "~Text Destruction" << endl;
-    		delete [] str;
-    		cout << "~Text Over" << endl;
-    	}
-    };
-    
-    void Print(Text str)
-    {
-    	cout << str.GetText() << endl;
-    }
-    
-    int main()
-    {
-    	Text t;
-    	t.SetText("abc");
-    	Print(t);
-    	return 1;
-    }
+	    #include <iostream>
+	    using namespace std;
+	    
+	    class Text
+	    {
+	    private:
+	    	char * str;
+	    
+	    public:
+	    	Text(){str = new char[20];::memset(str,0,20);}
+	    	Text(Text &t)
+	    	{
+	    		str = new char[20];
+	    		strcpy(str,t.GetText());
+	    	}
+	    	void SetText(char * str)
+	    	{
+	    		strcpy(this->str,str);
+	    	}
+	    	char * GetText() const{return str;}
+	    	~Text()
+	    	{
+	    		cout << "~Text Destruction" << endl;
+	    		delete [] str;
+	    		cout << "~Text Over" << endl;
+	    	}
+	    };
+	    
+	    void Print(Text str)
+	    {
+	    	cout << str.GetText() << endl;
+	    }
+	    
+	    int main()
+	    {
+	    	Text t;
+	    	t.SetText("abc");
+	    	Print(t);
+	    	return 1;
+	    }
 
 
 
@@ -127,10 +124,10 @@ C++类中，有时候使用到传值调用（对象实体做参数），遇到�
   2. （推荐）不使用传值调用。就像下面书写如下Print版本：
 
     
-    void Print(Text &str)
-    {
-    	cout << str.GetText() << endl;
-    }
+	    void Print(Text &str)
+	    {
+	    	cout << str.GetText() << endl;
+	    }
 
 
 
@@ -141,8 +138,7 @@ C++类中，有时候使用到传值调用（对象实体做参数），遇到�
 
 
 
-## 
-后记——语言的探讨
+### 后记——语言的探讨
 
 
 C++，以至于其他的程序语言，都是伟大的创造。他们是规则的世界，一愣一脚皆规则。当对某一规则有所熟知之后，就似发现新大陆似的。但想想，这些规则可经不起碰撞打击，殃及的是coder，是我们。这些规则不像1+1=2，“三点定面”来的铁定，总之比起数学理论来说，似乎程序规则脆弱很多，总之在它们身上看到的价值是有限的，总我还是选择了计算机...为之奈何，不得而知。

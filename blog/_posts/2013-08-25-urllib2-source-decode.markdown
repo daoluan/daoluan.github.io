@@ -79,15 +79,15 @@ urlopen 和 build_opener 方法的源码：
 
 _opener 是一个全局的对象，它调用 open() 它的作用和 urllib 一样，但做法是不同的。
 
-从类 OpenerDirector 说起：
-addheaders 添加 HTTP headers 的方法
-handlers 各种处理工具类对象，里面可以包含上面提到的预处理和善后处理
+从类 OpenerDirector 说起：  
+addheaders 添加 HTTP headers 的方法  
+handlers 各种处理工具类对象，里面可以包含上面提到的预处理和善后处理  
 
-handle_open 一个 key-value_list，存着发起连接的 handler，一般只有一个；key 是协议，http，https；value_list 就是方法集了
-hander_error 一个 key-value_list 同上；根据状态码进行各种处理
-process_response 一个 key-value_list 同上；预处理
-process_request 一个 key-value_list 同上；善后处理
-**这四个成员变量很重要，因为各种 handler 内的方法会根据方法名安置在这个四个 key-value_list 中，在不同的时机调用。**
+handle_open 一个 key-value_list，存着发起连接的 handler，一般只有一个；key 是协议，http，https；value_list 就是方法集了  
+hander_error 一个 key-value_list 同上；根据状态码进行各种处理  
+process_response 一个 key-value_list 同上；预处理  
+process_request 一个 key-value_list 同上；善后处理  
+**这四个成员变量很重要，因为各种 handler 内的方法会根据方法名安置在这个四个 key-value_list 中，在不同的时机调用。**  
 
 add_handler 添加各种处理工具类对象，它会自动扫描整个对象中的所有方法，根据方法的名字添加到不同的 key-value_list 中。
 
@@ -150,8 +150,8 @@ _open 从 open 中得知，它在预处理和善后处理之间，应该负责�
                                 'unknown_open', req)
 
 
-error 各种错误处理，或者处理各种状态码，从成员变量 handle_error 中选择方法
-至此 OpenerDirector 介绍到这里
+error 各种错误处理，或者处理各种状态码，从成员变量 handle_error 中选择方法  
+至此 OpenerDirector 介绍到这里  
 
 build_opener 这是一个全局方法，上面提到过，能创建 OpenerDirector 对象，并安装多个 handlers
 
@@ -180,22 +180,22 @@ build_opener 这是一个全局方法，上面提到过，能创建 OpenerDirect
         return response
 
 
-如果状态码不是 200-300，就调用父类的 error，error 能调遣各种错误处理或者状态码处理 handers，交由他们处理。
-**HTTPDefaultErrorHandler** 万能的，不想理会的错误就用它
-**HTTPRedirectHandler** 重定向处理，状态码是 30X 的时候会用到
-**ProxyHandler** 如果开了代理，会用到这个 handler
-**HTTPPasswordMgr** 秘密管理器，它里面会根据不同的连接，不同的 realm 管理密码
-**AbstractBasicAuthHandler** HTTP 认证抽象类
-**HTTPBasicAuthHandler** 继承自 AbstractBasicAuthHandler 类，HTTP 基本认证
-**AbstractBasicAuthHandler** 继承自 AbstractBasicAuthHandler 类；如果开了代理，需要用这个认证类
-**AbstractHTTPHandler** HTTP 处理抽象类，其实不抽象了；它内部有一个 do_open() 方法，是 HTTP 连接的核心，它返回上一节提到过的 addinfourl 对象，动作也和上一节提到的 open_http() 大同小异。
+如果状态码不是 200-300，就调用父类的 error，error 能调遣各种错误处理或者状态码处理 handers，交由他们处理。  
+**HTTPDefaultErrorHandler** 万能的，不想理会的错误就用它  
+**HTTPRedirectHandler** 重定向处理，状态码是 30X 的时候会用到  
+**ProxyHandler** 如果开了代理，会用到这个 handler  
+**HTTPPasswordMgr** 秘密管理器，它里面会根据不同的连接，不同的 realm 管理密码  
+**AbstractBasicAuthHandler** HTTP 认证抽象类  
+**HTTPBasicAuthHandler** 继承自 AbstractBasicAuthHandler 类，HTTP 基本认证  
+**AbstractBasicAuthHandler** 继承自 AbstractBasicAuthHandler 类；如果开了代理，需要用这个认证类  
+**AbstractHTTPHandler** HTTP 处理抽象类，其实不抽象了；它内部有一个 do_open() 方法，是 HTTP 连接的核心，它返回上一节提到过的 addinfourl 对象，动作也和上一节提到的 open_http() 大同小异。  
 
-**HTTPHandler** 这个类里有个 http_open() 方法，它会被安置在 OpenerDirector 对象的 **handle_open** list 中，很明显它是管理 HTTP 连接的，发送或者接受数据，其内部调用上面提到的 do_open() 方法。
-**HTTPSHandler** HTTPS
-**HTTPCookieProcessor** 里面有 http_request 和 http_response 方法，分别是 cookies 的预处理和善后处理，用作设置和提取 cookies
-**UnknownHandler** 里面定义了 unknown_open 方法；当遇到无法理解的 url 时候，就会被调用
-**FileHandler** 处理本地文件或者 ftp，这要视被传入的 url 而定
-**FTPHandler** 封装了 ftp 的处理，会创建上一节提到的 ftpwrapper。
+**HTTPHandler** 这个类里有个 http_open() 方法，它会被安置在 OpenerDirector 对象的 **handle_open** list 中，很明显它是管理 HTTP 连接的，发送或者接受数据，其内部调用上面提到的 do_open() 方法。  
+**HTTPSHandler** HTTPS  
+**HTTPCookieProcessor** 里面有 http_request 和 http_response 方法，分别是 cookies 的预处理和善后处理，用作设置和提取 cookies  
+**UnknownHandler** 里面定义了 unknown_open 方法；当遇到无法理解的 url 时候，就会被调用  
+**FileHandler** 处理本地文件或者 ftp，这要视被传入的 url 而定  
+**FTPHandler** 封装了 ftp 的处理，会创建上一节提到的 ftpwrapper。  
 **CacheFTPHandler** 带缓存的 FTPHandler，里面主要记录最近 ftp 连接的信息（实际上是 ftpwrapper 对象），并各自设置了过期时间。
 
 
@@ -253,21 +253,21 @@ tips:结合上面的 open() 方法，http_request 中传入的参数 request 是
 
 
 结果是：
-{}
-Date: Sun, 25 Aug 2013 03:06:56 GMT
-Server: BWS/1.0
-Content-Length: 10433
-Content-Type: text/html;charset=utf-8
-Cache-Control: private
-BDPAGETYPE: 1
-BDUSERID: 0
-BDQID: 0x8355f67f035cabd2
-Set-Cookie: BDSVRTM=1; path=/
-Set-Cookie: H_PS_PSSID=3194_1443_3139_2975_2981_2702; path=/; domain=.baidu.com
-Set-Cookie: BAIDUID=5300395E1E4ACB08A7C131F72AD493B6:FG=1; expires=Sun, 25-Aug-43 03:06:56 GMT; path=/; domain=.baidu.com
-Expires: Sun, 25 Aug 2013 03:06:56 GMT
-P3P: CP=" OTI DSP COR IVA OUR IND COM "
-Connection: Close
+    {}
+    Date: Sun, 25 Aug 2013 03:06:56 GMT
+    Server: BWS/1.0
+    Content-Length: 10433
+    Content-Type: text/html;charset=utf-8
+    Cache-Control: private
+    BDPAGETYPE: 1
+    BDUSERID: 0
+    BDQID: 0x8355f67f035cabd2
+    Set-Cookie: BDSVRTM=1; path=/
+    Set-Cookie: H_PS_PSSID=3194_1443_3139_2975_2981_2702; path=/; domain=.baidu.com
+    Set-Cookie: BAIDUID=5300395E1E4ACB08A7C131F72AD493B6:FG=1; expires=Sun, 25-Aug-43 03:06:56 GMT; path=/; domain=.baidu.com
+    Expires: Sun, 25 Aug 2013 03:06:56 GMT
+    P3P: CP=" OTI DSP COR IVA OUR IND COM "
+
 
 可以看到，自定义的 handler 已经被安装成功，即 http_request 方法已被安置在 process_request list 中； http_response 方法已被安置在 process_response list 中。从结果看，request 的 HTTP 头并没有任何东西，因为我们并没有添加任何额外的头部，但在连接的时候，是有添加一些 HTTP 头部信息，但并没有被记录；返回的 HTTP response 中就有了。
 
