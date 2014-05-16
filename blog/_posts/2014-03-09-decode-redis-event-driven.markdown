@@ -353,6 +353,7 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
 
 
   3. 有事件发生会被唤醒，处理已触发的 I/O 事件和定时事件。
+
         void aeMain(aeEventLoop *eventLoop) {
             eventLoop->stop = 0;
             while (!eventLoop->stop) {
