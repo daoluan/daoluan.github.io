@@ -18,6 +18,10 @@ top:    捣乱的个人网站
 <ul>
 {% for category in site.categories %}
   <span>{{ category | first }}</span>.
+  {% for post in category.last %}
+    <span><a href="{{ post.url }}">{{ post.title }}</a></span>.
+  {% endfor %}
+  <br>
 {% endfor %}
 </li>
 </ul>
