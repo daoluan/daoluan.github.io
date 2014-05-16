@@ -17,7 +17,7 @@ top:    捣乱的个人网站
 <h3>分类</h3>
 <ul>
 {% for category in site.categories %}
-  <span>{{ category | first }}</span>.
+  <span><strong>{{ category | first }}.</strong></span>
   {% for post in category.last %}
     <span><a href="{{ post.url }}">{{ post.title }}</a></span>.
   {% endfor %}
