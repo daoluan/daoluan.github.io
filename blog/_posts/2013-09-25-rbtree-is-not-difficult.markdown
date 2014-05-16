@@ -19,10 +19,10 @@ tags:
 
 
 
-  * 红黑树并没有我们想象的那么难(上): [http://daoluan.net/blog/?p=2057](http://daoluan.net/blog/?p=2057)
+  * 红黑树并没有我们想象的那么难(上): [http://md.daoluan.net/blog/rbtree-is-not-difficult/](http://md.daoluan.net/blog/rbtree-is-not-difficult/)
 
 
-  * 红黑树并没有我们想象的那么难(下): [http://daoluan.net/blog/?p=2112](http://daoluan.net/blog/?p=2112)
+  * 红黑树并没有我们想象的那么难(下): [http://md.daoluan.net/blog/rbtree-is-not-difficult-2/](http://md.daoluan.net/blog/rbtree-is-not-difficult-2/)
 
 
 红黑树并没有想象的那么难, 初学者觉得晦涩难读可能是因为情况太多. 红黑树的情况可以通过归结, 通过合并来得到更少的情况, 如此可以加深对红黑树的理解. 网络上的大部分红黑树的讲解因为没有「合并」. 红黑树的五个性质:

@@ -201,7 +201,9 @@ memcached 服务一个客户的时候, 是怎么一个过程, 试着去调试模
 
 
 
-  1. 客户`connect()`后, memcached 服务器主线程被唤醒, 接下来的调用链是`event_handler()->drive_machine()`被调用,此时主线程对应 conn 状态为 conn_listining,接受请求dispatch_conn_new(sfd, conn_new_cmd, EV_READ | EV_PERSIST,DATA_BUFFER_SIZE, tcp_transport);
+  1. 客户`connect()`后, memcached 服务器主线程被唤醒, 接下来的调用链是`event_handler()->drive_machine()`被调用,此时主线程对应 conn 状态为 conn_listining,接受请求
+
+        dispatch_conn_new(sfd, conn_new_cmd, EV_READ | EV_PERSIST,DATA_BUFFER_SIZE, tcp_transport);
 
 
   2. `dispatch_conn_new()`的工作是往工作线程工作队列中添加任务(前面已经提到过), 所以其中一个沉睡的工作线程会被唤醒,`thread_libevent_process()`会被工作线程调用, 注意这些机制都是由 libevent 提供的.

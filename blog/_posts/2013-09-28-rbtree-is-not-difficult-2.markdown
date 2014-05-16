@@ -21,10 +21,10 @@ tags:
 
 
 	
-  * 红黑树并没有我们想象的那么难(上): [http://daoluan.net/blog/?p=2057](http://daoluan.net/blog/?p=2057)
+  * 红黑树并没有我们想象的那么难(上): [http://md.daoluan.net/blog/rbtree-is-not-difficult/](http://md.daoluan.net/blog/rbtree-is-not-difficult/)
 
-	
-  * 红黑树并没有我们想象的那么难(下): [http://daoluan.net/blog/?p=2112](http://daoluan.net/blog/?p=2112)
+
+  * 红黑树并没有我们想象的那么难(下): [http://md.daoluan.net/blog/rbtree-is-not-difficult-2/](http://md.daoluan.net/blog/rbtree-is-not-difficult-2/)
 
 
 
