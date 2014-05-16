@@ -4,7 +4,7 @@ title: 捣乱小子 - daoluan.net
 keywords: 捣乱小子,捣乱,郑思愿,郑思愿daoluan,daoluan,daoluan.net
 ---
 
-<img class='inset right' src='/images/daoluan.png' title='daoluan' width='120px' />
+<img class='inset right' src='/blog/images/daoluan.png' title='daoluan' width='120px' />
 
 欢迎
 =====
