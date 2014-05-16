@@ -4,11 +4,27 @@ title:  归档
 top:    捣乱的个人网站
 ---
 
-<div>
-{% for category in page.categories %}
-<span>{{ category | first }}</span>
+<h2>Categories:</h2>
+<ul>
+{% for category in site.categories %}
+  <li><a href="#{{ category | first }}">{{ category | first }}</a></li>
 {% endfor %}
-</div>
+</ul>
+
+<h2>Articles by Category:</h2>
+<ul>
+{% for category in site.categories %}
+  <li><a name="{{ category | first }}">{{ category | first }}</a>
+    <ul>
+    {% for posts in category %}
+      {% for post in posts %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    {% endfor %}
+    </ul>
+  </li>
+{% endfor %}
+</ul>
 
 <div>
 <ul>
