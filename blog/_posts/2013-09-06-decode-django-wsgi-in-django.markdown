@@ -24,7 +24,7 @@ __init__.py
 
 下面的代码足以说明「百分之七八十」:
 
-    
+
     class ServerHandler(simple_server.ServerHandler, object):
     ...
     class WSGIServer(simple_server.WSGIServer, object):
@@ -36,27 +36,27 @@ __init__.py
 
 
 
-	
+
   * 重写了 write 函数, 当传输数据过大的时候分段传输
 
-	
+
   * 多了一些异常处理
 
-	
+
   * 错误记录
 
 
 都是无关痛痒, 不详细展开了.这里定义了一个很有意思的函数 run():
 
-    
+
     def run(addr, port, wsgi_handler, ipv6=False, threading=False):
         server_address = (addr, port)
-    
+
         if threading:
             httpd_cls = type(str('WSGIServer'), (socketserver.ThreadingMixIn, WSGIServer), {})
         else:
             httpd_cls = WSGIServer
-    
+
         httpd = httpd_cls(server_address, WSGIRequestHandler, ipv6=ipv6)
         httpd.set_app(wsgi_handler)
         httpd.serve_forever() 永久运行
@@ -86,23 +86,21 @@ __init__.py
 事实上, 在 WSGI 中除了 application,server 外, 还有一个 middleware, 名曰中间件. 在上一篇中故意漏了, 因为没有涉及到.最后我疏离一下上边提到的类模块等等, 方便大家找源码, 整理如下:
 
 
-<blockquote>C:\PYTHON27\LIB\WSGIREF
-handlers.py 定义了 BaseHandler, SimpleHandler 类
-headers.py
-simple_server.py 定义了 ServerHandler, WSGIRequestHandler 类, demo_app(), make_server()
-util.py
-validate.py
-__init__.py
-
-E:\DECODE-DJANGO\DJANGO-1.5.1\DJANGO\CORE\SERVERS
-basehttp.py 重写 ServerHandler,WSGIServer,WSGIRequestHandler,定义 run() 函数
-fastcgi.py
-__init__.py
-
-E:\DECODE-DJANGO\DJANGO-1.5.1\DJANGO\CORE\HANDLERS
-base.py application 的基类 BaseHandler
-wsgi.py 实现 WSGIHandler 类, 定义了 __call__, 这样就名正言顺的 WSGI 中的 application 了
-__init__.py</blockquote>
+<blockquote><p>C:\PYTHON27\LIB\WSGIREF<br>
+handlers.py 定义了 BaseHandler,&nbsp;SimpleHandler 类<br>
+headers.py<br>
+simple_server.py&nbsp;定义了&nbsp;ServerHandler,&nbsp;WSGIRequestHandler 类, demo_app(), make_server()<br>
+util.py<br>
+validate.py<br>
+__init__.py</p>
+<p>E:\DECODE-DJANGO\DJANGO-1.5.1\DJANGO\CORE\SERVERS<br>
+basehttp.py 重写 ServerHandler,WSGIServer,WSGIRequestHandler,定义 run() 函数<br>
+fastcgi.py<br>
+__init__.py</p>
+<p>E:\DECODE-DJANGO\DJANGO-1.5.1\DJANGO\CORE\HANDLERS<br>
+base.py application 的基类 BaseHandler<br>
+wsgi.py 实现&nbsp;WSGIHandler 类, 定义了 __call__, 这样就名正言顺的 WSGI 中的 application 了<br>
+__init__.py</p></blockquote>
 
 
 ps: 目录根据实际情况会不同, 看具体情况.我已经在 github 备份了 Django 源码的注释: [Decode-Django](https://github.com/daoluan/Decode-Django), 有兴趣的童鞋 fork 吧.

@@ -18,10 +18,10 @@ tags:
 
 
 
-	
+
   * 红黑树并没有我们想象的那么难(上): [http://daoluan.net/blog/?p=2057](http://daoluan.net/blog/?p=2057)
 
-	
+
   * 红黑树并没有我们想象的那么难(下): [http://daoluan.net/blog/?p=2112](http://daoluan.net/blog/?p=2112)
 
 
@@ -30,15 +30,11 @@ tags:
 [![](http://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Red-black_tree_example.svg/450px-Red-black_tree_example.svg.png)](http://zh.wikipedia.org/wiki/File:Red-black_tree_example.svg)
 
 
-<blockquote>性质1. 节点是红色或黑色。
-
-性质2. 根是黑色。
-
-性质3. 所有叶子都是黑色（叶子是NIL节点）。
-
-性质4. 每个红色节点的两个子节点都是黑色。(从每个叶子到根的所有路径上不能有两个连续的红色节点)
-
-性质5. 从任一节点到其每个叶子的所有简单路径 都包含相同数目的黑色节点。</blockquote>
+<blockquote><p>性质1. 节点是红色或黑色。</p>
+<p>性质2. 根是黑色。</p>
+<p>性质3. 所有叶子都是黑色（叶子是NIL节点）。</p>
+<p>性质4. 每个红色节点的两个子节点都是黑色。(从每个叶子到根的所有路径上不能有两个连续的红色节点)</p>
+<p><span style="line-height: 1.714285714; font-size: 1rem;">性质5. 从任一节点到其每个叶子的所有简单路径 都包含相同数目的黑色节点。</span></p></blockquote>
 
 
 
@@ -48,34 +44,34 @@ tags:
 
 摘自 sgi stl 红黑树数据结构定义:
 
-    
+
     typedef bool _Rb_tree_Color_type;
     const _Rb_tree_Color_type _S_rb_tree_red = false;
     const _Rb_tree_Color_type _S_rb_tree_black = true;
-    
+
     struct _Rb_tree_node_base
     {
       typedef _Rb_tree_Color_type _Color_type;
       typedef _Rb_tree_node_base* _Base_ptr;
-    
+
       _Color_type _M_color;
       _Base_ptr _M_parent;
       _Base_ptr _M_left;
       _Base_ptr _M_right;
-    
+
       static _Base_ptr _S_minimum(_Base_ptr __x)
       {
         while (__x->_M_left != 0) __x = __x->_M_left;
         return __x;
       }
-    
+
       static _Base_ptr _S_maximum(_Base_ptr __x)
       {
         while (__x->_M_right != 0) __x = __x->_M_right;
         return __x;
       }
     };
-    
+
     template <class _Value>
     struct _Rb_tree_node : public _Rb_tree_node_base
     {
@@ -109,13 +105,13 @@ tags:
 
 
 
-	
+
   1. 插入新节点总是红色节点
 
-	
+
   2. 如果插入节点的父节点是黑色, 能维持性质
 
-	
+
   3. 如果插入节点的父节点是红色, 破坏了性质. 故插入算法就是通过重新着色或旋转, 来维持性质
 
 
@@ -150,10 +146,10 @@ tags:
 
 
 
-	
+
   1. 如果删除的是红色节点, 不破坏性质
 
-	
+
   2. 如果删除的是黑色节点, 那么这个路径上就会少一个黑色节点, 破坏了性质. 故删除算法就是通过重新着色或旋转, 来维持性质
 
 
@@ -186,35 +182,35 @@ tags:
 
 
 
-	
+
   1. 通过 N 的黑色节点数量多了一个
 
-	
+
   2. 通过 SL 的黑色节点数量不变
 
-	
+
   3. 通过 SR 的黑色节点数量不变
 
 
 红黑树删除重新调整伪代码如下:
 
-    
+
     // 第 0.0 情况, N 为根节点. over
     if N.parent == NULL:
         return;
-    
+
     // 第 0.1 情况, 删除的节点为红. over
     if color == RED:
         return;
-    
+
     // 第 0.2 情况, 删除节点为黑, N 为红, 简单变换: N->黑, 重新平衡. over
     if color == BLACK && N.color == RED:
         N.color = BLACK;
-    
+
     // 第 1 种情况, N,P,S,SR,SL 都黑. 策略: S->红. 通过 N,S 的黑色节点数量相同了, 但会比其他路径多一个, 解决的方法是在 P 上从情况 0 开始继续调整.
     if N,P,S,SR,SL.color == BLACK:
         S.color = RED;
-    
+
         // 调整节点关系
         N = P
         N.parent = P.parent
@@ -222,33 +218,33 @@ tags:
         SL = S.left_child
         SR = S.right_child
         continue;
-    
+
     // 第 2 情况, S 红, 根据红黑树性质 P,SR,SL 一定黑. 旋转, 交换 P,S 颜色. 此时关注的范围缩小, 下面的情况对应下面的框图, 算法从框图重新开始.
     if S.color == RED:
         rotate(P);
         swap(P.color,S.color);
-    
+
         // 调整节点关系
         S = P.another_child
         SL = S.left_child
         SR = S.right_child
-    
+
     // 第 2.1 情况, S,SL,SR 都黑. 策略: P->黑. S->红, 因为通过 N 的路径多了一个黑节点, 通过 S 的黑节点个数不变, 所以维持了性质 5. over. 将看到, sgi stl map 源代码中将第 2.1 和第 1 情况合并成一种情况, 下节展开.
     if S,SL,SR.color == BLACK:
         P.color = BLACK;
         S.color = RED;
         return
-    
+
     // 第 2.2.1 情况, S,SR 黑, SL 红. 策略: 旋转, 变换 SL,S 颜色. 从而又进入下一种情况:
     if  S,SR.color == BLACK && SL.color == RED:
         rotate(P);
         swap(S.color,SL.color);
-    
+
         // 调整节点关系
         S = SL
         SL = S.left_child
         SR = S.right_child
-    
+
     // 第 2.2.2 情况, S 黑, SR 红. 策略: 旋转, 交换 S,P 颜色.
     if S.color == BLACK && SR.color == RED:
         rotate(P);

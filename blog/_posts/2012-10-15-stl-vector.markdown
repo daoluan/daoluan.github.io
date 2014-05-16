@@ -23,7 +23,7 @@ vector提供了几个版本的构造函数。详见：[http://www.cplusplus.com/
 
 比如：
 
-    
+
     vector<int> iv(3,3);	/*3,3,3*/
 
 
@@ -31,7 +31,7 @@ vector提供了几个版本的构造函数。详见：[http://www.cplusplus.com/
 
 又或：
 
-    
+
     ......
     vector<int>::iterator beg = iv.begin(),
     end = iv.end();
@@ -47,17 +47,17 @@ vector提供了几个版本的构造函数。详见：[http://www.cplusplus.com/
 在经常需要删除操作earse()（插入操作也一样insert()）的地方，不建议使用vector容器，因为删除元素会导致内存的复制，无疑增加系统开销。最为极端的情况，删除vector首部的元素：
 
 
-<blockquote>a b c d e f g h
-b c d e f g h h
-b c d e f g h</blockquote>
+<blockquote><p><span style="color: #ff0000;">a</span> b c d <span style="color: #000000;">e</span> f g h<br>
+<span style="color: #00ccff;">b c d e&nbsp;f g h </span><span style="color: #000000;">h<br>
+</span>b c d e&nbsp;f g h</p></blockquote>
 
 
 当然，有更好的做法，为了避免内存复制，在删除的时候，将需要删除的目标与vector尾端的元素交换，然后才执行删除操作，但这无疑也增加了一个指向vector尾端元素的空间开销。
 
 
-<blockquote>a b c d e f g h
-h b c d e f g a
-h b c d e f g</blockquote>
+<blockquote><p><span style="color: #ff0000;">a</span>&nbsp;b c d&nbsp;e&nbsp;f g h<br>
+<span style="color: #00ccff;">h</span> b c d&nbsp;e&nbsp;f g <span style="color: #00ccff;">a</span><br>
+<span style="color: #00ccff;">h</span> b c d&nbsp;e&nbsp;f g</p></blockquote>
 
 
 
@@ -67,17 +67,17 @@ h b c d e f g</blockquote>
 
 需要注意的是，vector备用空间是有限的，当发现备用空间不够用的时候，vector是另外新分配一个比原有更大的空间（原有空间*2），然后把原有的内容倒腾到新的空间上去，接着释放原有的空间。所以迭代器的使用就要特别小心了，在插入元素之后，很可能之前声明定义的迭代器都失效了。
 
-    
+
     ......
     vector<int> iv(3,3);
-    
+
     iv.push_back(10);	/*3,3,3,10*/
-    
+
     vector<int>::iterator beg = iv.begin(),
     	end = --iv.end();
-    
+
     cout << iv.size() << " " << *beg << " " << *end << endl;	/*4 3 10*/
-    
+
     iv.push_back(20);
     cout << iv.size() << " " << *beg << " " << *end << endl;	/*bomb.invalid iterator.*/
     ......
@@ -90,47 +90,47 @@ h b c d e f g</blockquote>
 
 
 
-    
+
     #include <iostream>
     #include <vector>
     #include <algorithm>
     using namespace std;
-    
+
     int main()
-    {	
+    {
     	vector<int> iv(3,3);
     	unsigned int i;
-    
+
     	/*add new elem.*/
     	iv.push_back(10);
     	iv.push_back(9);
     	iv.push_back(0);
-    
+
     	vector<int>::iterator beg = iv.begin(),
     		end = iv.end();
-    
+
     	/*print.*/
     	for(i=0; i<iv.size(); i++)
     		cout << iv[i] << " ";
     	cout << endl;
-    
+
     	/*sort.*/
     	sort(beg,end);
-    
+
     	/*print.*/
     	for(i=0; i<iv.size(); i++)
     		cout << iv[i] << " ";
     	cout << endl;
-    
+
     	return 0;
     }
 
 
 
 
-<blockquote>3 3 3 10 9 0
-0 3 3 3 9 10
-请按任意键继续. . .</blockquote>
+<blockquote><p>3 3 3 10 9 0<br>
+0 3 3 3 9 10<br>
+请按任意键继续. . .</p></blockquote>
 
 
 
@@ -140,22 +140,22 @@ h b c d e f g</blockquote>
 
 按上述遍历元素的方法查找，复杂度为O(n)。STL算法实现了find()，可以在指定的迭代器始末寻找指定的元素。
 
-    
+
     ......
     vector<int> iv(3,3);
     unsigned int i;
-    
+
     /*add new elem.*/
     iv.push_back(10);
     iv.push_back(9);
     iv.push_back(0);
-    
+
     vector<int>::iterator beg = iv.begin(),
     	end = iv.end(),
     	ret;
-    
+
     ret = find(beg,end,10);
-    
+
     cout << *ret << endl;
     ......
 

@@ -36,12 +36,12 @@ django 内部的 url 调度机制说白了就是给一张有关匹配信息的�
 一般的做法举例如下:
 
 
-<blockquote>http://example.com/aaaaa/
-http://example.com/bbbbb/
-http://example.com/ccccc/
-http://example.com/ddddd/
-http://example.com/eeeee/
-abcde 表示 web 应用的功能模块.</blockquote>
+<blockquote><p>http://example.com/aaaaa/</p>
+<p>http://example.com/bbbbb/</p>
+<p>http://example.com/ccccc/</p>
+<p>http://example.com/ddddd/</p>
+<p>http://example.com/eeeee/</p>
+<p>abcde 表示 web 应用的功能模块.</p></blockquote>
 
 
 为 aaaaa,bbbbb...都计算得到哈希值 hash(aaaaa),hash(bbbbb)...

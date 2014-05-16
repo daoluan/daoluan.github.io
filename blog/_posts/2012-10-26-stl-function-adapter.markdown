@@ -21,9 +21,9 @@ tags:
 
 展示一段代码：
 
-    
+
     /*摘自C++ standard STL。*/
-    
+
     ......
     int ia[] = {11,12,13,1,2,3,4,5,6,7};
     vector<int> iv(ia,ia+10);
@@ -33,13 +33,13 @@ tags:
 
 
 
-<blockquote>7
-请按任意键继续. . .</blockquote>
+<blockquote><p>7<br>
+请按任意键继续. . .</p></blockquote>
 
 
 我们可以试着一步一步展开count_if()函数，
 
-    
+
     /*摘自C++ standard STL。*/
     template<class _InIt,
     	class _Pr> inline
@@ -57,7 +57,7 @@ tags:
     	_DEBUG_RANGE(_First, _Last);
     	_DEBUG_POINTER(_Pred);
     	typename iterator_traits<_InIt>::difference_type _Count = 0;
-    
+
     	for (; _First != _Last; ++_First)
     		if (_Pred(*_First))
     			++_Count;
@@ -67,7 +67,7 @@ tags:
 
 其中，_Pred就是函数对象binder2nd，它在return (std::binder2nd<_Fn2>(_Func, _Val));语句中，被构造出来，同时它重载了“()”操作符，再来看看bind2nd和binder2nd：
 
-    
+
     /*摘自C++ standard STL。*/
     		// TEMPLATE CLASS binder2nd
     template<class _Fn2>
@@ -80,28 +80,28 @@ tags:
     		typename _Fn2::result_type> _Base;
     	typedef typename _Base::argument_type argument_type;
     	typedef typename _Base::result_type result_type;
-    
+
     	binder2nd(const _Fn2& _Func,
     		const typename _Fn2::second_argument_type& _Right)
     		: op(_Func), value(_Right)
     		{	// construct from functor and right operand
     		}
-    
+
     	result_type operator()(const argument_type& _Left) const
     		{	// apply functor to operands
     		return (op(_Left, value));
     		}
-    
+
     	result_type operator()(argument_type& _Left) const
     		{	// apply functor to operands
     		return (op(_Left, value));
     		}
-    
+
     protected:
     	_Fn2 op;	// the functor to apply
     	typename _Fn2::second_argument_type value;	// the right operand
     	};
-    
+
     		// TEMPLATE FUNCTION bind2nd
     template<class _Fn2,
     	class _Ty> inline
@@ -122,7 +122,7 @@ count_if()函数在处理每一个元素的时候，实际调用binder2nd的“(
 
 我们从count_if()的源代码可以得知，count_if(iv.begin(),iv.end(),bind2nd(less<int>(),10))；还可以被改写成，
 
-    
+
     bool less10(int i)
     {
     	if(i<10)

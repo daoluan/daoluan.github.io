@@ -26,8 +26,8 @@ tags:
 简单的基于tcp协议的 C/S编程都离不开这几个函数：
 
 
-<blockquote>服务端：socket,bind,listen,accept,recv,send
-客户端：socket,connect,recv,send</blockquote>
+<blockquote><p>服务端：socket,bind,listen,accept,recv,send<br>
+客户端：socket,connect,recv,send</p></blockquote>
 
 
 <!-- more -->
@@ -49,19 +49,17 @@ socket不成功怎么办，bind不成功怎么办，listen不成功怎么办...�
 [http://www.gnu.org/software/libc/manual/html_node/Internet-Address-Formats.html](http://www.gnu.org/software/libc/manual/html_node/Internet-Address-Formats.html)
 
 
-<blockquote>— Data Type: **struct sockaddr_in**
-
-This is the data type used to represent socket addresses in the Internet namespace. It has the following members:
-
-
-> 
-> `sa_family_t sin_family`
->     This identifies the address family or format of the socket address. You should store the value `AF_INET` in this member. See [Socket Addresses](http://www.gnu.org/software/libc/manual/html_node/Socket-Addresses.html#Socket-Addresses).
-> `struct in_addr sin_addr`
->     This is the Internet address of the host machine. See [Host Addresses](http://www.gnu.org/software/libc/manual/html_node/Host-Addresses.html#Host-Addresses), and [Host Names](http://www.gnu.org/software/libc/manual/html_node/Host-Names.html#Host-Names), for how to get a value to store here.
-> `unsigned short int sin_port`
->     This is the port number. See [Ports](http://www.gnu.org/software/libc/manual/html_node/Ports.html#Ports).
-> </blockquote>
+<blockquote><p>— Data Type: <strong>struct sockaddr_in</strong><var><a name="index-struct-sockaddr_005fin-1685"></a></var></p>
+<p>This is the data type used to represent socket addresses in the Internet namespace. It has the following members:</p>
+<dl>
+<dt><code>sa_family_t sin_family</code></dt>
+<dd>This identifies the address family or format of the socket address. You should store the value <code>AF_INET</code> in this member. See <a href="http://www.gnu.org/software/libc/manual/html_node/Socket-Addresses.html#Socket-Addresses">Socket Addresses</a>.</dd>
+<dt><code>struct in_addr sin_addr</code></dt>
+<dd>This is the Internet address of the host machine. See <a href="http://www.gnu.org/software/libc/manual/html_node/Host-Addresses.html#Host-Addresses">Host Addresses</a>, and <a href="http://www.gnu.org/software/libc/manual/html_node/Host-Names.html#Host-Names">Host Names</a>, for how to get a value to store here.</dd>
+<dt><code>unsigned short int sin_port</code></dt>
+<dd>This is the port number. See <a href="http://www.gnu.org/software/libc/manual/html_node/Ports.html#Ports">Ports</a>.</dd>
+</dl>
+</blockquote>
 
 
 注：sockaddr_in此类型数据在使用之前请务必bzero
@@ -71,9 +69,8 @@ This is the data type used to represent socket addresses in the Internet namespa
 [http://www.gnu.org/software/libc/manual/html_node/Host-Address-Data-Type.html](http://www.gnu.org/software/libc/manual/html_node/Host-Address-Data-Type.html)
 
 
-<blockquote>— Data Type: **struct in_addr**
-
-This data type is used in certain contexts to contain an IPv4 Internet host address. It has just one field, named `s_addr`, which records the host address number as an `uint32_t`.</blockquote>
+<blockquote><p>— Data Type: <strong>struct in_addr</strong><var><a name="index-struct-in_005faddr-1694"></a></var></p>
+<p>This data type is used in certain contexts to contain an IPv4 Internet host address. It has just one field, named <code>s_addr</code>, which records the host address number as an <code>uint32_t</code>.</p></blockquote>
 
 
 inet_pton和inet—_ntop方便点分十进制IP地址字符串和uint32_t（IP地址是4字节，应为网络字节序）的转换。
@@ -107,7 +104,7 @@ inet_pton和inet—_ntop方便点分十进制IP地址字符串和uint32_t（IP�
 
 client
 
-    
+
     #include <stdio.h>
     #include <unistd.h>
     #include <sys/socket.h>
@@ -116,13 +113,13 @@ client
     #include <arpa/inet.h>
     #include <string.h>
     #include <string.h>
-    
+
     #define MAXSLEEP 1024
-    
+
     int connect_retry(int sockfd,const struct sockaddr * addr,socklen_t alen)
     {
         int nsec;
-    
+
         printf("connecting\n");
         for(nsec = 1; nsec <= MAXSLEEP; nsec<<=1)
         {
@@ -136,7 +133,7 @@ client
         }// for:
         return 0;
     }
-    
+
     int main(int argc,char * argv[])
     {
         if(argc != 4)
@@ -144,59 +141,59 @@ client
             printf("you must input 4 arg\n");
             return 1;
         }// if
-    
-        int fd;    
+
+        int fd;
         struct sockaddr_in si,server;
         char addr[20],buf[20],bufrecv[20];
-    
+
         bzero(bufrecv,sizeof(bufrecv));
         sprintf(addr,"127.0.0.1");
-    
+
         fd = socket(AF_INET,SOCK_STREAM,0);//   create socker fd;
         printf("socket ok\n");
-    
+
     //prepare server addr
         bzero(&server,sizeof(server));
         server.sin_family = AF_INET;
         server.sin_port = htons(6000);
         inet_pton(AF_INET,addr,(void *)&server.sin_addr);
         printf("server ok\n");
-    
+
     //prepare request data
         bzero(buf,sizeof(buf));
         sprintf(buf,"%c%c%c",argv[1][0],argv[2][0],argv[3][0]);
-    
+
     //connect
         if(connect_retry(fd,(struct sockaddr *)&server,sizeof(server)) < 0)
         {
             printf("connect error\n");
             return 1;
         }// if
-    
+
     //send
-        if(send(fd,buf,20,0) < 0) 
+        if(send(fd,buf,20,0) < 0)
         {
             printf("client send error\n");
             return 1;
         }// if
-    
+
     //select
         fd_set readfd;
         FD_ZERO(&readfd);
         FD_SET(fd,&readfd);
         int t;
-    
+
         if((t = select(FD_SETSIZE,&readfd,NULL,NULL,NULL)) < 0)
         {
             printf("select error\n");
             return 1;
         }// if
-    
+
     //recv
         bzero(bufrecv,sizeof(bufrecv));
         recv(fd,bufrecv,20,0);
         printf("%s\n",bufrecv);
-    
+
         close(fd);
         return 0;
     }
@@ -204,7 +201,7 @@ client
 
 server
 
-    
+
     #include <stdio.h>
     #include <sys/socket.h>
     #include <netinet/in.h>
@@ -213,17 +210,17 @@ server
     #include <arpa/inet.h>
     #include <unistd.h>
     #include <string.h>
-    
+
     char bufret[20];
-    
+
     int initserver(int type,const struct sockaddr * addr,socklen_t alen,int qlen)
     {
         int fd;
         int err = 0;
-    
+
         if((fd = socket(addr->sa_family,type,0)) < 0)
             return -1;
-    
+
         printf("binding\n");
         if(bind(fd,addr,alen) < 0)
         {
@@ -231,7 +228,7 @@ server
             goto errout;
         }// if
         printf("bind succeed \n");
-    
+
         if(type == SOCK_STREAM || type == SOCK_SEQPACKET)
         {
             printf("listening\n");
@@ -244,38 +241,38 @@ server
         }// if
         printf("listened \n");
         return (fd);
-    
+
     errout:
         close(fd);
         errno = err;
         return -1;
     }
-    
+
     int serve(int sockfd)
     {
         int a,b;
         char op,buf[25];
-    
-        int ret,addrlen = sizeof(struct sockaddr_in),clfd; 
+
+        int ret,addrlen = sizeof(struct sockaddr_in),clfd;
         struct sockaddr_in client;
-    
+
         bzero(&client,sizeof(client));
-    
-    //accept   
+
+    //accept
         printf("accepting\n");
         clfd = accept(sockfd,(struct sockaddr *)&client,&addrlen);
-    
+
     //recv
         printf("accepted\n");
         bzero(buf,sizeof(buf));
         recv(clfd,buf,20,0);
         printf("recived\n");
-    
+
     //calculate
         a = buf[0] - '0';
         b = buf[1] - '0';
         op = buf[2];
-    
+
         switch(op)
         {
             case '+':ret = a + b;break;
@@ -283,9 +280,9 @@ server
             case '*':ret = a * b;break;
             case '/':ret = a / b;break;
         }// switch
-    
+
         sprintf(bufret,"the result:%d",ret);
-    
+
     //send
         printf("sending\n");
         if(send(clfd,bufret,20,0) < 0)
@@ -296,31 +293,31 @@ server
         printf("sended,server end\n");
         return 0;
     }
-    
+
     int main(int argc,char * argv[])
     {
         int sockfd;
         char addr[20];
-    
+
         bzero(addr,sizeof(addr));
         sprintf(addr,"127.0.0.1");
-    
+
         struct sockaddr_in server;
         bzero(&server,sizeof(server));
         server.sin_family = AF_INET;
         server.sin_port = htons(6000);
         //server.sin_addr.s_addr = htonl(INADDR_ANY);
         inet_pton(AF_INET,addr,(void *)&server.sin_addr);
-    
+
     //prepare server
         if((sockfd = initserver(SOCK_STREAM,(struct sockaddr *)&server,sizeof(server),1)) < 0)
         {
             printf("initserver error\n");
             return 0;
         }// if
-    
+
         printf("serving\n");
-    
+
     //serve
         serve(sockfd);
         close(sockfd);

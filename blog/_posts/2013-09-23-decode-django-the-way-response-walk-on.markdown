@@ -20,25 +20,13 @@ tags:
 
 
 <blockquote>
-
-> 
-> 
-	
->   * make_server() 中 WSGIServer 类已经作为服务器类, 负责接收请求, 调用 application 的处理, 返回相应;
-> 
-	
->   * WSGIRequestHandler 作为请求处理类, 并已经配置在 WSGIServer 中;
-> 
-	
->   * 接着还设置了 WSGIServer.application 属性(set_app(app));
-> 
-	
->   * 返回 server 实例.
-> 
-	
->   * 接着打开浏览器, 即发起请求. 服务器实例 WSGIServer httpd 调用自身 handle_request() 函数处理请求. handle_request() 的工作流程如下:请求-->WSGIServer 收到-->调用 WSGIServer.handle_request()-->调用 _handle_request_noblock()-->调用 process_request()-->调用 finish_request()-->finish_request() 中实例化 WSGIRequestHandler-->实例化过程中会调用 handle()-->handle() 中实例化 ServerHandler-->**调用 ServerHandler.run()-->run() 调用 application() 这才是真正的逻辑.-->run() 中在调用 ServerHandler.finish_response() 返回数据-->**回到 process_request() 中调用 WSGIServer.shutdown_request() 关闭请求(其实什么也没做)
-> 
-
+<ul>
+<li>make_server() 中 WSGIServer 类已经作为服务器类, 负责接收请求, 调用 application 的处理, 返回相应;</li>
+<li>WSGIRequestHandler 作为请求处理类, 并已经配置在 WSGIServer 中;</li>
+<li>接着还设置了 WSGIServer.application 属性(set_app(app));</li>
+<li>返回 server 实例.</li>
+<li>接着打开浏览器, 即发起请求. 服务器实例 WSGIServer httpd 调用自身 handle_request() 函数处理请求. handle_request() 的工作流程如下:请求–&gt;WSGIServer 收到–&gt;调用 WSGIServer.handle_request()–&gt;调用 _handle_request_noblock()–&gt;调用 process_request()–&gt;调用 finish_request()–&gt;finish_request() 中实例化 WSGIRequestHandler–&gt;实例化过程中会调用 handle()–&gt;handle() 中实例化 ServerHandler–&gt;<strong>调用 ServerHandler.run()–&gt;run() 调用 application() 这才是真正的逻辑.–&gt;run() 中在调用 ServerHandler.finish_response() 返回数据–&gt;</strong>回到 process_request() 中调用 WSGIServer.shutdown_request() 关闭请求(其实什么也没做)</li>
+</ul>
 </blockquote>
 
 
@@ -50,7 +38,7 @@ tags:
 
 从「调用 ServerHandler.run()-->run() 调用 application() 这才是真正的逻辑.-->run() 中在调用 ServerHandler.finish_response() 返回数据」开始说起, 下面是主要的代码解说:
 
-    
+
     # 下面的函数都在 ServerHandler 的继承链上方法, 有些方法父类只定义了空方法, 具体逻辑交由子类实现. 有关继承链请参看: http://daoluan.net/blog/decode-django-wsgi/
     def run(self, application):
         """Invoke the application"""
@@ -61,7 +49,7 @@ tags:
             self.finish_response()
         except:
             # handle error
-    
+
     def finish_response(self):
         try:
             if not self.result_is_file() or not self.sendfile():
@@ -71,16 +59,16 @@ tags:
                 self.finish_content()
         finally:
             self.close()
-    
+
     def write(self, data):
         """'write()' callable as specified by PEP 333"""
-    
+
         # 必须是都是字符
         assert type(data) is StringType,"write() argument must be string"
-    
+
         if not self.status:
             raise AssertionError("write() before start_response()")
-    
+
         # 需要先发送 HTTP 头
         elif not self.headers_sent:
             # Before the first output, send the stored headers
@@ -89,20 +77,20 @@ tags:
         # 再发送实体
         else:
             self.bytes_sent += len(data)
-    
+
         # XXX check Content-Length and truncate if too many bytes written?
         self._write(data)
         self._flush()
-    
+
     def write(self, data):
         """'write()' callable as specified by PEP 3333"""
-    
+
         assert isinstance(data, bytes), "write() argument must be bytestring"
-    
+
         # 必须先调用 self.start_response() 设置状态码
         if not self.status:
             raise AssertionError("write() before start_response()")
-    
+
         # 需要先发送 HTTP 头
         elif not self.headers_sent:
             # Before the first output, send the stored headers
@@ -111,12 +99,12 @@ tags:
         # 再发送实体
         else:
             self.bytes_sent += len(data)
-    
+
         # XXX check Content-Length and truncate if too many bytes written? 是否需要分段发送过大的数据?
-    
+
         # If data is too large, socket will choke, 窒息死掉 so write chunks no larger
         # than 32MB at a time.
-    
+
         # 分片发送
         length = len(data)
         if length > 33554432:
@@ -129,11 +117,11 @@ tags:
         else:
             self._write(data)
             self._flush()
-    
+
     def _write(self,data):
         # 如果是第一次调用, 则调用 stdout.write(), 理解为一个套接字对象
         self.stdout.write(data)
-    
+
         # 第二次调用就是直接调用 stdout.write() 了
         self._write = self.stdout.write
 

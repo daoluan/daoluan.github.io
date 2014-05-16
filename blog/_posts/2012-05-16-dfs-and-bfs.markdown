@@ -34,10 +34,10 @@ tags:
 
 
 
-	
+
   1. 无非是已经处理完的了；
 
-	
+
   2. 或者是存储在队列中尚未处理的。
 
 
@@ -47,7 +47,7 @@ tags:
 
 于是有了：
 
-    
+
     BFS(G,s)
     	for each vertex v in V[G]
     		status[v] = WHITE
@@ -81,19 +81,19 @@ tags:
 
 
 
-	
+
   1. WHITE 未访问顶点
 
-	
+
   2. GRAY 一条深度搜索路径上的顶点，即被发现时
 
-	
+
   3. BLACK 此顶点的邻接顶点被全部访问完之后——结束访问次顶点
 
 
 [![image.png](http://daoluan.net/blog/wp-content/uploads/2012/05/image1.png)](http://daoluan.net/blog/wp-content/uploads/2012/05/image1.png)
 
-    
+
     DFS(G,s)
     	for each vertex v in V(G)
     		status[v] = WHITE
@@ -101,7 +101,7 @@ tags:
     	for each vertex v in V(G)
     		if(status[v]==WHITE)
     			DFS-VISIT(v)
-    
+
     DFS-VISIT(v)
     	status[v] = GRAY
     	for each vertex t in Adj(v)
@@ -117,10 +117,10 @@ tags:
 
 
 
-	
+
   1. 在一顶点刚被发现的时候，标记此顶点的第一个时间戳；
 
-	
+
   2. 在结束此顶点的访问的时候，标记此顶点的第二个时间戳。时间戳可以用简单的123456来标记，只要能区分大小就行。
 
 

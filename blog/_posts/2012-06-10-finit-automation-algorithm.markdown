@@ -587,9 +587,8 @@ auto机就是一个协助匹配的状态表（或者图）。
 算法开始的时候（在对T进行搜索之前），预先根据匹配内容P和字符集A构造出这个状态表，从而简化搜索过程。
 
 
-<blockquote>对于字串P，(k)P表示长度k的P的前缀；P(k)表示长度为k的P的后缀。比如P=abcdef，(3)P=abc，P(3)=def。
-
-对于字串T，alpha(T)=max{k:T(k)==(k)P}，可见这个涉及了两个字串，分别是文本T和匹配内容P。很恶心的公式，有例子，比如：P=abc，如果T=tab，那么alpha(T)=2；如果T=tabc，那么alpha(T)=3。</blockquote>
+<blockquote><p>对于字串P，(k)P表示长度k的P的前缀；P(k)表示长度为k的P的后缀。比如P=abcdef，(3)P=abc，P(3)=def。</p>
+<p>对于字串T，alpha(T)=max{k:T(k)==(k)P}，可见这个涉及了两个字串，分别是文本T和匹配内容P。很恶心的公式，有例子，比如：P=abc，如果T=tab，那么alpha(T)=2；如果T=tabc，那么alpha(T)=3。</p></blockquote>
 
 
 整一个算法的思想就是基于这么一个理论：如若**alpha(T)=q（这个条件很重要）**,alpha(Ta)=alpha[(q)Pa]。这个搞定了，整个算法思想就通了。证明过程我只能用诸多“显然”的词汇来描述。 算法导论中有一个很经典的图：

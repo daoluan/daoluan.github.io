@@ -25,17 +25,17 @@ tags:
 
 按上述遍历元素的方法查找，复杂度为O(n)。STL算法实现了find()，可以在指定的迭代器始末寻找指定的元素。
 
-    
+
     ......
     list<int> il;
-    
+
     il.push_back(5);
     il.push_back(98);
     il.push_back(7);
     il.push_back(20);
     il.push_back(22);
     il.push_back(17);
-    
+
     list<int>::iterator ite;
     ite = find(il.begin(),il.end(),20);
     cout << *ite << endl;/*20*/
@@ -51,29 +51,29 @@ STL中也为list实现了几个版本的构造函数：[http://www.cplusplus.com
 
 list的遍历使用迭代器，如下：
 
-    
+
     #include <iostream>
     #include <list>
     #include <algorithm>
     using namespace std;
-    
+
     int main()
-    {	
+    {
     	unsigned int i;
     	list<int> il;
-    
+
     	il.push_back(5);
     	il.push_back(98);
     	il.push_back(7);
     	il.push_back(20);
     	il.push_back(22);
     	il.push_back(17);
-    
+
     	list<int>::iterator ite;
     	for(ite = il.begin(); ite != il.end(); ite++)
     		cout << *ite << " ";
     	cout << endl;
-    
+
     	return 0;
     }
 
@@ -92,36 +92,36 @@ list有提供pop_back,erase,clear,insert等实用的元素操作，不一一复�
 
 STL算法（<algorithm>）实现的sort只适用于支持随机访问的数据，所以它不适用于list，list不支持随机访问。所以list内部实现了自己的sort，内部排序使用使用迭代版本的快排。
 
-    
+
     unsigned int i;
     list<int> il;
-    
+
     il.push_back(5);
     il.push_back(98);
     il.push_back(7);
     il.push_back(20);
     il.push_back(22);
     il.push_back(17);
-    
+
     list<int>::iterator ite;
     for(ite = il.begin(); ite != il.end(); ite++)
     	cout << *ite << " ";
     cout << endl;
-    
+
     il.sort();
-    
+
     for(ite = il.begin(); ite != il.end(); ite++)
     	cout << *ite << " ";
     cout << endl;
-    
+
     return 0;
 
 
 
 
-<blockquote>5 98 7 20 22 17
-5 7 17 20 22 98
-请按任意键继续. . .</blockquote>
+<blockquote><p>5 98 7 20 22 17<br>
+5 7 17 20 22 98<br>
+请按任意键继续. . .</p></blockquote>
 
 
 

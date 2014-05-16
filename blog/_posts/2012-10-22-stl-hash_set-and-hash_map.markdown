@@ -25,10 +25,10 @@ tags:
 
 hash_set只需指定键值的类型，hash_map需指定键值和实值的类型。它们都可以像大多数的容器一样，通过迭代器，寻访元素。
 
-    
+
     ......
-    hash_set<int> ihs; 
-    
+    hash_set<int> ihs;
+
     ihs.insert(1);
     ihs.insert(5);
     ihs.insert(6);
@@ -36,12 +36,12 @@ hash_set只需指定键值的类型，hash_map需指定键值和实值的类型�
     ihs.insert(3);
     ihs.insert(3);
     ihs.insert(100);
-    
+
     ihs.insert(200);		/*故意的*/
-    
+
     hash_set<int>::iterator beg = ihs.begin(),
     	end = ihs.end(),ite;
-    
+
     for(ite = beg; ite != end; ite++)
     	cout << *ite << " ";
     cout << endl;
@@ -55,31 +55,31 @@ hash_set只需指定键值的类型，hash_map需指定键值和实值的类型�
 
 可证见hash_set拒绝插入重复元素（与set性质相同），未排序（违反set性质）。
 
-    
+
     ......
     hash_map<int,int> ihm;
-    
+
     ihm.insert(pair<int,int>(1,100));
     ihm.insert(pair<int,int>(2,200));
     ihm.insert(pair<int,int>(3,300));
     ihm.insert(pair<int,int>(4,400));
     ihm.insert(pair<int,int>(5,500));
-    
+
     hash_map<int,int>::iterator beg = ihm.begin(),
     	end = ihm.end(),ite;
-    
+
     for(ite = beg; ite != end; ite++)
     	cout << "<" << ite->first << "," << ite->second << ">" << " ";
     cout << endl;
-    
+
     cout << "ihm[1] = " << ihm[1] << endl;		/*可以通过键值索引*/
     ......
 
 
 
 
-<blockquote><1,100> <2,200> <3,300> <4,400> <5,500>
-ihm[1] = 100</blockquote>
+<blockquote><p>&lt;1,100&gt; &lt;2,200&gt; &lt;3,300&gt; &lt;4,400&gt; &lt;5,500&gt;<br>
+ihm[1] = 100</p></blockquote>
 
 
 

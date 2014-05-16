@@ -28,11 +28,9 @@ prim和kruskal是最小生成树（MST）的算法，dijkstra是单源最短路�
 很自然的，会有一定数量的边会通过该割，其中权重最小的边就是**轻边**。
 
 
-<blockquote>什么是轻边？
-
-[![image.png](http://daoluan.net/blog/wp-content/uploads/2012/05/image9.png)](http://daoluan.net/blog/wp-content/uploads/2012/05/image9.png)
-
-左边集合和右边集合就组成一个割，其中**边(a,b)是跨越两个集合最小的边**（途中标记为红色），它就是要找的轻边。</blockquote>
+<blockquote><p>什么是轻边？</p>
+<p><a href="http://daoluan.net/blog/wp-content/uploads/2012/05/image9.png"><img class="alignnone size-full wp-image-439" alt="image.png" src="http://daoluan.net/blog/wp-content/uploads/2012/05/image9.png" width="358" height="284"></a></p>
+<p>左边集合和右边集合就组成一个割，其中<strong>边(a,b)是跨越两个集合最小的边</strong>（途中标记为红色），它就是要找的轻边。</p></blockquote>
 
 
 每次操作都是选择min{w(u,v)|u∈A,v∈B}，从而将v加入到A中，即将v标记为已处理顶点，直到将所有点都处理完为止。
@@ -43,7 +41,7 @@ prim和kruskal是最小生成树（MST）的算法，dijkstra是单源最短路�
 
 prim的伪代码：
 
-    
+
     for i=[0,n)
     	dist[i] = tab[0][i]
     visit[0] = true
@@ -232,7 +230,7 @@ kruskal实现过程涉及了不相交子集的合并，可以开辟一个简单�
 
 kruskal的伪代码：
 
-    
+
     for i=[0,n)
     	parent[i] = i
     //	根据权值升序排序
@@ -252,13 +250,10 @@ kruskal的伪代码：
 一个非常明显的区别就是prim在任何时刻都只有两个集合，一个是已处理顶点集合，一个是待处理集合；而kruskal则有多个集合，所以kruskal涉及不相交子集合并的比较复杂的操作问题。
 
 
-<blockquote>简单的MST应用：
-
-某省调查乡村交通状况，得到的统计表中列出了任意两村庄间的距离。省政府“畅通工程”的目标是使全省任何两个村庄间都可以实现公路交通（但不一定有直接的公路相连，只要能间接通过公路可达即可），并要求铺设的公路总长度为最小。请计算最小的公路总长度。
-
-或者
-
-省政府“畅通工程”的目标是使全省任何两个村庄间都可以实现公路交通（但不一定有直接的公路相连，只要能间接通过公路可达即可）。经过调查评估，得到的统计表中列出了有可能建设公路的若干条道路的成本。现请你编写程序，计算出全省畅通需要的最低成本。</blockquote>
+<blockquote><p>简单的MST应用：</p>
+<p>某省调查乡村交通状况，得到的统计表中列出了任意两村庄间的距离。省政府“畅通工程”的目标是使全省任何两个村庄间都可以实现公路交通（但不一定有直接的公路相连，只要能间接通过公路可达即可），并要求铺设的公路总长度为最小。请计算最小的公路总长度。</p>
+<p>或者</p>
+<p>省政府“畅通工程”的目标是使全省任何两个村庄间都可以实现公路交通（但不一定有直接的公路相连，只要能间接通过公路可达即可）。经过调查评估，得到的统计表中列出了有可能建设公路的若干条道路的成本。现请你编写程序，计算出全省畅通需要的最低成本。</p></blockquote>
 
 
 
@@ -269,25 +264,19 @@ kruskal的伪代码：
 dijkstra要求所有点边的权值都是非负的，主要是如果出现负权边，可能会出现负权环，dijkstra就无法应付了。
 
 
-<blockquote>关于dijkstra的小故事
-
-这个人名真不好记，所以我一直把它读作disco，对不住迪科斯彻爹爹。</blockquote>
+<blockquote><p>关于dijkstra的小故事</p>
+<p>这个人名真不好记，所以我一直把它读作disco，对不住迪科斯彻爹爹。</p></blockquote>
 
 
 dijkstra算法中设置了一个顶点集合S，从源点到集合中的顶点的最终最短路径的权值均已经确定。dijkstra过程反复从V-S（V即图的顶点集）中选择一个顶点v，使得d(s,v)为最短，并将v加入到集合S中，接着对v的所有边进行松弛。
 
 
-<blockquote>什么是松弛？
-
-就是可能会出现这样的情况，假设源点为s，tab(u,v)为顶点u到顶点v的权值，dist(u)为迄今为止找到的s到u最短路径。在松弛(u,v)的过程中，要测试**是否可以通过u，对迄今为止找到的v的最短路径进行改进。**也就是可能会出现dist(v)>dist(u)+tab(u,v)的情况。
-
-[![image.png](http://daoluan.net/blog/wp-content/uploads/2012/05/image13.png)](http://daoluan.net/blog/wp-content/uploads/2012/05/image13.png)
-
-上面的图因为dist(v)>dist(u)+tab(u,v)即6>2+3，故要对边(u,v)进行松弛的时候会将dist(v)从6更正为5。但对于下面的情况，在松弛过后，dist(v)没有改变因为dist(v)<=dist(u)+tab(u,v)即4<=2+3。
-
-[![image.png](http://daoluan.net/blog/wp-content/uploads/2012/05/image14.png)](http://daoluan.net/blog/wp-content/uploads/2012/05/image14.png)
-
-松弛技术在Bellman-Ford负权回路探测算法中也有应用。不禁想起还小的一个作为题：两点之间曲线更短...</blockquote>
+<blockquote><p>什么是松弛？</p>
+<p>就是可能会出现这样的情况，假设源点为s，tab(u,v)为顶点u到顶点v的权值，dist(u)为迄今为止找到的s到u最短路径。在松弛(u,v)的过程中，要测试<strong>是否可以通过u，对迄今为止找到的v的最短路径进行改进。</strong>也就是可能会出现dist(v)&gt;dist(u)+tab(u,v)的情况。</p>
+<p><a href="http://daoluan.net/blog/wp-content/uploads/2012/05/image13.png"><img class="alignnone size-full wp-image-445" alt="image.png" src="http://daoluan.net/blog/wp-content/uploads/2012/05/image13.png" width="414" height="136"></a></p>
+<p>上面的图因为dist(v)&gt;dist(u)+tab(u,v)即6&gt;2+3，故要对边(u,v)进行松弛的时候会将dist(v)从6更正为5。但对于下面的情况，在松弛过后，dist(v)没有改变因为dist(v)&lt;=dist(u)+tab(u,v)即4&lt;=2+3。</p>
+<p><a href="http://daoluan.net/blog/wp-content/uploads/2012/05/image14.png"><img class="alignnone size-full wp-image-447" alt="image.png" src="http://daoluan.net/blog/wp-content/uploads/2012/05/image14.png" width="400" height="143"></a></p>
+<p>松弛技术在Bellman-Ford负权回路探测算法中也有应用。不禁想起还小的一个作为题：两点之间曲线更短…</p></blockquote>
 
 
 dijkstra的过程
@@ -296,10 +285,10 @@ dijkstra的过程
 
 
 
-	
+
   * 选择最短路径dist(s,t)，并将t加入到S中。
 
-	
+
   * 在第一步中得到t，对于u∈V-S，松弛边(t,v)。
 
 
@@ -307,21 +296,21 @@ dijkstra的过程
 
 可以给出伪代码：
 
-    
+
     //	初始化
     for i=[0,n)
     	dist[i] = tab[0][i]
     visit[0] = true;
-    
+
     for i=[1,n)
     	//	寻找最短路径(s,t)，同时把t加入S集合
     	min = MAX_VALUE
     	for j=[0,n)
     		if !visit[j] && dist[j]<min
     			min = dist[j]
-    
+
     	visit[j] = true
-    
+
     	//	松弛边(t,v)，其中v为顶点
     	for k=[0,n)
     		if !visit[k] && dist[k]>dist[j]+tab[j][k]
@@ -330,10 +319,9 @@ dijkstra的过程
 
 
 
-<blockquote>简单的dijkstra应用：
-
-某省自从实行了很多年的畅通工程计划后，终于修建了很多路。不过路多了也不好，每次要从一个城镇到另一个城镇时，都有许多种道路方案可以选择，而某些方案要比另一些方案行走的距离要短很多。这让行人很困扰。
-现在，已知起点和终点，请你计算出要从起点到终点，最短需要行走多少距离。</blockquote>
+<blockquote><p>简单的dijkstra应用：</p>
+<p>某省自从实行了很多年的畅通工程计划后，终于修建了很多路。不过路多了也不好，每次要从一个城镇到另一个城镇时，都有许多种道路方案可以选择，而某些方案要比另一些方案行走的距离要短很多。这让行人很困扰。<br>
+现在，已知起点和终点，请你计算出要从起点到终点，最短需要行走多少距离。</p></blockquote>
 
 
 
@@ -345,13 +333,13 @@ prim，kruskal和dijkstra算法有贪心策略，他们贪在哪啊？
 
 
 
-	
+
   1. prim：每次执行都选择轻边
 
-	
+
   2. kruskal：每次执行都选择权值最小的边，同时合并两个不相交的子集
 
-	
+
   3. dijkstra：每次执行都选择路径最短d(s,t)，并将顶点t加入到集合S中，同时对边进行松弛
 
 

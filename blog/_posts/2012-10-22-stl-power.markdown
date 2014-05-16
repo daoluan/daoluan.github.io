@@ -27,15 +27,15 @@ STL中的[pow](http://www.cplusplus.com/reference/clibrary/cmath/pow/)用来计�
 
 从上面的例子中，即10111b为奇数，A10111b=(A10110b)2 * A；10110b为偶数，A10110b=(A1011b)2 ，依次类推。。。。
 
-    
+
     typedef unsigned int UINT;
     UINT power(UINT A,UINT n)
     {
-    	if(n == 1)		
+    	if(n == 1)
     		return A;
-    
+
     	UINT tmp = power(A,n>>1);	/*calculate pow(A,n/2).*/
-    	return (n & 1) 
+    	return (n & 1)
     		? tmp * tmp * A			/*odd.*/
     		:tmp * tmp;				/*even.*/
     }
@@ -43,13 +43,8 @@ STL中的[pow](http://www.cplusplus.com/reference/clibrary/cmath/pow/)用来计�
 
 上面是递归的思路，迭代的也一样，同样可以举一个翔实的例子。计算A23，23用二进制展开：
 
-
 <blockquote>
-
-> 
-> 23 = 1 * 24 + 0 * 23 + 1 * 22 + 1 * 21 + 1 * 20,
-> 
-> 
+<p align="left">23 = 1 * 2<sup>4</sup> + 0 * 2<sup>3</sup> + 1 * 2<sup>2</sup> + 1 * 2<sup>1</sup> + 1 * 2<sup>0</sup>,</p>
 </blockquote>
 
 
@@ -60,7 +55,7 @@ STL中的[pow](http://www.cplusplus.com/reference/clibrary/cmath/pow/)用来计�
 
 
 
-    
+
     UINT power(UINT A,UINT n)
     {
     	UINT tmp = 1,base = 2;

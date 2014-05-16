@@ -16,10 +16,10 @@ tags:
 
 
 
-	
+
   * 如果多个 inode 指向同一个数据块的时候，是不是就可以实现熟悉的链接了？！这就是软连接的原理，新建一个文件（一个符号链接文件，文件的属性中有明确说明它是一个符号链接文件），为需要链接的文件分配一个新的 inode ，然后指向同一个文件。所以删除软连接文件不会真正删除源文件，而删除源文件过后，软连接文件将失效。
 
-	
+
   * 多个文件共用一个 inode ，同样可以实现链接？！这就是硬链接的原理， inode 中有链接计数器，当增加一个文件指向这个 inode 时，计数器增1。特别的，当计数器为 0 时候，即所有的文件都删除，文件才真正从磁盘删除；当然，修改其中任何一个文件，都会作用在其他硬链接文件上。
 
 
@@ -27,15 +27,15 @@ tags:
 
 ext3_inode上的数据结构如下：它记录了很多关于文件的信息，比如文件长度，文件所在的设备，文件的物理位置，创建、修改和更新时间等等，**特别的，它不包含文件名！**
 
-    
+
     struct ext3_inode {
     	__le16 i_mode; File mode
     	__le16 i_uid; Low 16 bits of Owner Uid
     	__le32 i_size; Size in bytes
-    	__le32 i_atime; Access time 
+    	__le32 i_atime; Access time
     	__le32 i_ctime; Creation time
     	__le32 i_mtime; Modification time
-    
+
     	__le32 i_dtime; Deletion Time
     	__le16 i_gid; Low 16 bits of Group Id
     	__le16 i_links_count; Links count
@@ -52,13 +52,12 @@ ext3_inode上的数据结构如下：它记录了很多关于文件的信息，�
 Linux上有dentry，中文的意思就是目录项，它粘合了内存中文件和磁盘中文件，同时它保存是经常访问的目录信息。
 
 
-<blockquote><a href="http://unix.stackexchange.com/questions/4402/what-is-a-superblock-inode-dentry-and-a-file">http://unix.stackexchange.com/questions/4402/what-is-a-superblock-inode-dentry-and-a-file</a> A dentry is the glue that holds inodes and files together by relating inode numbers to file names. Dentries also play a role in directory caching which, ideally, keeps the most frequently used files on-hand for faster access. File system traversal is another aspect of the dentry as it maintains a relationship between directories and their files.下面是一副很有趣的图片：
-
-<a style="line-height: 1.714285714; font-size: 1rem;" href="http://daoluan.net/blog/wp-content/uploads/2012/07/inodedentry_thumb.jpg"><img class="alignnone size-full wp-image-625" alt="inodedentry_thumb.jpg" src="http://daoluan.net/blog/wp-content/uploads/2012/07/inodedentry_thumb.jpg" width="486" height="314" /></a></blockquote>
-
+<blockquote><p><a href="http://unix.stackexchange.com/questions/4402/what-is-a-superblock-inode-dentry-and-a-file">http://unix.stackexchange.com/questions/4402/what-is-a-superblock-inode-dentry-and-a-file</a> A dentry is the glue that holds inodes and files together by relating inode numbers to file names. Dentries also play a role in directory caching which, ideally, keeps the most frequently used files on-hand for faster access. File system traversal is another aspect of the dentry as it maintains a relationship between directories and their files.下面是一副很有趣的图片：</p>
+<p><a style="line-height: 1.714285714; font-size: 1rem;" href="http://daoluan.net/blog/wp-content/uploads/2012/07/inodedentry_thumb.jpg"><img class="alignnone size-full wp-image-625" alt="inodedentry_thumb.jpg" src="http://daoluan.net/blog/wp-content/uploads/2012/07/inodedentry_thumb.jpg" width="486" height="314"></a></p></blockquote>
 
 
-    
+
+
     struct dentry {
     	atomic_t d_count; 目录项对象使用计数器
     	unsigned int d_flags; 目录项标志

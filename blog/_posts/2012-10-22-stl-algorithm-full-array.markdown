@@ -23,7 +23,7 @@ tags:
 
 递归实现全排列是一个经典的算法。
 
-    
+
     /*全排列递归版本*/
     void foo1(char *str,int k,int n)
     {
@@ -32,7 +32,7 @@ tags:
     		cout << str << " ";
     		return;
     	}//	if
-    
+
     	for(int i=k; i<n; i++)
     	{
     		swap(str[k],str[i]);
@@ -44,8 +44,8 @@ tags:
 
 
 
-<blockquote>abcd abdc acbd acdb adcb adbc bacd badc bcad bcda bdca bdac cbad cbda cabd cadb
-cdab cdba dbca dbac dcba dcab dacb dabc 请按任意键继续. . .</blockquote>
+<blockquote><p>abcd abdc acbd acdb adcb adbc bacd badc bcad bcda bdca bdac cbad cbda cabd cadb<br>
+cdab cdba dbca dbac dcba dcab dacb dabc 请按任意键继续. . .</p></blockquote>
 
 
 
@@ -59,22 +59,22 @@ next_permutation()算法描述：
 
 
 
-	
+
   1. 从str的尾端开始逆着寻找相邻的元素，*i和*ii，满足*i<*ii；
 
-	
+
   2. 接着，又从str的尾端开始逆着寻找一元素，*j，满足*i<*j（*i从步骤一中得到）；
 
-	
+
   3. swap(*i,*j)；
 
-	
+
   4. 将*ii之后（包括*ii）的所有元素逆转。
 
 
 举个例子，需要找到“01324”的下一个排列，找到*i=2，*ii=4，*j=4，下一个排列即“01342”。再来找到“abfedc”的下一个排列，找到*i=b，*ii=f，*j=c，swap操作过后为“acfedb”，逆转操作过后为“acbdef”。
 
-    
+
     /*全排列迭代归版本*/
     void reverse(char *str)
     {
@@ -82,30 +82,30 @@ next_permutation()算法描述：
     	for(i=0; i<len/2; i++)
     		swap(*(str+i),*(str+len-1-i));
     }
-    
+
     /*阶乘*/
     int factorial(int n)
     {
     	if(n == 1)	return 1;
     	return n * factorial(n-1);
     }
-    
+
     void foo2(char *p)
     {
     	int len = strlen(p),cnt = 1;
     	char *i,*ii,*j;
-    
+
     	cout << p << " ";
-    
+
     	/*STL <algorithm> next_permutation()函数的核心算法*/
     	while(++cnt <= factorial(len))
     	{
     		i = p + len - 2,ii = p + len - 1,j = ii;
     		while(*i >= *ii)	i--,ii--;	/*find *i and *ii.*/
     		while(*i >= *j)	j--;			/*find *j.*/
-    
+
     		swap(*i,*j);		/*swap.*/
-    
+
     		reverse(ii);		/*reverse.*/
     		cout << p << " ";
     	}//	while
@@ -114,8 +114,8 @@ next_permutation()算法描述：
 
 
 
-<blockquote>abcd abdc acbd acdb adbc adcb bacd badc bcad bcda bdac bdca cabd cadb cbad cbda
-cdab cdba dabc dacb dbac dbca dcab dcba 请按任意键继续. . .</blockquote>
+<blockquote><p>abcd abdc acbd acdb adbc adcb bacd badc bcad bcda bdac bdca cabd cadb cbad cbda<br>
+cdab cdba dabc dacb dbac dbca dcab dcba 请按任意键继续. . .</p></blockquote>
 
 
 prev_permutation()函数做法是一样的。

@@ -32,23 +32,22 @@ tags:
 无论如何分类，我们假设最后的浮点值 F 都可以用下面的算式来表达：
 
 
-<blockquote>F = sign(s) * N(e) * M(f).
-
-其中 sign 表示对符号位的处理，N 表示对阶码的处理，M 表示对尾数的处理。</blockquote>
+<blockquote><p>F = sign(s) * N(e) * M(f).</p>
+<p>其中 sign 表示对符号位的处理，N 表示对阶码的处理，M 表示对尾数的处理。</p></blockquote>
 
 
 **由于浮点数其本身的表示方法，因此 一些浮点数只能用一个逼近的值来表述**，譬如 100.3  并不能确切的用 F = 100.3 表示出来，即不能用上面的算式得出。如果 float val = 100.3，那变量 val 也只是接近 100.3 的值。做一个简单的测试：
 
-    
+
     #include <stdio.h>
-    
+
     const int kTestCount = 5000;
-    
+
     int  main(int argc, char const *argv[])
     {
     	float a = 100.3f,
     		b = 100.0f;
-    
+
     	float c = a - b;
     	printf("%f\n", c);
     	return 0;

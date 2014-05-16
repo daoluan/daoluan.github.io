@@ -27,7 +27,7 @@ STL存在内建的函数对象，比如算术类函数对象（+，-等），关
 
 函数对象直接应用的地方较少，但了为了配合接下来配接器（下一篇博文）的内容，简单测试下：
 
-    
+
     cout << "10 + 10 = " << plus<int>()(10,10) << endl;
     cout << "10 - 10 = " << minus<int>()(10,10) << endl;
     cout << "10 == 10 ? " << equal_to<int>()(10,10) << endl;
@@ -35,22 +35,22 @@ STL存在内建的函数对象，比如算术类函数对象（+，-等），关
 
 
 
-<blockquote>10 + 10 = 20
-10 - 10 = 0
-10 == 10 ? 1
-请按任意键继续. . .</blockquote>
+<blockquote><p>10 + 10 = 20<br>
+10 – 10 = 0<br>
+10 == 10 ? 1<br>
+请按任意键继续. . .</p></blockquote>
 
 
 plus<int>()(10,10)；中，第一个括号是为了产生struct plus的临时对象，第二个括号调用struct plus内部重载的“()”函数。上面是优雅的写法，也可以通俗点：
 
-    
+
     plus<float> opplus;
     cout << "10.0 + 10.1 = " << opplus(10.0,10.1) << endl;
 
 
 一下是struct plus的全貌，它很单纯：
 
-    
+
     template<class _Ty>
     	struct plus
     		: public binary_function<_Ty, _Ty, _Ty>
@@ -69,17 +69,17 @@ plus<int>()(10,10)；中，第一个括号是为了产生struct plus的临时对
 
 有些情况内建的函数对象不能满足我们的要求，需要我们自定义一个函数对象来对付当下的问题。STL规定：所有可配接的一元函数都应该继承[unary_function](http://cplusplus.com/reference/std/functional/unary_function/)（unary：一元），所有可配接的二元函数都应该继承[binary_function](http://cplusplus.com/reference/std/functional/binary_function/)（binary：二元）。譬如，我们定义一个平方算术类函数对象，很easy，照猫画虎plus的做法，修改其内部执行即可：
 
-    
+
     template<class _Ty>
     struct square
     	: public unary_function<_Ty, _Ty>
-    {	
+    {
     	_Ty operator()(const _Ty& Arg) const
-    	{	
+    	{
     		return (Arg * Arg);
     	}
     };
-    
+
     ......
     cout << "10^2 = " << square<int>()(10) << endl;
     ......
@@ -87,8 +87,8 @@ plus<int>()(10,10)；中，第一个括号是为了产生struct plus的临时对
 
 
 
-<blockquote>10^2 = 100
-请按任意键继续. . .</blockquote>
+<blockquote><p>10^2 = 100<br>
+请按任意键继续. . .</p></blockquote>
 
 
 本文完 2012-10-25
