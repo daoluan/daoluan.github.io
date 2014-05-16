@@ -354,34 +354,47 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
 	
   3. 有事件发生会被唤醒，处理已触发的 I/O 事件和定时事件。
 
+        void aeMain(aeEventLoop *eventLoop) {
+            eventLoop->stop = 0;
+            while (!eventLoop->stop) {
+         
+                // 进入事件循环可能会进入睡眠状态。在睡眠之前，执行预设置的函数 aeSetBeforeSleepProc()。
+                if (eventLoop->beforesleep != NULL)
+                    eventLoop->beforesleep(eventLoop);
+         
+                // AE_ALL_EVENTS 表示处理所有的事件
+                aeProcessEvents(eventLoop, AE_ALL_EVENTS);
+            }
+        }
+         
         // 先处理定时事件，然后处理套接字事件
         int aeProcessEvents(aeEventLoop *eventLoop, int flags)
         {
             int processed = 0, numevents;
-            
+         
             /* Nothing to do? return ASAP */
             if (!(flags & AE_TIME_EVENTS) && !(flags & AE_FILE_EVENTS)) return 0;
-            
+         
             /* Note that we want call select() even if there are no
              * file events to process as long as we want to process time
              * events, in order to sleep until the next time event is ready
              * to fire. */
             if (eventLoop->maxfd != -1 ||
                 ((flags & AE_TIME_EVENTS) && !(flags & AE_DONT_WAIT))) {
-            
+         
                 int j;
                 aeTimeEvent *shortest = NULL;
                 // tvp 会在 IO 多路复用的函数调用中用到，表示超时时间
                 struct timeval tv, *tvp;
-            
+         
                 // 得到最短将来会发生的定时事件
                 if (flags & AE_TIME_EVENTS && !(flags & AE_DONT_WAIT))
                     shortest = aeSearchNearestTimer(eventLoop);
-            
+         
                 // 计算睡眠的最短时间
                 if (shortest) { // 存在定时事件
                     long now_sec, now_ms;
-            
+         
                     /* Calculate the time missing for the nearest
                      * timer to fire. */
                     // 得到当前时间
@@ -395,7 +408,7 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
                     } else { // 不需要借位，直接减
                         tvp->tv_usec = (shortest->when_ms - now_ms)*1000;
                     }
-            
+         
                     // 当前系统时间已经超过定时事件设定的时间
                     if (tvp->tv_sec < 0) tvp->tv_sec = 0;
                     if (tvp->tv_usec < 0) tvp->tv_usec = 0;
@@ -412,10 +425,10 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
                         tvp = NULL; /* wait forever */
                     }
                 }
-            
+         
                 // 调用 IO 多路复用函数阻塞监听
                 numevents = aeApiPoll(eventLoop, tvp);
-            
+         
                 // 处理已经触发的事件
                 for (j = 0; j < numevents; j++) {
                     // 找到 I/O 事件表中存储的数据
@@ -423,7 +436,7 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
                     int mask = eventLoop->fired[j].mask;
                     int fd = eventLoop->fired[j].fd;
                     int rfired = 0;
-            
+         
                  /* note the fe->mask & mask & ... code: maybe an already processed
                      * event removed an element that fired and we still didn't
                      * processed, so we check if the event is still valid. */
@@ -440,12 +453,12 @@ initServer() 中调用了 aeCreateEventLoop() 完成了事件中心的初始化�
                     processed++;
                 }
             }
-            
+         
             // 处理定时事件
             /* Check time events */
             if (flags & AE_TIME_EVENTS)
                 processed += processTimeEvents(eventLoop);
-            
+         
             return processed; /* return the number of processed file/time events */
         }
 
