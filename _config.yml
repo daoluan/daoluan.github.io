@@ -1,4 +1,4 @@
 markdown    : rdiscount
 safe        : true
-permalink   : /blog/:categories/:title/
+permalink   : /blog/:title/
 encoding: utf-8
