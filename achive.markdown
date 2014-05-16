@@ -5,8 +5,8 @@ top:    捣乱的个人网站
 ---
 
 <div>
-{% for category in site.categories %}
-<span>{{ category[0] }}</span>
+{% for category in page.categories %}
+<span>{{ category | first }}</span>
 {% endfor %}
 </div>
 
