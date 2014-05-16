@@ -17,7 +17,7 @@ tags:
 
 <!-- more -->
 
-(http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/315px-Hash_table_3_1_1_0_1_0_0_SP.svg.png) 哈希表
+![](http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/315px-Hash_table_3_1_1_0_1_0_0_SP.svg.png) 哈希表
 
 
 ### Hashtable的查找，插入，删除

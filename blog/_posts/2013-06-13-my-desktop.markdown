@@ -22,7 +22,7 @@ tags:
 
 在 windows 系统，我们熟知，系统如果有消息要通知用户一般方法是弹窗+声音或者任务栏图标的闪烁，这是注意力不能够长时间集中的一个原因。如果想要长时间坐在电脑前学习工作又希望减少被中断的次数，这方法可以一试。ubuntu 中便是默认任务栏放置于桌面顶端：
 
-(http://upload.wikimedia.org/wikipedia/commons/0/05/Google_Chrome_22_on_Ubuntu_12.04.png) ubuntu_desktop
+![](http://upload.wikimedia.org/wikipedia/commons/0/05/Google_Chrome_22_on_Ubuntu_12.04.png) ubuntu_desktop
 
 最后附一张写此篇文章的全景图：我觉得工作起来很舒服
 

@@ -24,7 +24,7 @@ C-------------M-------------S
 
 
 
-(http://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Proxy_concept_en.svg/280px-Proxy_concept_en.svg.png) 前向代理
+![前向代理](http://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Proxy_concept_en.svg/280px-Proxy_concept_en.svg.png) 前向代理
 
 **对请求进行简化或者其他处理**意味着可以无视某些请求，譬如：学校发现 abc.com 站点上的内容很黄很暴力，为了在校学生的身心健康，在学校的代理服务器上对 abc.com 做限制，于是学生就不能访问 abc.com 站点了，也可以说 abc.com 被和谐了。除此之外，前向代理还有：
 
@@ -50,7 +50,7 @@ C-------------S-------------M
 
 
 
-(http://pic002.cnblogs.com/images/2011/42876/2011050410410734.jpg) 反向代理
+![反向代理](http://pic002.cnblogs.com/images/2011/42876/2011050410410734.jpg) 反向代理
 
 所以，这幅图已经告诉我们反向代理能做些什么：
 
