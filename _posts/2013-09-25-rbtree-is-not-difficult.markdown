@@ -99,7 +99,7 @@ tags:
 
 假设, 新插入的节点为 N, N 节点的父节点为 P, P 的兄弟(N 的叔父)节点为 U, P 的父亲(N 的爷爷)节点为 G. 所以有如下的印象图:
 
-[![rbtree0](http://md.daoluan.net/images/2013/09/rbtree0.png)](http://md.daoluan.net/images/2013/09/rbtree0.png)
+[![rbtree0](http://md.daoluan.net/images/blog/2013/09/rbtree0.png)](http://md.daoluan.net/images/blog/2013/09/rbtree0.png)
 
 插入节点的关键是:
 
@@ -122,15 +122,15 @@ tags:
 
 第 1 种情况, N,P,U 都红(G 肯定黑). 策略: G->红, N,P->黑. 此时, G 红, 如果 G 的父亲也是红, 性质又被破坏了, HACK: 可以将 GPUN 看成一个新的红色 N 节点, 如此递归调整下去; 特俗的, 如果碰巧将根节点染成了红色, 可以在算法的最后强制 root->黑.
 
-[![rbtre01](http://md.daoluan.net/images/2013/09/rbtre01.png)](http://md.daoluan.net/images/2013/09/rbtre01.png)
+[![rbtre01](http://md.daoluan.net/images/blog/2013/09/rbtre01.png)](http://md.daoluan.net/images/blog/2013/09/rbtre01.png)
 
 第 2 种情况, P 为红, N 为 P 右孩子, N 为红, U 为黑或缺少. 策略: 旋转变换, 从而进入下一种情况:
 
-[![rbtree02](http://md.daoluan.net/images/2013/09/rbtree02.png)](http://md.daoluan.net/images/2013/09/rbtree02.png)
+[![rbtree02](http://md.daoluan.net/images/blog/2013/09/rbtree02.png)](http://md.daoluan.net/images/blog/2013/09/rbtree02.png)
 
 第 3 种情况, 可能由第二种变化而来, 但不是一定: P 为红, N 为 P 左孩子, N 为红. 策略: 旋转, 交换 P,G 颜色, 调整后, 因为 P 为黑色, 所以不怕 P 的父节点是红色的情况. over
 
-[![rbtree03](http://md.daoluan.net/images/2013/09/rbtree03.png)](http://md.daoluan.net/images/2013/09/rbtree03.png)
+[![rbtree03](http://md.daoluan.net/images/blog/2013/09/rbtree03.png)](http://md.daoluan.net/images/blog/2013/09/rbtree03.png)
 
 红黑树的插入就为上面的三种情况. 你可以做镜像变换从而得到其他的情况.
 
@@ -140,7 +140,7 @@ tags:
 
 假设 N 节点见上面普通二叉树删除中的定义, P 为 N 父节点, S 为 N 的兄弟节点, SL,SR 分别是 S 的左右子节点. 有如下印象图:
 
-[![rbtree04](http://md.daoluan.net/images/2013/09/rbtree04.png)](http://md.daoluan.net/images/2013/09/rbtree04.png) N 没有任何的孩子!
+[![rbtree04](http://md.daoluan.net/images/blog/2013/09/rbtree04.png)](http://md.daoluan.net/images/blog/2013/09/rbtree04.png) N 没有任何的孩子!
 
 删除节点的关键是:
 
@@ -161,22 +161,22 @@ tags:
 
 第 1 情况, N,P,S,SR,SL 都黑. **策略: S->红.** 通过 PN,PS 的黑色节点数量相同了, 但会比其他路径多一个, 解决的方法是在 P 上从情况 0 开始继续调整. 为什么要这样呢? HANKS: 因为既然 PN,PS 路径上的黑节点数量相同而且比其他路径会少一个黑节点, 那何不将其整体看成了一个 N 节点! 这是递归原理.
 
-[![rbtree05](http://md.daoluan.net/images/2013/09/rbtree05.png)](http://md.daoluan.net/images/2013/09/rbtree05.png)
+[![rbtree05](http://md.daoluan.net/images/blog/2013/09/rbtree05.png)](http://md.daoluan.net/images/blog/2013/09/rbtree05.png)
 
 第 2 情况, S 红, 根据红黑树性质 P,SL,SR 一定黑. **策略: 旋转, 交换 P,S 颜色.** 处理后关注的范围缩小, 下面的情况对应下面的框图, 算法从框图重新开始, 进入下一个情况:
 
-[![rbtree06](http://md.daoluan.net/images/2013/09/rbtree06.png)](http://md.daoluan.net/images/2013/09/rbtree06.png)
+[![rbtree06](http://md.daoluan.net/images/blog/2013/09/rbtree06.png)](http://md.daoluan.net/images/blog/2013/09/rbtree06.png)
 
 第 2.1 情况, S,SL,SR 都黑. **策略: P->黑. S->红,** 因为通过 N 的路径多了一个黑节点, 通过 S 的黑节点个数不变, 所以维持了性质 5. over. 将看到, sgi stl map 源代码中将第 2.1 和第 1 情况合并成一种情况, 下节展开.
 
-[![rbtree07](http://md.daoluan.net/images/2013/09/rbtree07.png)](http://md.daoluan.net/images/2013/09/rbtree07.png)
+[![rbtree07](http://md.daoluan.net/images/blog/2013/09/rbtree07.png)](http://md.daoluan.net/images/blog/2013/09/rbtree07.png)
 
 第 2.2.1 情况, S,SR 黑, SL 红. **策略: 旋转, 变换 SL,S 颜色.** 从而又进入下一种情况:
 
-[![rbtree08](http://md.daoluan.net/images/2013/09/rbtree08.png)](http://md.daoluan.net/images/2013/09/rbtree08.png)
+[![rbtree08](http://md.daoluan.net/images/blog/2013/09/rbtree08.png)](http://md.daoluan.net/images/blog/2013/09/rbtree08.png)
 第 2.2.2 情况, S 黑, SR 红. **策略: 旋转, 交换 S,P 颜色, SR->黑色, 重新获得平衡.**
 
-[![rbtree09](http://md.daoluan.net/images/2013/09/rbtree09.png)](http://md.daoluan.net/images/2013/09/rbtree09.png)
+[![rbtree09](http://md.daoluan.net/images/blog/2013/09/rbtree09.png)](http://md.daoluan.net/images/blog/2013/09/rbtree09.png)
 
 上面情况标号 X.X.X 并不是说这些关系是嵌套的, 只是这样展开容易理解. 此时, 解释三个地方:
 

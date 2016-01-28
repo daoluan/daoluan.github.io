@@ -54,7 +54,7 @@ tags:
 
 定义ASCII(P)为字符串P的ASCII码总和，把ASCII(P)模q（q任意，只要合理即可），得到一个值p，把通过这样计算得到的值记为ASCIIMOD(P)。这样整体匹配成为可能：
 
-[![image9.png](http://md.daoluan.net/images/2012/06/image9.png)](http://md.daoluan.net/images/2012/06/image9.png)
+[![image9.png](http://md.daoluan.net/images/blog/2012/06/image9.png)](http://md.daoluan.net/images/blog/2012/06/image9.png)
 
 上图中，文本T=acdkttvsavdwjidcef，匹配内容P=vsav，设选模为q=15，ASCIIMOD(P)=13。所以在匹配的过程当中，只有mod15的值为13的字串才可以进行下一步的匹配。比如对于上图中的T中的前四个字符ACSIIMOD("acdk”)=ASCIIMOD(P)=13，因此可以进行下一步的匹配。“下一步匹配”的原因是对于相同长度的不同字串A和B来说，可能存在ASCIIMOD(A)=ASCIIMOD(B)的现象。
 

@@ -76,7 +76,7 @@ memcached 有可配置的两种模式: UNIX 域套接字和 TCP/UDP, 允许客�
 
 很关键的线索是`thread_init()`的实现中, 每个工作线程都创建了读写管道, 所能给我们的提示是: 只要利用 libevent 在工作线程的事件中心注册读管道的读事件, 就可以按需唤醒线程, 完成工作, 很有意思, 而`setup_thread()`的工作正是读管道的读事件被注册到线程的事件中心, 回调函数是`thread_libevent_process()`.`thread_libevent_process()`的工作就是从工作线程自己的 CQ 队列中取出任务执行, 而往工作线程工作队列中添加任务的是`dispatch_conn_new()`, 此函数一般由主线程调用. 下面是主线程和工作线程的工作流程:
 
-[![how_threads_work](http://md.daoluan.net/images/2013/12/how_threads_work.png)](http://md.daoluan.net/images/2013/12/how_threads_work.png)
+[![how_threads_work](http://md.daoluan.net/images/blog/2013/12/how_threads_work.png)](http://md.daoluan.net/images/blog/2013/12/how_threads_work.png)
 
 前几天在微博上, 看到 @高端小混混 的微博, 转发了:
 
@@ -93,7 +93,7 @@ memcached 所采用的模式就是这里所说的第二种! memcached 的线程�
 
 memcached 是做缓存用的, 内部肯定有一个容器. 回到`main()`中, 调用`assoc_init()`初始化了容器--hashtable, 采用头插法插入新数据, 因为头插法是最快的. memcached 只做了一级的索引, 即 hash; 接下来的就靠 memcmp() 在链表中找数据所在的位置. memcached 容器管理的接口主要在 item.h .c 中.
 
-[![hashtable](http://md.daoluan.net/images/2013/12/hashtable.png)](http://md.daoluan.net/images/2013/12/hashtable.png)
+[![hashtable](http://md.daoluan.net/images/blog/2013/12/hashtable.png)](http://md.daoluan.net/images/blog/2013/12/hashtable.png)
 
 
 ### [](https://github.com/daoluan/decode-memcached#%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86)连接管理
@@ -237,7 +237,7 @@ memcached 服务一个客户的时候, 是怎么一个过程, 试着去调试模
 
 memcached 的服务器没有向其他 memcached 服务器收发数据的功能, 意即就算部署多个 memcached 服务器, 他们之间也没有任何的通信. memcached 所谓的分布式部署也是并非平时所说的分布式. 所说的「分布式」是通过创建多个 memcached 服务器节点, 在客户端添加**缓存请求分发器**来实现的. memcached 的更多的时候限制是来自**网络 I/O**, 所以应该尽量减少网络 I/O.
 
-[![distributed-memcached](http://md.daoluan.net/images/2013/12/distributed-memcached.png)](http://md.daoluan.net/images/2013/12/distributed-memcached.png)
+[![distributed-memcached](http://md.daoluan.net/images/blog/2013/12/distributed-memcached.png)](http://md.daoluan.net/images/blog/2013/12/distributed-memcached.png)
 
 我在 github 上分享了 memcached 的源码剖析注释: [这里](https://github.com/daoluan/decode-memcached)
 

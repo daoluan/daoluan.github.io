@@ -21,7 +21,7 @@ tags:
 特别地，P0为s，v为PN-1。现对这个点序列按顺序进行<a href="http://www.daoluan.net/blog/?p=437">松弛</a>，即<a href="http://www.daoluan.net/blog/?p=437">松弛</a>顺序为（P0，P1），（P1，P2），（P2，P3）…，结果可以得到dist[v]=shortest_path(s,v)。注意，松弛顺序并非是严格先后，打比方：1，3，4在1，2，3，4中依旧是保持顺序的，但是可能中间会有“小插曲”。</p></blockquote>
 
 
-[![image.png](http://md.daoluan.net/images/2012/06/image6.png)](http://md.daoluan.net/images/2012/06/image6.png)
+[![image.png](http://md.daoluan.net/images/blog/2012/06/image6.png)](http://md.daoluan.net/images/blog/2012/06/image6.png)
 
 又[拓扑排序](http://www.daoluan.net/blog/?p=425)，可以知道，s到a肯定是不可达到，也就是不存在最短路径。故有期待已久的代码：
 
@@ -36,7 +36,7 @@ tags:
 
 有图有证据：（红色表示当前在[松弛](http://www.daoluan.net/blog/?p=437)的边）
 
-[![image1.png](http://md.daoluan.net/images/2012/06/image11.png)](http://md.daoluan.net/images/2012/06/image11.png)
+[![image1.png](http://md.daoluan.net/images/blog/2012/06/image11.png)](http://md.daoluan.net/images/blog/2012/06/image11.png)
 
 此算法抠门有两个条件：1、有向 2、无环
 

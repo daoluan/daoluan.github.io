@@ -28,7 +28,7 @@ Linux选择了ubuntu 12。一般装上ubuntu，选用NAT网络连接，即可联
 
 	
   1. 编辑->编辑虚拟网络->选择VMnet8->NAT设置，查看子网IP，掩码和网关IP
-[![1_thumb.png](http://md.daoluan.net/images/2012/07/1_thumb.png)](http://md.daoluan.net/images/2012/07/1_thumb.png)
+[![1_thumb.png](http://md.daoluan.net/images/blog/2012/07/1_thumb.png)](http://md.daoluan.net/images/blog/2012/07/1_thumb.png)
 
 	
   2. Linux设置静态IP
@@ -38,18 +38,18 @@ iface eth0 inet static
 address 192.168.2.6（子网192.168.2.0）  
 gateway 192.168.2.2（网关192.168.2.2）  
 netmask 255.255.255.0（掩码）  
-[![2_thumb.png](http://md.daoluan.net/images/2012/07/2_thumb.png)](http://md.daoluan.net/images/2012/07/2_thumb.png)
+[![2_thumb.png](http://md.daoluan.net/images/blog/2012/07/2_thumb.png)](http://md.daoluan.net/images/blog/2012/07/2_thumb.png)
 reboot下，确保上述设置生效
 	
   3. 设置Linux的DNS地址
 vim /etc/resolv.conf（指明dns地址）  
 nameserver 192.168.2.2（第一步中查询到的网关）  
-[![3_thumb.png](http://md.daoluan.net/images/2012/07/3_thumb.png)](http://md.daoluan.net/images/2012/07/3_thumb.png)
+[![3_thumb.png](http://md.daoluan.net/images/blog/2012/07/3_thumb.png)](http://md.daoluan.net/images/blog/2012/07/3_thumb.png)
 
 	
   4. 设置主机本地连接的静态IP
 如果你的主机直连路由器，那么主机本地连接的静态IP可以和Linux不在同一个子网内；但如果没有，那么必须设置在同一个子网内，这样才能实现主机和Linux之间的通信。 此时主机和Linux可以相互ping通，而且Linux可以联网。上述环境有利于不熟悉Linux环境的初学者，熟练的话大可不必。
-[![4_thumb.png](http://md.daoluan.net/images/2012/07/4_thumb.png)](http://md.daoluan.net/images/2012/07/4_thumb.png)
+[![4_thumb.png](http://md.daoluan.net/images/blog/2012/07/4_thumb.png)](http://md.daoluan.net/images/blog/2012/07/4_thumb.png)
 
 
 **putty**
@@ -61,11 +61,11 @@ apt-get install openssh-server
 ps -A | grep ssh
 用ps命令查看有sshd进程
 
-[![5_thumb.png](http://md.daoluan.net/images/2012/07/5_thumb.png)](http://md.daoluan.net/images/2012/07/5_thumb.png)
+[![5_thumb.png](http://md.daoluan.net/images/blog/2012/07/5_thumb.png)](http://md.daoluan.net/images/blog/2012/07/5_thumb.png)
 
 已经设置Linux的静态IP为192.168.2.9，此当然可作为putty登录Linux的IP Address。
 
-[![6_thumb.png](http://md.daoluan.net/images/2012/07/6_thumb.png)](http://md.daoluan.net/images/2012/07/6_thumb.png)
+[![6_thumb.png](http://md.daoluan.net/images/blog/2012/07/6_thumb.png)](http://md.daoluan.net/images/blog/2012/07/6_thumb.png)
 
 输入Linux帐号密码即可远程登录。这样非常方便一边在纯字符界面下编程或者调试，一边在win下查阅资料。笔者认为vmware+Linux+putty的环境很适合初学者。putty很容易将字符界面下的文字拷贝到win环境下，方便我们的查询。
 

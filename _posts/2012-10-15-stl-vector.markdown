@@ -83,7 +83,7 @@ vector提供了几个版本的构造函数。详见：[http://www.cplusplus.com/
     ......
 
 
-[![](http://md.daoluan.net/images/2012/10/vector_bomb.gif)](http://daoluan.net/blog/stl-vector/vector_bomb/) bomb！！！
+[![](http://md.daoluan.net/images/blog/2012/10/vector_bomb.gif)](http://daoluan.net/blog/stl-vector/vector_bomb/) bomb！！！
 
 
 ### vector元素排序

@@ -40,11 +40,11 @@ tags:
 
 登录了 taobao.com 后，下面是所产生的 cookie，也就是说认证系统已经为应用taobao.com 分配了钥匙，但这里并没有 etao.com 或者 tmall.com 的 cookie，认证系统还未为他们分配钥匙。
 
-[![taobao_cookie](http://md.daoluan.net/images/2014/03/taobao_cookie.png)](http://md.daoluan.net/images/2014/03/taobao_cookie.png)
+[![taobao_cookie](http://md.daoluan.net/images/blog/2014/03/taobao_cookie.png)](http://md.daoluan.net/images/blog/2014/03/taobao_cookie.png)
 
 下一步我们尝试去访问 etao.com：
 
-[![etao_network](http://md.daoluan.net/images/2014/03/etao_network.png)](http://md.daoluan.net/images/2014/03/etao_network.png)
+[![etao_network](http://md.daoluan.net/images/blog/2014/03/etao_network.png)](http://md.daoluan.net/images/blog/2014/03/etao_network.png)
 
 etao.com 被重定向到了 www.etao.com；访问 www.etao.com 被重定向到 http://jump.taobao.com/，下面是 response HTTP：
 
@@ -106,7 +106,7 @@ etao.com 被重定向到了 www.etao.com；访问 www.etao.com 被重定向到 h
 
 「Set-Cookie」意味着应用etao.com 拿到了认证系统的钥匙，耶斯！
 
-[![etao_cookie](http://md.daoluan.net/images/2014/03/etao_cookie.png)](http://md.daoluan.net/images/2014/03/etao_cookie.png)
+[![etao_cookie](http://md.daoluan.net/images/blog/2014/03/etao_cookie.png)](http://md.daoluan.net/images/blog/2014/03/etao_cookie.png)
 
 
 ### 京东商城单点登录策略
@@ -114,7 +114,7 @@ etao.com 被重定向到了 www.etao.com；访问 www.etao.com 被重定向到 h
 
 来看看京东商城的做法
 
-[![jd_cookie](http://md.daoluan.net/images/2014/03/jd_cookie.png)](http://md.daoluan.net/images/2014/03/jd_cookie.png)
+[![jd_cookie](http://md.daoluan.net/images/blog/2014/03/jd_cookie.png)](http://md.daoluan.net/images/blog/2014/03/jd_cookie.png)
 
 登录 jd.com 后发现，它已经给所有的应用代领了钥匙！这里利用了前端里面的 jsonp，对于跨域的问题，jsonp 驾轻就熟。
 
@@ -147,9 +147,9 @@ ajax get 到数据自动调用预设值的回调函数。jsonp 返回的数据�
 
 回调函数对 a.sso 中每一个连接执行 getJSON()。注：使用 jquery 的 getJSON() 进行跨域读取数据，实际上 getJSON() 方式的根本原理和 ajax 使用 jsonp 的方式一样。
 
-[![jquery jsonp 请求](http://md.daoluan.net/images/2014/03/jd_jsonp_network_01.png)](http://md.daoluan.net/images/2014/03/jd_jsonp_network_01.png) jquery jsonp 请求
+[![jquery jsonp 请求](http://md.daoluan.net/images/blog/2014/03/jd_jsonp_network_01.png)](http://md.daoluan.net/images/blog/2014/03/jd_jsonp_network_01.png) jquery jsonp 请求
 
-[![jquery jsonp 请求产生的重定向](http://md.daoluan.net/images/2014/03/jd_jsonp_network_011.png)](http://md.daoluan.net/images/2014/03/jd_jsonp_network_011.png) jquery jsonp 请求产生的重定向
+[![jquery jsonp 请求产生的重定向](http://md.daoluan.net/images/blog/2014/03/jd_jsonp_network_011.png)](http://md.daoluan.net/images/blog/2014/03/jd_jsonp_network_011.png) jquery jsonp 请求产生的重定向
 
 以第一个参数为例，所产生的 request HTTP：
 
@@ -241,7 +241,7 @@ response HTTP 中有 「Set-Cookie」说明已经拿到认证系统的钥匙了�
 
 可见访问 http://360buy.com 的时候，并没有特地跑去认证系统索要钥匙，只凭借之前访问 jd.com 时 getJSON() 留下的 cookie。
 
-![360buy_com_network](http://md.daoluan.net/images/2014/03/360buy_com_network.png)
+![360buy_com_network](http://md.daoluan.net/images/blog/2014/03/360buy_com_network.png)
 
 关于单点登录的问题，还有待更深入讨论。我只是用一些抓包工具和网站的前端代码来猜测单点登录策略如何，后台会是更复杂的技术，譬如分布式存储等。对于上面的两个案例，如果你了解淘宝或者京东商城的单点登录的具体方法，不吝赐教。
 

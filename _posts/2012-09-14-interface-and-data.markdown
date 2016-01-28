@@ -18,7 +18,7 @@ categories:
 
 <!-- more -->
 
-[![](http://md.daoluan.net/images/2012/09/UI_data_combine.png)](http://daoluan.net/blog/archives/975/ui_data_combine)
+[![](http://md.daoluan.net/images/blog/2012/09/UI_data_combine.png)](http://daoluan.net/blog/archives/975/ui_data_combine)
 
 原因是往后我又YY了下，想升级下上次小软件的功能。可是越到后来越是发现升级很困难。于是不得不丢弃这个软件的升级。所有的业务逻辑被封装在界面代码里头，对数据的掌控就不那么随心所欲了——这句话也太早了。因为这样界面元素和数据之间得到更新或者同步方便很多，界面可以直接获取，而不是跨越其他的对象。
 
@@ -38,7 +38,7 @@ categories:
   3. 数据区则负责纯数据的管理。
 
 
-[![](http://md.daoluan.net/images/2012/09/UI_data_detach.png)](http://daoluan.net/blog/archives/975/ui_data_detach)
+[![](http://md.daoluan.net/images/blog/2012/09/UI_data_detach.png)](http://daoluan.net/blog/archives/975/ui_data_detach)
 
 在请教先生的时候，先生有建议把数据处理部分独立开来，这可以提高代码的复用。哈，最后的数据区正是为此独立出来的。
 在界面元素相对单一，并且在不考虑升情况下，YY是很不错的选择，对程序员来说，愉悦身心。但反之，最好三思而后行。最后需要记下的是，界面永远是数据的奴仆。我认为，分析架构一个项目，数据先行！

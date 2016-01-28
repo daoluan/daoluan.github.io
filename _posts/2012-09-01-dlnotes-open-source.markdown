@@ -58,19 +58,19 @@ DL便签 V0.3——**简单，效率！**一款实用的桌面便签。笔者会
 
 软件的主界面：
 
-[![](http://md.daoluan.net/images/2012/09/dlnote_01.png)](http://daoluan.net/blog/archives/946/dlnote_01-png)
+[![](http://md.daoluan.net/images/blog/2012/09/dlnote_01.png)](http://daoluan.net/blog/archives/946/dlnote_01-png)
 
 上下左右重新排列便签：
 
-[![](http://md.daoluan.net/images/2012/09/dlnote_02.png)](http://daoluan.net/blog/archives/946/dlnote_02-png)
+[![](http://md.daoluan.net/images/blog/2012/09/dlnote_02.png)](http://daoluan.net/blog/archives/946/dlnote_02-png)
 
 实际效果图：
 
-[![](http://md.daoluan.net/images/2012/09/dlnote_03.png)](http://daoluan.net/blog/archives/946/dlnote_03-png)
+[![](http://md.daoluan.net/images/blog/2012/09/dlnote_03.png)](http://daoluan.net/blog/archives/946/dlnote_03-png)
 
 实现透明效果后神奇的黄色边边：
 
-[![](http://md.daoluan.net/images/2012/09/dlnote_04.png)](http://daoluan.net/blog/archives/946/dlnote_04-png)
+[![](http://md.daoluan.net/images/blog/2012/09/dlnote_04.png)](http://daoluan.net/blog/archives/946/dlnote_04-png)
 
 下载地址（大小：42K）：[http://download.csdn.net/detail/daoluanxiaozi/4245948](http://download.csdn.net/detail/daoluanxiaozi/4245948)
 

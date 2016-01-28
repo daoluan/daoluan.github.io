@@ -340,7 +340,7 @@ get_response() 方法, 中间件调用执行的顺序是请求中间件, 视图�
 
 图解中间件:
 
-[![django 处理流程图](http://md.daoluan.net/images/2013/09/django-处理流程图.png)](http://md.daoluan.net/images/2013/09/django-处理流程图.png)
+[![django 处理流程图](http://md.daoluan.net/images/blog/2013/09/django-处理流程图.png)](http://md.daoluan.net/images/blog/2013/09/django-处理流程图.png)
 
 
 

@@ -124,7 +124,7 @@ categories:
 
 解馋图：
 
-[![](http://md.daoluan.net/images/2012/09/UIButtonApp.jpg)](http://daoluan.net/blog/archives/1006/uibuttonapp)
+[![](http://md.daoluan.net/images/blog/2012/09/UIButtonApp.jpg)](http://daoluan.net/blog/archives/1006/uibuttonapp)
 
 源代码：[http://files.cnblogs.com/daoluanxiaozi/UIButtonApp.rar](http://files.cnblogs.com/daoluanxiaozi/UIButtonApp.rar)
 

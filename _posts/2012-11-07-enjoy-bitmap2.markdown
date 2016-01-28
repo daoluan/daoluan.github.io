@@ -18,11 +18,11 @@ tags:
 
 2012年11月8日1:03:01 深夜断网，不能上传源码和可执行文件，明日早起补上。喜欢的童鞋们先收藏。
 
-[![](http://md.daoluan.net/images/2012/11/Maruko.jpg)](http://daoluan.net/blog/enjoy-bitmap2/maruko/) 小丸子
+[![](http://md.daoluan.net/images/blog/2012/11/Maruko.jpg)](http://daoluan.net/blog/enjoy-bitmap2/maruko/) 小丸子
 
 <!-- more -->
 
-查看大图：[http://md.daoluan.net/images/2012/11/Maruko.jpg](http://md.daoluan.net/images/2012/11/Maruko.jpg)
+查看大图：[http://md.daoluan.net/images/blog/2012/11/Maruko.jpg](http://md.daoluan.net/images/blog/2012/11/Maruko.jpg)
 
 接上篇：[http://daoluan.net/blog/enjoy-bitmap/](http://daoluan.net/blog/enjoy-bitmap/)
 

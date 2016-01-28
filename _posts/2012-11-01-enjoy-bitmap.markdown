@@ -11,7 +11,7 @@ categories:
 - mfc
 ---
 
-[![](http://md.daoluan.net/images/2012/11/enjoy_bitmap_jobs.jpg)](http://daoluan.net/blog/enjoy-bitmap/enjoy_bitmap_jobs/) 乔帮主
+[![](http://md.daoluan.net/images/blog/2012/11/enjoy_bitmap_jobs.jpg)](http://daoluan.net/blog/enjoy-bitmap/enjoy_bitmap_jobs/) 乔帮主
 
 年前加入一个项目小组，只要是做图像处理的软件，组内分配第一个任务便是熟悉位图。[http://www.cnblogs.com/daoluanxiaozi/tag/MFC%E5%B0%8F%E9%A1%B9%E7%9B%AE/](http://www.cnblogs.com/daoluanxiaozi/tag/MFC%E5%B0%8F%E9%A1%B9%E7%9B%AE/)，但后来不知道为什么，没有呆下去。
 
@@ -19,7 +19,7 @@ categories:
 
 <!-- more -->
 
-[![](http://md.daoluan.net/images/2012/11/enjoy_bitmap_sample.jpg)](http://daoluan.net/blog/enjoy-bitma/enjoy_bitmap_sample/) 大致效果
+[![](http://md.daoluan.net/images/blog/2012/11/enjoy_bitmap_sample.jpg)](http://daoluan.net/blog/enjoy-bitma/enjoy_bitmap_sample/) 大致效果
 
 png，jpg，gif等都不懂，所以从位图下手，来实现图片的处理。
 
