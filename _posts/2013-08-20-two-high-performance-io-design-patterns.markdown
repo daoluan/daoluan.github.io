@@ -25,7 +25,7 @@ Reactor 和 Proactor 是基于事件驱动，在网络编程中经常用到两�
 
 Reactor，即反应堆。Reactor 的一般工作过程是首先在 Reactor 中注册（Reactor）感兴趣事件，并在注册时候指定某个已定义的回调函数（callback）；当客户端发送请求时，在 Reactor 中会触发刚才注册的事件，并调用对应的处理函数。在这一个处理回调函数中，一般会有数据**接收**、处理、**回复**请求等操作。
 
-![reactor_pattern](http://daoluan.net/blog/wp-content/uploads/2013/08/reactor_pattern.png)
+![reactor_pattern](http://md.daoluan.net/blog/images/2013/08/reactor_pattern.png)
 
 libevent 采用的就是 Reactor 的设计思想。其 **Reactor 的中心思想是众所周知的 I/O 多路复用**：select,poll,epoll,kqueue 等.libevent 精彩的将定时事件，信号处理，I/O 事件结合在在一起，也就是说用户同时在 Reactor 中注册上述三类事件。遗憾的是，libevent 不支持多线程，也就是说它同步处理请求，导致不能处理大量的请求；这样并不是说 Reactor 实现的网络库都不支持多线程，而是 libevent 本身的原因，我们也可以通过修改让 ilbevent 支持多线程，并发处理多个请求。
 
@@ -59,11 +59,11 @@ libevent 采用的就是 Reactor 的设计思想。其 **Reactor 的中心思�
 
 从上面 Reactor 模式中，发现服务端数据的接收和发送都占用了用户状态（还有一种内核态），这样服务器的处理操作就在数据的读写上阻塞花费了时间，节省这些时间的办法是借助操作系统的异步读写；异步读写在调用的时候可以传递回调函数或者回送信号，当异步操作完毕，内核会自动调用回调函数或者发送信号。Proactor 就是这么做的，所以很依赖操作系统。来一幅 UML：
 
-[![proactor_uml](http://daoluan.net/blog/wp-content/uploads/2013/08/proactor_uml.png)](http://daoluan.net/blog/wp-content/uploads/2013/08/proactor_uml.png)
+[![proactor_uml](http://md.daoluan.net/blog/images/2013/08/proactor_uml.png)](http://md.daoluan.net/blog/images/2013/08/proactor_uml.png)
 
 和时序图：
 
-[![proactor_timing_diagram](http://daoluan.net/blog/wp-content/uploads/2013/08/proactor_timing_diagram.png)](http://daoluan.net/blog/wp-content/uploads/2013/08/proactor_timing_diagram.png)
+[![proactor_timing_diagram](http://md.daoluan.net/blog/images/2013/08/proactor_timing_diagram.png)](http://md.daoluan.net/blog/images/2013/08/proactor_timing_diagram.png)
 
 _注：这两幅美艳的图片来自 Proactor.doc，下面会提到._
 
@@ -77,7 +77,7 @@ Proactor 的实现主要有三个部分：异步操作处理器，Proactor 和 
 
 曾经看过 Proactor.doc，作者是 Douglas C. Schmidt，你可以在[这里](http://www.laputan.org/pub/sag/proactor.pdf)阅读此文档。里面的关于 Proactor 的讲解很精彩，部分摘抄和自己的理解如下：当连接 web 服务器时：
 
-[![proactor_web_connect](http://daoluan.net/blog/wp-content/uploads/2013/08/proactor_web_connect.png)](http://daoluan.net/blog/wp-content/uploads/2013/08/proactor_web_connect.png)
+[![proactor_web_connect](http://md.daoluan.net/blog/images/2013/08/proactor_web_connect.png)](http://md.daoluan.net/blog/images/2013/08/proactor_web_connect.png)
 
 
 
@@ -108,7 +108,7 @@ Proactor 的实现主要有三个部分：异步操作处理器，Proactor 和 
 
 接收 GET 请求过后，会处理数据：
 
-[![proactor_web_service](http://daoluan.net/blog/wp-content/uploads/2013/08/proactor_web_service.png)](http://daoluan.net/blog/wp-content/uploads/2013/08/proactor_web_service.png)
+[![proactor_web_service](http://md.daoluan.net/blog/images/2013/08/proactor_web_service.png)](http://md.daoluan.net/blog/images/2013/08/proactor_web_service.png)
 
 
 

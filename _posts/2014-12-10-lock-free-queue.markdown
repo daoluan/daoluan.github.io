@@ -27,17 +27,17 @@ tags:
 
 如果一个共享队列只与一个生产者与一个消费者共享，那么此队列可以这么设计：
 
-[![single_producer_0](http://daoluan.net/blog/wp-content/uploads/2014/12/single_producer_0.png)](http://daoluan.net/blog/wp-content/uploads/2014/12/single_producer_0.png)
+[![single_producer_0](http://md.daoluan.net/blog/images/2014/12/single_producer_0.png)](http://md.daoluan.net/blog/images/2014/12/single_producer_0.png)
 
 在共享内存中， 分别维护 front 指针，rear 指针和循环队列，其中 front 指针指向队列头部，其值由生产者维护；rear 指针指向队列尾部，其值由消费者维护；循环队列是一个大数组。注意，front, rear 存储的是数据的下标而已，且**队列最后一个空间不可用，后者是为了方便作 full 判断。**
 
 所以，当 front==rear 的时候，队列为空：
 
-[![single_producer_1](http://daoluan.net/blog/wp-content/uploads/2014/12/single_producer_1.png)](http://daoluan.net/blog/wp-content/uploads/2014/12/single_producer_1.png)
+[![single_producer_1](http://md.daoluan.net/blog/images/2014/12/single_producer_1.png)](http://md.daoluan.net/blog/images/2014/12/single_producer_1.png)
 
 当 (front+1)%MAX_QUEUE_SIZE==rear 的时候，队列满了：
 
-[![single_producer_2](http://daoluan.net/blog/wp-content/uploads/2014/12/single_producer_2.png)](http://daoluan.net/blog/wp-content/uploads/2014/12/single_producer_2.png)
+[![single_producer_2](http://md.daoluan.net/blog/images/2014/12/single_producer_2.png)](http://md.daoluan.net/blog/images/2014/12/single_producer_2.png)
 
 获取循环队列大小的时候，需要注意 front<rear 的情况：
 
@@ -87,15 +87,15 @@ CAS 操作帮忙解决了多进程维护一份数据的同步问题。
 
 具体实现需要在“单个生产者与单个消费者”中描述的方法上，稍微修改一下。入队操作都是一样的，只有一个生产者，维护 front 值。出队操作稍有不同。
 
-[![single_producer_multi_customers_0](http://daoluan.net/blog/wp-content/uploads/2014/12/single_producer_multi_customers_0.png)](http://daoluan.net/blog/wp-content/uploads/2014/12/single_producer_multi_customers_0.png)
+[![single_producer_multi_customers_0](http://md.daoluan.net/blog/images/2014/12/single_producer_multi_customers_0.png)](http://md.daoluan.net/blog/images/2014/12/single_producer_multi_customers_0.png)
 
 先保存旧的 rear ->old_rear，接着拷贝数据，
 
-[![single_producer_multi_customers_1](http://daoluan.net/blog/wp-content/uploads/2014/12/single_producer_multi_customers_1.png)](http://daoluan.net/blog/wp-content/uploads/2014/12/single_producer_multi_customers_1.png)
+[![single_producer_multi_customers_1](http://md.daoluan.net/blog/images/2014/12/single_producer_multi_customers_1.png)](http://md.daoluan.net/blog/images/2014/12/single_producer_multi_customers_1.png)
 
 CAS(&rear, old_rear, rear+1)，如果用数组模拟环形数组，考虑越界的情况，
 
-[![single_producer_multi_customers_2](http://daoluan.net/blog/wp-content/uploads/2014/12/single_producer_multi_customers_2.png)](http://daoluan.net/blog/wp-content/uploads/2014/12/single_producer_multi_customers_2.png)
+[![single_producer_multi_customers_2](http://md.daoluan.net/blog/images/2014/12/single_producer_multi_customers_2.png)](http://md.daoluan.net/blog/images/2014/12/single_producer_multi_customers_2.png)
 
 不成功，重新开始。
 
@@ -106,19 +106,19 @@ CAS(&rear, old_rear, rear+1)，如果用数组模拟环形数组，考虑越界�
 这种情况下，要考虑多个生产者之间 push 操作同步的问题。
 
 我们设置三个值：front, rear, write_index. 前两个值和上面描述的一样，分别是队列头部和尾部，write_index 的作用是为生产者在 push 的时候预留空间，在无 push 操作的时候，write_index==front。
-[![multi_producers_multi_customers_0](http://daoluan.net/blog/wp-content/uploads/2014/12/multi_producers_multi_customers_0.png)](http://daoluan.net/blog/wp-content/uploads/2014/12/multi_producers_multi_customers_0.png)
+[![multi_producers_multi_customers_0](http://md.daoluan.net/blog/images/2014/12/multi_producers_multi_customers_0.png)](http://md.daoluan.net/blog/images/2014/12/multi_producers_multi_customers_0.png)
 
 在入队的时候，保存旧的 write_index -> old_write_index，接着 CAS(&write_index, old_write_index, old_write_index+1). 这一步不成功，需要重复执行。
 
-[![multi_producers_multi_customers_1](http://daoluan.net/blog/wp-content/uploads/2014/12/multi_producers_multi_customers_1.png)](http://daoluan.net/blog/wp-content/uploads/2014/12/multi_producers_multi_customers_1.png)
+[![multi_producers_multi_customers_1](http://md.daoluan.net/blog/images/2014/12/multi_producers_multi_customers_1.png)](http://md.daoluan.net/blog/images/2014/12/multi_producers_multi_customers_1.png)
 
 接着将数据写到对应的位置上，
 
-[![multi_producers_multi_customers_2](http://daoluan.net/blog/wp-content/uploads/2014/12/multi_producers_multi_customers_2.png)](http://daoluan.net/blog/wp-content/uploads/2014/12/multi_producers_multi_customers_2.png)
+[![multi_producers_multi_customers_2](http://md.daoluan.net/blog/images/2014/12/multi_producers_multi_customers_2.png)](http://md.daoluan.net/blog/images/2014/12/multi_producers_multi_customers_2.png)
 
 最后 CAS(&front, old_write_index, old_write_index+1)，直到 CAS 成功为止。这一步不成功，需要重复执行。
 
-[![multi_producers_multi_customers_3](http://daoluan.net/blog/wp-content/uploads/2014/12/multi_producers_multi_customers_3.png)](http://daoluan.net/blog/wp-content/uploads/2014/12/multi_producers_multi_customers_3.png)
+[![multi_producers_multi_customers_3](http://md.daoluan.net/blog/images/2014/12/multi_producers_multi_customers_3.png)](http://md.daoluan.net/blog/images/2014/12/multi_producers_multi_customers_3.png)
 
 在网络上的资料中，还在这最后一步**不成功的情况**下添了点花：不成功的时候，调用 sched_yield(); 主要目的是让该生产者主动让出 cpu 给其他的生产者，因为可能其他生产者正在执行 push 操作，这样它就可以完成 push 操作了。确实，这在处理器数量少于生产者数量的时候，对性能来说是比较关键的。
 

@@ -41,7 +41,7 @@ tags:
 
 缺陷：由子进程来负责serve的部分。服务器主进程（父进程）不负责等待子进程结束，资源由内核回收（这一要非必要）。
 
-[![](http://daoluan.net/blog/wp-content/uploads/2012/08/fork.png)](http://daoluan.net/blog/archives/787/fork)
+[![](http://md.daoluan.net/blog/images/2012/08/fork.png)](http://daoluan.net/blog/archives/787/fork)
 
 
 # 上实验结果图片解解馋
@@ -49,15 +49,15 @@ tags:
 
 服务器启动
 
-[![](http://daoluan.net/blog/wp-content/uploads/2012/08/1_thumb1.png)](http://daoluan.net/blog/archives/787/1_thumb1)
+[![](http://md.daoluan.net/blog/images/2012/08/1_thumb1.png)](http://daoluan.net/blog/archives/787/1_thumb1)
 
 客户端方面，将client1、client2和client3（编译链接自同一个代码）写进脚本。运行
 
-[![](http://daoluan.net/blog/wp-content/uploads/2012/08/2_thumb1.png)](http://daoluan.net/blog/archives/787/2_thumb1)
+[![](http://md.daoluan.net/blog/images/2012/08/2_thumb1.png)](http://daoluan.net/blog/archives/787/2_thumb1)
 
 服务端服务多个客户请求
 
-[![](http://daoluan.net/blog/wp-content/uploads/2012/08/3_thumb1.png)](http://daoluan.net/blog/archives/787/3_thumb1)
+[![](http://md.daoluan.net/blog/images/2012/08/3_thumb1.png)](http://daoluan.net/blog/archives/787/3_thumb1)
 
 client
 
