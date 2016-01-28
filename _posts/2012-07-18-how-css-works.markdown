@@ -24,7 +24,7 @@ tags:
 
 CSS中包括三个部分：样式名（标准说是“选择器”），属性名和属性值。那CSS的代码应该放在哪里？最为常用的方法就是把css代码独立于一个外部的.css文件中，跟其他文件一样，样式表文件放在Web服务器上或者本地硬盘上；
 
-<!-- more -->![“style.css”被存放在文件夹“style”里](http://md.daoluan.net/blog/images/2012/07/css.jpg)
+<!-- more -->![“style.css”被存放在文件夹“style”里](http://md.daoluan.net/images/2012/07/css.jpg)
 
 同时在html文档的头部，即header部分，<head></head>之间，显示声明一个指向外部样式表文件的链接。
 
@@ -65,7 +65,7 @@ style.css文件里的body内的属性还有很多是可以自定义的，比如�
 
 效果图：
 
-[![image_thumb.png](http://md.daoluan.net/blog/images/2012/07/image_thumb3.png)](http://md.daoluan.net/blog/images/2012/07/image_thumb3.png)
+[![image_thumb.png](http://md.daoluan.net/images/2012/07/image_thumb3.png)](http://md.daoluan.net/images/2012/07/image_thumb3.png)
 
 CSS支持非常灵活的样式组合，如果样式名（选择器）为非内置（body，h1等是内置的），比如自定义mystyle样式（它被定义在.css文件里）。比如，同样在桌面新建default.html和style.css两个文件，用记事本进行编辑：
 
@@ -98,7 +98,7 @@ CSS支持非常灵活的样式组合，如果样式名（选择器）为非内�
 
 效果图：
 
-[![image_thumb.png](http://md.daoluan.net/blog/images/2012/07/image_thumb4.png)](http://md.daoluan.net/blog/images/2012/07/image_thumb4.png)
+[![image_thumb.png](http://md.daoluan.net/images/2012/07/image_thumb4.png)](http://md.daoluan.net/images/2012/07/image_thumb4.png)
 
 
 本文完 2012-07-15

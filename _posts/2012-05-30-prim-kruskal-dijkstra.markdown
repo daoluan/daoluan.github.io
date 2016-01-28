@@ -29,7 +29,7 @@ prim和kruskal是最小生成树（MST）的算法，dijkstra是单源最短路�
 
 
 <blockquote><p>什么是轻边？</p>
-<p><a href="http://md.daoluan.net/blog/images/2012/05/image9.png"><img class="alignnone size-full wp-image-439" alt="image.png" src="http://md.daoluan.net/blog/images/2012/05/image9.png" width="358" height="284"></a></p>
+<p><a href="http://md.daoluan.net/images/2012/05/image9.png"><img class="alignnone size-full wp-image-439" alt="image.png" src="http://md.daoluan.net/images/2012/05/image9.png" width="358" height="284"></a></p>
 <p>左边集合和右边集合就组成一个割，其中<strong>边(a,b)是跨越两个集合最小的边</strong>（途中标记为红色），它就是要找的轻边。</p></blockquote>
 
 
@@ -64,11 +64,11 @@ prim的伪代码：
 
 重复上述过程，就可以将森林中的树不断的合并（通俗的讲就是合并两个不相交集合），直到将所有点同属于一棵树为止（通俗的讲就是只剩下一个集合）。
 
-[![image.png](http://md.daoluan.net/blog/images/2012/05/image11.png)](http://md.daoluan.net/blog/images/2012/05/image11.png)
+[![image.png](http://md.daoluan.net/images/2012/05/image11.png)](http://md.daoluan.net/images/2012/05/image11.png)
 
 如上图，有了四个独立的集合，先不管上面的边上从这个集合中哪个点连到那个集合的哪个点，我们只要找到最小权值的边（对于上面的图中是11），合并集合即可。因此上面的例子进行合并后：
 
-[![image.png](http://md.daoluan.net/blog/images/2012/05/image12.png)](http://md.daoluan.net/blog/images/2012/05/image12.png)
+[![image.png](http://md.daoluan.net/images/2012/05/image12.png)](http://md.daoluan.net/images/2012/05/image12.png)
 
 kruskal证明过程可以参照prim算法的证明过程。
 
@@ -273,9 +273,9 @@ dijkstra算法中设置了一个顶点集合S，从源点到集合中的顶点�
 
 <blockquote><p>什么是松弛？</p>
 <p>就是可能会出现这样的情况，假设源点为s，tab(u,v)为顶点u到顶点v的权值，dist(u)为迄今为止找到的s到u最短路径。在松弛(u,v)的过程中，要测试<strong>是否可以通过u，对迄今为止找到的v的最短路径进行改进。</strong>也就是可能会出现dist(v)&gt;dist(u)+tab(u,v)的情况。</p>
-<p><a href="http://md.daoluan.net/blog/images/2012/05/image13.png"><img class="alignnone size-full wp-image-445" alt="image.png" src="http://md.daoluan.net/blog/images/2012/05/image13.png" width="414" height="136"></a></p>
+<p><a href="http://md.daoluan.net/images/2012/05/image13.png"><img class="alignnone size-full wp-image-445" alt="image.png" src="http://md.daoluan.net/images/2012/05/image13.png" width="414" height="136"></a></p>
 <p>上面的图因为dist(v)&gt;dist(u)+tab(u,v)即6&gt;2+3，故要对边(u,v)进行松弛的时候会将dist(v)从6更正为5。但对于下面的情况，在松弛过后，dist(v)没有改变因为dist(v)&lt;=dist(u)+tab(u,v)即4&lt;=2+3。</p>
-<p><a href="http://md.daoluan.net/blog/images/2012/05/image14.png"><img class="alignnone size-full wp-image-447" alt="image.png" src="http://md.daoluan.net/blog/images/2012/05/image14.png" width="400" height="143"></a></p>
+<p><a href="http://md.daoluan.net/images/2012/05/image14.png"><img class="alignnone size-full wp-image-447" alt="image.png" src="http://md.daoluan.net/images/2012/05/image14.png" width="400" height="143"></a></p>
 <p>松弛技术在Bellman-Ford负权回路探测算法中也有应用。不禁想起还小的一个作为题：两点之间曲线更短…</p></blockquote>
 
 

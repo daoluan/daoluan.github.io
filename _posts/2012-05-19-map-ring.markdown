@@ -39,11 +39,11 @@ tags:
 
 在未探索完的一条深度优先搜索路径上，这条路径上的所有点都是灰色的（如果这些点被访问）；而搜索过程又不是并行的，所以程序每次只处在一条深度优先搜索路径的处理上。不知道理解没有，来看看图：
 
-[![image.png](http://md.daoluan.net/blog/images/2012/05/image2.png)](http://md.daoluan.net/blog/images/2012/05/image2.png)
+[![image.png](http://md.daoluan.net/images/2012/05/image2.png)](http://md.daoluan.net/images/2012/05/image2.png)
 
 更形象点，介绍一下“DFS树”，在DFS过程当中，把真正走过的边加入DFS树当中，那些未真正走过的边不加入到DFS树当中，比如，从u到已经被访问的v，那么(u,v)就是一条未真正走过的边。来看图：红色边和其所连接的点组成了DFS树，在图中，DFS树会有两棵。
 
-[![image.png](http://md.daoluan.net/blog/images/2012/05/image3.png)](http://md.daoluan.net/blog/images/2012/05/image3.png)
+[![image.png](http://md.daoluan.net/images/2012/05/image3.png)](http://md.daoluan.net/images/2012/05/image3.png)
 
 如果这样来定义DFS树的话，那么在这课DFS树当中只有树边了。
 
@@ -62,17 +62,17 @@ tags:
 <blockquote>反向边：在DFS树中，连接顶点u到它某一祖先顶点v的边，也就是连接到那DFS条路径上点的边。</blockquote>
 
 
-[![image.png](http://md.daoluan.net/blog/images/2012/05/image5.png)](http://md.daoluan.net/blog/images/2012/05/image5.png)
+[![image.png](http://md.daoluan.net/images/2012/05/image5.png)](http://md.daoluan.net/images/2012/05/image5.png)
 
 上面的两个图是等价的。
 
 所以如果这么定义深度优先搜索树，对于下面的图它不可能存在反向边了，只有树边。把DFS树稍作修改，就可以得到原图（加上反向边，正向边，交叉边，《导论》有概念），
 
-![image.png](http://md.daoluan.net/blog/images/2012/05/image4.png)
+![image.png](http://md.daoluan.net/images/2012/05/image4.png)
 
 对于有向图，判断有无环就是判断它的“DFS树是否存在反向边”？那么如何判断呢？利用“颜色标记”法，就可以很简单做到。
 
-[![image.png](http://md.daoluan.net/blog/images/2012/05/image6.png)](http://md.daoluan.net/blog/images/2012/05/image6.png)
+[![image.png](http://md.daoluan.net/images/2012/05/image6.png)](http://md.daoluan.net/images/2012/05/image6.png)
 
 上面的虚线边就表示当前DFS路径上探索到了一条反向边因为x和z点都是灰色的。当然对于有向图中是否存在环，并不影响DFS的最终效果——遍历。
 

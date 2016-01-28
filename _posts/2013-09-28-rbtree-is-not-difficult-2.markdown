@@ -36,7 +36,7 @@ tags:
 
 sgi stl map 底层实现是 _Rb_tree类, 为了方便管理, _Rb_tree 内置了 _M_header, 用于记录红黑树中的根节点, 最小节点和最大节点. 在插入删除中都会对其进行维护. 找到一副美艳的图片:
 
-[![rbtree_header](http://md.daoluan.net/blog/images/2013/09/rbtree_header.jpg)](http://md.daoluan.net/blog/images/2013/09/rbtree_header.jpg)
+[![rbtree_header](http://md.daoluan.net/images/2013/09/rbtree_header.jpg)](http://md.daoluan.net/images/2013/09/rbtree_header.jpg)
 
 我只会展开插入和删除的代码. _Rb_tree 有 insert_unique() 和 insert_equal() 两种, 前者不允许有重复值, 后者可以. insert_unique() 判断是否有重复值的方法利用了二叉搜索树的性质. 细节请参看下面的代码.
 

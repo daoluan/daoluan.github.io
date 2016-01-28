@@ -41,7 +41,7 @@ tags:
   2. 或者是存储在队列中尚未处理的。
 
 
-[![image.png](http://md.daoluan.net/blog/images/2012/05/image.png)](http://md.daoluan.net/blog/images/2012/05/image.png)
+[![image.png](http://md.daoluan.net/images/2012/05/image.png)](http://md.daoluan.net/images/2012/05/image.png)
 
 《算法导轮》对两种搜索都采用了很聪明的做法，用白色WHITE来标志未发现的节点，用灰色GRAY来标志第一次被发现的节点，用黑色BLACK来标志第二次被发现的节点。
 
@@ -91,7 +91,7 @@ tags:
   3. BLACK 此顶点的邻接顶点被全部访问完之后——结束访问次顶点
 
 
-[![image.png](http://md.daoluan.net/blog/images/2012/05/image1.png)](http://md.daoluan.net/blog/images/2012/05/image1.png)
+[![image.png](http://md.daoluan.net/images/2012/05/image1.png)](http://md.daoluan.net/images/2012/05/image1.png)
 
 
     DFS(G,s)

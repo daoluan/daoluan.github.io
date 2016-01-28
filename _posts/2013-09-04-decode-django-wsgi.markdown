@@ -118,7 +118,7 @@ python 作为一种脚本语言, 已经逐渐大量用于 web 后台开发中, �
 
 python 的库有好多的工具, 这时可能因为需要的原因, 会生出好多的父类, 为了讲明, 根据 wsgiref 模块和它自带的测试用例得出下面的 UML 图(注意, 这只是 wsgiref, 没有涉及 Django):
 
-[![python-wsgiref](http://md.daoluan.net/blog/images/2013/09/python-wsgiref.png)](http://md.daoluan.net/blog/images/2013/09/python-wsgiref.png)
+[![python-wsgiref](http://md.daoluan.net/images/2013/09/python-wsgiref.png)](http://md.daoluan.net/images/2013/09/python-wsgiref.png)
 
 我读完这些的时候已经晕了, 确实是里边的继承关系有些复杂. 因此, 简要的概括了测试代码的执行关系:
 

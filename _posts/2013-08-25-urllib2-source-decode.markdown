@@ -41,7 +41,7 @@ urllib2 对 urllib 改进了好些，整个思路都改了，变得更加灵活�
   * 另添加了 N 多 handlers，这些 handlers 主要对 HTTP 连接，HTTP request 或者 HTTP response 的处理，譬如往 HTTP request 中添加几个特定的 cookies 或者状态码处理，所有你能想到的 HTTP request 的预处理或者 HTTP response 的善后处理，稍后展开。
 
 
-[![urllib2](http://md.daoluan.net/blog/images/2013/08/urllib2.gif)](http://md.daoluan.net/blog/images/2013/08/urllib2.gif)
+[![urllib2](http://md.daoluan.net/images/2013/08/urllib2.gif)](http://md.daoluan.net/images/2013/08/urllib2.gif)
 
 
 ### OpenerDirector

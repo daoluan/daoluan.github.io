@@ -24,11 +24,11 @@ tags:
 
 下面是士兵排队，边(u,v)表示士兵u必须排在士兵v的前面。
 
-[![image.png](http://md.daoluan.net/blog/images/2012/05/image7.png)](http://md.daoluan.net/blog/images/2012/05/image7.png)
+[![image.png](http://md.daoluan.net/images/2012/05/image7.png)](http://md.daoluan.net/images/2012/05/image7.png)
 
 DFS过程增加时间戳，然后按照时间戳来排列顶点就可以得到士兵的排列，就可以得到：
 
-[![image.png](http://md.daoluan.net/blog/images/2012/05/image8.png)](http://md.daoluan.net/blog/images/2012/05/image8.png)
+[![image.png](http://md.daoluan.net/images/2012/05/image8.png)](http://md.daoluan.net/images/2012/05/image8.png)
 
 所以g在f的前面，f在e的前面...
 
@@ -51,7 +51,7 @@ DFS过程增加时间戳，然后按照时间戳来排列顶点就可以得到�
 
 拓扑排序可以用于有向图环的判断。对于有向无回路图来说，进行拓扑排序之后（将上面第二个图，可以参考一下），对于(left,right)，left指起点在左，right指终点在右，都有第二时间戳(right)<第二时间戳(left)，也就是说如果违反这个结果，图中是比存在环的。看看：
 
-[![image.png](http://md.daoluan.net/blog/images/2012/05/image10.png)](http://md.daoluan.net/blog/images/2012/05/image10.png)
+[![image.png](http://md.daoluan.net/images/2012/05/image10.png)](http://md.daoluan.net/images/2012/05/image10.png)
 
 对于边(d,a)第二时间戳(a)>第二时间戳(d)，此图存在环。利用拓扑排序还可以实现单源最短路径算法。
 

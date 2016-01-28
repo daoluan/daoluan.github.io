@@ -15,7 +15,7 @@ tags:
 
 一句话list：list是我们在数据结构中接触过的双向循环链表，应用有[约瑟夫环](http://zh.wikipedia.org/wiki/%E7%BA%A6%E7%91%9F%E5%A4%AB%E6%96%AF%E9%97%AE%E9%A2%98)；可见其空间非连续的，但可以动态扩充，效率很高，只是不支持随机访问，必须通过迭代器找到指定的元素。总的来说，list用起来比较顺手。
 
-[![](http://md.daoluan.net/blog/images/2012/10/list_node.jpg)](http://daoluan.net/blog/stl-list/list_node/) list_node
+[![](http://md.daoluan.net/images/2012/10/list_node.jpg)](http://daoluan.net/blog/stl-list/list_node/) list_node
 
 <!-- more -->
 

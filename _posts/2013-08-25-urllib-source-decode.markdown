@@ -31,7 +31,7 @@ urllib 是 python 内置的网络爬虫模块，如果熟悉 python 一定能很
 
 写这篇文章的目的是因为用到了它，但因为用的次数较多，又或者是具体的需求，有必要深入去理解内部的工作方式。
 
-[![urllib](http://md.daoluan.net/blog/images/2013/08/urllib.gif)](http://md.daoluan.net/blog/images/2013/08/urllib.gif)
+[![urllib](http://md.daoluan.net/images/2013/08/urllib.gif)](http://md.daoluan.net/images/2013/08/urllib.gif)
 
 
 ### 最简单的使用
