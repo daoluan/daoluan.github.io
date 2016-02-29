@@ -122,7 +122,7 @@ redis 定义两个 struct rio，分别是 rioFileIO 和 rioBufferIO，前者用�
 ### RDB 持久化的运作机制
 
 
-[![rdb_persistence](http://md.daoluan.net/images/blog/2014/03/rdb_persistence.png)](http://md.daoluan.net/images/blog/2014/03/rdb_persistence.png)
+[![rdb_persistence](http://daoluan.net/images/blog/2014/03/rdb_persistence.png)](http://daoluan.net/images/blog/2014/03/rdb_persistence.png)
 
 redis 支持两种方式进行 RDB：当前进程执行和后台执行（BGSAVE）。RDB BGSAVE 策略是 fork 出一个子进程，把内存中的数据集整个 dump 到硬盘上。两个场景举例：
 
@@ -340,7 +340,7 @@ RDB 的文件组织方式为：**数据集序号1：操作码：数据1：结束
 
 举两个字符串存储的例子，其他的大概都以至于的形式来组织数据：
 
-[![rdb_datastruct_sample](http://md.daoluan.net/images/blog/2014/03/rdb_datastruct_sample.png)](http://md.daoluan.net/images/blog/2014/03/rdb_datastruct_sample.png)
+[![rdb_datastruct_sample](http://daoluan.net/images/blog/2014/03/rdb_datastruct_sample.png)](http://daoluan.net/images/blog/2014/03/rdb_datastruct_sample.png)
 
 **可见**，RDB 持久化的结果是一个非常紧凑的文件，几乎每一位都是有用的信息。如果对 redis RDB 数据组织方式的细则感兴趣，可以参看 rdb.h 和 rdb.c 两个文件的实现。
 

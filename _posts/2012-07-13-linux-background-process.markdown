@@ -32,7 +32,7 @@ tags:
 
 
 <blockquote><p>下面的文件是/ect/init/tty1.conf，这足以说明init的动作。</p>
-<p><a href="http://md.daoluan.net/images/blog/2012/07/image_thumb.png"><img class="alignnone size-full wp-image-644" alt="image_thumb.png" src="http://md.daoluan.net/images/blog/2012/07/image_thumb.png" width="644" height="185"></a></p></blockquote>
+<p><a href="http://daoluan.net/images/blog/2012/07/image_thumb.png"><img class="alignnone size-full wp-image-644" alt="image_thumb.png" src="http://daoluan.net/images/blog/2012/07/image_thumb.png" width="644" height="185"></a></p></blockquote>
 
 
 getty进程所要做的：
@@ -84,13 +84,13 @@ login已完成使命（主要是以上步骤），shell登场（exec）。
 
 根据上面的第二条：
 
-[![image_thumb.png](http://md.daoluan.net/images/blog/2012/07/image_thumb1.png)](http://md.daoluan.net/images/blog/2012/07/image_thumb1.png)
+[![image_thumb.png](http://daoluan.net/images/blog/2012/07/image_thumb1.png)](http://daoluan.net/images/blog/2012/07/image_thumb1.png)
 
 我在.profile第九行添加“Daoluan Logins In Succeed!”，在进入命令提示符的前一行，就有显示这一字符串，说明这是初始化的必经之地。经常我们需要自定义我们的工作环境的时候，通常要在工作目录下的.bashrc（在.profile文件里有一个行执行.bashrc的代码），从而达到自定义环境的目的。
 
 
 <blockquote><p>用apue上一幅图来结束这篇学习总结！</p>
-<p><a href="http://md.daoluan.net/images/blog/2012/07/image_thumb2.png"><img class="alignnone size-full wp-image-648" alt="image_thumb.png" src="http://md.daoluan.net/images/blog/2012/07/image_thumb2.png" width="345" height="686"></a></p>
+<p><a href="http://daoluan.net/images/blog/2012/07/image_thumb2.png"><img class="alignnone size-full wp-image-648" alt="image_thumb.png" src="http://daoluan.net/images/blog/2012/07/image_thumb2.png" width="345" height="686"></a></p>
 <p>上面是终端登录的过程；网络登录的话，会有伪终端设备驱动程序，配合talnet来对终端进行仿真。</p></blockquote>
 
 

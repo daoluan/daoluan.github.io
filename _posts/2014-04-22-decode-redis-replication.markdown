@@ -23,7 +23,7 @@ tags:
 
 redis 支持 master-slave（主从）模式，redis server 可以设置为另一个 redis server 的主机（从机），从机定期从主机拿数据。特殊的，一个 从机同样可以设置为一个 redis server 的主机，这样一来 master-slave 的分布看起来就是一个有向无环图 DAG，如此形成 redis server 集群，无论是主机还是从机都是 redis server，都可以提供服务）。
 
-[![master_slave](http://md.daoluan.net/images/blog/2014/04/master_slave.png)](http://md.daoluan.net/images/blog/2014/04/master_slave.png)
+[![master_slave](http://daoluan.net/images/blog/2014/04/master_slave.png)](http://daoluan.net/images/blog/2014/04/master_slave.png)
 
 在配置后，主机可负责读写服务，从机只负责读。redis 提高这种配置方式，为的是让其支持数据的弱一致性，即最终一致性。在业务中，选择强一致性还是若已执行，应该取决于具体的业务需求，像微博，完全可以使用弱一致性模型；像淘宝，可以选用强一致性模型。
 
@@ -289,7 +289,7 @@ redis 主从同步有两种方式（或者所两个阶段）：全同步和部�
 
 下面这幅图，总结了主从同步的机制：
 
-[![how_redis_replication_sync_works](http://md.daoluan.net/images/blog/2014/04/how_redis_replication_sync_works.png)](http://md.daoluan.net/images/blog/2014/04/how_redis_replication_sync_works.png)
+[![how_redis_replication_sync_works](http://daoluan.net/images/blog/2014/04/how_redis_replication_sync_works.png)](http://daoluan.net/images/blog/2014/04/how_redis_replication_sync_works.png)
 
 如需设置 slave，master 需要向 slave 发送 SLAVEOF hostname port，从机接收到后会自动连接主机，注册相应读写事件（syncWithMaster())。
 

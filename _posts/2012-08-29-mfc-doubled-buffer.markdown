@@ -19,7 +19,7 @@ MFC中双缓冲技术比较常用，主要是为了避免因绘图过程的缓�
 
 <!-- more -->
 
-[![](http://md.daoluan.net/images/blog/2012/08/Double-cache.png)](http://daoluan.net/blog/archives/914/double-cache)
+[![](http://daoluan.net/images/blog/2012/08/Double-cache.png)](http://daoluan.net/blog/archives/914/double-cache)
 
 MFC中具体是这么做的：
 

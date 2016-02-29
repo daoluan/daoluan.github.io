@@ -50,7 +50,7 @@ STL中会定义迭代器：
     };
 
 
-[![](http://md.daoluan.net/images/blog/2012/10/iterator_op.jpg)](http://daoluan.net/blog/stl-iterator/iterator_op/) iterator_op
+[![](http://daoluan.net/images/blog/2012/10/iterator_op.jpg)](http://daoluan.net/blog/stl-iterator/iterator_op/) iterator_op
 
 从中看出，迭代器不包含数据实体，它只是能表现和操作数据实体。因为上述container_iterator操控的的实现，因此当手头有一container_iterator的时候，你可以“*ite”来获得数据元的引用，可以“ite->”获得数据元的指针，“++”可以另ite自动前进一步，“--”可以另ite后退一步。。。
 
