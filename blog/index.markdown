@@ -8,8 +8,6 @@ keywords: 捣乱小子,捣乱,郑思愿,郑思愿daoluan,daoluan,daoluan.net
 
 欢迎
 =====
-男，程序员，关注 c++，平时喜欢读书，写博客，吉他。
-
 最近的文章
 <p>
 <ul class="compact recent">
