@@ -12,4 +12,4 @@ categories:
 
 越来越能体会到世界是一个经济体。当今是以美国为主的世界经济联合体，回想起来 2008年美国的次贷危机就能很好的验证上面这个结论。当时的根本原因就是美国放贷放得太多而来不及收回来，甚至收不回来，导致银行有一大批坏账，贷款公司倒闭，最后就是美国的大萧条，这波及了世界其他地方，包括中国。中国是制造业大国，此时美国的萧条必然导致国内出口受阻，中国 GDP 增长比例就很难维持下去，中国政府必须想法子。当然，中国想的不是什么好办法：四万亿。四万亿是什么，是刺激，是放水。在这之前，中国的房地产已经慢慢渗入到中国的经济结构当中，可为中国经济支柱的之一，然后这本来就是畸形的经济结构，而四万亿更是催生了房地产的泡沫，因为房地产若是垮台，中国经济也就垮了。
 
-[![gdp_of_china](http://daoluan.net/images/blog/2015/12/gdp_of_china.png)](http://daoluan.net/images/blog/2015/12/gdp_of_china.png)
+[![gdp_of_china](http://md.daoluan.net/images/blog/2015/12/gdp_of_china.png)](http://md.daoluan.net/images/blog/2015/12/gdp_of_china.png)

@@ -327,7 +327,7 @@ P** d a o d a o d a o d a o l  u a n  **
 
 比如：同样对P=ababababca，求π*(8)， 有下图结果（来自算法导论）：
 
-[![image.png](http://daoluan.net/images/blog/2012/06/image3.png)](http://daoluan.net/images/blog/2012/06/image3.png)
+[![image.png](http://md.daoluan.net/images/blog/2012/06/image3.png)](http://md.daoluan.net/images/blog/2012/06/image3.png)
 
 所以π*(8)={0,2,4,6}。对于其他的 π*(q)值也是这样计算。**这里的涉及了很多的定义，务必看懂，下面的三个结论才看得下去。如果太急，直接忽视这里，看上面的“有趣的字符串匹配”。**
 
@@ -364,7 +364,7 @@ KMP 有三个结论，他们主要是用来计算辅助表的：
 
 根据结论一，得到 t-1∈π*(q-1)，π(q)-1∈π*(q-1)总能成立。
 
-- 图示结论[![image.png](http://daoluan.net/images/blog/2012/06/image5.png)](http://daoluan.net/images/blog/2012/06/image5.png)
+- 图示结论[![image.png](http://md.daoluan.net/images/blog/2012/06/image5.png)](http://md.daoluan.net/images/blog/2012/06/image5.png)
 
 上面的图中，如果匹配不成功, π 值会越来越小, 直到为0, 此时就需要重新从第一个字符开始匹配了.
 

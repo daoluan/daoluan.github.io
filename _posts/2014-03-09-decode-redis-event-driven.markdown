@@ -23,7 +23,7 @@ redis 内部有一个小型的事件驱动，它和 libevent 网络库的事件�
 
 利用 I/O 多路复用技术，监听感兴趣的文件 I/O 事件，例如读事件，写事件等，同时也要维护一个以文件描述符为主键，数据为某个预设函数的事件表，这里其实就是一个数组或者链表 。当事件触发时，比如某个文件描述符可读，系统会返回文件描述符值，用这个值在事件表中找到相应的数据项，从而实现回调。同样的，定时事件也是可以实现的，因为系统提供的 I/O 多路复用技术中的函数允许我们设定时间值。
 
-[![redis_event_summary](http://daoluan.net/images/blog/2014/03/redis_event_summary.png)](http://daoluan.net/images/blog/2014/03/redis_event_summary.png)
+[![redis_event_summary](http://md.daoluan.net/images/blog/2014/03/redis_event_summary.png)](http://md.daoluan.net/images/blog/2014/03/redis_event_summary.png)
 
 上面一段话比较综合，可能需要一些 linux 系统编程和网络编程的基础，但你会看到多数事件驱动程序都是这么实现的（？）。
 
@@ -171,7 +171,7 @@ redis 的主函数中调用 initServer() 函数从而初始化事件循环中心
 
 文件 I/O 事件注册主要操作在 aeCreateFileEvent() 中完成。aeCreateFileEvent() 会根据文件描述符的数值大小在事件循环结构体的 I/O 事件表中取一个数据空间，利用系统提供的 I/O 多路复用技术监听感兴趣的 I/O 事件，并设置回调函数。
 
-[![io_event_table](http://daoluan.net/images/blog/2014/03/io_event_table.png)](http://daoluan.net/images/blog/2014/03/io_event_table.png)
+[![io_event_table](http://md.daoluan.net/images/blog/2014/03/io_event_table.png)](http://md.daoluan.net/images/blog/2014/03/io_event_table.png)
 
     
     int aeCreateFileEvent(aeEventLoop *eventLoop, int fd, int mask,
@@ -202,11 +202,11 @@ redis 的主函数中调用 initServer() 函数从而初始化事件循环中心
 
 对于不同版本的 I/O 多路复用，比如 epoll，select，kqueue 等，redis 有各自的版本，但接口统一，譬如 aeApiAddEvent()。
 
-[![redis_event_api](http://daoluan.net/images/blog/2014/03/redis_event_api.png)](http://daoluan.net/images/blog/2014/03/redis_event_api.png)
+[![redis_event_api](http://md.daoluan.net/images/blog/2014/03/redis_event_api.png)](http://md.daoluan.net/images/blog/2014/03/redis_event_api.png)
 
 之于定时事件，在事件循环结构体中用链表来维护。定时事件操作在 aeCreateTimeEvent() 中完成：分配定时事件结构体，设置触发时间和回调函数，插入到定时事件表中。
 
-[![time_event_table](http://daoluan.net/images/blog/2014/03/time_event_table.png)](http://daoluan.net/images/blog/2014/03/time_event_table.png)
+[![time_event_table](http://md.daoluan.net/images/blog/2014/03/time_event_table.png)](http://md.daoluan.net/images/blog/2014/03/time_event_table.png)
 
     
     long long aeCreateTimeEvent(aeEventLoop *eventLoop, long long milliseconds,
@@ -552,7 +552,7 @@ redis 的事件驱动总结如下：
   6. 如果与客户端连接的套接字变为可读，执行相应的操作
 
 
-![redis_event_summary](http://daoluan.net/images/blog/2014/03/redis_event_summary.png)
+![redis_event_summary](http://md.daoluan.net/images/blog/2014/03/redis_event_summary.png)
 
 后续分享更多内容。
 

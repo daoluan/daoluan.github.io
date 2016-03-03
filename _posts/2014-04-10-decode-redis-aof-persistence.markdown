@@ -55,7 +55,7 @@ redis AOF 持久化同样借助了 struct rio. 详细内容在《深入剖析 re
 
 和 redis RDB 持久化运作机制不同，redis AOF 有后台执行和边服务边备份两种方式。
 
-[![aof_persistence](http://daoluan.net/images/blog/2014/04/aof_persistence.png)](http://daoluan.net/images/blog/2014/04/aof_persistence.png)
+[![aof_persistence](http://md.daoluan.net/images/blog/2014/04/aof_persistence.png)](http://md.daoluan.net/images/blog/2014/04/aof_persistence.png)
 
 1）AOF 后台执行的方式和 RDB 有类似的地方，fork 一个子进程，主进程仍进行服务，子进程执行 AOF 持久化，数据被 dump 到磁盘上。与 RDB 不同的是，后台子进程持久化过程中，主进程会记录期间的所有数据变更（主进程还在服务），并存储在 server.aof_rewrite_buf_blocks 中；后台子进程结束后，redis 更新缓存追加到 AOF 文件中，是 RDB 持久化所不具备的。
 
@@ -498,7 +498,7 @@ redis 源码中是这么实现的：propagrate()->feedAppendOnlyFile()->aofRewri
 
 一副可以缓解视力疲劳的图片——AOF 持久化运作机制：
 
-[![how_aof_works](http://daoluan.net/images/blog/2014/04/how_aof_works.png)](http://daoluan.net/images/blog/2014/04/how_aof_works.png)
+[![how_aof_works](http://md.daoluan.net/images/blog/2014/04/how_aof_works.png)](http://md.daoluan.net/images/blog/2014/04/how_aof_works.png)
 
 下面是主要的代码：
 

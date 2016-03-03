@@ -101,7 +101,7 @@ redis 允许一个客户端不间断执行多条命令：发送 MULTI 后，用�
     2) (integer) 1
 
 
-[![redis_transaction](http://daoluan.net/images/blog/2014/06/redis_transaction.png)](http://daoluan.net/images/blog/2014/06/redis_transaction.png)
+[![redis_transaction](http://md.daoluan.net/images/blog/2014/06/redis_transaction.png)](http://md.daoluan.net/images/blog/2014/06/redis_transaction.png)
 
 processCommand() 函数中的一段代码可以窥探命令入队的操作：
 
@@ -405,7 +405,7 @@ final: score=12
 
 redis 数据集结构体 redisDB 和客户端结构体 redisClient 都会保存键值监视的相关数据。
 
-[![redis_watched_keys](http://daoluan.net/images/blog/2014/06/redis_watched_keys.png)](http://daoluan.net/images/blog/2014/06/redis_watched_keys.png)
+[![redis_watched_keys](http://md.daoluan.net/images/blog/2014/06/redis_watched_keys.png)](http://md.daoluan.net/images/blog/2014/06/redis_watched_keys.png)
 
 监视键值的过程：
 

@@ -593,11 +593,11 @@ auto机就是一个协助匹配的状态表（或者图）。
 
 整一个算法的思想就是基于这么一个理论：如若**alpha(T)=q（这个条件很重要）**,alpha(Ta)=alpha[(q)Pa]。这个搞定了，整个算法思想就通了。证明过程我只能用诸多“显然”的词汇来描述。 算法导论中有一个很经典的图：
 
-[![image9.png](http://daoluan.net/images/blog/2012/06/image9.png)](http://daoluan.net/images/blog/2012/06/image9.png)
+[![image9.png](http://md.daoluan.net/images/blog/2012/06/image9.png)](http://md.daoluan.net/images/blog/2012/06/image9.png)
 
 假定r=alpha(Ta)，那么r<=q+1（条件alpha(T)=q），因为最理想的情况也就是r=q+1（图中的a字符刚好与P的第q+1字符匹配），此时也有r=q+1=alpha[(q)Pa]。
 
-[![image.png](http://daoluan.net/images/blog/2012/06/image.png)](http://daoluan.net/images/blog/2012/06/image.png)
+[![image.png](http://md.daoluan.net/images/blog/2012/06/image.png)](http://md.daoluan.net/images/blog/2012/06/image.png)
 
 其他的情况一律满足r<q+1，又T(r)肯定是P的前缀，即T(r)=(r)P，所以r<=alpha[(q)Pa]，即alpha(Ta)<=alpha[(q)Pa]。再来，因为(q)Pa肯定是T(q)a的后缀，alpha(Ta)>=alpha[(q)Pa]肯定成立。这样就证明了alpha(Ta)=alpha[(q)Pa]。
 
@@ -609,7 +609,7 @@ auto机就是一个协助匹配的状态表（或者图）。
 
 看一个具体的例子： 假定，匹配内容P=acbaca，其字符集只涉及了{a,b,c}，那么其对应的状态转换图：
 
-[![image_thumb.png](http://daoluan.net/images/blog/2012/06/image_thumb1.png)](http://daoluan.net/images/blog/2012/06/image_thumb1.png)
+[![image_thumb.png](http://md.daoluan.net/images/blog/2012/06/image_thumb1.png)](http://md.daoluan.net/images/blog/2012/06/image_thumb1.png)
 
 补充说明红色线和绿色线。
 

@@ -89,15 +89,15 @@ inet_pton和inet—_ntop方便点分十进制IP地址字符串和uint32_t（IP�
 
 服务器启动
 
-[![1_thumb.png](http://daoluan.net/images/blog/2012/08/1_thumb.png)](http://daoluan.net/images/blog/2012/08/1_thumb.png)
+[![1_thumb.png](http://md.daoluan.net/images/blog/2012/08/1_thumb.png)](http://md.daoluan.net/images/blog/2012/08/1_thumb.png)
 
 客户端启动，太快了，结果都出来了
 
-[![2_thumb.png](http://daoluan.net/images/blog/2012/08/2_thumb.png)](http://daoluan.net/images/blog/2012/08/2_thumb.png)
+[![2_thumb.png](http://md.daoluan.net/images/blog/2012/08/2_thumb.png)](http://md.daoluan.net/images/blog/2012/08/2_thumb.png)
 
 服务器处理结束，退出
 
-[![3_thumb.png](http://daoluan.net/images/blog/2012/08/3_thumb.png)](http://daoluan.net/images/blog/2012/08/3_thumb.png)
+[![3_thumb.png](http://md.daoluan.net/images/blog/2012/08/3_thumb.png)](http://md.daoluan.net/images/blog/2012/08/3_thumb.png)
 
 计算器要求：客户需要传递后缀表达式简单运算（如上图），服务器直接运行就即可。
 缺陷：此计算器只服务于一个客户，其他不给予处理；此计算器进一步改进可以实现接受不只一个客户的请求。

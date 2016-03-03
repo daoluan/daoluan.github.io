@@ -69,7 +69,7 @@ C-------------S-------------M
 在这里要提一下 CDN 内容分发网络，反向代理可以是 CDN 的一种实现原理。为此，找到一幅好图：
 
 
-[![CDN](http://daoluan.net/images/blog/2013/08/CDN.png)](http://daoluan.net/images/blog/2013/08/CDN.png)
+[![CDN](http://md.daoluan.net/images/blog/2013/08/CDN.png)](http://md.daoluan.net/images/blog/2013/08/CDN.png)
 
 
 从图中可以看到 www.yourdomain.com 设置有三个节点，USA、EU、APAC。这三个节点可以缓存一些静态内容，从而减轻后端服务器压力。当然，这只是原理，其中还很多很牛犇的技术在里面。欢迎补充。
