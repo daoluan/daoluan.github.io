@@ -14,7 +14,7 @@ tags:
 - 红黑树
 ---
 
-<红黑树并没有我们想象的那么难> 上、下两篇已经完成, 希望能帮助到大家.
+<红黑树并没有我们想象的那么难> 上、下两篇已经完成, 希望能帮助到大家。
 
   1. 红黑树并没有我们想象的那么难(上): [http://daoluan.net/blog/rbtree-is-not-difficult/](http://daoluan.net/blog/rbtree-is-not-difficult/)
 
