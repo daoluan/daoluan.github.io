@@ -16,17 +16,17 @@ categories:
 
 记得有一次离开舅舅家的时候，妈妈摩托车载着我，寒风细雨里小狗硬是狂追了好一段路，最后是眼巴巴的望着我们走了。这一点已经能让我回味很久了，因为那是最后一次见面。
 
-[![dog_01](http://md.daoluan.net/images/blog/2014/12/dog_01.png)](http://md.daoluan.net/images/blog/2014/12/dog_01.png)
+[![dog_01](http://daoluan.net/images/blog/2014/12/dog_01.png)](http://daoluan.net/images/blog/2014/12/dog_01.png)
 
 再来是高中毕业的时候，嫂子不知道从哪里弄来了两只小狗，妈妈挑了一只黑白相间的一只。高中毕业后的那个暑假，它一只陪在我们的身边，但很不幸在一次车祸中没了。我很懊恼，因为狗狗下楼之前，我还在一旁玩游戏。虽然只有陪伴的一个月，但现在依旧是满满的回忆。
 
-[![dog_02](http://md.daoluan.net/images/blog/2014/12/dog_02.jpg)](http://md.daoluan.net/images/blog/2014/12/dog_02.jpg)
+[![dog_02](http://daoluan.net/images/blog/2014/12/dog_02.jpg)](http://daoluan.net/images/blog/2014/12/dog_02.jpg)
 
 昨晚看电影的时候，接到是第三只小狗逝去的事情。最伤心的，应该是妈妈了，突然没了一个每天陪伴的小东西，整个人有种被抽空的感觉。狗不会说话， 但这恰恰成为了人们的痛点，人在这个时候往往会把责任归咎于自己。
 
 当时抱养的时候也是两只小狗，一黄一黑，同样也是让我选。我分别抱起它们，往它们的嘴鼻子上吹起，黄狗舔舔了嘴鼻子，大概是痒吧，于是就抱养了黄狗，不用分析了这里面没有任何逻辑。
 
-[![dog_03](http://md.daoluan.net/images/blog/2014/12/dog_03.png)](http://md.daoluan.net/images/blog/2014/12/dog_03.png)
+[![dog_03](http://daoluan.net/images/blog/2014/12/dog_03.png)](http://daoluan.net/images/blog/2014/12/dog_03.png)
 
 你们在上，都要好好，谢谢你们的陪伴。
 

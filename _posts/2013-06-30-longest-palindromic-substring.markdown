@@ -56,11 +56,11 @@ categories:
 
 利用一个辅助数组 arr[n]，其中 arr[i] 记录的是以 str[i] 为中心的回文子串长度。当计算 arr[i] 的时候，arr[0...i-1] 是已知并且可被利用的。Manacher 核心在于：**用 mx 记录之前计算的最长的回文子串长度所能到达的最后边界，用 id 记录其对应的中心，可以利用回文子串中的回文子串信息。**
 
-![lps02](http://md.daoluan.net/images/blog/2013/06/lps02.png)
+![lps02](http://daoluan.net/images/blog/2013/06/lps02.png)
 
 假设 id 与 mx 已经得出，当计算以 str[i] 为中心回文子串长度时，因为已经可以确定绿色部分已经是回文子串了，所以可以利用以 str[j] 为中心回文子串长度即 arr[j]。在上图的情况下，所以可以从箭头所指出开始比较。还有一种情况：
 
-[![lps01](http://md.daoluan.net/images/blog/2013/06/lps01.png)](http://md.daoluan.net/images/blog/2013/06/lps01.png)
+[![lps01](http://daoluan.net/images/blog/2013/06/lps01.png)](http://daoluan.net/images/blog/2013/06/lps01.png)
 
 这种情况下，不能直接利用以 str[j] 为中心回文子串长度即 arr[j]，因为以 id 为中心回文子串长度只计算到了绿色箭头所指之处，所以能力利用的信息是 mx-i，比较 mx-i 之后的字符。
 
@@ -80,7 +80,7 @@ cdabadabac
 
 1113141?
 
-当计算「？」即 arr[7] 的时候，id = 5,mx = 8，此时 arr[7] 不能赋 arr[2*id-7=3]=3 的初值，因为以 id 为中心的回文子串只为图中蓝色部分：[![lps03](http://md.daoluan.net/images/blog/2013/06/lps03.png)](http://md.daoluan.net/images/blog/2013/06/lps03.png) 。所以，arr[7] 只能赋值为 mx-i = 8-7 = 1，继续比较以更新 arr[7]。
+当计算「？」即 arr[7] 的时候，id = 5,mx = 8，此时 arr[7] 不能赋 arr[2*id-7=3]=3 的初值，因为以 id 为中心的回文子串只为图中蓝色部分：[![lps03](http://daoluan.net/images/blog/2013/06/lps03.png)](http://daoluan.net/images/blog/2013/06/lps03.png) 。所以，arr[7] 只能赋值为 mx-i = 8-7 = 1，继续比较以更新 arr[7]。
 
 Manacher 线性算法只要在纸上演算一遍就明白了。
 

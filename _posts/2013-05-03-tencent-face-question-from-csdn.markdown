@@ -26,7 +26,7 @@ categories:
 
 显然，**只要将 arr1 的所有正数和 arr2 的所有负数交换就好了**，为了不打乱原有正数/负数的次序，而且不借用任何其他的空间，考虑用《编程珠玑》中提到的 Doug Mcllroy 提出的翻手例子：
 
-[![0_1320473198JbmS](http://md.daoluan.net/images/blog/2013/05/0_1320473198JbmS_thumb.gif)](http://md.daoluan.net/images/blog/2013/05/0_1320473198JbmS.gif)
+[![0_1320473198JbmS](http://daoluan.net/images/blog/2013/05/0_1320473198JbmS_thumb.gif)](http://daoluan.net/images/blog/2013/05/0_1320473198JbmS.gif)
 
 翻手代码在时间和空间上都很高效，而且代码非常的简短，很难出错。
 
@@ -133,7 +133,7 @@ categories:
 
 我们来看看根据 n 和 m 的不同模拟的函数图像，将函数写成 y = x-x^2/k：
 
-[![未命名](http://md.daoluan.net/images/blog/2013/05/thumb.gif)](http://md.daoluan.net/images/blog/2013/05/adb5ebe0c28e.gif)
+[![未命名](http://daoluan.net/images/blog/2013/05/thumb.gif)](http://daoluan.net/images/blog/2013/05/adb5ebe0c28e.gif)
 
 由此，这种算法确实很不稳定。一开始以为平摊法可以解决复杂度分析问题，可以达到 O(N) 的效果，但无果而终。在 CSDN 上有这题的讨论：[腾讯面试题：把负数移动到正数之前，不能改变正负数原先的次序](http://bbs.csdn.net/topics/390436444) 和 [微博的一个编程题](http://bbs.csdn.net/topics/390382292#post-393824102) 。如果你有什么好的想法，不忘给我和网友们分享一下 :)，据说「之前百度就出过这道题,讨论了1000楼都没有一个正确答案」。
 
