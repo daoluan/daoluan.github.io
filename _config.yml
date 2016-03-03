@@ -1,3 +1,4 @@
 markdown    : maruku
 safe        : true
+permalink   : /blog/:title/
 encoding: utf-8
