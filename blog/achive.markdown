@@ -14,20 +14,6 @@ top:    捣乱的个人网站
 </div> -->
 
 <div>
-    <h3>分类</h3>
-    <ul>
-        {% for category in site.categories %}
-            <span><strong>{{ category | first }}.</strong></span>
-            {% for post in category.last %}
-            <span><a href="{{ post.url }}">{{ post.title }}</a></span>.
-            {% endfor %}
-            <br>
-        {% endfor %}
-    </li>
-</ul>
-</div>
-
-<div>
     <h3>时间线</h3>
     <ul>
         {% for post in site.posts %}
@@ -43,5 +29,19 @@ top:    捣乱的个人网站
         <li>{{ post.date | date:"%Y-%m-%d" }} &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
     </ul>
+</div>
+
+<div>
+    <h3>分类</h3>
+    <ul>
+        {% for category in site.categories %}
+            <span><strong>{{ category | first }}.</strong></span>
+            {% for post in category.last %}
+            <span><a href="{{ post.url }}">{{ post.title }}</a></span>.
+            {% endfor %}
+            <br>
+        {% endfor %}
+    </li>
+</ul>
 </div>
 
