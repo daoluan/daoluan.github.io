@@ -19,10 +19,8 @@ tags:
 
 
 
-  * 红黑树并没有我们想象的那么难(上): [http://daoluan.net/blog/rbtree-is-not-difficult/](http://daoluan.net/blog/rbtree-is-not-difficult/)
-
-
-  * 红黑树并没有我们想象的那么难(下): [http://daoluan.net/blog/rbtree-is-not-difficult-2/](http://daoluan.net/blog/rbtree-is-not-difficult-2/)
+* 红黑树并没有我们想象的那么难(上): [http://daoluan.net/blog/rbtree-is-not-difficult/](http://daoluan.net/blog/rbtree-is-not-difficult/)
+* 红黑树并没有我们想象的那么难(下): [http://daoluan.net/blog/rbtree-is-not-difficult-2/](http://daoluan.net/blog/rbtree-is-not-difficult-2/)
 
 
 
