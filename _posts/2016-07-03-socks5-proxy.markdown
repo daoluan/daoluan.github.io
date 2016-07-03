@@ -16,7 +16,7 @@ categories:
 
 基本的实现框架是在本地(local)开启一个代理，这个代理用来处理 sock5 协议的处理以及浏览器的请求。在远程也开启一个代理，这个代理负责与实际的网站交互。本地的代理和远程的代理使用私有协议交互，目前使用的是 des 加密。
 
-[![访问 G站](http://daoluan.net/images/blog/2015/12/google-page.png)](http://daoluan.net/images/blog/2015/12/google-page.png)
+[![访问 G站](http://daoluan.net/images/blog/2016/google-page.png)](http://daoluan.net/images/blog/2016/google-page.png)
 
 初步完成 2016年6月9日00:44:19
 
