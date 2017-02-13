@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <title>default</title>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <!--custom style-->
+    <style>
+        .current .title{
+            -webkit-animation: slideToTop .8s ease both;
+        }
+
+        .current .subtitle{
+            -webkit-animation: slideToTop .8s 0.3s ease both;
+        }
+
+        .current .valen-text{
+            -webkit-animation: slideToTop .8s 0.5s ease both;
+        }
+
+        .current .valen-textsub{
+            -webkit-animation: slideToTop .8s 1.0s ease both;
+        }
+
+        .current .valen-img{
+            -webkit-animation: slideToTop .8s 1.0s ease both;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+        <div class="page">
+            <div class="title">2016.10.09</div>
+            <!-- <div class="subtitle">page one subtitle</div> -->
+            <!-- <div><img src="img/img.jpg" style="width:75%;height:auto;"></div> -->
+            <div class="valen-text">我们在一起了</div>
+            <div class="valen-textsub"></div>
+            <div class="valen-textsub"></div>
+            <div class="valen-textsub"></div>
+            <div class="valen-textsub"></div>
+            <div class="valen-textsub">.</div>
+            <div class="valen-textsub">.</div>
+            <div class="valen-textsub">.</div>
+            <div class="valen-textsub">.</div>
+            <div class="valen-textsub">.</div>
+            <div class="valen-textsub">.</div>
+            <div class="arrow"></div>
+        </div>
+
+        <div class="page">
+            <div class="title">这是美美的她~</div>
+            <div class="valen-img"><img src="img/lyy-pre.jpg" style="width:63%;height:auto;"></div>
+            <div class="arrow"></div>
+        </div>
+
+        <div class="page">
+            <div class="title">这是她的山精伯伯~</div>
+            <div class="valen-img"><img src="img/zsy-pre.jpg" style="width:63%;height:auto;"></div>
+            <div class="arrow"></div>
+        </div>
+
+        <div class="page">
+            <div><img src="img/we.jpg" style="width:100%;"></div>
+        </div>
+
+        <div class="page">
+            <div class="title" style="padding-top:65%;font-size:42pt;font-family:"微软雅黑">END ❤</div>
+            <div class="arrow"></div>
+        </div>
+
+        <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=35403523&auto=1&height=66"></iframe> -->
+    </div>
+
+    <script src="./js/zepto.min.js"></script>
+    <script src="./js/PageSlider.js"></script>
+    <script>
+        new PageSlider({
+            pages: $('.page-wrap .page')
+        });
+    </script>
+</body>
+</html>
