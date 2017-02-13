@@ -102,8 +102,13 @@
         <div class="arrow"></div>
     </div>
 
-<audio id="Jaudio" class="media-audio" src="audio/cyx.mp3" autoplay preload loop="loop">
-</div>
+<script type="text/javascript">
+(function () {
+  var a = new Audio();
+  a.src = './audio/cyx.mp3';
+  a.play();
+})();
+</script>
 
 <script src="./js/zepto.min.js"></script>
 <script src="./js/PageSlider.js"></script>
