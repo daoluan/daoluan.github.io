@@ -40,6 +40,41 @@
     </style>
 </head>
 <body>
+<div class="musicinfo" id="musicinfo">
+    <audio id="musicid" src="audio/cyx.mp3" preload="preload" autoplay="autoplay"  loop="loop">您的浏览器不支持 audio标签。</audio>
+</div>
+
+<script type="text/javascript">
+    // 音乐播放
+    function autoPlayMusic() {
+        // 自动播放音乐效果，解决浏览器或者APP自动播放问题
+        function musicInBrowserHandler() {
+            musicPlay(true);
+            document.body.removeEventListener('touchstart', musicInBrowserHandler);
+        }
+        document.body.addEventListener('touchstart', musicInBrowserHandler);
+
+        // 自动播放音乐效果，解决微信自动播放问题
+        function musicInWeixinHandler() {
+            musicPlay(true);
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                musicPlay(true);
+            }, false);
+            document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+        }
+        document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+    }
+    function musicPlay(isPlay) {
+        var audio = document.getElementById('musicid');
+        if (isPlay && audio.paused) {
+            audio.play();
+        }
+        if (!isPlay && !audio.paused) {
+            audio.pause();
+        }
+    }
+    autoPlayMusic();
+</script>
     <div class="page-wrap">
 
     <div class="page">
@@ -101,14 +136,6 @@
         <div class="title" style="padding-top:65%;font-size:42pt;">END ❤</div>
         <div class="arrow"></div>
     </div>
-
-<script type="text/javascript">
-(function () {
-  var a = new Audio();
-  a.src = './audio/cyx.mp3';
-  a.play();
-})();
-</script>
 
 <script src="./js/zepto.min.js"></script>
 <script src="./js/PageSlider.js"></script>
