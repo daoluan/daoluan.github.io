@@ -132,6 +132,7 @@
 
         for (i = 0; i < 18 || i == 19; i++)
         {
+            if (i == 1) continue;
             var img = "show" + i + ".jpg"
             document.write('<div class="page"><div class="page-flower"></div> <div class="valen-only-img"><img src="img/' + img + '"></div><div class="valen-text-bottom">'+ eh[i] +'</div></div>')
         }
