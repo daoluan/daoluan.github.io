@@ -18,69 +18,99 @@
             -webkit-animation: slideToTop .8s 0.3s ease both;
         }
 
-        .current .valen-text{
+        .current .valen-dot{
             -webkit-animation: slideToTop .8s 0.5s ease both;
         }
 
-        .current .valen-textsub{
+        .current .valen-img{
             -webkit-animation: slideToTop .8s 1.0s ease both;
         }
 
-        .current .valen-img{
+        .current .valen-title{
+            -webkit-animation: slideToTop .8s 1.0s ease both;
+        }
+
+        .current .valen-only-img{
+            -webkit-animation: slideToTop .8s 1.0s ease both;
+        }
+
+        .current .valen-text-bottom{
             -webkit-animation: slideToTop .8s 1.0s ease both;
         }
     </style>
 </head>
 <body>
     <div class="page-wrap">
-        <div class="page">
-            <div class="title">2016.10.09</div>
-            <!-- <div class="subtitle">page one subtitle</div> -->
-            <!-- <div><img src="img/img.jpg" style="width:75%;height:auto;"></div> -->
-            <div class="valen-text">我们在一起了</div>
-            <div class="valen-textsub"></div>
-            <div class="valen-textsub"></div>
-            <div class="valen-textsub"></div>
-            <div class="valen-textsub"></div>
-            <div class="valen-textsub">.</div>
-            <div class="valen-textsub">.</div>
-            <div class="valen-textsub">.</div>
-            <div class="valen-textsub">.</div>
-            <div class="valen-textsub">.</div>
-            <div class="valen-textsub">.</div>
-            <div class="arrow"></div>
-        </div>
 
-        <div class="page">
-            <div class="title">这是美美的她~</div>
-            <div class="valen-img"><img src="img/lyy-pre.jpg" style="width:63%;height:auto;"></div>
-            <div class="arrow"></div>
-        </div>
-
-        <div class="page">
-            <div class="title">这是她的山精伯伯~</div>
-            <div class="valen-img"><img src="img/zsy-pre.jpg" style="width:63%;height:auto;"></div>
-            <div class="arrow"></div>
-        </div>
-
-        <div class="page">
-            <div><img src="img/we.jpg" style="width:100%;"></div>
-        </div>
-
-        <div class="page">
-            <div class="title" style="padding-top:65%;font-size:42pt;font-family:"微软雅黑">END ❤</div>
-            <div class="arrow"></div>
-        </div>
-
-        <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=35403523&auto=1&height=66"></iframe> -->
+    <div class="page">
+        <div class="page-flower"></div>
+        <div class="title">2016.10.09</div>
+        <!-- <div class="subtitle">page one subtitle</div> -->
+        <!-- <div><img src="img/img.jpg" style="width:75%;height:auto;"></div> -->
+        <div class="subtitle">我们在一起了</div>
+        <div style="height:50%"></div>
+        <div class="valen-dot">.</div>
+        <div class="valen-dot">.</div>
+        <div class="valen-dot">.</div>
+        <div class="arrow"></div>
     </div>
 
-    <script src="./js/zepto.min.js"></script>
-    <script src="./js/PageSlider.js"></script>
-    <script>
-        new PageSlider({
-            pages: $('.page-wrap .page')
-        });
+    <div class="page">
+        <div class="page-flower"></div>
+        <div class="valen-title">这是美美的她~</div>
+        <div class="valen-img"><img src="img/lyy-pre.jpg" ></div>
+        <div class="arrow"></div>
+    </div>
+
+    <div class="page">
+        <div class="page-flower"></div>
+        <div class="valen-title">这是她的山精伯伯~</div>
+        <div class="valen-img"><img src="img/zsy-pre.jpg"></div>
+        <div class="arrow"></div>
+    </div>
+
+     <script type="text/javascript">
+        var eh = ["然后我们就拍拍拍... ",
+            "常去的永泰掩面",
+            "坚持电话，不能停~",
+            "坚持自拍，不能停~",
+            "这些我们也会有",
+            "嗯哼",
+            "调皮的加了滤镜",
+            "我们去了沙面",
+            "肿有广州灯展",
+            "and 琶醍",
+            "宝贝~",
+            "遇上你~",
+            "我真的变得幸福~",
+            "如果有下辈子的话~",
+            "我还会爱上你",
+            "over and over again...",
+            "over and over again...",
+            "over and over again...",];
+
+        for (i = 0; i < 18; i++)
+        {
+            var img = "show" + i + ".jpg"
+            document.write('<div class="page"><div class="page-flower"></div> <div class="valen-only-img"><img src="img/' + img + '"></div><div class="valen-text-bottom">'+ eh[i] +'</div></div>')
+        }
     </script>
+
+    <div class="page">
+        <div class="page-flower"></div>
+        <div class="title" style="padding-top:65%;font-size:42pt;">END ❤</div>
+        <div class="arrow"></div>
+    </div>
+
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=35403523&auto=1&height=66"></iframe>
+</div>
+
+<script src="./js/zepto.min.js"></script>
+<script src="./js/PageSlider.js"></script>
+<script>
+    new PageSlider({
+        pages: $('.page-wrap .page')
+    });
+</script>
 </body>
 </html>

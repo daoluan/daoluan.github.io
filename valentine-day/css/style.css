@@ -21,11 +21,23 @@ html, body {
     -webkit-perspective: 1000;
 }
 
-.page:first-child {
-    background-color: #FF69B4;
+.page-flower {
+    z-index: -100;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-image: url("./img/flower.jpg");
+    -webkit-filter: blur(10px); /* Chrome, Opera */
+    -moz-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
 }
 
-.page:nth-child(2) {
+/*.page:first-child {
+    background-color: #FF69B4;
+}*/
+
+/*.page:nth-child(2) {
     background-color: #FF69B4;
 }
 
@@ -39,14 +51,14 @@ html, body {
 
 .page:last-child {
     background-color: #FF69B4;
-}
+}*/
 
 .title {
     width: 100%;
     text-align: center;
     padding-top: 40px;
     color: #FFF;
-    font-size: 18px;
+    font-size: 52px;
     opacity: 0;
 }
 
@@ -55,11 +67,11 @@ html, body {
     text-align: center;
     padding-top: 20px;
     color: #FFF;
-    font-size: 16px;
+    font-size: 28px;
     opacity: 0;
 }
 
-.valen-text {
+.valen-dot {
     width: 100%;
     text-align: center;
     padding-top: 20px;
@@ -69,20 +81,45 @@ html, body {
     font-family: "微软雅黑";
 }
 
-.valen-textsub {
+.valen-title {
     width: 100%;
+    height: 15%;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 15%;
     color: #FFF;
-    font-size: 16px;
+    font-size: 32px;
     opacity: 0;
-    font-family: "微软雅黑";
+}
+
+.valen-text-bottom {
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    padding-top: 5%;
+    color: #FFF;
+    font-size: 32px;
+    opacity: 0;
 }
 
 .valen-img {
     text-align: center;
-    margin-top: 25%;
     opacity: 0;
+    padding-bottom: 10%
+}
+
+.valen-only-img {
+    text-align: center;
+    padding-bottom: 10%;
+    opacity: 0;
+}
+
+.valen-only-img img {
+    width: 100%;
+    height: auto;
+}
+
+.valen-img img {
+    width: 80%;
 }
 
 .arrow{
