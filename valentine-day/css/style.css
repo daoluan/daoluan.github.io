@@ -125,7 +125,7 @@ html, body {
 .arrow{
     position: absolute;
     left: 50%;
-    bottom: 10px;
+    bottom: 8%;
     width: 33px;
     height: 18px;
     margin-left: -16px;
