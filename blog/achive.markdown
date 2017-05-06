@@ -41,7 +41,6 @@ top:    捣乱的个人网站
             {% endfor %}
             <br>
         {% endfor %}
-    </li>
-</ul>
+    </ul>
 </div>
 
