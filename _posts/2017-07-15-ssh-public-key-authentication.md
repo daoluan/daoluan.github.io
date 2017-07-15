@@ -34,6 +34,6 @@ rfc4252 规定，ssh 登录服务器是可以通过 pubkey 的方式登录的，
     input_userauth_pk_ok
     send_pubkey_test
 
-对源码感兴趣的同学可以参看，这两个函数，基本从从客户端的角度描述了怎么使用 pubkey 登录服务器的过程。
+对源码感兴趣的同学可以参看 openssl 的上面几个函数，基本从从客户端的角度描述了怎么使用 pubkey 登录服务器的过程。
 
 reference：[https://www.ssh.com/a/rfc4252.txt](https://www.ssh.com/a/rfc4252.txt)
