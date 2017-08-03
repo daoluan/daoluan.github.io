@@ -241,4 +241,4 @@ memcached 的服务器没有向其他 memcached 服务器收发数据的功能, 
 
 我在 github 上分享了 memcached 的源码剖析注释: [这里](https://github.com/daoluan/decode-memcached)
 
-欢迎讨论: [@郑思愿daoluan](http://weibo.com/daoluanxiaozi)
+欢迎讨论: [@daoluannn](http://weibo.com/daoluanxiaozi)
