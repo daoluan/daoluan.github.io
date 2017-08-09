@@ -19,23 +19,23 @@ tags:
 
 协程。协程的诞生，是程序猿的福音。举一个例，业务处理的时候经常需要请求其他模块的数据，非协程的处理模式：
 
-	build request;
-	send request;
-	bind(HandleRespone)
-	...
-	// event loop invoke HandleResponse
+    build request;
+    send request;
+    bind(HandleRespone)
+    ...
+    // event loop invoke HandleResponse
 
 可以看到请求发出后和处理请求两个阶段是完全分开的，如果业务简单可以接受，但只要有稍微复杂点，在业务逻辑多请求几个其他模块，这很痛苦。协程的处理模式：
 
-	build request0;
-	send requset0;
-	recv response0;
-	handle response0;
-	
-	build request1;
-	send requset1;
-	recv response1;
-	handle response1;
+    build request0;
+    send requset0;
+    recv response0;
+    handle response0;
+    
+    build request1;
+    send requset1;
+    recv response1;
+    handle response1;
 
 这样的代码使用简单，可维护性好，性能上会比非协程模式稍差，但综合权衡还是协程模块适合业务开发。所以协程能体现出开发的**高效率**
 
@@ -43,64 +43,64 @@ tags:
 
 提了这些背景，那怎么来写**高性能**的业务框架。最主要的核心是你的框架要使得当前一个请求的业务处理流程不要阻塞导致其他共存的业务处理流程被阻塞。举例子，当请求发出后，不能死等，得让进程继续处理其他请求，比如继续处理新进来的请求，比如继续处理上一个请求的响应。简而言之，要想高性能，就别阻塞。
 
-如果直接照搬 memcached以及 nginx 这样的模型来做业务框架，这样会让开发人员很痛苦，试想如果让他们和协程结合是不是可以诞生一个同时具备高性能以及高开发效率的开发框架？ [tinyco](https://github.com/daoluan/tinyco) 就是依据这样的目标来设计的，在多次使用了部门的公共组件后，发现它并不完美，所以才诞生了 tinyco，可以看看下面的 snippets：
+如果直接照搬 memcached以及 nginx 这样的模型来做业务框架，这样会让开发人员很痛苦，试想如果让他们和协程结合是不是可以诞生一个同时具备高性能以及高开发效率的开发框架？ [tinyco](https://github.com/daoluan/tinyco) 就是依据这样的目标来设计的，在多次使用了部门的公共组件后，发现它并不完美，所以才诞生了 tinyco。虽然每个组件都是经验的总和，而且目前来看运行足够稳定，但这不能妨碍我们尝试使用新的思路。可以看看下面的 snippets：
 
 http 服务器：
 
-	#include <assert.h>
-	
-	#include "http_server.h"
-	
-	using namespace tinyco;
-	
-	class TestWork : public http::HttpSrvWork {
-	 public:
-	  virtual int Serve() {
-	    LOG("ready to reply");
-	    hrsp_.SetStatus(200);
-	    hrsp_.SetContent("hello world!");
-	    Reply();
-	
-	    return 0;
-	  }
-	};
-	
-	int main() {
-	  assert(Frame::Init());
-	  Frame::TcpSrv<TestWork>(0, 8080);
-	  Frame::Fini();
-	  return 0;
-	}
+    #include <assert.h>
+    
+    #include "http_server.h"
+    
+    using namespace tinyco;
+    
+    class TestWork : public http::HttpSrvWork {
+     public:
+      virtual int Serve() {
+        LOG("ready to reply");
+        hrsp_.SetStatus(200);
+        hrsp_.SetContent("hello world!");
+        Reply();
+    
+        return 0;
+      }
+    };
+    
+    int main() {
+      assert(Frame::Init());
+      Frame::TcpSrv<TestWork>(0, 8080);
+      Frame::Fini();
+      return 0;
+    }
 
 udp 服务器：
 
-	#include <assert.h>
-	
-	#include "frame.h"
-	
-	using namespace tinyco;
-	
-	class TestWork : public UdpReqWork {
-	 public:
-	  TestWork() {}
-	  virtual ~TestWork() {}
-	
-	  int Run() {
-	    LOG("new udp req: %s|response after 10s", req_.reqpkg.c_str());
-	
-	    Frame::Sleep(10000);
-	
-	    LOG("rsp to client");
-	    Reply(req_.reqpkg);
-	  }
-	};
-	
-	int main(int argc, char **argv) {
-	  assert(Frame::Init());
-	  Frame::UdpSrv<TestWork>(0, 32000);
-	  Frame::Fini();
-	  return 0;
-	}
+    #include <assert.h>
+    
+    #include "frame.h"
+    
+    using namespace tinyco;
+    
+    class TestWork : public UdpReqWork {
+     public:
+      TestWork() {}
+      virtual ~TestWork() {}
+    
+      int Run() {
+        LOG("new udp req: %s|response after 10s", req_.reqpkg.c_str());
+    
+        Frame::Sleep(10000);
+    
+        LOG("rsp to client");
+        Reply(req_.reqpkg);
+      }
+    };
+    
+    int main(int argc, char **argv) {
+      assert(Frame::Init());
+      Frame::UdpSrv<TestWork>(0, 32000);
+      Frame::Fini();
+      return 0;
+    }
 
 tinyco 借鉴了 nginx的特性，多个 worker 都监听了一个端口（通过 fork），但他们竞争一个文件锁，在拿到文件锁后的 worker 才有权利去 accept 一个新的请求，这样可以利用多核优势，大大提供吞吐量。曾经使用过一个业务框架，只有一个进程在 accept 请求，实际上这样不能利用多核优势，吞吐量上不来。另外，tinyco 引入了协程，有很高的开发效率，支持 http/dns 等。
 
