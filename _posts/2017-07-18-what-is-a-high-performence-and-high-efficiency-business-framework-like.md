@@ -37,7 +37,7 @@ tags:
     recv response1;
     handle response1;
 
-这样的代码使用简单，可维护性好，性能上会比非协程模式稍差，但综合权衡还是协程模块适合业务开发。所以协程能体现出开发的**高效率**
+这样的代码使用简单，可维护性好，性能上会比非协程模式稍差，但综合权衡还是协程模块适合业务开发。所以协程能体现出开发的**高效率**。
 
 类似 nginx以及 memcached 都是基于非协程异步事件框架来做的，所以你会看到像 memcached 里面代码很难读懂，得多抠几行才能理解，而且里面还涉及较为复杂的状态机来处理请求（[decode-memcached](https://github.com/daoluan/decode-memcached)）。
 
