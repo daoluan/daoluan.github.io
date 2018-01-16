@@ -4,6 +4,7 @@ author: daoluan
 title: GM 实习(五)
 comments: true
 date: 2013-12-17 20:36:16
+published: false
 ---
 
 ![never_give_up.png](/images/never_give_up.png)
