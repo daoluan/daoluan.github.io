@@ -19,7 +19,3 @@ keywords: 捣乱小子,捣乱,郑思愿,郑思愿daoluan,daoluan,daoluan.net
 {% endfor %}
 </ul>
 </p>
-
-我有看过的书
-
-<script type="text/javascript" src="http://www.douban.com/service/badge/daoluan/?selection=random&amp;picsize=medium&amp;hideself=on&amp;show=collection&amp;n=4&amp;hidelogo=on&amp;cat=book&amp;columns=4"></script>
