@@ -23,7 +23,7 @@ keywords: 捣乱小子,捣乱,郑思愿,郑思愿daoluan,daoluan,daoluan.net
 作品
 
  - [IT 小小鸟外传](http://bibodeng.com/bibodeng/IT_birds/book.html)
- - [Redis 源码日志](http://daoluan.net/redis-source-note/), [Redis 源码日志-极客学院Wiki](http://wiki.jikexueyuan.com/project/redis/)
+ - [Redis 源码日志](http://daoluan.net/redis-source-notes/)(会保持更新), ~~[Redis 源码日志-极客学院Wiki](http://wiki.jikexueyuan.com/project/redis/)~~
 
 赞助(主要用作本站维护使用)：
 
