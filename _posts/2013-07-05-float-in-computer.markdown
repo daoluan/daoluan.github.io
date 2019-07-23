@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2013-07-05 11:01:37+00:00
-layout: post
-slug: float-in-computer
 title: 浮点数在计算机中的表示
-wordpress_id: 1788
+date: 2013-07-05 11:01:37 Z
 categories:
 - 学习总结
 - 计算机系统
 tags:
 - 浮点数
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1788
 ---
 
 在计算机中，用二进制表示任何的数据，熟知的整数便是，浮点数同样也是用二进制来表示。举例：二进制 0.1 是十进制的 0.5，二进制中的 0.011 是十进制的 0.375.其中的转换和「二进制与十进制整数转换」的原理数一样的。

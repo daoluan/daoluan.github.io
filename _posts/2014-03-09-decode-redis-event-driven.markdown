@@ -1,11 +1,6 @@
 ---
-author: daoluan
-comments: true
-date: 2014-03-09 07:15:19+00:00
-layout: post
-slug: decode-redis-event-driven
 title: 深入剖析 redis 事件驱动
-wordpress_id: 2250
+date: 2014-03-09 07:15:19 Z
 categories:
 - linux
 - 学习总结
@@ -14,6 +9,10 @@ tags:
 - redis
 - 事件驱动
 - 源码剖析
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2250
 ---
 
 ### 概述

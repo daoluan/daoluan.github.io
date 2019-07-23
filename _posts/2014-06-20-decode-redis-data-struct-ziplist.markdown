@@ -1,17 +1,16 @@
 ---
-author: daoluan
-comments: true
-date: 2014-06-20 01:21:35+00:00
-layout: post
-slug: decode-redis-data-struct-ziplist
 title: 深入剖析 redis 数据结构 ziplist
-wordpress_id: 2387
+date: 2014-06-20 01:21:35 Z
 categories:
 - linux
 tags:
 - redis
 - ziplist
 - 数据结构
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2387
 ---
 
 ### 概述

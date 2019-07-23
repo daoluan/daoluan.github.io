@@ -1,11 +1,6 @@
 ---
-author: daoluan
-comments: true
-date: 2013-04-11 08:50:29+00:00
-layout: post
-slug: complement-confessions
 title: 码的忏悔录
-wordpress_id: 1675
+date: 2013-04-11 08:50:29 Z
 categories:
 - 学习总结
 - 随笔
@@ -14,6 +9,10 @@ tags:
 - 反码
 - 有符号无符号运算
 - 补码
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1675
 ---
 
 [![myidea](http://daoluan.net/images/blog/2013/04/myidea_thumb.gif)](http://daoluan.net/images/blog/2013/04/myidea.gif) 沿着线条走，你能否发现各种溢出？！

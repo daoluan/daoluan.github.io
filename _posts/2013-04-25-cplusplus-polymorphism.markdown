@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2013-04-25 07:47:48+00:00
-layout: post
-slug: cplusplus-polymorphism
 title: C++ 多态实现机制
-wordpress_id: 1720
+date: 2013-04-25 07:47:48 Z
 categories:
 - cplusplus
 tags:
 - C/C++
 - 多态
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1720
 ---
 
 本篇从 C++ 初学者遇到的一个有趣的问题开始。

@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2012-10-24 16:06:26+00:00
-layout: post
-slug: stl-function-object
 title: 私房STL之函数对象
-wordpress_id: 1301
+date: 2012-10-24 16:06:26 Z
 categories:
 - cplusplus
 tags:
 - C/C++
-- 《STL源码剖析》
+- "《STL源码剖析》"
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1301
 ---
 
 一句话之函数对象：函数对象（又称仿函数）的秘密不足以让你吃惊，它是重载“()”操作符的类（结构体）的对象；实现简单：声明一个类（结构体），重载“()”操作符，即可。

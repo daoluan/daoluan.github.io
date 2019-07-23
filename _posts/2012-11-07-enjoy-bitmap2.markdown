@@ -1,17 +1,16 @@
 ---
-author: daoluan
-comments: true
-date: 2012-11-07 17:05:33+00:00
-layout: post
-slug: enjoy-bitmap2
 title: 玩转位图（bitmap）2
-wordpress_id: 1445
+date: 2012-11-07 17:05:33 Z
 categories:
 - cplusplus
 - mfc
 tags:
 - 开源应用
 - 编程小记
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1445
 ---
 
 2012年11月8日9:25:47 已上传源代码和可执行文件

@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2012-08-02 13:15:43+00:00
-layout: post
-slug: tcp-network-programming-01
 title: 基于TCP的C/S初级网络编程1
-wordpress_id: 774
+date: 2012-08-02 13:15:43 Z
 categories:
 - linux
 tags:
 - apue 学习总结
 - linux
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 774
 ---
 
 # 导读

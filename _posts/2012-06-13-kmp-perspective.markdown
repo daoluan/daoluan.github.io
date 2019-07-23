@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2012-06-13 16:43:00+00:00
-layout: post
-slug: kmp-perspective
-title: 【字符串匹配】KMP算法之道
-wordpress_id: 498
+title: "【字符串匹配】KMP算法之道"
+date: 2012-06-13 16:43:00 Z
 categories:
 - 算法
 tags:
-- 《算法导轮》学习总结
+- "《算法导轮》学习总结"
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 498
 ---
 
 修订于2012-06-18，心急的读者可以着重看“有趣的字符串匹配提示”，这个例子看懂了，KMP也就差不多了。

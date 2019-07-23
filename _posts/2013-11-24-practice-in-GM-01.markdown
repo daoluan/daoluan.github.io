@@ -1,10 +1,10 @@
 ---
+title: GM 实习(一)
+date: 2013-11-24 14:26:31 Z
+published: false
 layout: post
 author: daoluan
-title: GM 实习(一)
 comments: true
-date: 2013-11-24 14:26:31
-published: false
 ---
 
 二十多岁的人可能都很容易矛盾，他到底要成为什么样的人，在不断的认识和判断中，修正和形成自己的行为，从而最后成为他自己。

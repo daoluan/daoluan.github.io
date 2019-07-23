@@ -1,11 +1,6 @@
 ---
-author: daoluan
-comments: true
-date: 2014-04-22 14:48:31+00:00
-layout: post
-slug: decode-redis-replication
 title: 深入剖析 redis 主从复制
-wordpress_id: 2331
+date: 2014-04-22 14:48:31 Z
 categories:
 - linux
 - 学习总结
@@ -16,6 +11,10 @@ tags:
 - replication
 - 主从连接
 - 源码剖析
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2331
 ---
 
 ### 主从概述

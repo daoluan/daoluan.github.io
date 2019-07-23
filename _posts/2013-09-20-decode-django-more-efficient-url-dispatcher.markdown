@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2013-09-20 23:05:45+00:00
-layout: post
-slug: decode-django-more-efficient-url-dispatcher
 title: 'Django 源码小剖: 更高效的 URL 调度器(URL dispatcher)'
-wordpress_id: 2025
+date: 2013-09-20 23:05:45 Z
 categories:
 - 学习总结
 tags:
 - Django
 - 源代码
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2025
 ---
 
 ### 效率问题

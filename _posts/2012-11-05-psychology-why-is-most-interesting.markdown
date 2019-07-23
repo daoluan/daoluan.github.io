@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2012-11-05 15:44:22+00:00
-layout: post
-slug: psychology-why-is-most-interesting
 title: 对“最”这么感兴趣
-wordpress_id: 1426
+date: 2012-11-05 15:44:22 Z
 categories:
 - 思维
 tags:
 - 认知心理
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1426
 ---
 
 此一篇史上最专业的心理学文章。

@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2012-10-23 12:06:52+00:00
-layout: post
-slug: stl-lvalue-rvalue
 title: 私房STL之左值和右值
-wordpress_id: 1285
+date: 2012-10-23 12:06:52 Z
 categories:
 - cplusplus
 tags:
 - C/C++
-- 《STL源码剖析》
+- "《STL源码剖析》"
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1285
 ---
 
 左值和右值并不专属于STL里的内容，是在接触STL的过程发现了笔者C/C++的知识规则漏洞。

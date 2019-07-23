@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2012-10-21 04:12:56+00:00
-layout: post
-slug: stl-hashtable
 title: 私房STL之Hashtable
-wordpress_id: 1234
+date: 2012-10-21 04:12:56 Z
 categories:
 - cplusplus
 tags:
 - C/C++
-- 《STL源码剖析》
+- "《STL源码剖析》"
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1234
 ---
 
 一句话之Hashtable：哈希表（散列表）能通过键值对数据进行访问的数据结构；其在C++0X标准中未出现，可能是考虑到哈希表效率低下，出于其广泛用于工程中，C++11将其纳入了标准库。C++11的新特性：[http://en.wikipedia.org/wiki/C%2B%2B11](http://en.wikipedia.org/wiki/C%2B%2B11)，C++11中哈希表的说明：[http://en.wikipedia.org/wiki/C%2B%2B11#Hash_tables](http://en.wikipedia.org/wiki/C%2B%2B11#Hash_tables)；我们知道，通过哈希表来索引目标是很高效的，但这样会出现碰撞问题（即对不同的关键字可能得到同一哈希地址）。常用的解决碰撞的方法有四：线性探测、二次探测、再散列和开链法。而STL中的哈希表所采用的是开链法（也叫链地址法）。

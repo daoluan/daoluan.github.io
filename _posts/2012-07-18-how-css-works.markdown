@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2012-07-18 05:46:00+00:00
-layout: post
-slug: how-css-works
 title: CSS的工作原理
-wordpress_id: 678
+date: 2012-07-18 05:46:00 Z
 categories:
 - 学习总结
 tags:
 - CSS
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 678
 ---
 
 层叠样式表（英语：Cascading Style Sheets，简写CSS），又称串样式列表，由W3C定义和维护的标准，一种用来为结构化文档（如HTML文档或XML应用）添加样式（字体、间距和颜色等）的计算机语言。维基百科如是说。所以，接触过HTML，对CSS也相对容易理解。

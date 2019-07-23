@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2012-09-18 10:57:35+00:00
-layout: post
-slug: the-kite-runner
 title: 追风筝的人：关于救赎的故事
-wordpress_id: 1061
+date: 2012-09-18 10:57:35 Z
 categories:
 - 读书
 - 随笔
 tags:
 - 读书
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1061
 ---
 
 小记

@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2012-11-18 02:38:29+00:00
-layout: post
-slug: before-code
 title: 写代码之前要做什么？
-wordpress_id: 1473
+date: 2012-11-18 02:38:29 Z
 categories:
 - 随笔
 tags:
 - 随笔
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1473
 ---
 
 在想到这个问题的时候，很多童鞋都会笃定回答：我会先构思程序大体的框架，接着就开始写代码。

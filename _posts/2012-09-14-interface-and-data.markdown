@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2012-09-14 14:55:41+00:00
-layout: post
-slug: interface-and-data
 title: 漫谈界面和数据
-wordpress_id: 1029
+date: 2012-09-14 14:55:41 Z
 categories:
 - mfc
 - 学习总结
 - 编程小记
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1029
 ---
 
 下面的文字是关于界面和数据的，是在做了项目之中之后的心得体会。求指导，欢迎斧正。

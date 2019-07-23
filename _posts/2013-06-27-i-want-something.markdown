@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2013-06-27 09:57:03+00:00
-layout: post
-slug: i-want-something
 title: 我要点什么
-wordpress_id: 1772
+date: 2013-06-27 09:57:03 Z
 categories:
 - 随笔
 tags:
 - 随笔
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1772
 ---
 
 很不要脸的把这些字投给了左岸。如果是中文系的童鞋，麻烦给个分，按高考的标准 60 分满分。

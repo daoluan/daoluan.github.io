@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2012-06-21 04:08:42+00:00
-layout: post
-slug: 2012-06-21-sophomore
 title: 2012-06-21，两年？
-wordpress_id: 581
+date: 2012-06-21 04:08:42 Z
 categories:
 - 随笔
 tags:
 - 随笔
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 581
 ---
 
 ![](http://t2.gstatic.com/images?q=tbn:ANd9GcQFSVzoQ4ypMJ8mWAhBoPxSS0gpKTgWkM_tjv6263rbOK91manItpjeV6n2dA)

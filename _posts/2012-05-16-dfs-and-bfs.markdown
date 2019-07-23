@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2012-05-16 21:14:35+00:00
-layout: post
-slug: dfs-and-bfs
-title: 【图论】广度优先搜索和深度优先搜索
-wordpress_id: 295
+title: "【图论】广度优先搜索和深度优先搜索"
+date: 2012-05-16 21:14:35 Z
 categories:
 - 算法
 tags:
-- 《算法导轮》学习总结
+- "《算法导轮》学习总结"
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 295
 ---
 
 # 写在最前面的

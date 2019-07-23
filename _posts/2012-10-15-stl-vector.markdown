@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2012-10-15 16:24:18+00:00
-layout: post
-slug: stl-vector
 title: 私房STL之vector
-wordpress_id: 1149
+date: 2012-10-15 16:24:18 Z
 categories:
 - cplusplus
 tags:
 - C/C++
-- 《STL源码剖析》
+- "《STL源码剖析》"
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1149
 ---
 
 一句话vector：vector的空间可扩充，支持随机存取访问，是一段连续线性的空间。所以它是动态空间，与之对比的array是静态的空间，不可扩充。简单来说，vector是数组的增强版。

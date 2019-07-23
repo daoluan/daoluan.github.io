@@ -1,17 +1,16 @@
 ---
-author: daoluan
-comments: true
-date: 2014-06-24 15:49:12+00:00
-layout: post
-slug: decode-redis-data-struct-redisobject
 title: 深入剖析 redis 数据结构 redisObject
-wordpress_id: 2378
+date: 2014-06-24 15:49:12 Z
 categories:
 - linux
 tags:
 - redis
 - redisObject
 - 数据结构
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2378
 ---
 
 redis 是 key-value 存储系统，其中 key 类型一般为字符串，而 value 类型则为 redis 对象（redis object）。redis 对象可以绑定各种类型的数据，譬如 string、list 和 set。

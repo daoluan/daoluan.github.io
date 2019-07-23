@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2012-06-25 11:36:40+00:00
-layout: post
-slug: funning-bitwise
 title: 有趣的位运算
-wordpress_id: 594
+date: 2012-06-25 11:36:40 Z
 categories:
 - 编程小记
 tags:
-- 《c程序设计语言》
+- "《c程序设计语言》"
 - 编程小记
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 594
 ---
 
 看了会《c程序设计语言》的位运算一节，重温了下“位运算”的巧妙与高效。

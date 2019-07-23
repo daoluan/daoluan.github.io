@@ -1,16 +1,13 @@
 ---
-author: daoluan
-comments: true
-date: 2014-12-21 14:47:10+00:00
-layout: post
-slug: the-second-dog
 title: 第二只小狗
-wordpress_id: 2464
+date: 2014-12-21 14:47:10 Z
 categories:
 - 随笔
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2464
 ---
-
-
 
 第零只是一只还小胖嘟嘟的小狗，长相已经不可考据了。当时邻居的“小狗”还在，每天放学找小伙伴们玩的时候，都能遇见，这是只听话的不得了的母狗，屁股上面稍微按下就能在你面前坐下。有次“小狗”产了一窝小狗，我喜欢就闹着爸妈要在自己的家里养一条小狗，爸妈同意了。这只小狗没养多久就被送到了舅舅家里，家里是做生意的没人照看小狗，而且中华田园犬也是不能圈着养的，田园嘛。
 

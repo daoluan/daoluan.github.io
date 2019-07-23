@@ -1,11 +1,6 @@
 ---
-author: daoluan
-comments: true
-date: 2012-08-29 01:07:01+00:00
-layout: post
-slug: summer-summary
 title: 行走在消逝中，且行且珍惜--2012年大二暑假
-wordpress_id: 883
+date: 2012-08-29 01:07:01 Z
 categories:
 - 随笔
 tags:
@@ -13,6 +8,10 @@ tags:
 - linux
 - 吉他
 - 思维
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 883
 ---
 
 ![](http://daoluan.net/images/blog/2012/08/richard_stevens.png)

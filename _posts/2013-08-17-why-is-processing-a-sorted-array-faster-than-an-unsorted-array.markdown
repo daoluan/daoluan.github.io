@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2013-08-17 04:59:59+00:00
-layout: post
-slug: why-is-processing-a-sorted-array-faster-than-an-unsorted-array
 title: 程序处理已排序数据为什么比未排序的快？
-wordpress_id: 1850
+date: 2013-08-17 04:59:59 Z
 categories:
 - 计算机系统
 tags:
 - 分支预测
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1850
 ---
 
 sof 上的帖子，原文链接：[Why is processing a sorted array faster than an unsorted array?](http://stackoverflow.com/questions/11227809/why-is-processing-a-sorted-array-faster-than-an-unsorted-array).在 [RabbitOverCarrot](http://rabbitovercarrot.sinaapp.com/) 有更多的内容。下面是翻译正文：

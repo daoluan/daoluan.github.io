@@ -1,17 +1,16 @@
 ---
-author: daoluan
-comments: true
-date: 2013-08-01 09:02:20+00:00
-layout: post
-slug: about-proxy
 title: 前向代理和反向代理
-wordpress_id: 1811
+date: 2013-08-01 09:02:20 Z
 categories:
 - 学习总结
 - 计算机系统
 tags:
 - CDN
 - proxy
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1811
 ---
 
 第一次接触代理是在大二计算机网络课堂中，通由代理服务器可以让网络访问更具伸缩性，可以拒绝访问某些网站和协助访问被和谐的网站。最近无意中接触了反向代理，有对比正好有机会可以搞清楚前向代理和反向代理着两个概念。

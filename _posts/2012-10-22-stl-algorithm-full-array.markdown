@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2012-10-22 00:50:05+00:00
-layout: post
-slug: stl-algorithm-full-array
 title: 私房STL算法之全排列
-wordpress_id: 1247
+date: 2012-10-22 00:50:05 Z
 categories:
 - cplusplus
 tags:
 - C/C++
-- 《STL源码剖析》
+- "《STL源码剖析》"
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1247
 ---
 
 全排列问题：从n个不同元素中任取m（m≤n）个元素，按照一定的顺序排列起来，叫做从n个不同元素中取出m个元素的一个排列。当m＝n时所有的排列情况叫全排列。譬如，考虑{a，b，c}的全排列有abc，acb，bac，bca，cab，cba六（3！）种情况。

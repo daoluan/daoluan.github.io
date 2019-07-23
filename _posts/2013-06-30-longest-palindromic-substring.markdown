@@ -1,13 +1,12 @@
 ---
-author: daoluan
-comments: true
-date: 2013-06-30 06:05:52+00:00
-layout: post
-slug: longest-palindromic-substring
 title: 最长回文子串（Longest Palindromic Substring）
-wordpress_id: 1775
+date: 2013-06-30 06:05:52 Z
 categories:
 - 学习总结
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1775
 ---
 
 一个「对称」的序列，就可称为回文序列，譬如：aba，abba 等。详细介绍参看： [http://zh.wikipedia.org/wiki/%E5%9B%9E%E6%96%87%E6%95%B0](http://zh.wikipedia.org/wiki/%E5%9B%9E%E6%96%87%E6%95%B0)

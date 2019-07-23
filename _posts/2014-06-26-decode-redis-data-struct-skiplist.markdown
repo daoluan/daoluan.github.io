@@ -1,11 +1,6 @@
 ---
-author: daoluan
-comments: true
-date: 2014-06-26 13:20:06+00:00
-layout: post
-slug: decode-redis-data-struct-skiplist
 title: 深入剖析 redis 数据结构 skiplist
-wordpress_id: 2380
+date: 2014-06-26 13:20:06 Z
 categories:
 - 未分类
 tags:
@@ -15,6 +10,10 @@ tags:
 - zset
 - 数据结构
 - 跳表
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2380
 ---
 
 ### 概述

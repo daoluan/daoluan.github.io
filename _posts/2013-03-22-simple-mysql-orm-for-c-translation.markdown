@@ -1,11 +1,6 @@
 ---
-author: daoluan
-comments: true
-date: 2013-03-22 04:48:49+00:00
-layout: post
-slug: simple-mysql-orm-for-c-translation
-title: 【译】Simple MySQL ORM for C
-wordpress_id: 1613
+title: "【译】Simple MySQL ORM for C"
+date: 2013-03-22 04:48:49 Z
 categories:
 - cplusplus
 - linux
@@ -15,6 +10,10 @@ tags:
 - linux
 - MySQL
 - 开源应用
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1613
 ---
 
 一直不知道有ORM这种东西，直到和 @海坡 交流后才接触。

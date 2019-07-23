@@ -1,12 +1,13 @@
 ---
-author: daoluan
-layout: post
 title: tinyco 是怎么处理惊群的
+date: 2017-08-16 00:00:00 Z
 categories:
 - 编程小记
 tags:
 - tinyco
 - 惊群
+author: daoluan
+layout: post
 ---
 
 遇上这个问题比较凑巧。

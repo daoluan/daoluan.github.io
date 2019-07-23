@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2013-10-12 01:08:18+00:00
-layout: post
-slug: decode-django-orm-preview
 title: 'Django 源码小剖: Django 对象关系映射(ORM)文件组织结构'
-wordpress_id: 2028
+date: 2013-10-12 01:08:18 Z
 categories:
 - 学习总结
 tags:
 - Django
 - 源代码
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2028
 ---
 
 ### 引

@@ -1,11 +1,6 @@
 ---
-author: daoluan
-comments: true
-date: 2013-04-01 11:10:42+00:00
-layout: post
-slug: gtd-summary
 title: GTD时间管理作品总结
-wordpress_id: 1633
+date: 2013-04-01 11:10:42 Z
 categories:
 - cplusplus
 - linux
@@ -14,6 +9,10 @@ categories:
 - 随笔
 tags:
 - GTD项目实录
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1633
 ---
 
 GTD时间管理项目接近尾声。

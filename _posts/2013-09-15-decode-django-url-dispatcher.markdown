@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2013-09-15 14:04:37+00:00
-layout: post
-slug: decode-django-url-dispatcher
 title: 'Django 源码小剖: URL 调度器(URL dispatcher)'
-wordpress_id: 1980
+date: 2013-09-15 14:04:37 Z
 categories:
 - 学习总结
 tags:
 - Django
 - 源代码
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1980
 ---
 
 在刚开始接触 django 的时候, 我们尝试着从各种入门文档中创建一个自己的 django 项目, 需要在 mysite.urls.py 中配置 URL. 这是 django url 匹配处理机制的一小部分.

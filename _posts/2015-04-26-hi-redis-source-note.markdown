@@ -1,13 +1,12 @@
 ---
-author: daoluan
-comments: true
-date: 2015-04-26 07:48:44+00:00
-layout: post
-slug: hi-redis-source-note
 title: 终于到了校验阶段
-wordpress_id: 2480
+date: 2015-04-26 07:48:44 Z
 categories:
 - 随笔
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2480
 ---
 
 小册子终于到了最后校验阶段，并决定不再增添内容。

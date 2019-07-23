@@ -1,17 +1,16 @@
 ---
-author: daoluan
-comments: true
-date: 2013-01-04 16:06:10+00:00
-layout: post
-slug: limited-execution
 title: 有限的执行力
-wordpress_id: 1572
+date: 2013-01-04 16:06:10 Z
 categories:
 - 思维
 - 随笔
 tags:
 - 思维
 - 随笔
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1572
 ---
 
 套用那句话可以这么说，执行力是有限的，点子是无限的；把有限的执行力投入到无限的点子之中，肯定是不可取的。

@@ -1,11 +1,6 @@
 ---
-author: daoluan
-comments: false
-date: 2014-03-29 15:12:53+00:00
-layout: post
-slug: single-sign-on
 title: 初探单点登录 SSO
-wordpress_id: 2285
+date: 2014-03-29 15:12:53 Z
 categories:
 - 互联网
 - 学习总结
@@ -15,6 +10,10 @@ tags:
 - 京东单点登录
 - 单点登录
 - 淘宝网单点登录
+author: daoluan
+comments: false
+layout: post
+wordpress_id: 2285
 ---
 
 ### 单点登录

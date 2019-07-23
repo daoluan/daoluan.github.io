@@ -1,13 +1,12 @@
 ---
-author: daoluan
-comments: true
-date: 2016-04-13 16:53:16+00:00
-layout: post
-slug: why-could-not-gdb-grouth-be-zero
 title: 为什么 GDP 增长不能为零
-wordpress_id: 2495
+date: 2016-04-13 16:53:16 Z
 categories:
 - 经济学
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2495
 ---
 
 十三五上习近平声明，中国经济增长的底线是 6.5%，为什么一个国家要规定经济的增长率。

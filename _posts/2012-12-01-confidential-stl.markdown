@@ -1,18 +1,17 @@
 ---
-author: daoluan
-comments: true
-date: 2012-12-01 16:06:57+00:00
-layout: post
-slug: confidential-stl
 title: 数据结构利器之私房STL
-wordpress_id: 1508
+date: 2012-12-01 16:06:57 Z
 categories:
 - cplusplus
 - 学习总结
 - 算法
 tags:
 - C/C++
-- 《STL源码剖析》
+- "《STL源码剖析》"
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1508
 ---
 
 **此系列的文章适合初学有意剖析STL和欲复习STL的同学们**。都是原创！

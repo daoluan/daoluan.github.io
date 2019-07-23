@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2013-09-23 15:02:55+00:00
-layout: post
-slug: decode-django-the-way-response-walk-on
 title: 'Django 源码小剖: 响应数据 response 的返回'
-wordpress_id: 2010
+date: 2013-09-23 15:02:55 Z
 categories:
 - 学习总结
 tags:
 - Django
 - 源代码
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2010
 ---
 
 ### 响应数据的返回

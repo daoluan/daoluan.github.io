@@ -1,11 +1,6 @@
 ---
-author: daoluan
-comments: true
-date: 2014-03-26 04:20:14+00:00
-layout: post
-slug: decode-redis-rdb-persistence
 title: 深入剖析 redis RDB 持久化策略
-wordpress_id: 2276
+date: 2014-03-26 04:20:14 Z
 categories:
 - linux
 - 学习总结
@@ -15,6 +10,10 @@ tags:
 - redis
 - 持久化
 - 源码剖析
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2276
 ---
 
 ### 简介 redis 持久化 RDB、AOF

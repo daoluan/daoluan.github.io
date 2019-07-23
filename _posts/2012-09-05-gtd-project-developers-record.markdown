@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2012-09-05 04:43:26+00:00
-layout: post
-slug: gtd-project-developers-record
 title: GTD项目开发实录
-wordpress_id: 975
+date: 2012-09-05 04:43:26 Z
 categories:
 - 学习总结
 - 随笔
 tags:
 - GTD项目实录
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 975
 ---
 
 ## 文章目录

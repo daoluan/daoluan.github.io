@@ -1,17 +1,16 @@
 ---
-author: daoluan
-comments: true
-date: 2014-06-28 13:10:57+00:00
-layout: post
-slug: decode-redis-transaction
 title: 深入剖析 redis 事务机制
-wordpress_id: 2396
+date: 2014-06-28 13:10:57 Z
 categories:
 - linux
 tags:
 - redis
 - transaction
 - 事务
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2396
 ---
 
 ### redis 事务简述

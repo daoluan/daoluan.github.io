@@ -1,17 +1,16 @@
 ---
-author: daoluan
-comments: true
-date: 2012-09-20 01:15:13+00:00
-layout: post
-slug: mysql-entry
 title: MySQL入门教程
-wordpress_id: 1063
+date: 2012-09-20 01:15:13 Z
 categories:
 - linux
 - 学习总结
 tags:
 - linux
 - MySQL
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1063
 ---
 
 环境：Linux  2.6.32-28-generic

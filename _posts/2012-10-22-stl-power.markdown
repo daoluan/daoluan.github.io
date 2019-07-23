@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2012-10-22 11:35:32+00:00
-layout: post
-slug: stl-power
 title: 私房STL算法之快速幂
-wordpress_id: 1265
+date: 2012-10-22 11:35:32 Z
 categories:
 - cplusplus
 tags:
 - C/C++
-- 《STL源码剖析》
+- "《STL源码剖析》"
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1265
 ---
 
 STL中的[pow](http://www.cplusplus.com/reference/clibrary/cmath/pow/)用来计算某数的n幂次方。

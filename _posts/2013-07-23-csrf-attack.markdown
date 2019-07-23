@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2013-07-23 12:36:43+00:00
-layout: post
-slug: csrf-attack
 title: CSRF 攻击
-wordpress_id: 1799
+date: 2013-07-23 12:36:43 Z
 categories:
 - 互联网
 - 学习总结
 tags:
 - CSRF 攻击
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1799
 ---
 
 在 Django 的表单（或 POST）中硬性添加 **{% raw %}{% csrf_token %}{% endraw %}** 标记如下，否则在提交表单的时候会出错，目的就是为了防止 CSRF 攻击：

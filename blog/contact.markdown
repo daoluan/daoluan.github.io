@@ -1,7 +1,7 @@
 ---
+title: 联系我
 layout: name
-title:  联系我
-top:    捣乱的个人网站
+top: 捣乱的个人网站
 ---
 
 联系我：

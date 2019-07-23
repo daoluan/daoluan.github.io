@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2012-06-06 01:26:49+00:00
-layout: post
-slug: rabin-karp-algorithm
-title: 【字符串匹配】最为朴素的匹配和Rabin-Karp算法
-wordpress_id: 469
+title: "【字符串匹配】最为朴素的匹配和Rabin-Karp算法"
+date: 2012-06-06 01:26:49 Z
 categories:
 - 算法
 tags:
-- 《算法导轮》学习总结
+- "《算法导轮》学习总结"
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 469
 ---
 
 # 写在最前面

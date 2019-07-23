@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2013-06-13 11:28:21+00:00
-layout: post
-slug: my-desktop
 title: 置顶任务栏中的效率
-wordpress_id: 1761
+date: 2013-06-13 11:28:21 Z
 categories:
 - 随笔
 tags:
 - 随笔
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1761
 ---
 
 在 windows 系统中，桌面的任务栏可以放置在上，下，左，右的位置，因习惯的不同，个人的喜好也不一。但最近，我偏好把任务栏移动置桌面的顶端，不知不觉中提高了自己的学习工作效率。

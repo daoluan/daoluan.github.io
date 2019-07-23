@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2012-07-10 06:57:39+00:00
-layout: post
-slug: inode-vnode-dentry
 title: Linux/Unix inode、vnode和dentry
-wordpress_id: 626
+date: 2012-07-10 06:57:39 Z
 categories:
 - linux
 tags:
 - apue 学习总结
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 626
 ---
 
 传统的Unix既有v节点（vnode）也有i节点（inode），vnode的数据结构中包含了inode信息。但在Linux中没有使用vnode，而使用了通用inode。“实现虽不同，但在概念上是一样的。” vnode ("virtual node")仅在文件打开的时候，才出现的；而inode定位文件在磁盘的位置，它的信息本身是存储在磁盘等上的，当打开文件的时候从磁盘上读入内存。 [![fs.jpg](http://daoluan.net/images/blog/2012/07/fs_thumb.jpg)](http://daoluan.net/images/blog/2012/07/fs_thumb.jpg) inode信息就存储在磁盘的某个分区上。下图是上图的一个扩展：inode指示了文件在数据块中的物理位置。所以仅仅存在inode无法描述一个完整的文件系统，比如：目录与目录的树状结构，这一点在inode上无法体现。 延伸：

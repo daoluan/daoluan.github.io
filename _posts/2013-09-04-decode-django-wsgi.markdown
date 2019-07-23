@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2013-09-04 10:42:18+00:00
-layout: post
-slug: decode-django-wsgi
 title: 'Django 源码小剖: 初探 WSGI'
-wordpress_id: 1929
+date: 2013-09-04 10:42:18 Z
 categories:
 - 学习总结
 tags:
 - Django
 - 源代码
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1929
 ---
 
 python 作为一种脚本语言, 已经逐渐大量用于 web 后台开发中, 而基于 python 的 web 应用程序框架也越来越多, Bottle, Django, Flask 等等.

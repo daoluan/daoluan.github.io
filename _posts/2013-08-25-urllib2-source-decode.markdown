@@ -1,11 +1,6 @@
 ---
-author: daoluan
-comments: true
-date: 2013-08-25 15:23:58+00:00
-layout: post
-slug: urllib2-source-decode
 title: urllib2 源码小剖
-wordpress_id: 1909
+date: 2013-08-25 15:23:58 Z
 categories:
 - 编程小记
 - 网络编程
@@ -14,6 +9,10 @@ tags:
 - urllib2
 - 源代码
 - 爬虫
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1909
 ---
 
 两篇小剖已经完成：

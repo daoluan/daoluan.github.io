@@ -1,13 +1,12 @@
 ---
-author: daoluan
-comments: true
-date: 2014-06-11 17:35:58+00:00
-layout: post
-slug: the-best-and-worst-of-times
 title: 最好的时代，最坏的时代
-wordpress_id: 2367
+date: 2014-06-11 17:35:58 Z
 categories:
 - 随笔
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2367
 ---
 
 今天，逛微博遇到了 huangz 的主页，这个 90年出生的小伙已经开始出书了，我很佩服。一来，我们年龄相近，我是 91年的，即便是这样我依然觉得 huangz 值得我借鉴的地方很多；二来，他所出书的主题与我正在完成的系列博客是同一个主题，相形之下，解读和写作的深度有一定的差距。

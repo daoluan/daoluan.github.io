@@ -1,13 +1,12 @@
 ---
-author: daoluan
-comments: true
-date: 2015-05-16 10:11:22+00:00
-layout: post
-slug: redis-source-note-release
-title: 《Redis 源码日志》发布
-wordpress_id: 2489
+title: "《Redis 源码日志》发布"
+date: 2015-05-16 10:11:22 Z
 categories:
 - 随笔
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2489
 ---
 
 过去的一年，确实有点压力，就快喘息不过来了。原因有二，一是工作，一是《redis 源码日志》。

@@ -1,17 +1,16 @@
 ---
-author: daoluan
-comments: true
-date: 2014-06-16 12:26:07+00:00
-layout: post
-slug: decode-redis-data-struct-dict
 title: 深入剖析 redis 数据结构 dict
-wordpress_id: 2370
+date: 2014-06-16 12:26:07 Z
 categories:
 - linux
 tags:
 - dict
 - redis
 - 数据结构
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2370
 ---
 
 ### redis 的键值对存储在哪里

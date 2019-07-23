@@ -1,7 +1,7 @@
 ---
+title: 归档
 layout: name
-title:  归档
-top:    捣乱的个人网站
+top: 捣乱的个人网站
 ---
 
 <!-- <div>

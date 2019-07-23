@@ -1,17 +1,16 @@
 ---
-author: daoluan
-comments: true
-date: 2014-07-02 16:29:16+00:00
-layout: post
-slug: decode-redis-data-struct-intset
 title: 深入剖析 redis 数据结构 intset
-wordpress_id: 2403
+date: 2014-07-02 16:29:16 Z
 categories:
 - linux
 tags:
 - intset
 - redis
 - 数据结构
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2403
 ---
 
 intset 和 dict 都是 sadd 命令的底层数据结构，当添加的所有数据都是整数时，会使用前者；否则使用后者。**特别的**，当遇到添加数据为字符串，即不能表示为整数时，redis 会把数据结构转换为 dict，即把 intset 中的数据全部搬迁到 dict。

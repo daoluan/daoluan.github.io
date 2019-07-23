@@ -1,17 +1,16 @@
 ---
-author: daoluan
-comments: true
-date: 2012-09-25 14:43:10+00:00
-layout: post
-slug: hava-a-look-at-libevent
 title: 初探libevent网络库
-wordpress_id: 1089
+date: 2012-09-25 14:43:10 Z
 categories:
 - cplusplus
 - linux
 tags:
 - GTD项目实录
 - libevent
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1089
 ---
 
 libevent官网：[http://libevent.org/](http://libevent.org/)

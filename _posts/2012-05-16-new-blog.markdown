@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2012-05-16 21:57:21+00:00
-layout: post
-slug: new-blog
 title: 搬家了，有了自己的独立博客
-wordpress_id: 304
+date: 2012-05-16 21:57:21 Z
 categories:
 - 随笔
 tags:
 - 随笔
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 304
 ---
 
 # 搬家啦

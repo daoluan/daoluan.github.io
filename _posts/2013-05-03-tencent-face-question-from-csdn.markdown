@@ -1,14 +1,13 @@
 ---
-author: daoluan
-comments: true
-date: 2013-05-03 06:50:58+00:00
-layout: post
-slug: tencent-face-question-from-csdn
 title: 腾讯面试题：把负数移动到正数之前，不能改变正负数原先的次序
-wordpress_id: 1740
+date: 2013-05-03 06:50:58 Z
 categories:
 - 学习总结
 - 算法
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1740
 ---
 
 如：-5,7,1,9，-12,15 变成 -5,-12,7,1,9,15。如何解？

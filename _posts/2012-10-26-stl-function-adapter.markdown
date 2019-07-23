@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2012-10-26 05:30:37+00:00
-layout: post
-slug: stl-function-adapter
 title: 私房STL之函数配接器
-wordpress_id: 1312
+date: 2012-10-26 05:30:37 Z
 categories:
 - cplusplus
 tags:
 - C/C++
-- 《STL源码剖析》
+- "《STL源码剖析》"
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1312
 ---
 
 本文只通过简单的例子介绍函数配接器是如何工作的。

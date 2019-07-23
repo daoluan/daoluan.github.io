@@ -1,11 +1,12 @@
 ---
-author: daoluan
-layout: post
 title: ssh 免密登录过程
+date: 2017-07-15 00:00:00 Z
 categories:
 - 学习总结
 tags:
 - ssh
+author: daoluan
+layout: post
 ---
 
 rfc4252 规定，ssh 登录服务器是可以通过 pubkey 的方式登录的，这样省去了输入密码的过程，此方式生效的前提是服务器已经拥有了客户端生成的 pubkey，privkey 存在于客户端。

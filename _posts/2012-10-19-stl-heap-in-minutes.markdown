@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2012-10-19 11:48:41+00:00
-layout: post
-slug: stl-heap-in-minutes
 title: 私房STL之一分钟的heap
-wordpress_id: 1196
+date: 2012-10-19 11:48:41 Z
 categories:
 - cplusplus
 tags:
 - C/C++
-- 《STL源码剖析》
+- "《STL源码剖析》"
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1196
 ---
 
 一句话的heap：一种数据结构，完全二叉树（若二叉树高h，除过最底层h层，其他层1~h-1都是满的；并且最底层从左到右不能有空隙。），但在实现上，它没有选择一般的二叉树数据结构（即一个节点包含指向两个孩子的指针），使用的是数组；heap最为常用的操作是上溯和下溯，它们在“维持堆”和“堆排序”中经常用到。这篇文章能让你快速回顾heap。

@@ -1,14 +1,13 @@
 ---
-author: daoluan
-comments: true
-date: 2012-08-29 15:19:54+00:00
-layout: post
-slug: mfc-doubled-buffer
 title: 老调重弹--双缓冲
-wordpress_id: 914
+date: 2012-08-29 15:19:54 Z
 categories:
 - cplusplus
 - mfc
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 914
 ---
 
 MFC中双缓冲技术比较常用，主要是为了避免因绘图过程的缓慢而闪烁。

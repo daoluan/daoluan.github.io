@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2013-09-11 07:21:21+00:00
-layout: post
-slug: decode-django-wsgihandler
 title: 'Django 源码小剖: 应用程序入口 WSGIHandler'
-wordpress_id: 1954
+date: 2013-09-11 07:21:21 Z
 categories:
 - 学习总结
 tags:
 - Django
 - 源代码
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1954
 ---
 
 WSGI 有三个部分, 分别为服务器(server), 应用程序(application) 和中间件(middleware). 已经知道, 服务器方面会调用应用程序来处理请求, 在应用程序中有真正的处理逻辑, 在这里面几乎可以做任何事情, 其中的中间件就会在里面展开.

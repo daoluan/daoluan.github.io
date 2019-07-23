@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2013-05-09 09:43:51+00:00
-layout: post
-slug: how-to-simulate-polymorphism-whit-c
 title: C 语言实现 C++ 多态
-wordpress_id: 1746
+date: 2013-05-09 09:43:51 Z
 categories:
 - cplusplus
 tags:
 - C/C++
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1746
 ---
 
 ## C 还是 C++？

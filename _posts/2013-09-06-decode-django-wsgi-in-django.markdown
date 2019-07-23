@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2013-09-06 14:08:36+00:00
-layout: post
-slug: decode-django-wsgi-in-django
 title: 'Django 源码小剖: Django 中的 WSGI'
-wordpress_id: 1944
+date: 2013-09-06 14:08:36 Z
 categories:
 - 学习总结
 tags:
 - Django
 - 源代码
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1944
 ---
 
 Django 其内部已经自带了一个方便本地测试的小服务器, 所以在刚开始学习 Django 的时候并不需搭建 apache 或者 nginx 服务器. Django 自带的服务器基于 python wsgiref 模块实现的, 其百分之七八十的代码都是 wsgiref 中的代码, 只重写了一部分, 所以 Django 自带的服务器测试写个 helloworld 就好了.

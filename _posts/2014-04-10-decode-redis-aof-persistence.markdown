@@ -1,11 +1,6 @@
 ---
-author: daoluan
-comments: true
-date: 2014-04-10 05:30:15+00:00
-layout: post
-slug: decode-redis-aof-persistence
 title: 深入剖析 redis AOF 持久化策略
-wordpress_id: 2308
+date: 2014-04-10 05:30:15 Z
 categories:
 - linux
 - 学习总结
@@ -15,6 +10,10 @@ tags:
 - redis
 - 持久化
 - 源码剖析
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2308
 ---
 
 本篇主要讲的是 AOF 持久化，了解 AOF 的数据组织方式和运作机制。redis 主要在 aof.c 中实现 AOF 的操作。

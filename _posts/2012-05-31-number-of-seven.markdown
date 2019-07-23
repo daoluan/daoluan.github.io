@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2012-05-31 16:58:19+00:00
-layout: post
-slug: number-of-seven
-title: 【趣味编程】“至少出现一次7”的数
-wordpress_id: 460
+title: "【趣味编程】“至少出现一次7”的数"
+date: 2012-05-31 16:58:19 Z
 categories:
 - 编程小记
 tags:
 - 编程小记
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 460
 ---
 
 班级q群上老师给的题目，突然给出来的，感觉还是蛮喜欢这样的题目的。

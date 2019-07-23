@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2013-10-20 12:38:42+00:00
-layout: post
-slug: no-unread
 title: 不留一封未读邮件
-wordpress_id: 2137
+date: 2013-10-20 12:38:42 Z
 categories:
 - 随笔
 tags:
 - 未读邮件
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2137
 ---
 
 这是在 36kr 看到的文章: [创业者不做的那一件事（一）：不在收件箱里留一封邮件](http://www.36kr.com/p/207002.html), 里面提到的「未读邮件数量」的问题在自己身上也很明显, 总结了文中提到的方法.

@@ -1,17 +1,16 @@
 ---
-author: daoluan
-comments: true
-date: 2014-12-10 15:16:27+00:00
-layout: post
-slug: lock-free-queue
 title: 无锁消息队列
-wordpress_id: 2436
+date: 2014-12-10 15:16:27 Z
 categories:
 - linux
 tags:
 - lock free
 - queue
 - 无锁消息队列
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2436
 ---
 
 ### 背景

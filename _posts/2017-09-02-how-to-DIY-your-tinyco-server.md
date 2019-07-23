@@ -1,13 +1,13 @@
 ---
-author: daoluan
-layout: post
 title: 如何使用 tinyco 定制你的服务
+date: 2017-09-02 00:00:00 Z
 categories:
 - 编程小记
 tags:
 - tinyco
+author: daoluan
+layout: post
 ---
-
 
 业务逻辑服务所做的事情可以总结为：在某个绑定端口上收到请求，需要做什么？如果需要使用 tinyco 实现业务服务，可细化为三个步骤：
 

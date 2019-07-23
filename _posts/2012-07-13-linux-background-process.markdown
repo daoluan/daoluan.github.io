@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2012-07-13 06:28:33+00:00
-layout: post
-slug: linux-background-process
 title: Unix/Linux 那些系统启动后的进程
-wordpress_id: 649
+date: 2012-07-13 06:28:33 Z
 categories:
 - linux
 tags:
 - apue 学习总结
 - linux
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 649
 ---
 
 # 闲扯

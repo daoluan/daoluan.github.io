@@ -1,14 +1,13 @@
 ---
-author: daoluan
-comments: true
-date: 2012-11-01 02:49:56+00:00
-layout: post
-slug: enjoy-bitmap
 title: 玩转位图（bitmap）
-wordpress_id: 1350
+date: 2012-11-01 02:49:56 Z
 categories:
 - cplusplus
 - mfc
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1350
 ---
 
 [![](http://daoluan.net/images/blog/2012/11/enjoy_bitmap_jobs.jpg)](http://daoluan.net/blog/enjoy-bitmap/enjoy_bitmap_jobs/) 乔帮主

@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2012-10-18 16:34:11+00:00
-layout: post
-slug: stl-stack-queue
 title: 私房STL之stack与queue
-wordpress_id: 1187
+date: 2012-10-18 16:34:11 Z
 categories:
 - cplusplus
 tags:
 - C/C++
-- 《STL源码剖析》
+- "《STL源码剖析》"
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1187
 ---
 
 一句话stack和queue：相对于[deque](http://daoluan.net/blog/?p=1170  )，stack和queue没有那么底层，他们大部分底层的操作都由deque一手操办，特别的stack和queue是deque的子集（换句话说，stack、queue管deque叫老爹）；通过关闭或者限制deque的一些接口就可以轻易实现stack和queue（STL源码剖析中管这种机制叫“adapter”。）；由stack和queue的定义来看，它们的遍历动作是不被允许的，没有迭代器概念；有趣的是，通过修改list的接口，同样可以让[list](http://daoluan.net/blog/stl-list/)假冒stack和queue。

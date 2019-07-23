@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2012-10-22 16:29:25+00:00
-layout: post
-slug: stl-hash_set-and-hash_map
 title: 私房STL之hash_set和hash_map
-wordpress_id: 1271
+date: 2012-10-22 16:29:25 Z
 categories:
 - cplusplus
 tags:
 - C/C++
-- 《STL源码剖析》
+- "《STL源码剖析》"
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1271
 ---
 
 一句话hash_set和hash_map：它们皆由Hashtable（Standard C++ Library未公开，只作为底层部件）作为底层容器， 所有的操作也都由Hashtable提供；咋看起来，好似与set和map有很大的关联，其实不大，只不过hash_set和hash_map有着“set键值就是实值，实值就是键值，map键值就是键值，实值就是实值”特征，姑且让set和map挂挂名:-)；

@@ -1,11 +1,6 @@
 ---
-author: daoluan
-comments: true
-date: 2012-05-06 10:27:00+00:00
-layout: post
-slug: knapsack-problems
 title: 背包问题（01背包，完全背包，多重背包）
-wordpress_id: 58
+date: 2012-05-06 10:27:00 Z
 categories:
 - 算法
 tags:
@@ -13,6 +8,10 @@ tags:
 - 多重背包
 - 完全背包
 - 背包问题
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 58
 ---
 
 # 写在最前面的

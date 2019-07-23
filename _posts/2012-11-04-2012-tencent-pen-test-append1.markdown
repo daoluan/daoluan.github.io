@@ -1,17 +1,16 @@
 ---
-author: daoluan
-comments: true
-date: 2012-11-04 08:17:12+00:00
-layout: post
-slug: 2012-tencent-pen-test-append1
 title: 2012腾讯实习招聘笔试附加题
-wordpress_id: 1419
+date: 2012-11-04 08:17:12 Z
 categories:
 - 编程小记
 - 随笔
 tags:
 - 巴什博弈
 - 编程小记
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1419
 ---
 
 2012腾讯实习招聘笔试附加题1，问题描述大致如下：

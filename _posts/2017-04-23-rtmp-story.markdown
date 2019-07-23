@@ -1,11 +1,12 @@
 ---
-author: daoluan
-layout: post
 title: rtmp 小记
+date: 2017-04-23 00:00:00 Z
 categories:
 - 编程小记
 tags:
 - rtmp
+author: daoluan
+layout: post
 ---
 
 直播最近很火，项目组也在热火朝天。

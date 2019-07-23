@@ -1,11 +1,6 @@
 ---
-author: daoluan
-comments: true
-date: 2013-12-19 14:19:03+00:00
-layout: post
-slug: decode-memcached
 title: memcached 源码阅读笔记
-wordpress_id: 2226
+date: 2013-12-19 14:19:03 Z
 categories:
 - linux
 - 学习总结
@@ -13,6 +8,10 @@ categories:
 tags:
 - memcached
 - 源码剖析
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2226
 ---
 
 阅读 memcached 最好有 libevent 基础, memcached 是基于 libevent 构建起来的. 通由 libevent 提供的事件驱动机制触发 memcached 中的 IO 事件.

@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2012-06-18 15:57:32+00:00
-layout: post
-slug: directed-acyclic-graph-shortest-distance
-title: 【图论】有向无回路图的单源最短路径
-wordpress_id: 563
+title: "【图论】有向无回路图的单源最短路径"
+date: 2012-06-18 15:57:32 Z
 categories:
 - 算法
 tags:
-- 《算法导轮》学习总结
+- "《算法导轮》学习总结"
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 563
 ---
 
 有向无回路图（Directed acyclic graph，DAG）的单源最短路径是基于这个理论：

@@ -1,13 +1,13 @@
 ---
-author: daoluan
-layout: post
 title: 如何书写高性能高效率的业务框架
+date: 2017-07-18 00:00:00 Z
 categories:
 - 编程小记
 tags:
 - tinyco
+author: daoluan
+layout: post
 ---
-
 
 做后台业务，设计一个系统时，并发是需重点考虑的，当然依据业务的不同，情况会有所不同。
 

@@ -1,19 +1,18 @@
 ---
-author: daoluan
-comments: true
-date: 2013-09-28 16:48:35+00:00
-layout: post
-slug: rbtree-is-not-difficult-2
 title: 红黑树并没有我们想象的那么难(下)
-wordpress_id: 2112
+date: 2013-09-28 16:48:35 Z
 categories:
 - 学习总结
 - 数据结构
 - 算法
 tags:
-- 《STL源码剖析》
+- "《STL源码剖析》"
 - 源代码
 - 红黑树
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2112
 ---
 
 红黑树并没有我们想象的那么难 上、下两篇已经完成, 希望能帮助到大家.

@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2012-05-22 15:18:47+00:00
-layout: post
-slug: topological-sort
-title: 【图论】拓扑排序应用
-wordpress_id: 425
+title: "【图论】拓扑排序应用"
+date: 2012-05-22 15:18:47 Z
 categories:
 - 算法
 tags:
-- 《算法导轮》学习总结
+- "《算法导轮》学习总结"
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 425
 ---
 
 拓扑排序虽是一种排序，但是它跟平时所接触的sort或者qsort不同，排序的意义不同。拓扑排序针对有向无回路图（DAG）而言的，不应用与存在回路的有向图。

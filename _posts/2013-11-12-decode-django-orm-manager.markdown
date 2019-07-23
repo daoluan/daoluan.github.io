@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2013-11-12 15:45:26+00:00
-layout: post
-slug: decode-django-orm-manager
 title: 'Django 源码小剖: Django ORM 查询管理器'
-wordpress_id: 2048
+date: 2013-11-12 15:45:26 Z
 categories:
 - 学习总结
 tags:
 - Django
 - 源代码
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2048
 ---
 
 ### ORM 查询管理器

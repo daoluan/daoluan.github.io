@@ -1,17 +1,16 @@
 ---
-author: daoluan
-comments: true
-date: 2014-06-09 13:59:22+00:00
-layout: post
-slug: redis-overview-of-data-structure
 title: redis 数据结构综述
-wordpress_id: 2361
+date: 2014-06-09 13:59:22 Z
 categories:
 - linux
 tags:
 - redis
 - 数据结构
 - 源码剖析
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 2361
 ---
 
 这里所说的数据结构是针对 redis 内部存储 key-value 的，其他诸如 redis 配置相关的数据结构，不在此篇讨论范围。

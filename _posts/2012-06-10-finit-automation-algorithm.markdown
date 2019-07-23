@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2012-06-10 15:49:04+00:00
-layout: post
-slug: finit-automation-algorithm
-title: 【字符串匹配】有限自动机进行字符串匹配
-wordpress_id: 481
+title: "【字符串匹配】有限自动机进行字符串匹配"
+date: 2012-06-10 15:49:04 Z
 categories:
 - 算法
 tags:
-- 《算法导轮》学习总结
+- "《算法导轮》学习总结"
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 481
 ---
 
 # 17周之后21周之前的大学生

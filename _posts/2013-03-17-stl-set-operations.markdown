@@ -1,17 +1,16 @@
 ---
-author: daoluan
-comments: true
-date: 2013-03-17 11:52:04+00:00
-layout: post
-slug: stl-set-operations
 title: STL求交集、并集、差集和对称差集
-wordpress_id: 1608
+date: 2013-03-17 11:52:04 Z
 categories:
 - cplusplus
 - linux
 tags:
 - C/C++
 - GTD项目实录
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1608
 ---
 
 STL算法提供求两个容器中的数据的交集、并集、差集和对称差集，分别是set_intersection，set_union，set_difference，set_symmetric_difference。

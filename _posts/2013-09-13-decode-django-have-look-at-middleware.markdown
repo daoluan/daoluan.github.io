@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2013-09-13 16:20:14+00:00
-layout: post
-slug: decode-django-have-look-at-middleware
 title: 'Django 源码小剖: 初探中间件(middleware)'
-wordpress_id: 1956
+date: 2013-09-13 16:20:14 Z
 categories:
 - 学习总结
 tags:
 - Django
 - 源代码
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1956
 ---
 
 因为考虑到文章的长度, 所以 BaseHandler 的展开被推迟了. 在 BaseHandler 中隐藏着中间件的信息, 较常见的 SessionMiddleware 就已经默认安装.  BaseHandler 的展开主要是以代码为主, 但已经加入了注释; 文章的最后附一张美图 .

@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2012-10-20 12:24:04+00:00
-layout: post
-slug: stl-map-set
 title: 私房STL之map和set
-wordpress_id: 1218
+date: 2012-10-20 12:24:04 Z
 categories:
 - cplusplus
 tags:
 - C/C++
-- 《STL源码剖析》
+- "《STL源码剖析》"
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1218
 ---
 
 一句话set：容器set底层是由RB_TREE实现的，它和（deque--->stack、queue）模式一样；色set的元素不允许重复；set中键值就是实值，实值就是键值，而键值是不可以更改的（但MS STL不这样做），所以set不允许对其中的元素进行更新；

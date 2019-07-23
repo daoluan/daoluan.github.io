@@ -1,11 +1,6 @@
 ---
-author: daoluan
-comments: true
-date: 2013-08-20 15:32:44+00:00
-layout: post
-slug: two-high-performance-io-design-patterns
 title: 两种高性能 I/O 设计模式 Reactor 和 Proactor
-wordpress_id: 1872
+date: 2013-08-20 15:32:44 Z
 categories:
 - linux
 - 学习总结
@@ -13,6 +8,10 @@ categories:
 tags:
 - proactor
 - reactor
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1872
 ---
 
 Reactor 和 Proactor 是基于事件驱动，在网络编程中经常用到两种设计模式。

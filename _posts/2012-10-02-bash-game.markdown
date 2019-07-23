@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2012-10-02 08:32:16+00:00
-layout: post
-slug: bash-game
 title: 巴什博弈|你总能赢
-wordpress_id: 1110
+date: 2012-10-02 08:32:16 Z
 categories:
 - 算法
 - 随笔
 tags:
 - 巴什博弈
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1110
 ---
 
 **巴什[博弈](http://zh.wikipedia.org/wiki/%E5%8D%9A%E5%BC%88)：**一堆n个物品，两个人轮流从这堆物品中取物，规定每次至少取一个，至多取m个，最后取光者得胜。就针对这个问题，讨论先取（物品）玩家是否能获胜。为了方便说明，先取玩家和后取玩家都很有头脑。

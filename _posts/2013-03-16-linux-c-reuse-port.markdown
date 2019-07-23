@@ -1,11 +1,6 @@
 ---
-author: daoluan
-comments: true
-date: 2013-03-16 05:58:32+00:00
-layout: post
-slug: linux-c-reuse-port
 title: Linux c端口复用
-wordpress_id: 1604
+date: 2013-03-16 05:58:32 Z
 categories:
 - linux
 - 网络编程
@@ -13,6 +8,10 @@ tags:
 - C/C++
 - GTD项目实录
 - linux
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1604
 ---
 
 在Linux c后台开发中， 经常需要修改一段服务器代码过后，编译连接然后重启服务器进程。

@@ -1,11 +1,6 @@
 ---
-author: daoluan
-comments: true
-date: 2012-09-11 04:05:53+00:00
-layout: post
-slug: delete-twice
 title: C++ 一不小心被delete两次
-wordpress_id: 1019
+date: 2012-09-11 04:05:53 Z
 categories:
 - cplusplus
 - 学习总结
@@ -13,6 +8,10 @@ categories:
 tags:
 - C/C++
 - 随笔
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1019
 ---
 
 2012-09-11 22:10：更多经常的讨论 [http://www.cnblogs.com/daoluanxiaozi/archive/2012/09/11/2679972.html](http://www.cnblogs.com/daoluanxiaozi/archive/2012/09/11/2679972.html)

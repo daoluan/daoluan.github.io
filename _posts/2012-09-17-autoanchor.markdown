@@ -1,13 +1,12 @@
 ---
-author: daoluan
-comments: true
-date: 2012-09-17 11:27:55+00:00
-layout: post
-slug: autoanchor
-title: 『AA』AutoAnchor自动猫
-wordpress_id: 1049
+title: "『AA』AutoAnchor自动猫"
+date: 2012-09-17 11:27:55 Z
 categories:
 - 学习总结
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1049
 ---
 
 2012-09-17 19:40:31：嘿嘿，给自己出了道编程题，难度不大（YY都可以）， 大家有兴趣可以自己去实现下。

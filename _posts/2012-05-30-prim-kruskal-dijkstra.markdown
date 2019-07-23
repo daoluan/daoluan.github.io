@@ -1,13 +1,12 @@
 ---
-author: daoluan
-comments: true
-date: 2012-05-30 09:00:00+00:00
-layout: post
-slug: prim-kruskal-dijkstra
-title: 【图论】信手拈来的Prim，Kruskal和Dijkstra
-wordpress_id: 437
+title: "【图论】信手拈来的Prim，Kruskal和Dijkstra"
+date: 2012-05-30 09:00:00 Z
 categories:
 - 算法
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 437
 ---
 
 # 关于三个简单的图论算法

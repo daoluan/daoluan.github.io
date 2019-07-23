@@ -1,15 +1,14 @@
 ---
-author: daoluan
-comments: true
-date: 2012-07-30 02:47:06+00:00
-layout: post
-slug: vmware-linux-putty
 title: vmware Linux putty环境配置
-wordpress_id: 759
+date: 2012-07-30 02:47:06 Z
 categories:
 - linux
 tags:
 - linux
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 759
 ---
 
 这里主要解决vmware虚拟机上的Linux与主机进行相互通信的问题，另外介绍[putty](http://zh.wikipedia.org/wiki/Putty)工具的使用。

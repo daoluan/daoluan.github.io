@@ -1,16 +1,15 @@
 ---
-author: daoluan
-comments: true
-date: 2012-10-28 05:15:20+00:00
-layout: post
-slug: stl-iterator
 title: 私房STL之迭代器
-wordpress_id: 1341
+date: 2012-10-28 05:15:20 Z
 categories:
 - cplusplus
 tags:
 - C/C++
-- 《STL源码剖析》
+- "《STL源码剖析》"
+author: daoluan
+comments: true
+layout: post
+wordpress_id: 1341
 ---
 
 STL表现的如此出色的，迭代器（iterator）做出了很大的贡献，功不可没。
