@@ -1,0 +1,31 @@
+---
+label: post-template
+hide_body: false
+fields:
+- type: text
+  name: author
+  label: author
+- type: boolean
+  name: comments
+  label: comments
+- type: datetime
+  name: date
+  label: date
+- type: text
+  name: layout
+  label: layout
+- type: text
+  name: slug
+  label: slug
+- type: text
+  name: title
+  label: title
+- type: number
+  name: wordpress_id
+  label: wordpress_id
+- type: list
+  name: categories
+  label: categories
+- type: list
+  name: tags
+  label: tags
