@@ -1,36 +1,35 @@
 ---
----
-
----
 label: post-template
 hide_body: false
 fields:
 - type: text
-  name: author
-  label: author
-- type: boolean
-  name: comments
-  label: comments
-- type: datetime
-  name: date
-  label: date
-- type: text
-  name: layout
-  label: layout
-- type: text
-  name: slug
-  label: slug
-- type: text
   name: title
   label: title
-- type: number
-  name: wordpress_id
-  label: wordpress_id
 - type: list
   name: categories
   label: categories
+- type: text
+  name: author
+  label: author
+  default: dylanzheng
 - type: list
   name: tags
   label: tags
+- type: boolean
+  name: comments
+  label: comments
+  hidden: false
+  default: true
+- type: datetime
+  name: date
+  label: date
+  default: now
+- type: text
+  name: layout
+  label: layout
+  default: post
+- type: text
+  name: slug
+  label: slug
 pages:
 - _posts/2019-07-23-new-post.md
