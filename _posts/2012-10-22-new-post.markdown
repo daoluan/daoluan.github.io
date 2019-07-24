@@ -1,18 +1,17 @@
 ---
-author: daoluan
-comments: true
-date: 2012-10-22 00:50:05 +0000
-layout: post
-slug: 
-title: 
-wordpress_id: "1247"
+title: New Post
+date: 2012-10-22 00:50:05 Z
 categories:
 - cplusplus
 tags:
 - C/C++
 - "《STL源码剖析》"
-
+author: daoluan
+comments: true
+layout: post
+wordpress_id: '1247'
 ---
+
 全排列问题：从n个不同元素中任取m（m≤n）个元素，按照一定的顺序排列起来，叫做从n个不同元素中取出m个元素的一个排列。当m＝n时所有的排列情况叫全排列。譬如，考虑{a，b，c}的全排列有abc，acb，bac，bca，cab，cba六（3！）种情况。
 
 首先要声明，STL没有实现全排列的函数，但描述了全排列的核心算法，分别是[next_permutation](http://www.cplusplus.com/reference/algorithm/next_permutation/)和[prev_permutation](http://www.cplusplus.com/reference/algorithm/prev_permutation/)，两者实际上一样，只不过情况不同。全排列实现可以是递归和迭代两个版本。STL算法中的next_permutation便也是全排列算法迭代版本的核心。
