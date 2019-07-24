@@ -1,7 +1,4 @@
 ---
----
-
----
 label: post-template
 hide_body: false
 fields:
@@ -32,3 +29,5 @@ fields:
 - type: list
   name: tags
   label: tags
+pages:
+- _posts/这是一篇新的文章.md
