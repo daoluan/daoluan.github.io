@@ -1,7 +1,4 @@
 ---
----
-
----
 label: post-template
 hide_body: false
 fields:
@@ -35,4 +32,5 @@ fields:
   name: slug
   label: slug
 pages:
+- _posts/ssdb-如何利用-leveldb.md
 - _posts/2019-07-23-new-post.md
