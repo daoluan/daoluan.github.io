@@ -6,6 +6,8 @@ feed: atom.xml
 
 <div id="header">
     {% include nav-name.html %}
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 </div>
 
 <div id="page">
@@ -14,7 +16,7 @@ feed: atom.xml
 
         {{ content }}
 
-         <!-- 作者和时间 -->
+        <!-- 作者和时间 -->
         <address class="signature">
             <span class="date">{{ page.date | date_to_long_string }}</span>
             <span class="location">{{ page.location }}</span>
@@ -22,24 +24,42 @@ feed: atom.xml
     </div>
 </div><!-- End Page -->
 
-<div id="disqus_thread"><p>disqus 可能被墙~</p></div>
+<script>
+    var clientId = '42fd8fb3599d49e9210f'
+    var clientSecret = '43915b47d2b594a92470a86e85a2a3ade3874ba4'
+    var gitment = new Gitment({
+        id: 'demo page',
+        owner: 'imsun',
+        repo: 'gitment',
+        oauth: {
+            client_id: clientId,
+            client_secret: clientSecret,
+        },
+    })
+
+    gitment.render('container')
+</script>
+<!-- <div id="disqus_thread">
+    <p>disqus 可能被墙~</p>
+</div>
 
 <script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://dylan-3.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function () { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+        s.src = 'https://dylan-3.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript> -->
