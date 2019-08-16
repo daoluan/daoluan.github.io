@@ -15,6 +15,6 @@ slug: ''
 
 我为这个钱包设计了 logo，取了名字：Blockit 比特币钱包。整个过程让我非常充实，学到很多东西。
 
-![çµå½±æµ·æ¥å¾ç](https://lh3.googleusercontent.com/HXOPyNtAIKaROLg5jal3MSA0XxoNfYsa1mfP8KPxPQzREwyibuAacOjvUSta2Jj94Dk=s180-rw)
+![logo](https://lh3.googleusercontent.com/HXOPyNtAIKaROLg5jal3MSA0XxoNfYsa1mfP8KPxPQzREwyibuAacOjvUSta2Jj94Dk=s180-rw)
 
 关于区块链方向的项目方案，有需要的话可以和我联系，我可以提供咨询服务，包括但不限于客户端以及服务端的整体落地方案：g.daoulan#gmail.com。
