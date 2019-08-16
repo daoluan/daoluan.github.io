@@ -28,9 +28,6 @@ fields:
   name: layout
   label: layout
   default: post
-- type: text
-  name: slug
-  label: slug
 pages:
 - _posts/blockit-bitcoin-wallet.md
 - _posts/2019-07-23-new-post.md
