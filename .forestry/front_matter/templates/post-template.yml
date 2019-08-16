@@ -32,5 +32,6 @@ fields:
   name: slug
   label: slug
 pages:
+- _posts/blockit-比特币钱包发布.md
 - 开发了一款比特币钱包.md
 - _posts/2019-07-23-new-post.md
