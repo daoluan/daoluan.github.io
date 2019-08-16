@@ -4,7 +4,8 @@ comments: true
 date: 2019-08-16 10:17:58 +0000
 layout: post
 title: Blockit 比特币钱包发布
-categories: []
+categories:
+- 区块链
 tags: []
 slug: ''
 
