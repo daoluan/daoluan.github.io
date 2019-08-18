@@ -29,5 +29,4 @@ fields:
   label: layout
   default: post
 pages:
-- _posts/blockit-bitcoin-wallet.md
 - _posts/2019-07-23-new-post.md
