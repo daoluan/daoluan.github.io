@@ -1,7 +1,7 @@
 ---
 author: dylanzheng
 comments: true
-date: 2019-08-16 10:17:58 +0000
+date: 2019-08-16T10:17:58.000+00:00
 layout: post
 title: Blockit 比特币钱包发布
 categories:
@@ -17,4 +17,10 @@ tags: []
 
 ![logo](https://lh3.googleusercontent.com/HXOPyNtAIKaROLg5jal3MSA0XxoNfYsa1mfP8KPxPQzREwyibuAacOjvUSta2Jj94Dk=s180-rw)
 
-关于区块链方向的项目方案，有需要的话可以和我联系，我可以提供咨询服务，包括但不限于客户端以及服务端的整体落地方案：g.daoulan#gmail.com。
+关于区块链方向的项目方案，有需要的话可以和我联系，我可以提供咨询服务，包括但不限于：
+
+* 公链客户端架构
+* 服务端的整体落地方案
+* 区块浏览器整体落地方案
+
+联系方式 g.daoulan#gmail.com。
