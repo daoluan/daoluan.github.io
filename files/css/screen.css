@@ -26,6 +26,7 @@ body {
 	background-repeat: repeat-x;
 
     font-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", Roboto, "Microsoft YaHei", "Source Han Sans SC", "Noto Sans CJK SC", "Myriad Pro", "Hiragino Sans", "Yu Gothic", "Lucida Grande", sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* Hack via Joel Spolsky to make image rescaling nicer in IE */
