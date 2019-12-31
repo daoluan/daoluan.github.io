@@ -170,4 +170,4 @@ vector还提供insert，earse，clear等元素的操作，不一一复述。最�
 
 本文完 2012-10-16
 
-捣乱小子 [http://www.daoluan.net/](http://www.daoluan.net/blog/)
+Dylan [http://www.daoluan.net/](http://www.daoluan.net/blog/)

@@ -557,6 +557,6 @@ redis 的事件驱动总结如下：
 
 ----
 
-捣乱 2014-3-9
+Dylan 2014-3-9
 
 http://daoluan.net

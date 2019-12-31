@@ -1,10 +1,10 @@
 ---
-title: 捣乱小子 - daoluan.net
+title: dylan 的博客 - daoluan.net
 layout: name
-keywords: 捣乱小子,捣乱,郑思愿,郑思愿daoluan,daoluan,daoluan.net
+keywords: dylanzheng,daoluan.net
 ---
 
-<img class='inset right' src='/images/daoluan.png' title='daoluan' width='120px' />
+<img class='inset right' src='/images/daoluan.png' title='dylan' width='120px' />
 
 欢迎
 =====

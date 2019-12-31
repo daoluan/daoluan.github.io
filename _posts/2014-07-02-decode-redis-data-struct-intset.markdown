@@ -188,7 +188,7 @@ intset 实现中比较远有意思的是插入算法部分。
 
 
 
-捣乱 2014-7-3
+Dylan 2014-7-3
 
 [http://daoluan.net](http://daoluan.net/)
 

@@ -104,4 +104,4 @@ priority_queue带权值的queue，顺序入队之后，按照权值的大小出�
 
 本文完 2012-10-19
 
-捣乱小子 [http://www.daoluan.net/](http://www.daoluan.net)
+Dylan [http://www.daoluan.net/](http://www.daoluan.net)

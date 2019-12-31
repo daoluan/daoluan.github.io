@@ -98,4 +98,4 @@ hash_set和hash_map还实现很多函数，给出参考链接：[http://msdn.mic
 
 本文完 2012-10-23
 
-捣乱小子 [http://www.daoluan.net/](http://www.daoluan.net/)
+Dylan [http://www.daoluan.net/](http://www.daoluan.net/)

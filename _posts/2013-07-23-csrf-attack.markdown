@@ -81,6 +81,6 @@ CSRF 攻击通常会调用 JavaScript 自动提交跨站表单，然而，不�
 
 参考：[http://www.squarefree.com/securitytips/web-developers.html#CSRF](http://www.squarefree.com/securitytips/web-developers.html#CSRF)
 
-捣乱 2013-07-23
+Dylan 2013-07-23
 
 http://daoluan.net/blog

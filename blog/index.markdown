@@ -1,7 +1,7 @@
 ---
 layout: name
-title: 捣乱小子 - daoluan.net
-keywords: 捣乱小子,捣乱,郑思愿,郑思愿daoluan,daoluan,daoluan.net
+title: Dylan - daoluan.net
+keywords: Dylan,Dylan,郑思愿,郑思愿daoluan,daoluan,daoluan.net
 
 ---
 <img class='inset right' src='/images/daoluan.png' title='daoluan' width='120px' />

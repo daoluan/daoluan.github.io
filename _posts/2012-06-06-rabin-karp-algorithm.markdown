@@ -84,4 +84,4 @@ wordpress_id: 469
 
 本文完 2012-06-06
 
-捣乱小子 [www.daoluan.net/blog](http://www.daoluan.net/blog)
+Dylan [www.daoluan.net/blog](http://www.daoluan.net/blog)

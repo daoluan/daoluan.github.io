@@ -301,6 +301,6 @@ redis ziplist 讲解请参看[《深入剖析 redis 数据结构 ziplist》](htt
 
 
 
-捣乱 2014-6-26
+Dylan 2014-6-26
 
 [http://daoluan.net](http://daoluan.net/)

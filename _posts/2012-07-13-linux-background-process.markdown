@@ -97,4 +97,4 @@ login已完成使命（主要是以上步骤），shell登场（exec）。
 
 本文完 2012-07-13
 
-捣乱小子 [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)
+Dylan [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)

@@ -204,4 +204,4 @@ wordpress_id: 460
 
 本文完 2012-06-01 00:58
 
-捣乱小子 [www.daoluan.net/blog](http://www.daoluan.net/blog) PS：儿童节快乐！
+Dylan [www.daoluan.net/blog](http://www.daoluan.net/blog) PS：儿童节快乐！

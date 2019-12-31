@@ -397,4 +397,4 @@ kmp主程序也是用这种平摊分析方法。
 
 本文完 2012-06-14
 
-捣乱小子 [www.daoluan.net/blog](http://www.daoluan.net/blog)
+Dylan [www.daoluan.net/blog](http://www.daoluan.net/blog)

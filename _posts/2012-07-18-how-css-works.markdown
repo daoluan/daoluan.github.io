@@ -102,4 +102,4 @@ CSS支持非常灵活的样式组合，如果样式名（选择器）为非内�
 
 本文完 2012-07-15
 
-捣乱小子 [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)
+Dylan [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)

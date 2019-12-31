@@ -74,4 +74,4 @@ ps -A | grep ssh
 
 本文完 2012-07-29
 
-捣乱小子 [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)
+Dylan [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)

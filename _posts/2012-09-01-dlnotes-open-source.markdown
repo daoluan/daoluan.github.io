@@ -16,7 +16,7 @@ wordpress_id: 946
 
 DL便签的各种细节技术定当日后补上。在后来的GTD项目PC客户端开发当中很多的细节技术都能在DL便签上找到思路，这对开发大大降低了门槛，缩短开发周期。完成GTD项目，专心WEB（python+linux），在技术上有广度是好事（有“半桶水”的嫌疑），但T型程序猿在行内更受欢迎。
 
-捣乱小子 2012-09-01 [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/) 
+Dylan 2012-09-01 [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/) 
 
 **《DL便签V0.3源码发布》**
 
@@ -28,7 +28,7 @@ DL便签的各种细节技术定当日后补上。在后来的GTD项目PC客户�
 
 本文完 2012-08-25
 
-**《捣乱便签V0.3发布》**[
+**《Dylan便签V0.3发布》**[
 ](http://blog.csdn.net/daoluanxiaozi/article/details/7483269)
 
 DL便签 V0.3——**简单，效率！**一款实用的桌面便签。笔者会不定期更新。
@@ -73,8 +73,8 @@ DL便签 V0.3——**简单，效率！**一款实用的桌面便签。笔者会
 
 下载地址（大小：42K）：[http://download.csdn.net/detail/daoluanxiaozi/4245948](http://download.csdn.net/detail/daoluanxiaozi/4245948)
 
-**感想：**软件的架构确实非常重要。捣乱一开始也是无从下手，想到什么就写什么，写到哪里是哪里，所以代码凌乱，捣乱也凌乱。之后有试着放弃之前写过的代码，先着手架构软件，然后才开始编码，可是发现对“软件工厂”的了解甚少，现在狂补中...计划学到点“软件工程”的东西后，公布源码，并分享开发的过程。
+**感想：**软件的架构确实非常重要。Dylan一开始也是无从下手，想到什么就写什么，写到哪里是哪里，所以代码凌乱，Dylan也凌乱。之后有试着放弃之前写过的代码，先着手架构软件，然后才开始编码，可是发现对“软件工厂”的了解甚少，现在狂补中...计划学到点“软件工程”的东西后，公布源码，并分享开发的过程。
 
 **喜欢界面，但又不得不放弃它，因为它华而不实；注重软件的架构，才能真正驾驭编码！**
 
-捣乱小子 2012-04-22 [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)
+Dylan 2012-04-22 [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)

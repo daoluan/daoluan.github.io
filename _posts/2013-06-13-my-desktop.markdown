@@ -27,6 +27,6 @@ wordpress_id: 1761
 
 [![my-desktop](http://daoluan.net/images/blog/2013/06/my-desktop.jpg)](http://daoluan.net/images/blog/2013/06/my-desktop.jpg)
 
-捣乱 2013-06-13
+Dylan 2013-06-13
 
 [http://daoluan.net](http://daoluan.net/)

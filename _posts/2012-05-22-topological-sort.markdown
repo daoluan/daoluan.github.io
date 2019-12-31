@@ -63,4 +63,4 @@ DFS过程增加时间戳，然后按照时间戳来排列顶点就可以得到�
 
 本文完 2012-05-22
 
-捣乱小子 [http://www.daoluan.net/blog](http://www.daoluan.net/blog/)
+Dylan [http://www.daoluan.net/blog](http://www.daoluan.net/blog/)

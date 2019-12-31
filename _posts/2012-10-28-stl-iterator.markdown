@@ -160,4 +160,4 @@ container和container_iterator就是这样结合起来的。还剩下一STL中�
 
 本文完 2012-10-28
 
-捣乱小子 [http://www.daoluan.net/](http://www.daoluan.net/)
+Dylan [http://www.daoluan.net/](http://www.daoluan.net/)

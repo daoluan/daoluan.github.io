@@ -357,4 +357,4 @@ prim，kruskal和dijkstra算法有贪心策略，他们贪在哪啊？
 
 本文完 2012-05-30
 
-捣乱小子 [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)
+Dylan [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)

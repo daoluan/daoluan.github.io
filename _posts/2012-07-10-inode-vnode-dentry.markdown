@@ -82,4 +82,4 @@ Linux上有dentry，中文的意思就是目录项，它粘合了内存中文件
 
 本文完
 
-2012-07-10 捣乱小子 [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)
+2012-07-10 Dylan [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)

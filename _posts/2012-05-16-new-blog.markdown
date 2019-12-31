@@ -60,7 +60,7 @@ wordpress_id: 304
 
 终【DL便签 V0.3】发布了，VC做的：
 
-[捣乱便签V0.3发布！](http://blog.csdn.net/daoluanxiaozi/article/details/7483269)
+[Dylan便签V0.3发布！](http://blog.csdn.net/daoluanxiaozi/article/details/7483269)
 
 大二上学期，有了数据结构的课程，于是写了几篇关于算法的：
 
@@ -92,7 +92,7 @@ wordpress_id: 304
 # 总结
 
 
-捣乱认为比较有价值的文章就是这些了，当然不可能都是自己的东西，更多的是学习总结，另外加上自己的理解。站在了巨人的肩膀上，远的东西没有看到多少；倒了从巨人身上学到很多东西。
+Dylan认为比较有价值的文章就是这些了，当然不可能都是自己的东西，更多的是学习总结，另外加上自己的理解。站在了巨人的肩膀上，远的东西没有看到多少；倒了从巨人身上学到很多东西。
 
 接下来的任务就是把《导轮》啃完，买都买了，不看就坑我爹了...哈哈，顺便写写《算法导轮》总结吧，另外，算法是“万恶之源”。
 
@@ -100,4 +100,4 @@ wordpress_id: 304
 
 本文完 2012-05-17
 
-捣乱小子 [http://www.daoluan.net/blog](http://www.daoluan.net/blog/)
+Dylan [http://www.daoluan.net/blog](http://www.daoluan.net/blog/)

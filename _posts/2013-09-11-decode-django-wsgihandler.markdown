@@ -146,6 +146,6 @@ WSGIHandler 类只实现了 def __call__(self, environ, start_response), 使它
 
 近来准备校园招聘, 生产效率较低, 九月份的空气注定不安分 ;)
 
-捣乱 2013-9-11
+Dylan 2013-9-11
 
 [http://daoluan.net](http://daoluan.net)

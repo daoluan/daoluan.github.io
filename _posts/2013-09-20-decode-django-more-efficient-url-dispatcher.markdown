@@ -51,6 +51,6 @@ django 内部的 url 调度机制说白了就是给一张有关匹配信息的�
 
 什么提到会调用 url 对应的 action, 并返回响应数据, django 是怎么返回的. 我已经在 github 备份了 Django 源码的注释: [Decode-Django](https://github.com/daoluan/Decode-Django), 有兴趣的童鞋 fork 吧.
 
-捣乱 2013-9-18
+Dylan 2013-9-18
 
 [http://daoluan.net](http://daoluan.net/)

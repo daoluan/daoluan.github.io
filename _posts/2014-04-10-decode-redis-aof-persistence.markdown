@@ -784,6 +784,6 @@ AOF 的数据恢复过程设计实在是棒极了，它模拟一个服务过程�
 
 —-
 
-捣乱 2014-3-26
+Dylan 2014-3-26
 
 [http://daoluan.net](http://daoluan.net)

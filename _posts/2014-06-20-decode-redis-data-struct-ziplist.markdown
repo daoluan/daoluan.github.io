@@ -158,6 +158,6 @@ redis HSET 命令官网的描述是：
 
 
 
-捣乱 2014-6-20
+Dylan 2014-6-20
 
 [http://daoluan.net](http://daoluan.net/)

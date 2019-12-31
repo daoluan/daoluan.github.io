@@ -135,6 +135,6 @@ wordpress_id: 2010
 
 我已经在 github 备份了 Django 源码的注释: [Decode-Django](https://github.com/daoluan/Decode-Django), 有兴趣的童鞋 fork 吧.
 
-捣乱 2013-9-23
+Dylan 2013-9-23
 
 [http://daoluan.net](http://daoluan.net/)

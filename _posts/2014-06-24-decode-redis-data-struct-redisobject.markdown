@@ -107,6 +107,6 @@ struct redisObject 把最后一个指针留给了真正的数据。
 
 
 
-捣乱 2014-6-18
+Dylan 2014-6-18
 
 [http://daoluan.net](http://daoluan.net/)

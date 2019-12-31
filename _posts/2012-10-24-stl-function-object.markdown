@@ -92,4 +92,4 @@ plus<int>()(10,10)；中，第一个括号是为了产生struct plus的临时对
 
 本文完 2012-10-25
 
-捣乱小子 [http://www.daoluan.net/](http://www.daoluan.net/)
+Dylan [http://www.daoluan.net/](http://www.daoluan.net/)

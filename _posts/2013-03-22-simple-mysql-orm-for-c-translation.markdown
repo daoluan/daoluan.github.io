@@ -293,6 +293,6 @@ c版本Simple MySQL ORM是用python的脚本完成的，它可以用来连接已
 
 感谢作者 @alesak。Simple MySQL ORM for C我没有亲手测试，找时间补上测试篇。另，笔者水平有限，欢迎扶正拍砖。以上。
 
-捣乱 2013-3-22
+Dylan 2013-3-22
 
 [http://daoluan.net](http://daoluan.net)

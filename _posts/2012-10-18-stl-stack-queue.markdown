@@ -127,4 +127,4 @@ stack/queue在实际应用用的比较多，两者有很大的共性，因此que
 
 本文完 2012-10-19
 
-捣乱小子 [http://www.daoluan.net/](http://www.daoluan.net/blog/)
+Dylan [http://www.daoluan.net/](http://www.daoluan.net/blog/)

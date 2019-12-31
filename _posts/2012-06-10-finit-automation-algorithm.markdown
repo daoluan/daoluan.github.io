@@ -1064,9 +1064,9 @@ auto机就是一个协助匹配的状态表（或者图）。
 代码呢，这么补贴代码？
 
 
-<blockquote>如果真的需要的话，我可以日后补上。不过先看懂上面的理论，代码就可以很快打出来。捣乱日后补上。</blockquote>
+<blockquote>如果真的需要的话，我可以日后补上。不过先看懂上面的理论，代码就可以很快打出来。Dylan日后补上。</blockquote>
 
 
 本文可能未完 2012-06-10
 
-捣乱小子 [www.daoluan.net/blog](http://www.daoluan.net/blog)
+Dylan [www.daoluan.net/blog](http://www.daoluan.net/blog)

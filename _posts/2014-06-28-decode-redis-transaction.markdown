@@ -618,6 +618,6 @@ touchWatchedKey() 是标记某键值被修改的函数，它一般不被 signalM
 
 
 
-捣乱 2014-6-28
+Dylan 2014-6-28
 
 [http://daoluan.net](http://daoluan.net/)

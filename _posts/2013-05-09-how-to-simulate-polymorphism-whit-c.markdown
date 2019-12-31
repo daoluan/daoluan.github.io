@@ -146,6 +146,6 @@ panimal->move();
 
 在一些 c 开源项目中经常用到这种设计，譬如 libevent。
 
-捣乱 2013-05-09
+Dylan 2013-05-09
 
 [http://daoluan.net](http://daoluan.net/)

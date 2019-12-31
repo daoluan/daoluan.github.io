@@ -67,6 +67,6 @@ STL算法提供求两个容器中的数据的交集、并集、差集和对称�
 
 本文有待补充。
 
-捣乱 2013-3-17
+Dylan 2013-3-17
 
 [http://daoluan.net](http://daoluan.net)

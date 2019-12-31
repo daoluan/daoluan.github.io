@@ -25,6 +25,6 @@ wordpress_id: 2004
 
 -- 摘自 [我的实习笔记](http://www.douban.com/note/302050099/)
 
-捣乱
+Dylan
 
 2013-09-05 03:21 下午

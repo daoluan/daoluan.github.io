@@ -144,6 +144,6 @@ print f.read() 这一句调用其实就是 文件对象的 read，但它是 addi
 
 最后总结，urlopen 是最高层的封装，简单的一句话就可以爬取 WWW 很简单；其内部是通由 FancyURLopener 实现，FancyURLopener 是 URLopener 的父类：URLopener 实现了爬取方法，但未定义对应具体状态码的 error handlers，这些由 FancyURLopener 定义。
 
-捣乱  2013-08-25
+Dylan  2013-08-25
 
 [http://daoluan.net](http://daoluan.net/)

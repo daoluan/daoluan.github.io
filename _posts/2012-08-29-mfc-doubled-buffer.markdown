@@ -55,4 +55,4 @@ m_memClose.BitBlt(0,0,r.Width(),r.Height(),GetDC(),0,0,SRCCOPY);
 
 本文完 2012-08-29
 
-捣乱小子 [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)
+Dylan [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)

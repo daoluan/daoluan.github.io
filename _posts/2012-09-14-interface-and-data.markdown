@@ -44,4 +44,4 @@ wordpress_id: 1029
 
 本文完 2012-09-14
 
-捣乱小子 [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)
+Dylan [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)

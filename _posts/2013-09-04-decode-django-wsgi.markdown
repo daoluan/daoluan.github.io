@@ -151,6 +151,6 @@ ps: 明明 application 是 WSGIServer 的属性, 为什么会在 ServerHandler �
 
 关于 Django 中的 WSGI 如何, 下一节再说. Django 源码剖析从这里开始! 我已经在 github 备份了 Django 源码的注释: [Decode-Django](https://github.com/daoluan/Decode-Django), 有兴趣的童鞋 fork 吧. 本文结合 python wsgiref, BaseHTTPServer.py, SocketServer.py 模块源码看更好.
 
-捣乱  2013-9-4
+Dylan  2013-9-4
 
 [http://daoluan.net](http://daoluan.net/)

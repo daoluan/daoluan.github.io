@@ -141,4 +141,4 @@ STL实现的函数配接器：[http://www.cplusplus.com/reference/std/functional
 
 本文完 2012-10-26
 
-捣乱小子 [http://www.daoluan.net/](http://www.daoluan.net/)
+Dylan [http://www.daoluan.net/](http://www.daoluan.net/)

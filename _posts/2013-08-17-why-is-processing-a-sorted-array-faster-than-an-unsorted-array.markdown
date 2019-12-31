@@ -342,6 +342,6 @@ Java - Netbeans 7.1.1 JDK 7 - x64
 
 编译器选择等级优化的时候，就会忽略 for 语句，以前曾经写过一篇代码优化的文章：[《编程珠玑，字字珠玑》910读书笔记——代码优化](http://www.cnblogs.com/daoluanxiaozi/archive/2012/04/15/2450134.html).
 
-（完）捣乱 2013-08-17
+（完）Dylan 2013-08-17
 
 [http://daoluan.net/](http://daoluan.net/)

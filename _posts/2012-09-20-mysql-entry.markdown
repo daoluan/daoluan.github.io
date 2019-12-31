@@ -173,4 +173,4 @@ reference:《MySQL 完全手册》
 
 本文完 2012-09-20
 
-捣乱小子 [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)
+Dylan [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)

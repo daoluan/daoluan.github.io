@@ -49,4 +49,4 @@ png，jpg，gif等都不懂，所以从位图下手，来实现图片的处理�
 
 本文完 2012-11-1
 
-捣乱小子 [http://www.daoluan.net/](http://www.daoluan.net/)
+Dylan [http://www.daoluan.net/](http://www.daoluan.net/)

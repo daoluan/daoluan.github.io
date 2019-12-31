@@ -262,6 +262,6 @@ wordpress_id: 2057
 
 参考文档: [wikipedia](http://zh.wikipedia.org/zh-cn/%E7%BA%A2%E9%BB%91%E6%A0%91)
 
-捣乱 2013-9-25
+Dylan 2013-9-25
 
 [http://daoluan.net](http://daoluan.net/)

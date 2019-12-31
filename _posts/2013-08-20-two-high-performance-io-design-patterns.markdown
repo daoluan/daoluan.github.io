@@ -151,6 +151,6 @@ Proactor 的实现主要有三个部分：异步操作处理器，Proactor 和 
 
 - 《 IO - 同步，异步，阻塞，非阻塞 （亡羊补牢篇）》，[http://blog.csdn.net/historyasamirror/article/details/5778378](http://blog.csdn.net/historyasamirror/article/details/5778378)
 
-捣乱 2013-08-21
+Dylan 2013-08-21
 
 [http://daoluan.net](http://daoluan.net/)

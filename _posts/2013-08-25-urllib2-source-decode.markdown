@@ -279,6 +279,6 @@ tips:结合上面的 open() 方法，http_request 中传入的参数 request 是
 
 至此，urllib 和 urllib2 的小剖完毕，期中的秘密也不算多，但从 urllib 到 urllib2 的改进是值得我们在软件设计过程的值得深思的，明显 urllib2 比 urllib 会更具伸缩性。另外，urllib2 用到的应该是某种设计模式，记得的童鞋不忘留言告诉我。
 
-捣乱  2013-08-25
+Dylan  2013-08-25
 
 [http://daoluan.net](http://daoluan.net/)

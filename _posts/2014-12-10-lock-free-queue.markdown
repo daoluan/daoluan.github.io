@@ -135,6 +135,6 @@ CAS(&rear, old_rear, rear+1)，如果用数组模拟环形数组，考虑越界�
 
 
 
-捣乱 2014-12-10
+Dylan 2014-12-10
 
 [http://daoluan.net](http://daoluan.net/)

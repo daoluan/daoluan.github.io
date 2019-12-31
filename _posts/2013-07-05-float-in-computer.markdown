@@ -59,6 +59,6 @@ wordpress_id: 1788
 
 参考资料：《深入理解计算机系统》第二章 第四小节 如有需要强烈建议读这一小节。
 
-捣乱 2013-07-05
+Dylan 2013-07-05
 
 [http://daoluan.net](http://daoluan.net)

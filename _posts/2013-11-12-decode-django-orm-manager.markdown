@@ -150,6 +150,6 @@ Book.objects 实际上是一个 Manager, 实际上的实际上却是一个 Man
 
 我已经在 github 备份了 Django 源码的注释: [Decode-Django](https://github.com/daoluan/Decode-Django), 有兴趣的童鞋 fork 吧.
 
-捣乱 2013-9-24
+Dylan 2013-9-24
 
 [http://daoluan.net](http://daoluan.net/)
