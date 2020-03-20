@@ -22,9 +22,11 @@ keywords: Dylan,Dylan,郑思愿,郑思愿daoluan,daoluan,daoluan.net
 
 作品
 
-* [IT 小小鸟外传](http://bibodeng.com/bibodeng/IT_birds/book.html)
-* [Redis 源码日志](http://daoluan.net/redis-source-notes/)(会保持更新), [~~Redis 源码日志-极客学院Wiki~~](http://wiki.jikexueyuan.com/project/redis/)
-* [Blockit 比特币钱包](https://play.google.com/store/apps/details?id=com.blockit.blockit_wallet)
+ - [IT 小小鸟外传](http://bibodeng.com/bibodeng/IT_birds/book.html)
+ - [Redis 源码日志](http://daoluan.net/redis-source-notes/)(会保持更新), ~~[Redis 源码日志-极客学院Wiki](http://wiki.jikexueyuan.com/project/redis/)~~
+ - [理解 STL](http://daoluan.net/cplusplus/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E7%AE%97%E6%B3%95/2012/12/01/confidential-stl.html)
+ - [理解 Django](https://github.com/daoluan/decode-Django)
+ - [理解 memcache](https://github.com/daoluan/decode-memcached)
 
 赞助(主要用作本站维护使用)：
 
