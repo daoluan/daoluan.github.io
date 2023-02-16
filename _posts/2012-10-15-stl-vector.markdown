@@ -82,7 +82,7 @@ vector提供了几个版本的构造函数。详见：[http://www.cplusplus.com/
     ......
 
 
-[![](http://daoluan.net/images/blog/2012/10/vector_bomb.gif)](http://daoluan.net/blog/stl-vector/vector_bomb/) bomb！！！
+[![](http://daoluan.github.io/images/blog/2012/10/vector_bomb.gif)](http://daoluan.github.io/blog/stl-vector/vector_bomb/) bomb！！！
 
 
 ### vector元素排序
@@ -170,4 +170,4 @@ vector还提供insert，earse，clear等元素的操作，不一一复述。最�
 
 本文完 2012-10-16
 
-Dylan [http://www.daoluan.net/](http://www.daoluan.net/blog/)
+Dylan [http://daoluan.github.io/](http://daoluan.github.io/blog/)

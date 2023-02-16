@@ -152,4 +152,4 @@ Book.objects 实际上是一个 Manager, 实际上的实际上却是一个 Man
 
 Dylan 2013-9-24
 
-[http://daoluan.net](http://daoluan.net/)
+[http://daoluan.github.io](http://daoluan.github.io/)

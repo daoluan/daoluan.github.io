@@ -75,7 +75,7 @@ django url 匹配处理机制主要由一下模块实现: django.conf.urls 和 d
 
 从上, 至少可以知道, 真正发挥匹配作用的是 RegexURLResolver 对象, 并调用 RegexURLResolver.resolve() 启动了解析, 一切从这里开始. 从 urlresolver.py 中抽取主干部分, 可以得到下面的 UML 图:
 
-[![url_dispatcher_uml](http://daoluan.net/images/blog/2013/09/url_dispatcher_uml.jpg)](http://daoluan.net/images/blog/2013/09/url_dispatcher_uml.jpg)
+[![url_dispatcher_uml](http://daoluan.github.io/images/blog/2013/09/url_dispatcher_uml.jpg)](http://daoluan.github.io/images/blog/2013/09/url_dispatcher_uml.jpg)
 
 LocaleRegexProvider 类只为地区化而存在, 他持有 regex 属性, 但在 RegexURLResolver 和 RegexURLPattern 中发挥不同的作用:
 
@@ -321,7 +321,7 @@ LocaleRegexProvider 类只为地区化而存在, 他持有 regex 属性, 但在 
 当访问 http://exapmle.com/people/daoluan/ 的时候 URL dispatcher 的调度过程(蓝色部分):
 
 
-[![urldispatcher_example](http://daoluan.net/images/blog/2013/09/urldispatcher_example.gif)](http://daoluan.net/images/blog/2013/09/urldispatcher_example.gif)
+[![urldispatcher_example](http://daoluan.github.io/images/blog/2013/09/urldispatcher_example.gif)](http://daoluan.github.io/images/blog/2013/09/urldispatcher_example.gif)
 
 对应上面的例子 url 调度器机制的具体工作过程如下, 从 BaseHandler.get_response() 开始说起:
 
@@ -401,4 +401,4 @@ LocaleRegexProvider 类只为地区化而存在, 他持有 regex 属性, 但在 
 
 Dylan 2013-9-15
 
-[http://daoluan.net](http://daoluan.net)
+[http://daoluan.github.io](http://daoluan.github.io)

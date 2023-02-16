@@ -31,7 +31,7 @@ GTD时间管理项目接近尾声。
 
 **确定****DBMS和数据持久化** 在数据库管理系统上，后台选用的是 mysql ； PC 前端一开始选用简单文件读写，但一来它很容易被用户更改，这是潜在的问题；二来，不方便进行数据更新。所以，选用了轻量级的 SQLite。
 
-因为要对数据库进行添加/修改/删除等等操作，势必需要有可执行的 SQL 语句。一开是方法是到处生成raw SQL语句，然后交由数据库操作接口执行，缺乏数据持久性。当对数据库表修改的时候，势必要对raw SQL生成器作大量的修改。于是便有了 [【译】Simple MySQL ORM for C](http://daoluan.net/blog/simple-mysql-orm-for-c-translation/)。但这仍然有一个缺点，因为前端使用的是 SQLite ，Simple MySQL ORM for C 是为 MySQL 而生的，无法使用到前端中。最好是该用 [LiteSQL](http://sourceforge.net/apps/trac/litesql/) ，不然学习的成本很大。
+因为要对数据库进行添加/修改/删除等等操作，势必需要有可执行的 SQL 语句。一开是方法是到处生成raw SQL语句，然后交由数据库操作接口执行，缺乏数据持久性。当对数据库表修改的时候，势必要对raw SQL生成器作大量的修改。于是便有了 [【译】Simple MySQL ORM for C](http://daoluan.github.io/blog/simple-mysql-orm-for-c-translation/)。但这仍然有一个缺点，因为前端使用的是 SQLite ，Simple MySQL ORM for C 是为 MySQL 而生的，无法使用到前端中。最好是该用 [LiteSQL](http://sourceforge.net/apps/trac/litesql/) ，不然学习的成本很大。
 
 **数据同步策略** 最后一个较为棘手的问题：同步问题。在 CSDN 上发起的讨论：[讨论：印象笔记的同步策略是怎么样的？](http://bbs.csdn.net/topics/390389282)
 
@@ -69,23 +69,23 @@ MFC界面开发：
 
 
 	
-  * [UIButton 简易UI](http://daoluan.net/blog/gtd-project-developers-record/#3)
+  * [UIButton 简易UI](http://daoluan.github.io/blog/gtd-project-developers-record/#3)
 
 	
-  * [漫谈界面和数据](http://daoluan.net/blog/gtd-project-developers-record/#4)
+  * [漫谈界面和数据](http://daoluan.github.io/blog/gtd-project-developers-record/#4)
 
 
 linux网络编程：
 
 	
-  * [基于TCP的C/S初级网络编程1](http://daoluan.net/blog/tcp%e5%8d%8f%e8%ae%ae-cs%e7%bd%91%e7%bb%9c%e7%bc%96%e7%a8%8b/)
+  * [基于TCP的C/S初级网络编程1](http://daoluan.github.io/blog/tcp%e5%8d%8f%e8%ae%ae-cs%e7%bd%91%e7%bb%9c%e7%bc%96%e7%a8%8b/)
 
 
 	
-  * [基于TCP的C/S初级网络编程2](http://daoluan.net/blog/%e5%9f%ba%e4%ba%8etcp%e7%9a%84cs%e5%88%9d%e7%ba%a7%e7%bd%91%e7%bb%9c%e7%bc%96%e7%a8%8b/)
+  * [基于TCP的C/S初级网络编程2](http://daoluan.github.io/blog/%e5%9f%ba%e4%ba%8etcp%e7%9a%84cs%e5%88%9d%e7%ba%a7%e7%bd%91%e7%bb%9c%e7%bc%96%e7%a8%8b/)
 
 	
-  * [初探libevent网络库](http://daoluan.net/blog/hava-a-look-at-libevent/)
+  * [初探libevent网络库](http://daoluan.github.io/blog/hava-a-look-at-libevent/)
 
 	
   * <微博小讨论>[这里](http://weibo.com/2313159920/yC6O46ZyP?type=repost)
@@ -94,19 +94,19 @@ linux网络编程：
 数据库实践：
 
 	
-  * [MySQL入门教程](http://daoluan.net/blog/mysql-entry/)
+  * [MySQL入门教程](http://daoluan.github.io/blog/mysql-entry/)
 
 	
-  * [Linux c端口复用](http://daoluan.net/blog/linux-c-reuse-port/)
+  * [Linux c端口复用](http://daoluan.github.io/blog/linux-c-reuse-port/)
 
 	
-  * [【译】Simple MySQL ORM for C](http://daoluan.net/blog/simple-mysql-orm-for-c-translation/)
+  * [【译】Simple MySQL ORM for C](http://daoluan.github.io/blog/simple-mysql-orm-for-c-translation/)
 
 
 其他：
 
 	
-  * [GTD项目开发实录](http://daoluan.net/blog/gtd-project-developers-record/)
+  * [GTD项目开发实录](http://daoluan.github.io/blog/gtd-project-developers-record/)
 
 	
   * [讨论：印象笔记的同步策略是怎么样的？](http://bbs.csdn.net/topics/390389282)
@@ -116,4 +116,4 @@ linux网络编程：
 
 Dylan 2013-4-1 
 
-[daoluan.net](http://daoluan.net)
+[daoluan.github.io](http://daoluan.github.io)

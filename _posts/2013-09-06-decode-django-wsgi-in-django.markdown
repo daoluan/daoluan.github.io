@@ -106,4 +106,4 @@ ps: 目录根据实际情况会不同, 看具体情况.我已经在 github 备�
 
 Dylan  2013-9-6
 
-[http://daoluan.net](http://daoluan.net/)
+[http://daoluan.github.io](http://daoluan.github.io/)

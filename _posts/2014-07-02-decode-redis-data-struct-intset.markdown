@@ -190,6 +190,6 @@ intset 实现中比较远有意思的是插入算法部分。
 
 Dylan 2014-7-3
 
-[http://daoluan.net](http://daoluan.net/)
+[http://daoluan.github.io](http://daoluan.github.io/)
 
 

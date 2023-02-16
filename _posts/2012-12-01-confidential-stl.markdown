@@ -27,46 +27,46 @@ wordpress_id: 1508
 
 
 	
-  1. [私房STL之vector](http://daoluan.net/blog/?p=1149)
+  1. [私房STL之vector](http://daoluan.github.io/blog/?p=1149)
 
 	
-  2. [私房STL之list](http://daoluan.net/blog/?p=1159)
+  2. [私房STL之list](http://daoluan.github.io/blog/?p=1159)
 
 	
-  3. [私房STL之deque](http://daoluan.net/blog/?p=1170)
+  3. [私房STL之deque](http://daoluan.github.io/blog/?p=1170)
 
 	
-  4. [私房STL之stack与queue](http://daoluan.net/blog/?p=1187)
+  4. [私房STL之stack与queue](http://daoluan.github.io/blog/?p=1187)
 
 	
-  5. [私房STL之一分钟的heap](http://daoluan.net/blog/?p=1196)
+  5. [私房STL之一分钟的heap](http://daoluan.github.io/blog/?p=1196)
 
 	
-  6. [私房STL之map和set](http://daoluan.net/blog/?p=1218)
+  6. [私房STL之map和set](http://daoluan.github.io/blog/?p=1218)
 
 	
-  7. [私房STL之Hashtable](http://daoluan.net/blog/?p=1234)
+  7. [私房STL之Hashtable](http://daoluan.github.io/blog/?p=1234)
 
 	
-  8. [私房STL算法之全排列](http://daoluan.net/blog/?p=1247)
+  8. [私房STL算法之全排列](http://daoluan.github.io/blog/?p=1247)
 
 	
-  9. [私房STL算法之快速幂](http://daoluan.net/blog/?p=1265)
+  9. [私房STL算法之快速幂](http://daoluan.github.io/blog/?p=1265)
 
 	
-  10. [私房STL之hash_set和hash_map](http://daoluan.net/blog/?p=1271)
+  10. [私房STL之hash_set和hash_map](http://daoluan.github.io/blog/?p=1271)
 
 	
-  11. [私房STL之左值和右值](http://daoluan.net/blog/?p=1285)
+  11. [私房STL之左值和右值](http://daoluan.github.io/blog/?p=1285)
 
 	
-  12. [私房STL之函数对象](http://daoluan.net/blog/?p=1301)
+  12. [私房STL之函数对象](http://daoluan.github.io/blog/?p=1301)
 
 	
-  13. [私房STL之函数配接器](http://daoluan.net/blog/?p=1312)
+  13. [私房STL之函数配接器](http://daoluan.github.io/blog/?p=1312)
 
 	
-  14. [私房STL之迭代器](http://daoluan.net/blog/?p=1341)
+  14. [私房STL之迭代器](http://daoluan.github.io/blog/?p=1341)
 
 
 STL是很实用的工具，用好了就宝贝，对工程有很大的帮助。
@@ -75,4 +75,4 @@ ps：取名『私房STL』有点霸道，不过最后还是厚颜斗胆为此系
 
 本文完 2012-12-1
 
-Dylan [http://www.daoluan.net/](http://www.daoluan.net/)
+Dylan [http://daoluan.github.io/](http://daoluan.github.io/)

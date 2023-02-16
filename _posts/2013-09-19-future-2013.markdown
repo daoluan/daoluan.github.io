@@ -9,7 +9,7 @@ layout: post
 wordpress_id: 2004
 ---
 
-[![锤子工作室](http://daoluan.net/images/blog/2013/09/yonghaoluo.jpg)](http://daoluan.net/images/blog/2013/09/yonghaoluo.jpg) 锤子工作室
+[![锤子工作室](http://daoluan.github.io/images/blog/2013/09/yonghaoluo.jpg)](http://daoluan.github.io/images/blog/2013/09/yonghaoluo.jpg) 锤子工作室
 
 还有几天，我将结束我愉快的实习旅程。
 

@@ -339,10 +339,10 @@ get_response() 方法, 中间件调用执行的顺序是请求中间件, 视图�
 
 图解中间件:
 
-[![django 处理流程图](http://daoluan.net/images/blog/2013/09/django-处理流程图.png)](http://daoluan.net/images/blog/2013/09/django-处理流程图.png)
+[![django 处理流程图](http://daoluan.github.io/images/blog/2013/09/django-处理流程图.png)](http://daoluan.github.io/images/blog/2013/09/django-处理流程图.png)
 
 
 
 Dylan 2013-9-14
 
-[http://daoluan.net](http://daoluan.net/)
+[http://daoluan.github.io](http://daoluan.github.io/)

@@ -21,7 +21,7 @@ wordpress_id: 1604
 一般的后台服务器进程大概这样：
 
 
-[![fork](http://daoluan.net/images/blog/2012/08/fork.png)](http://daoluan.net/images/blog/2012/08/fork.png)
+[![fork](http://daoluan.github.io/images/blog/2012/08/fork.png)](http://daoluan.github.io/images/blog/2012/08/fork.png)
 
 
 先socket()申请一个合法的套接字，这时如果直接bind、listen，就不能再短时间内重启服务器（因为端口被占用）。

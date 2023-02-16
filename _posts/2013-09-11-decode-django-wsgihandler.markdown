@@ -148,4 +148,4 @@ WSGIHandler 类只实现了 def __call__(self, environ, start_response), 使它
 
 Dylan 2013-9-11
 
-[http://daoluan.net](http://daoluan.net)
+[http://daoluan.github.io](http://daoluan.github.io)

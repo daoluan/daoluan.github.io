@@ -110,7 +110,7 @@ wordpress_id: 1720
 
 最为简单的对象模型：
 
-[![Image](http://daoluan.net/images/blog/2013/04/Image_thumb.png)](http://daoluan.net/images/blog/2013/04/Image.png)
+[![Image](http://daoluan.github.io/images/blog/2013/04/Image_thumb.png)](http://daoluan.github.io/images/blog/2013/04/Image.png)
 
 静态/非静态 成员函数 和 静态/非静态 成员变量 的地址都存储在一个表当中，通过表内存储的地址指向相应的部分。这样的设计简易，便于理解，类的实例只需要维护这张表就好了，赔上的是空间和执行效率：
 
@@ -120,13 +120,13 @@ wordpress_id: 1720
 
 这是最初的假设，实际的实现肯定没有那么简单，下面是将变量和函数分割存储的模型（表格驱动对象模型）：
 
-[![Image(1)](http://daoluan.net/images/blog/2013/04/Image1_thumb.png)](http://daoluan.net/images/blog/2013/04/Image1.png)
+[![Image(1)](http://daoluan.github.io/images/blog/2013/04/Image1_thumb.png)](http://daoluan.github.io/images/blog/2013/04/Image1.png)
 
 简易对象模型经改良后可以的得到这种。sizeof(A) 的结果是 8。
 
 为支撑 virtual function ，引入了现在的 C++ 对象模型：
 
-[![Image(2)](http://daoluan.net/images/blog/2013/04/Image2_thumb.png)](http://daoluan.net/images/blog/2013/04/Image2.png)
+[![Image(2)](http://daoluan.github.io/images/blog/2013/04/Image2_thumb.png)](http://daoluan.github.io/images/blog/2013/04/Image2.png)
 
 **非静态成员变量同指向虚拟函数表的指针（vptr），**和**静态成员变量/函数，非静态成员函数**分离存储。类的每一个实例都存有 vptr 和 非静态成员函数，他们独立拥有这些数据，并不和其他的实例共享。这时候，回到第二种情况，class A 和 继承自 A 的 class B 都拥有虚函数，因此都会有一个 vptr，因此 sizeof 运算得到的结果都为 4.然而，如果往里面添加一个非静态 int 型变量，那么相应可以得到 8B 的大小；但往里面添加静态 int 型变量，大小却没有改变。
 
@@ -606,4 +606,4 @@ C++ 为实现多态引入虚函数机制，带来了空间和执行上的折损�
     class iostream : public istream,public ostream {...};
 
 
-这里实际有两份 ios ！全文完。[daoluan.net](http://daoluan.net)
+这里实际有两份 ios ！全文完。[daoluan.github.io](http://daoluan.github.io)

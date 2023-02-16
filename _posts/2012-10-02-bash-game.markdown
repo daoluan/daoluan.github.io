@@ -37,4 +37,4 @@ wordpress_id: 1110
 
 本文完 2012-10-2
 
-Dylan [http://www.daoluan.net/](http://www.daoluan.net/blog/)
+Dylan [http://daoluan.github.io/](http://daoluan.github.io/blog/)

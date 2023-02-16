@@ -100,4 +100,4 @@ Dylan认为比较有价值的文章就是这些了，当然不可能都是自己
 
 本文完 2012-05-17
 
-Dylan [http://www.daoluan.net/blog](http://www.daoluan.net/blog/)
+Dylan [http://daoluan.github.io/blog](http://daoluan.github.io/blog/)

@@ -15,7 +15,7 @@ layout: post
 wordpress_id: 1675
 ---
 
-[![myidea](http://daoluan.net/images/blog/2013/04/myidea_thumb.gif)](http://daoluan.net/images/blog/2013/04/myidea.gif) 沿着线条走，你能否发现各种溢出？！
+[![myidea](http://daoluan.github.io/images/blog/2013/04/myidea_thumb.gif)](http://daoluan.github.io/images/blog/2013/04/myidea.gif) 沿着线条走，你能否发现各种溢出？！
 
 二进制数据的表示方法有原码，反码，补码。
 
@@ -99,4 +99,4 @@ wordpress_id: 1675
 
 Dylan 2013-4-11
 
-[daoluan.net](http://daoluan.net/)
+[daoluan.github.io](http://daoluan.github.io/)

@@ -23,7 +23,7 @@ redis 中 zset 是一个有序非线性的数据结构,它底层核心的数据�
 
 一张关于跳表和跳表搜索过程如下图：
 
-[![redis_ds_skiplist_search](http://daoluan.net/images/blog/2014/06/redis_ds_skiplist_search.png)](http://daoluan.net/images/blog/2014/06/redis_ds_skiplist_search.png)
+[![redis_ds_skiplist_search](http://daoluan.github.io/images/blog/2014/06/redis_ds_skiplist_search.png)](http://daoluan.github.io/images/blog/2014/06/redis_ds_skiplist_search.png)
 
 在图中，需要寻找 68，在给出的查找过程中，利用跳表数据结构优势，只比较了 3次，横箭头不比较，竖箭头比较。由此可见，**跳表预先间隔地保存了有序链表中的节点，从而在查找过程中能达到类似于二分搜索的效果，**而二分搜索思想就是通过比较中点数据放弃另一半的查找，从而节省一半的查找时间。
 
@@ -37,7 +37,7 @@ redis 中 zset 是一个有序非线性的数据结构,它底层核心的数据�
 ### 跳表的数据结构
 
 
-[![redis_ds_skiplist_search](http://daoluan.net/images/blog/2014/06/redis_ds_skiplist_search.png)](http://daoluan.net/images/blog/2014/06/redis_ds_skiplist_search.png)
+[![redis_ds_skiplist_search](http://daoluan.github.io/images/blog/2014/06/redis_ds_skiplist_search.png)](http://daoluan.github.io/images/blog/2014/06/redis_ds_skiplist_search.png)
 
 从上图中，总结跳表的性质：
 
@@ -105,7 +105,7 @@ redis 中跳表数据结构定义：
 
 什么是 span？
 
-[![redis_ds_skiplist_search](http://daoluan.net/images/blog/2014/06/redis_ds_skiplist_search.png)](http://daoluan.net/images/blog/2014/06/redis_ds_skiplist_search.png)
+[![redis_ds_skiplist_search](http://daoluan.github.io/images/blog/2014/06/redis_ds_skiplist_search.png)](http://daoluan.github.io/images/blog/2014/06/redis_ds_skiplist_search.png)
 
 span 即从两个相邻节点间隔了多少节点。譬如 level 1，-1 的 span 就是 1；level 2，-1 的 span 为 2。
 
@@ -113,11 +113,11 @@ span 即从两个相邻节点间隔了多少节点。譬如 level 1，-1 的 spa
 
 1）小于等于原有的层数
 
-[![redis_ds_skiplist_insert_1](http://daoluan.net/images/blog/2014/06/redis_ds_skiplist_insert_1.png)](http://daoluan.net/images/blog/2014/06/redis_ds_skiplist_insert_1.png)
+[![redis_ds_skiplist_insert_1](http://daoluan.github.io/images/blog/2014/06/redis_ds_skiplist_insert_1.png)](http://daoluan.github.io/images/blog/2014/06/redis_ds_skiplist_insert_1.png)
 
 2）大于原有的层数
 
-[![redis_ds_skiplist_insert_2](http://daoluan.net/images/blog/2014/06/redis_ds_skiplist_insert_2.png)](http://daoluan.net/images/blog/2014/06/redis_ds_skiplist_insert_2.png)
+[![redis_ds_skiplist_insert_2](http://daoluan.github.io/images/blog/2014/06/redis_ds_skiplist_insert_2.png)](http://daoluan.github.io/images/blog/2014/06/redis_ds_skiplist_insert_2.png)
 
 redis 中跳表插入算法的具体实现：
 
@@ -203,7 +203,7 @@ redis 中跳表插入算法的具体实现：
 
 跳表的删除算和插入算法步骤类似：找出每一层需删除数据的前驱并保存；接着调整指针，在 redis 中还会调整 span。
 
-[![redis_ds_skiplist_delete](http://daoluan.net/images/blog/2014/06/redis_ds_skiplist_delete.png)](http://daoluan.net/images/blog/2014/06/redis_ds_skiplist_delete.png)
+[![redis_ds_skiplist_delete](http://daoluan.github.io/images/blog/2014/06/redis_ds_skiplist_delete.png)](http://daoluan.github.io/images/blog/2014/06/redis_ds_skiplist_delete.png)
 
 redis 中跳表删除算法的具体实现：
 
@@ -293,14 +293,14 @@ ZXX 命令是针对有序集合（sorted set）的，譬如：
 
 zset 一个经典的应用场景是用来做排行榜，譬如游戏中分数最高的十位玩家，可以用 zset 维护所有游戏玩家的分数。
 
-最后，关于二叉查找树，更多请参看[《编程珠玑，字字珠玑》读书笔记完结篇——AVL树》](http://www.cnblogs.com/daoluanxiaozi/archive/2012/04/26/2471256.html)和[《红黑树并没有我们想象的那么难(上)》](http://daoluan.net/blog/rbtree-is-not-difficult/)、[《红黑树并没有我们想象的那么难(下)》](http://daoluan.net/blog/rbtree-is-not-difficult-2/)。
+最后，关于二叉查找树，更多请参看[《编程珠玑，字字珠玑》读书笔记完结篇——AVL树》](http://www.cnblogs.com/daoluanxiaozi/archive/2012/04/26/2471256.html)和[《红黑树并没有我们想象的那么难(上)》](http://daoluan.github.io/blog/rbtree-is-not-difficult/)、[《红黑树并没有我们想象的那么难(下)》](http://daoluan.github.io/blog/rbtree-is-not-difficult-2/)。
 
-redis dict 讲解请参看[《深入剖析 redis 数据结构 dict》](http://daoluan.net/blog/decode-redis-data-struct-dict/)
+redis dict 讲解请参看[《深入剖析 redis 数据结构 dict》](http://daoluan.github.io/blog/decode-redis-data-struct-dict/)
 
-redis ziplist 讲解请参看[《深入剖析 redis 数据结构 ziplist》](http://daoluan.net/blog/decode-redis-data-struct-ziplist/)
+redis ziplist 讲解请参看[《深入剖析 redis 数据结构 ziplist》](http://daoluan.github.io/blog/decode-redis-data-struct-ziplist/)
 
 
 
 Dylan 2014-6-26
 
-[http://daoluan.net](http://daoluan.net/)
+[http://daoluan.github.io](http://daoluan.github.io/)

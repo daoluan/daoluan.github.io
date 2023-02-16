@@ -18,7 +18,7 @@ MFC中双缓冲技术比较常用，主要是为了避免因绘图过程的缓�
 
 <!-- more -->
 
-[![](http://daoluan.net/images/blog/2012/08/Double-cache.png)](http://daoluan.net/blog/archives/914/double-cache)
+[![](http://daoluan.github.io/images/blog/2012/08/Double-cache.png)](http://daoluan.github.io/blog/archives/914/double-cache)
 
 MFC中具体是这么做的：
 
@@ -55,4 +55,4 @@ m_memClose.BitBlt(0,0,r.Width(),r.Height(),GetDC(),0,0,SRCCOPY);
 
 本文完 2012-08-29
 
-Dylan [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)
+Dylan [http://daoluan.github.io/blog/](http://daoluan.github.io/blog/)

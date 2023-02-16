@@ -20,10 +20,10 @@ wordpress_id: 1909
 
 
 	
-  * [urllib 源码小剖](http://daoluan.net/blog/urllib-source-decode/)
+  * [urllib 源码小剖](http://daoluan.github.io/blog/urllib-source-decode/)
 
 	
-  * [urllib2 源码小剖](http://daoluan.net/blog/urllib2-source-decode/)
+  * [urllib2 源码小剖](http://daoluan.github.io/blog/urllib2-source-decode/)
 
 
 urllib2 对 urllib 改进了好些，整个思路都改了，变得更加灵活，有“高内聚，低耦合”的味道。
@@ -40,7 +40,7 @@ urllib2 对 urllib 改进了好些，整个思路都改了，变得更加灵活�
   * 另添加了 N 多 handlers，这些 handlers 主要对 HTTP 连接，HTTP request 或者 HTTP response 的处理，譬如往 HTTP request 中添加几个特定的 cookies 或者状态码处理，所有你能想到的 HTTP request 的预处理或者 HTTP response 的善后处理，稍后展开。
 
 
-[![urllib2](http://daoluan.net/images/blog/2013/08/urllib2.gif)](http://daoluan.net/images/blog/2013/08/urllib2.gif)
+[![urllib2](http://daoluan.github.io/images/blog/2013/08/urllib2.gif)](http://daoluan.github.io/images/blog/2013/08/urllib2.gif)
 
 
 ### OpenerDirector
@@ -281,4 +281,4 @@ tips:结合上面的 open() 方法，http_request 中传入的参数 request 是
 
 Dylan  2013-08-25
 
-[http://daoluan.net](http://daoluan.net/)
+[http://daoluan.github.io](http://daoluan.github.io/)

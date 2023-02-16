@@ -20,17 +20,17 @@ wordpress_id: 1904
 
 
 	
-  * [urllib 源码小剖](http://daoluan.net/blog/urllib-source-decode/)
+  * [urllib 源码小剖](http://daoluan.github.io/blog/urllib-source-decode/)
 
 	
-  * [urllib2 源码小剖](http://daoluan.net/blog/urllib2-source-decode/)
+  * [urllib2 源码小剖](http://daoluan.github.io/blog/urllib2-source-decode/)
 
 
 urllib 是 python 内置的网络爬虫模块，如果熟悉 python 一定能很快上手使用 urllib。
 
 写这篇文章的目的是因为用到了它，但因为用的次数较多，又或者是具体的需求，有必要深入去理解内部的工作方式。
 
-[![urllib](http://daoluan.net/images/blog/2013/08/urllib.gif)](http://daoluan.net/images/blog/2013/08/urllib.gif)
+[![urllib](http://daoluan.github.io/images/blog/2013/08/urllib.gif)](http://daoluan.github.io/images/blog/2013/08/urllib.gif)
 
 
 ### 最简单的使用
@@ -146,4 +146,4 @@ print f.read() 这一句调用其实就是 文件对象的 read，但它是 addi
 
 Dylan  2013-08-25
 
-[http://daoluan.net](http://daoluan.net/)
+[http://daoluan.github.io](http://daoluan.github.io/)

@@ -295,4 +295,4 @@ c版本Simple MySQL ORM是用python的脚本完成的，它可以用来连接已
 
 Dylan 2013-3-22
 
-[http://daoluan.net](http://daoluan.net)
+[http://daoluan.github.io](http://daoluan.github.io)

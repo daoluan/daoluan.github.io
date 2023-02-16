@@ -15,7 +15,7 @@ wordpress_id: 1761
 
 首先发现，在很多时候，人的视线并非与水平地面平行，更多的时候，人的视线会与水平地面成一定的夹角（见下面正确坐姿图）。
 
-![right_sitting](http://daoluan.net/images/blog/2013/06/right_sitting.jpg)
+![right_sitting](http://daoluan.github.io/images/blog/2013/06/right_sitting.jpg)
 
 由此，我们可能更少的机会去注视桌面的顶端，所消耗的注意力也相对减少，更多的是在桌面的中部及以下，这样将任务栏放置在桌面的顶端，可以减少学习工作被中断的次数。因为倘若任务栏放置在桌面的低端，人会习惯性调整眼球（实现）往桌面的中部一下移动，从而更多的注意力被任务栏的占用；相反的，倘若在桌面的中部以下放置都是与人的学习工作相关的画面，顺理成章注意力会更集中，且眼部也更舒适。
 
@@ -25,8 +25,8 @@ wordpress_id: 1761
 
 最后附一张写此篇文章的全景图：我觉得工作起来很舒服
 
-[![my-desktop](http://daoluan.net/images/blog/2013/06/my-desktop.jpg)](http://daoluan.net/images/blog/2013/06/my-desktop.jpg)
+[![my-desktop](http://daoluan.github.io/images/blog/2013/06/my-desktop.jpg)](http://daoluan.github.io/images/blog/2013/06/my-desktop.jpg)
 
 Dylan 2013-06-13
 
-[http://daoluan.net](http://daoluan.net/)
+[http://daoluan.github.io](http://daoluan.github.io/)

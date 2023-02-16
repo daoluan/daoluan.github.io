@@ -14,11 +14,11 @@ wordpress_id: 1196
 
 一句话的heap：一种数据结构，完全二叉树（若二叉树高h，除过最底层h层，其他层1~h-1都是满的；并且最底层从左到右不能有空隙。），但在实现上，它没有选择一般的二叉树数据结构（即一个节点包含指向两个孩子的指针），使用的是数组；heap最为常用的操作是上溯和下溯，它们在“维持堆”和“堆排序”中经常用到。这篇文章能让你快速回顾heap。
 
-[![](http://daoluan.net/images/blog/2012/10/complete-binary-tree.jpg)](http://daoluan.net/blog/stl-heap-in-minutes/complete-binary-tree/)  
+[![](http://daoluan.github.io/images/blog/2012/10/complete-binary-tree.jpg)](http://daoluan.github.io/blog/stl-heap-in-minutes/complete-binary-tree/)  
 完全二叉树（左）和非完全二叉树（右）
 
 
-[![](http://daoluan.net/images/blog/2012/10/complete-binary-tree-in-array.jpg)](http://daoluan.net/blog/stl-heap-in-minutes/complete-binary-tree-in-array/)   
+[![](http://daoluan.github.io/images/blog/2012/10/complete-binary-tree-in-array.jpg)](http://daoluan.github.io/blog/stl-heap-in-minutes/complete-binary-tree-in-array/)   
 完全二叉树的数组存储（对应上图左），X是实现上的技巧，刻意空出来
 
 如果某节点位于数组i处，那么那么2i即为其左子结点，2i+1即为其右子结点。
@@ -37,11 +37,11 @@ wordpress_id: 1196
 
 上溯：某节点与父节点比较，如果其键值比父节点大，即交换父子节点。重复上述操作，直到不需要交换或者到达根节点为止。
 
-[![](http://daoluan.net/images/blog/2012/10/percolate-up.jpg)](http://daoluan.net/blog/stl-heap-in-minutes/percolate-up/) 上溯
+[![](http://daoluan.github.io/images/blog/2012/10/percolate-up.jpg)](http://daoluan.github.io/blog/stl-heap-in-minutes/percolate-up/) 上溯
 
 下塑：此节点为与堆顶，拿其与min（左子结点键值，右子结点键值）比较，如果父节点键值小过min，即交换父子节点。重复上述操作，直到不需要交换为止。
 
-[![](http://daoluan.net/images/blog/2012/10/percolate-down.jpg)](http://daoluan.net/blog/stl-heap-in-minutes/percolate-down/) 下溯
+[![](http://daoluan.github.io/images/blog/2012/10/percolate-down.jpg)](http://daoluan.github.io/blog/stl-heap-in-minutes/percolate-down/) 下溯
 
 
 ### 堆的形成
@@ -49,7 +49,7 @@ wordpress_id: 1196
 
 任务：给定一个数组，将其转换为最大heap。STL中make_heap()函数可以完成，它的思路：**从最底层开始维持每一个子堆**。看图：
 
-[![](http://daoluan.net/images/blog/2012/10/make-heap.jpg)](http://daoluan.net/blog/stl-heap-in-minutes/make-heap/) make-heap
+[![](http://daoluan.github.io/images/blog/2012/10/make-heap.jpg)](http://daoluan.github.io/blog/stl-heap-in-minutes/make-heap/) make-heap
 
 **还有一种可行的思路，**即：先假设堆中的元素个数为0，然后向（尾端+1）（意即尾端后的一个位置）push一个新的元素，然后在这个位置执行上溯操作。重复上述操作，直至数组内所有的元素都push完为止。我们发现这个方法也是可行的。
 
@@ -104,4 +104,4 @@ priority_queue带权值的queue，顺序入队之后，按照权值的大小出�
 
 本文完 2012-10-19
 
-Dylan [http://www.daoluan.net/](http://www.daoluan.net)
+Dylan [http://daoluan.github.io/](http://daoluan.github.io)

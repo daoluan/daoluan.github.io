@@ -73,4 +73,4 @@ STL中的[pow](http://www.cplusplus.com/reference/clibrary/cmath/pow/)用来计�
 
 本文完 2012-10-22
 
-Dylan [http://www.daoluan.net/](http://www.daoluan.net/)
+Dylan [http://daoluan.github.io/](http://daoluan.github.io/)

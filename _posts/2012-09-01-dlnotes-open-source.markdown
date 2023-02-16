@@ -16,7 +16,7 @@ wordpress_id: 946
 
 DL便签的各种细节技术定当日后补上。在后来的GTD项目PC客户端开发当中很多的细节技术都能在DL便签上找到思路，这对开发大大降低了门槛，缩短开发周期。完成GTD项目，专心WEB（python+linux），在技术上有广度是好事（有“半桶水”的嫌疑），但T型程序猿在行内更受欢迎。
 
-Dylan 2012-09-01 [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/) 
+Dylan 2012-09-01 [http://daoluan.github.io/blog/](http://daoluan.github.io/blog/) 
 
 **《DL便签V0.3源码发布》**
 
@@ -57,19 +57,19 @@ DL便签 V0.3——**简单，效率！**一款实用的桌面便签。笔者会
 
 软件的主界面：
 
-[![](http://daoluan.net/images/blog/2012/09/dlnote_01.png)](http://daoluan.net/blog/archives/946/dlnote_01-png)
+[![](http://daoluan.github.io/images/blog/2012/09/dlnote_01.png)](http://daoluan.github.io/blog/archives/946/dlnote_01-png)
 
 上下左右重新排列便签：
 
-[![](http://daoluan.net/images/blog/2012/09/dlnote_02.png)](http://daoluan.net/blog/archives/946/dlnote_02-png)
+[![](http://daoluan.github.io/images/blog/2012/09/dlnote_02.png)](http://daoluan.github.io/blog/archives/946/dlnote_02-png)
 
 实际效果图：
 
-[![](http://daoluan.net/images/blog/2012/09/dlnote_03.png)](http://daoluan.net/blog/archives/946/dlnote_03-png)
+[![](http://daoluan.github.io/images/blog/2012/09/dlnote_03.png)](http://daoluan.github.io/blog/archives/946/dlnote_03-png)
 
 实现透明效果后神奇的黄色边边：
 
-[![](http://daoluan.net/images/blog/2012/09/dlnote_04.png)](http://daoluan.net/blog/archives/946/dlnote_04-png)
+[![](http://daoluan.github.io/images/blog/2012/09/dlnote_04.png)](http://daoluan.github.io/blog/archives/946/dlnote_04-png)
 
 下载地址（大小：42K）：[http://download.csdn.net/detail/daoluanxiaozi/4245948](http://download.csdn.net/detail/daoluanxiaozi/4245948)
 
@@ -77,4 +77,4 @@ DL便签 V0.3——**简单，效率！**一款实用的桌面便签。笔者会
 
 **喜欢界面，但又不得不放弃它，因为它华而不实；注重软件的架构，才能真正驾驭编码！**
 
-Dylan 2012-04-22 [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)
+Dylan 2012-04-22 [http://daoluan.github.io/blog/](http://daoluan.github.io/blog/)

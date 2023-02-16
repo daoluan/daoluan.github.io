@@ -73,4 +73,4 @@ django ORM 底层的实现都在 django.db.models 中. 如你所知, 数据库�
 
 Dylan 2013-9-22
 
-[http://daoluan.net](http://daoluan.net/)
+[http://daoluan.github.io](http://daoluan.github.io/)

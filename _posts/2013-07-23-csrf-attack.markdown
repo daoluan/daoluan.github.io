@@ -52,7 +52,7 @@ CSRF 全称是 Cross-site request forgery，即跨站点请求伪造。当恶�
 未名攻击者特地写了个带图片的链接，可以是下面的形式：
 
     
-    <a href="daoluan.net"><img height="185" width="185" alt="" src="http://shopping.cm/Transfer.html?toAccount=123456&money=1000"></a>
+    <a href="daoluan.github.io"><img height="185" width="185" alt="" src="http://shopping.cm/Transfer.html?toAccount=123456&money=1000"></a>
 
 
 小明傻乎乎的点击打开，于是浏览器尝试装载图片的时候，同时提交了小明的 cookie。服务器收到此请求，验证 cookie 正确后，于是修改了数据，即给账户「123456」转账 ￥1000.没错，在装载图片过程中会产生上面形式的 HTTP 请求。
@@ -83,4 +83,4 @@ CSRF 攻击通常会调用 JavaScript 自动提交跨站表单，然而，不�
 
 Dylan 2013-07-23
 
-http://daoluan.net/blog
+http://daoluan.github.io/blog

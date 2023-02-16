@@ -15,7 +15,7 @@ wordpress_id: 2010
 ### 响应数据的返回
 
 
-在 WSGIHandler.__call__(self, environ, start_response) 方法调用了 WSGIHandler.get_response() 方法, 由此得到响应数据对象 response. 如今所要做的, 便是将其返回给客户端. 在 [Django 源码小剖: 初探 WSGI](http://daoluan.net/blog/decode-django-wsgi/) 中, 简要的概括了请求到来时 django 自带服务器的执行关系, 摘抄如下:
+在 WSGIHandler.__call__(self, environ, start_response) 方法调用了 WSGIHandler.get_response() 方法, 由此得到响应数据对象 response. 如今所要做的, 便是将其返回给客户端. 在 [Django 源码小剖: 初探 WSGI](http://daoluan.github.io/blog/decode-django-wsgi/) 中, 简要的概括了请求到来时 django 自带服务器的执行关系, 摘抄如下:
 
 
 <blockquote>
@@ -38,7 +38,7 @@ wordpress_id: 2010
 从「调用 ServerHandler.run()-->run() 调用 application() 这才是真正的逻辑.-->run() 中在调用 ServerHandler.finish_response() 返回数据」开始说起, 下面是主要的代码解说:
 
 
-    # 下面的函数都在 ServerHandler 的继承链上方法, 有些方法父类只定义了空方法, 具体逻辑交由子类实现. 有关继承链请参看: http://daoluan.net/blog/decode-django-wsgi/
+    # 下面的函数都在 ServerHandler 的继承链上方法, 有些方法父类只定义了空方法, 具体逻辑交由子类实现. 有关继承链请参看: http://daoluan.github.io/blog/decode-django-wsgi/
     def run(self, application):
         """Invoke the application"""
         try:
@@ -137,4 +137,4 @@ wordpress_id: 2010
 
 Dylan 2013-9-23
 
-[http://daoluan.net](http://daoluan.net/)
+[http://daoluan.github.io](http://daoluan.github.io/)

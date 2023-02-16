@@ -39,4 +39,4 @@ wordpress_id: 2137
 
 Dylan 2013-10-20
 
-http://daoluan.net
+http://daoluan.github.io

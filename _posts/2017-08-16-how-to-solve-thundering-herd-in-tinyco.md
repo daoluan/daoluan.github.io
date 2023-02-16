@@ -22,7 +22,7 @@ nginx 多进程同时服务的基本思路是在监听端口后，fork 出几个
 
 通过 perf top 来看，CPU的消耗主要在 mspin_lock，看来是内核在竞争某个共享资源导致的。
 
-[![](http://daoluan.net/images/blog/2017/how-to-solve-thundering-herd-in-tinyco.png)](http://daoluan.net/images/blog/2017/how-to-solve-thundering-herd-in-tinyco.png)
+[![](http://daoluan.github.io/images/blog/2017/how-to-solve-thundering-herd-in-tinyco.png)](http://daoluan.github.io/images/blog/2017/how-to-solve-thundering-herd-in-tinyco.png)
 
 通过查看调用栈，才关注起 epoll 这个系统调用的背后。一开始，tinyco 确实是在初始化 epoll 资源后，才 fork 出子进程的。epoll_create 调用后会返回一个 fd，该 fd 标记了内核中的某个资源，对于 epoll 来说应该就是一颗红黑树了。如果父进程创建了 epoll资源后 fork了子进程，那么所有子进程包括父进程都会共享这一资源，势必这颗红黑树会有互斥访问的保护。惊群的问题迎刃而解。势必在有新的连接过来的时候，所有进程的 epoll_wait 都被惊醒（返回），所以压测的时候不断有新的连接来，所有的进程都不停的被唤醒，CPU很快被吃满。
 

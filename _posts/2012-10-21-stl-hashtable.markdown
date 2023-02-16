@@ -58,7 +58,7 @@ wordpress_id: 1234
 
 开链法，动态非连续空间（single list），不存在线性探测和二次探测的第一个问题；在确定地址过后，只需要对相应的single list作插入，删除，修改操作，这样碰撞的问题就转化为single list的寻访，速度可观。STL Hashtable就是采用开链法。
 
-[![](http://daoluan.net/images/blog/2012/10/Hashtable_with_slist.jpg)](http://daoluan.net/blog/stl-hashtable/hashtable_with_slist/) 链地址法
+[![](http://daoluan.github.io/images/blog/2012/10/Hashtable_with_slist.jpg)](http://daoluan.github.io/blog/stl-hashtable/hashtable_with_slist/) 链地址法
 
 后来我们将看到，STL中的hash_set和hash_map皆由Hashtable作为底层容器。
 
@@ -72,4 +72,4 @@ wordpress_id: 1234
 
 本文完 2012-10-21
 
-Dylan [http://www.daoluan.net/](http://www.daoluan.net/)
+Dylan [http://daoluan.github.io/](http://daoluan.github.io/)

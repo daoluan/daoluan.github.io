@@ -56,4 +56,4 @@ B：手痒~~
 
 本文完 2012-11-18
 
-Dylan [http://www.daoluan.net/](http://www.daoluan.net/)
+Dylan [http://daoluan.github.io/](http://daoluan.github.io/)

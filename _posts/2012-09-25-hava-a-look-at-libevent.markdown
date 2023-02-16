@@ -255,4 +255,4 @@ libevent的事件驱动机制是在是太妙了，应该是借助了系统的信
 
 本文完 2012-09-25
 
-Dylan [http://www.daoluan.net/](http://www.daoluan.net/blog/)
+Dylan [http://daoluan.github.io/](http://daoluan.github.io/blog/)

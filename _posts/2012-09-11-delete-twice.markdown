@@ -144,4 +144,4 @@ C++，以至于其他的程序语言，都是伟大的创造。他们是规则�
 
 本文完 2012-09-11
 
-Dylan [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)
+Dylan [http://daoluan.github.io/blog/](http://daoluan.github.io/blog/)

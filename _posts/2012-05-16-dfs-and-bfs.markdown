@@ -40,7 +40,7 @@ wordpress_id: 295
   2. 或者是存储在队列中尚未处理的。
 
 
-[![image.png](http://daoluan.net/images/blog/2012/05/image.png)](http://daoluan.net/images/blog/2012/05/image.png)
+[![image.png](http://daoluan.github.io/images/blog/2012/05/image.png)](http://daoluan.github.io/images/blog/2012/05/image.png)
 
 《算法导轮》对两种搜索都采用了很聪明的做法，用白色WHITE来标志未发现的节点，用灰色GRAY来标志第一次被发现的节点，用黑色BLACK来标志第二次被发现的节点。
 
@@ -90,7 +90,7 @@ wordpress_id: 295
   3. BLACK 此顶点的邻接顶点被全部访问完之后——结束访问次顶点
 
 
-[![image.png](http://daoluan.net/images/blog/2012/05/image1.png)](http://daoluan.net/images/blog/2012/05/image1.png)
+[![image.png](http://daoluan.github.io/images/blog/2012/05/image1.png)](http://daoluan.github.io/images/blog/2012/05/image1.png)
 
 
     DFS(G,s)
@@ -137,4 +137,4 @@ wordpress_id: 295
 
 本文完 2012-05-16
 
-Dylan [http://www.daoluan.net/blog](http://www.daoluan.net/blog/)
+Dylan [http://daoluan.github.io/blog](http://daoluan.github.io/blog/)

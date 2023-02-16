@@ -14,11 +14,11 @@ wordpress_id: 1170
 
 一句话deque：deque是双端队列，它的空间构造并非一个vector式的长数组，而是“分段存储，整体维护”的方式；STL允许在deque中任意位置操作元素（删除添加）（这超出了deque的概念，最原始的deque将元素操作限定在队列两端），允许遍历，允许随机访问（这是假象）；我们将看到，deque将是STL中stack和queue的幕后功臣，对deque做适当的修正，便可以实现stack和queue。
 
-[![](http://daoluan.net/images/blog/2012/10/deque_in_mind.jpg)](http://daoluan.net/blog/stl-deque/deque_in_mind/)
+[![](http://daoluan.github.io/images/blog/2012/10/deque_in_mind.jpg)](http://daoluan.github.io/blog/stl-deque/deque_in_mind/)
 
 <!-- more -->
 
-[![](http://daoluan.net/images/blog/2012/10/deque_in_real.jpg)](http://daoluan.net/blog/stl-deque/deque_in_real/) bug,deque_in_real
+[![](http://daoluan.github.io/images/blog/2012/10/deque_in_real.jpg)](http://daoluan.github.io/blog/stl-deque/deque_in_real/) bug,deque_in_real
 
 
 ### deque的迭代器
@@ -114,4 +114,4 @@ deque在实际的应用当中使用的比较少，但正如文章开头指出的
 
 本文完 2012-10-17
 
-Dylan [http://www.daoluan.net/](http://www.daoluan.net/blog/)
+Dylan [http://daoluan.github.io/](http://daoluan.github.io/blog/)

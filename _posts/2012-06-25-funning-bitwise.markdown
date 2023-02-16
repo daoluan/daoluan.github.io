@@ -147,4 +147,4 @@ XXX110011XXX
 
 本文完 2012-06-25
 
-Dylan [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)
+Dylan [http://daoluan.github.io/blog/](http://daoluan.github.io/blog/)

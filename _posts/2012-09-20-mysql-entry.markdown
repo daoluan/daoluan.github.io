@@ -173,4 +173,4 @@ reference:《MySQL 完全手册》
 
 本文完 2012-09-20
 
-Dylan [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)
+Dylan [http://daoluan.github.io/blog/](http://daoluan.github.io/blog/)

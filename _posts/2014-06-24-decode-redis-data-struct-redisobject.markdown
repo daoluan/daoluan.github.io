@@ -109,4 +109,4 @@ struct redisObject 把最后一个指针留给了真正的数据。
 
 Dylan 2014-6-18
 
-[http://daoluan.net](http://daoluan.net/)
+[http://daoluan.github.io](http://daoluan.github.io/)

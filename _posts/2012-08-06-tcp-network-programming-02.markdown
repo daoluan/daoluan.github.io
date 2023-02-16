@@ -17,7 +17,7 @@ wordpress_id: 787
 
 
 
-<blockquote>本篇文章对[http://www.daoluan.net/blog/?p=774](http://www.daoluan.net/blog/?p=774)中的“计算器”进行改进，与大家分享。</blockquote>
+<blockquote>本篇文章对[http://daoluan.github.io/blog/?p=774](http://daoluan.github.io/blog/?p=774)中的“计算器”进行改进，与大家分享。</blockquote>
 
 
 上面那篇中的服务端属重复型，即一个时刻只处理一客户的请求，处理期间不搭理其他客户。此篇对上篇的“计算器”进行小小的改进——能够接受多个客户的请求。
@@ -40,7 +40,7 @@ wordpress_id: 787
 
 缺陷：由子进程来负责serve的部分。服务器主进程（父进程）不负责等待子进程结束，资源由内核回收（这一要非必要）。
 
-[![](http://daoluan.net/images/blog/2012/08/fork.png)](http://daoluan.net/blog/archives/787/fork)
+[![](http://daoluan.github.io/images/blog/2012/08/fork.png)](http://daoluan.github.io/blog/archives/787/fork)
 
 
 # 上实验结果图片解解馋
@@ -48,15 +48,15 @@ wordpress_id: 787
 
 服务器启动
 
-[![](http://daoluan.net/images/blog/2012/08/1_thumb1.png)](http://daoluan.net/blog/archives/787/1_thumb1)
+[![](http://daoluan.github.io/images/blog/2012/08/1_thumb1.png)](http://daoluan.github.io/blog/archives/787/1_thumb1)
 
 客户端方面，将client1、client2和client3（编译链接自同一个代码）写进脚本。运行
 
-[![](http://daoluan.net/images/blog/2012/08/2_thumb1.png)](http://daoluan.net/blog/archives/787/2_thumb1)
+[![](http://daoluan.github.io/images/blog/2012/08/2_thumb1.png)](http://daoluan.github.io/blog/archives/787/2_thumb1)
 
 服务端服务多个客户请求
 
-[![](http://daoluan.net/images/blog/2012/08/3_thumb1.png)](http://daoluan.net/blog/archives/787/3_thumb1)
+[![](http://daoluan.github.io/images/blog/2012/08/3_thumb1.png)](http://daoluan.github.io/blog/archives/787/3_thumb1)
 
 client
 
@@ -306,4 +306,4 @@ test.sh
 
 本文完 2012-08-06
 
-Dylan [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)
+Dylan [http://daoluan.github.io/blog/](http://daoluan.github.io/blog/)

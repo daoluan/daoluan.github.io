@@ -17,13 +17,13 @@ wordpress_id: 1445
 
 2012年11月8日1:03:01 深夜断网，不能上传源码和可执行文件，明日早起补上。喜欢的童鞋们先收藏。
 
-[![](http://daoluan.net/images/blog/2012/11/Maruko.jpg)](http://daoluan.net/blog/enjoy-bitmap2/maruko/) 小丸子
+[![](http://daoluan.github.io/images/blog/2012/11/Maruko.jpg)](http://daoluan.github.io/blog/enjoy-bitmap2/maruko/) 小丸子
 
 <!-- more -->
 
-查看大图：[http://daoluan.net/images/blog/2012/11/Maruko.jpg](http://daoluan.net/images/blog/2012/11/Maruko.jpg)
+查看大图：[http://daoluan.github.io/images/blog/2012/11/Maruko.jpg](http://daoluan.github.io/images/blog/2012/11/Maruko.jpg)
 
-接上篇：[http://daoluan.net/blog/enjoy-bitmap/](http://daoluan.net/blog/enjoy-bitmap/)
+接上篇：[http://daoluan.github.io/blog/enjoy-bitmap/](http://daoluan.github.io/blog/enjoy-bitmap/)
 
 上篇中发布的程序中不支持png，jpg，gif等主流的图片格式的玩转，只支持24位位图。这一次对软件做以下更新：
 
@@ -55,4 +55,4 @@ wordpress_id: 1445
 
 本文完 2012-11-8
 
-Dylan [http://www.daoluan.net/](http://www.daoluan.net/)
+Dylan [http://daoluan.github.io/](http://daoluan.github.io/)

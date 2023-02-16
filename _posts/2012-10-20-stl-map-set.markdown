@@ -212,4 +212,4 @@ RB_TREE本身就是一个搜索树，加之它能时刻保持良好的平衡，�
 
 本文完 2012-10-16
 
-Dylan [http://www.daoluan.net/](http://www.daoluan.net/)
+Dylan [http://daoluan.github.io/](http://daoluan.github.io/)

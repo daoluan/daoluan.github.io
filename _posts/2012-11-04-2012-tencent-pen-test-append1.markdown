@@ -428,7 +428,7 @@ wordpress_id: 1419
 
 本文完 2012-11-4
 
-Dylan [http://www.daoluan.net/](http://www.daoluan.net/)
+Dylan [http://daoluan.github.io/](http://daoluan.github.io/)
 
 
 <blockquote></blockquote>

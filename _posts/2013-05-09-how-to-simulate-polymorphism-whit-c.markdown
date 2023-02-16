@@ -14,7 +14,7 @@ wordpress_id: 1746
 ## C 还是 C++？
 
 
-C++ 中的多态是指「通过基类对象的指针或者基类对象的引用调用虚函数」，表现更多派生类的特性，但[根据 C++ 多态的实现](http://daoluan.net/blog/cplusplus-polymorphism/)，我们发现这种方法存在一定的空间和效率的折损。不可否认，多态轻松解决了很多工程中遇到的问题，这与 pure C 的解决方法比起来，更为优雅。
+C++ 中的多态是指「通过基类对象的指针或者基类对象的引用调用虚函数」，表现更多派生类的特性，但[根据 C++ 多态的实现](http://daoluan.github.io/blog/cplusplus-polymorphism/)，我们发现这种方法存在一定的空间和效率的折损。不可否认，多态轻松解决了很多工程中遇到的问题，这与 pure C 的解决方法比起来，更为优雅。
 
 在考虑移植性上，C 的光芒要盖过 C++，但 C++ 的多态是可借鉴的，于是用 pure C 来模仿 C++ 中多态行为。
 
@@ -148,4 +148,4 @@ panimal->move();
 
 Dylan 2013-05-09
 
-[http://daoluan.net](http://daoluan.net/)
+[http://daoluan.github.io](http://daoluan.github.io/)

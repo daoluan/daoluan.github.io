@@ -14,7 +14,7 @@ layout: post
 wordpress_id: 883
 ---
 
-![](http://daoluan.net/images/blog/2012/08/richard_stevens.png)
+![](http://daoluan.github.io/images/blog/2012/08/richard_stevens.png)
 
 前些时间为了期末考试费尽心思，没有多少时间去看喜欢的书。暑假开始的时候，并没有急着回家，而是留在学校看APUE，为了期末，“禁欲”好多天了。APUE实际上是一个API手册，比MSDN详细介绍了函数和参数等等，心里落差很大，本来就对它抱有很大希望，拜读后发现自己被忽悠了，“武林秘籍”也成了幻影。但它依旧是W.Richard Stevens爹爹笔下的经典。
 
@@ -32,7 +32,7 @@ APUE应该这么读：
 
 暑假里，学习的时间占了没多少。不过，笔者倒培养了心理学这一爱好。爱好并不意味着擅长。心理学是庞杂抽象的学科，它很靠近人性，却有时又很颠覆人性，所以阅读心理学的作品通常质疑 声不断，“人人都存在自我服务偏见，总倾向于把成功归因于个人”。书里经常会遇到“这有什么，我早就知道了”，对心理学产生不屑，但往往“真理在被发现的时候才会变得显而易见”。人性的多样，但又并非无规可寻，这其中的奥妙足以让笔者“虽不能至，然心向往之”。
 
-[![](http://daoluan.net/images/blog/2012/08/SocialPsychology.png)](http://daoluan.net/blog/archives/883/socialpsychology-png)
+[![](http://daoluan.github.io/images/blog/2012/08/SocialPsychology.png)](http://daoluan.github.io/blog/archives/883/socialpsychology-png)
 
 暑假陪伴笔者的还有小说。看的余华（朴素）和刘慈欣（科幻）的作品，计划回到学校把他们的其他作品扫一遍。
 
@@ -40,10 +40,10 @@ APUE应该这么读：
 
 还有吉他。在学期结束之前，在树洞上买下一把二手吉他，200上手，笔者算是个比较奢侈的新手。吉他的教学工作一直由同专业的Ming担当。Ming的吉他史有好多年了，在他那里学到很多吉他的东西。不过，音乐知识我不懂多少，和弦倒是会几个。这会我会想起《海上钢琴师》中的“ 拿一部钢琴来说，从琴键开始，又结束。你知道钢琴只有88个键，随便什么琴都没差。它们不是无限的。你才是无限的，在琴键上制作出的音乐是无限的。我喜欢这样，我活的惯。”1900的这句话很耐人寻味。
 
-[![](http://daoluan.net/images/blog/2012/08/cchord.png)](http://daoluan.net/blog/archives/883/cchord-png)
+[![](http://daoluan.github.io/images/blog/2012/08/cchord.png)](http://daoluan.github.io/blog/archives/883/cchord-png)
 
 展望未来：路漫漫其修远兮，吾将上下而求索。
 
 本文完 2012-08-29（大二暑假结束）
 
-Dylan [http://www.daoluan.net/blog/](http://www.daoluan.net/blog/)
+Dylan [http://daoluan.github.io/blog/](http://daoluan.github.io/blog/)

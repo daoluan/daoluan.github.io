@@ -158,4 +158,4 @@ node++ = 1;执行过后，node没有被“=1”影响。那可不可以反其道
 
 本文完 2012-10-23
 
-Dylan [http://www.daoluan.net/](http://www.daoluan.net/)
+Dylan [http://daoluan.github.io/](http://daoluan.github.io/)

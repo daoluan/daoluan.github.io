@@ -296,7 +296,7 @@ a b a
 
 
 <blockquote><p>问题定义：</p>
-<p>字符串匹配问题：T=“www.daoluan.net/blog”，P=“daoluan”，问P是否在T中出现？答：是。</p></blockquote>
+<p>字符串匹配问题：T=“daoluan.github.io/blog”，P=“daoluan”，问P是否在T中出现？答：是。</p></blockquote>
 
 
 之前遇到的字符串匹配算法效率不是很看好，有限自动机之于最为朴素的穷举法有一定的提高，但是初始化过程仍不乐观，总体效率不高。奇葩的是，KMP算法初始化和匹配过程分别可以达到O(n)和O(m)，实在是神奇。本篇文章目的就是吃透KMP。纵观KMP，它无非就基于三个核心的结论，吃透这个三个结论，将KMP踩在脚下。
@@ -326,7 +326,7 @@ P** d a o d a o d a o d a o l  u a n  **
 
 比如：同样对P=ababababca，求π*(8)， 有下图结果（来自算法导论）：
 
-[![image.png](http://daoluan.net/images/blog/2012/06/image3.png)](http://daoluan.net/images/blog/2012/06/image3.png)
+[![image.png](http://daoluan.github.io/images/blog/2012/06/image3.png)](http://daoluan.github.io/images/blog/2012/06/image3.png)
 
 所以π*(8)={0,2,4,6}。对于其他的 π*(q)值也是这样计算。**这里的涉及了很多的定义，务必看懂，下面的三个结论才看得下去。如果太急，直接忽视这里，看上面的“有趣的字符串匹配”。**
 
@@ -363,7 +363,7 @@ KMP 有三个结论，他们主要是用来计算辅助表的：
 
 根据结论一，得到 t-1∈π*(q-1)，π(q)-1∈π*(q-1)总能成立。
 
-- 图示结论[![image.png](http://daoluan.net/images/blog/2012/06/image5.png)](http://daoluan.net/images/blog/2012/06/image5.png)
+- 图示结论[![image.png](http://daoluan.github.io/images/blog/2012/06/image5.png)](http://daoluan.github.io/images/blog/2012/06/image5.png)
 
 上面的图中，如果匹配不成功, π 值会越来越小, 直到为0, 此时就需要重新从第一个字符开始匹配了.
 
@@ -397,4 +397,4 @@ kmp主程序也是用这种平摊分析方法。
 
 本文完 2012-06-14
 
-Dylan [www.daoluan.net/blog](http://www.daoluan.net/blog)
+Dylan [daoluan.github.io/blog](http://daoluan.github.io/blog)

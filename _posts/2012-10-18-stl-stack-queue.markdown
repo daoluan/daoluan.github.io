@@ -12,14 +12,14 @@ layout: post
 wordpress_id: 1187
 ---
 
-一句话stack和queue：相对于[deque](http://daoluan.net/blog/?p=1170  )，stack和queue没有那么底层，他们大部分底层的操作都由deque一手操办，特别的stack和queue是deque的子集（换句话说，stack、queue管deque叫老爹）；通过关闭或者限制deque的一些接口就可以轻易实现stack和queue（STL源码剖析中管这种机制叫“adapter”。）；由stack和queue的定义来看，它们的遍历动作是不被允许的，没有迭代器概念；有趣的是，通过修改list的接口，同样可以让[list](http://daoluan.net/blog/stl-list/)假冒stack和queue。
+一句话stack和queue：相对于[deque](http://daoluan.github.io/blog/?p=1170  )，stack和queue没有那么底层，他们大部分底层的操作都由deque一手操办，特别的stack和queue是deque的子集（换句话说，stack、queue管deque叫老爹）；通过关闭或者限制deque的一些接口就可以轻易实现stack和queue（STL源码剖析中管这种机制叫“adapter”。）；由stack和queue的定义来看，它们的遍历动作是不被允许的，没有迭代器概念；有趣的是，通过修改list的接口，同样可以让[list](http://daoluan.github.io/blog/stl-list/)假冒stack和queue。
 
-[![](http://daoluan.net/images/blog/2012/10/stack.png)](http://daoluan.net/blog/stl%e4%b9%8bstack%e4%b8%8equeue/stack/)  
+[![](http://daoluan.github.io/images/blog/2012/10/stack.png)](http://daoluan.github.io/blog/stl%e4%b9%8bstack%e4%b8%8equeue/stack/)  
 stack
 
 
 
-[![](http://daoluan.net/images/blog/2012/10/queue.jpg)](http://daoluan.net/blog/stl%e4%b9%8bstack%e4%b8%8equeue/queue/)  
+[![](http://daoluan.github.io/images/blog/2012/10/queue.jpg)](http://daoluan.github.io/blog/stl%e4%b9%8bstack%e4%b8%8equeue/queue/)  
 queue
 
 
@@ -127,4 +127,4 @@ stack/queue在实际应用用的比较多，两者有很大的共性，因此que
 
 本文完 2012-10-19
 
-Dylan [http://www.daoluan.net/](http://www.daoluan.net/blog/)
+Dylan [http://daoluan.github.io/](http://daoluan.github.io/blog/)

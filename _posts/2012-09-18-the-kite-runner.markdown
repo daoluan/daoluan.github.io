@@ -33,4 +33,4 @@ wordpress_id: 1061
 
 本文完 2012-09-18
 
-Dylan [http://www.daoluan.net/](http://www.daoluan.net/)
+Dylan [http://daoluan.github.io/](http://daoluan.github.io/)

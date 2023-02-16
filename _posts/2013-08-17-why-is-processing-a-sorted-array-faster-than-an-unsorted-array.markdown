@@ -344,4 +344,4 @@ Java - Netbeans 7.1.1 JDK 7 - x64
 
 （完）Dylan 2013-08-17
 
-[http://daoluan.net/](http://daoluan.net/)
+[http://daoluan.github.io/](http://daoluan.github.io/)
