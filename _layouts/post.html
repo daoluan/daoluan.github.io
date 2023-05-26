@@ -26,21 +26,9 @@ feed: atom.xml
 
 <div id="container"></div>
 
-<script>
-    var clientId = '42fd8fb3599d49e9210f'
-    var clientSecret = '43915b47d2b594a92470a86e85a2a3ade3874ba4'
-    var gitment = new Gitment({
-        id: '{{ page.date }}',
-        owner: 'daoluan',
-        repo: 'daoluan.github.io',
-        oauth: {
-            client_id: clientId,
-            client_secret: clientSecret,
-        },
-    })
-
-    gitment.render('container')
-</script>
+<script src="https://utteranc.es/client.js" repo="daoluan/daoluan.github.io" issue-term="pathname" theme="github-light"
+    crossorigin="anonymous" async>
+    </script>
 <!-- <div id="disqus_thread">
     <p>disqus 可能被墙~</p>
 </div>
