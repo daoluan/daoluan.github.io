@@ -1,0 +1,50 @@
+---
+layout: post
+title: 0rtt
+date: 2023-08-08 11:33:58
+author: daoluan
+comments: true
+typora-root-url: ../
+---
+
+总结几个 0rtt 的技术点
+
+# quic 
+
+quic 支持 0rtt。第一次握手时，需要 1rtt 以交换公钥。后续的交互，就可以携带数据了。
+
+![img](/images/blog/neb1t3ivw4.png)
+
+https://zhuanlan.zhihu.com/p/142794794
+
+# webrtc
+
+webrtc 实际握手需要很多个来回。
+
+- signal tcp 握手 1.5rtt
+- sdp 交换≈1rtt
+
+接下来是 webrtc 实际的协议
+
+- stun bind
+- dtls 握手
+- 实际的数据
+
+![v2-8cf643367610fad90cecc870b2795f4b_1440w.webp](/images/blog/v2-8cf643367610fad90cecc870b2795f4b_1440w.webp.png)
+
+优化的方法：
+
+- sdp stun bind，甚至音视频的第一帧，放在一个 udp 包里（极致做到 0rtt 吐流）
+- dtls 去掉，音视频取消加密
+
+# tcp
+
+- 第一次交互时按正常的流程，服务端会下发 cookies
+- 后续的交互，客户端可以在第一个包带上 cookies 和数据。
+
+但有几点限制，无法启用
+
+- nat 网络架构
+- vip 网络架构
+
+待补充...

@@ -11,3 +11,4 @@ collections:
 safe: true
 markdown: kramdown
 encoding: utf-8
+future: true

@@ -1,0 +1,42 @@
+---
+layout: post
+title: x264-startup
+date: 2023-07-27 18:54:16
+author: daoluan
+comments: true
+typora-root-url: ../
+---
+
+x264 的源码剖析，持续更新中：[x264-source-notes](https://github.com/daoluan/x264-source-notes)
+
+X264 的学习笔记，后续在这里补充。
+
+X264 解码函数消耗 top10
+
+- cabac 消耗很大，主要在模式决策阶段，每个模式都要计算码率失真
+
+![image-20230727185443562](/images/blog/image-20230727185443562.png)
+
+> 在x264编码过程中，`x264_trellis_coef1`是一个与Trellis量化相关的参数。Trellis量化是一种用于优化编码效率的技术，它通过在量化过程中进行更细致的比特率-失真（RD）优化来提高压缩效率。这种优化可以在量化过程中对系数进行微调，以找到最佳的量化级别，从而在保持图像质量的同时减少比特率。
+>
+> `x264_trellis_coef1`参数通常用于在CABAC（Context-Adaptive Binary Arithmetic Coding）编码中，对量化后的系数进行Trellis搜索。这种搜索策略会增加计算量，因为它需要评估多个可能的量化级别，以确定最佳的编码选择。在CABAC中，每个系数的编码都依赖于其上下文状态（node_ctx），而Trellis搜索会在多个可能的状态转换之间进行选择，以找到总体上最优的编码路径。
+>
+> 根据搜索结果中的信息，`x264_trellis_coef1`的使用确实会增加编码时间，因为它涉及到更复杂的计算过程。在某些情况下，尤其是在指定码率模式下，更高级别的Trellis（如trellis2）虽然消耗了更多的时间，但并没有带来画质的提高，有时甚至比trellis0还低。因此，如果编码速度是一个重要考虑因素，或者在特定的应用场景中画质提升不明显，可以选择较低级别的Trellis，如trellis0，以减少计算消耗并加快编码速度。
+>
+> 在实际应用中，选择是否使用Trellis量化以及使用哪个级别的Trellis，需要根据具体的需求和资源限制来决定。
+
+### 架构分层
+
+- vcl：视频编码层，组要负责压缩视频
+- nal：网络分层
+
+### 编码流程：[H.264 压缩编码原理演示](https://www.iqiyi.com/w_19rtmsdogd.html?vfrm=2-3-0-1)
+
+- 帧内压缩，相等于 jpeg 压缩原始图片的过程 https://blog.csdn.net/leixiaohua1020/article/details/45644367
+  - 普通的 Intra16x16 的宏块的像素。它的下方包含了使用 Vertical，Horizontal，DC 和 Plane 四种帧内预测模式预测的像素
+- 帧间压缩
+  - 运动估计
+  - 运动补偿
+  - 预测误差
+- DCT：时域到频域的转换
+- cabac：类似赫夫曼压缩算法，属于无损压缩（🔥🔥🔥 or cavlc
