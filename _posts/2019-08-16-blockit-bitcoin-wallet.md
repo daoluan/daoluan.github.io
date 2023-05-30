@@ -14,5 +14,3 @@ tags: []
 离职后空闲的一段时间里，为了完善技能树，开始折腾客户端的技术，由于 Android 以及 iOS 双端的工作实在是水深，于是决定研究 flutter。经过一周的紧锣密鼓的开发，终于面世了：[https://play.google.com/store/apps/details?id=com.blockit.blockit_wallet](https://play.google.com/store/apps/details?id=com.blockit.blockit_wallet "https://play.google.com/store/apps/details?id=com.blockit.blockit_wallet")。大家可以下载体验。
 
 我为这个钱包设计了 logo，取了名字：Blockit 比特币钱包。整个过程让我非常充实，学到很多东西。
-
-![logo](https://lh3.googleusercontent.com/HXOPyNtAIKaROLg5jal3MSA0XxoNfYsa1mfP8KPxPQzREwyibuAacOjvUSta2Jj94Dk=s180-rw)

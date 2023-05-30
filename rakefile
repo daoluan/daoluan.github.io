@@ -26,6 +26,7 @@ title: #{title}
 date: #{Time.now.strftime('%Y-%m-%d %k:%M:%S')}
 author: daoluan
 comments: true
+typora-root-url: ../
 ---
 EOS
     end
