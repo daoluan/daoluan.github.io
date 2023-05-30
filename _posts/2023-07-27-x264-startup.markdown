@@ -1,0 +1,34 @@
+---
+layout: post
+title: x264-startup
+date: 2023-07-27 18:54:16
+author: daoluan
+comments: true
+typora-root-url: ../
+---
+
+x264 的源码剖析，持续更新中：[x264-source-notes](https://github.com/daoluan/x264-source-notes)
+
+X264 的学习笔记，后续在这里补充。
+
+X264 解码函数消耗 top10
+
+- cabac 消耗很大，主要在最后的无损压缩阶段
+
+![image-20230727185443562](/images/blog/image-20230727185443562.png)
+
+### 架构分层
+
+- vcl：视频编码层，组要负责压缩视频
+- nal：网络分层
+
+### 编码流程：[H.264 压缩编码原理演示](https://www.iqiyi.com/w_19rtmsdogd.html?vfrm=2-3-0-1)
+
+- 帧内压缩，相等于 jpeg 压缩原始图片的过程 https://blog.csdn.net/leixiaohua1020/article/details/45644367
+  - 普通的 Intra16x16 的宏块的像素。它的下方包含了使用 Vertical，Horizontal，DC 和 Plane 四种帧内预测模式预测的像素
+- 帧间压缩
+  - 运动估计
+  - 运动补偿
+  - 预测误差
+- DCT：时域到频域的转换
+- cabac：类似赫夫曼压缩算法，属于无损压缩（🔥🔥🔥 or cavlc

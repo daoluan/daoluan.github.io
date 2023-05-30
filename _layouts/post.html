@@ -13,6 +13,7 @@ feed: atom.xml
 <div id="page">
     <h1 class="entry-title">{{ page.title }}</h1>
     <div class="entry-content">
+        {% include toc.html html=content %}
 
         {{ content }}
 
@@ -20,6 +21,7 @@ feed: atom.xml
         <address class="signature">
             <span class="date">{{ page.date | date_to_long_string }}</span>
             <span class="location">{{ page.location }}</span>
+            <span>会持续更新</span>
         </address>
     </div>
 </div><!-- End Page -->

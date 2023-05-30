@@ -1,14 +1,15 @@
 ---
 layout: name
 title: Dylan - daoluan.github.io
-keywords: Dylan,Dylan,郑思愿,郑思愿daoluan,daoluan,daoluan.github.io
-
+keywords: Dylan,daoluan,daoluan.github.io
 ---
+
 <img class='inset right' src='/images/daoluan.png' title='daoluan' width='120px' />
 
 # 欢迎
 
 最近的文章
+
 <p>
 <ul class="compact recent">
 {% for post in site.posts limit:5 %}
@@ -22,11 +23,10 @@ keywords: Dylan,Dylan,郑思愿,郑思愿daoluan,daoluan,daoluan.github.io
 
 作品
 
- - [IT 小小鸟外传](http://bibodeng.com/bibodeng/IT_birds/book.html)
- - [Redis 源码日志](http://daoluan.github.io/redis-source-notes/)(会保持更新), ~~[Redis 源码日志-极客学院Wiki](http://wiki.jikexueyuan.com/project/redis/)~~
- - [理解 STL](http://daoluan.github.io/cplusplus/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E7%AE%97%E6%B3%95/2012/12/01/confidential-stl.html)
- - [理解 Django](https://github.com/daoluan/decode-Django)
- - [理解 memcache](https://github.com/daoluan/decode-memcached)
+- [Redis 源码日志](http://daoluan.github.io/redis-source-notes/)(会保持更新), ~~[Redis 源码日志-极客学院 Wiki](http://wiki.jikexueyuan.com/project/redis/)~~
+- [理解 STL](http://daoluan.github.io/cplusplus/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E7%AE%97%E6%B3%95/2012/12/01/confidential-stl.html)
+- [理解 Django](https://github.com/daoluan/decode-Django)
+- [理解 memcache](https://github.com/daoluan/decode-memcached)
 
 赞助(主要用作本站维护使用)：
 
